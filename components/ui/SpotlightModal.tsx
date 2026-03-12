@@ -1,8 +1,9 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { X } from 'lucide-react';
+import { ChevronDown, ChevronUp, X } from 'lucide-react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 type Props = {
   open: boolean;
@@ -25,6 +26,12 @@ export default function SpotlightModal({
   chips = [],
   address
 }: Props) {
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    if (open) setExpanded(false);
+  }, [open, title]);
+
   return (
     <AnimatePresence>
       {open && (
@@ -46,7 +53,7 @@ export default function SpotlightModal({
             ) : (
               <div className="h-full w-full bg-neutral-900" />
             )}
-            <div className="absolute inset-0 bg-black/55 backdrop-blur-[3px]" />
+            <div className="absolute inset-0 bg-black/45" />
           </motion.div>
 
           <motion.div
@@ -57,7 +64,7 @@ export default function SpotlightModal({
             transition={{ delay: 0.05 }}
           >
             <div className="min-h-screen">
-              <div className="relative flex min-h-[72vh] items-end border-b border-white/20 px-4 pb-8 pt-20 sm:px-8 md:px-12">
+              <div className="relative flex min-h-[68vh] items-end border-b border-white/20 px-4 pb-8 pt-20 sm:px-8 md:px-12">
                 <button
                   onClick={onClose}
                   className="absolute right-4 top-4 rounded-full border border-white/30 bg-black/40 p-2 text-white hover:bg-black/55"
@@ -78,7 +85,7 @@ export default function SpotlightModal({
                   <h3 className="font-[var(--font-heading)] text-3xl text-white drop-shadow-lg md:text-5xl">
                     {title}
                   </h3>
-                  {shortDesc && <p className="mt-4 max-w-3xl text-sm leading-7 text-white/85 md:text-base">{shortDesc}</p>}
+                  {shortDesc && <p className="mt-4 max-w-3xl text-sm leading-7 text-white/90 md:text-base">{shortDesc}</p>}
                 </motion.div>
               </div>
 
@@ -86,9 +93,33 @@ export default function SpotlightModal({
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
-                className="mx-auto -mt-10 w-[calc(100%-2rem)] max-w-4xl rounded-2xl border border-white/20 bg-white/90 p-6 shadow-2xl backdrop-blur md:p-8"
+                className="mx-auto -mt-10 w-[calc(100%-2rem)] max-w-4xl rounded-2xl border border-white/20 bg-white p-6 shadow-2xl md:p-8"
               >
-                {fullDesc && <p className="text-[15px] leading-8 text-neutral-800 md:text-base">{fullDesc}</p>}
+                <div className={`${expanded ? '' : 'max-h-64 overflow-hidden'}`}>
+                  {fullDesc && <p className="text-[15px] leading-8 text-neutral-800 md:text-base">{fullDesc}</p>}
+                </div>
+
+                {!expanded && fullDesc && fullDesc.length > 220 && (
+                  <div className="-mt-14 h-14 bg-gradient-to-t from-white to-transparent" />
+                )}
+
+                {fullDesc && fullDesc.length > 220 && (
+                  <button
+                    type="button"
+                    onClick={() => setExpanded((v) => !v)}
+                    className="mt-2 inline-flex items-center gap-2 rounded-lg border border-hueGold/40 px-3 py-2 text-sm font-semibold text-hueRed"
+                  >
+                    {expanded ? (
+                      <>
+                        Thu gọn nội dung <ChevronUp size={16} />
+                      </>
+                    ) : (
+                      <>
+                        Mở rộng nội dung <ChevronDown size={16} />
+                      </>
+                    )}
+                  </button>
+                )}
 
                 {chips.length > 0 && (
                   <div className="mt-6 flex flex-wrap gap-2">
@@ -108,10 +139,6 @@ export default function SpotlightModal({
                     <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
                   </p>
                 )}
-
-                <div className="mt-8 border-t border-neutral-200 pt-4 text-sm text-neutral-600">
-                  Cuộn để xem toàn bộ thông tin chi tiết.
-                </div>
               </motion.div>
 
               <div className="h-10" />
