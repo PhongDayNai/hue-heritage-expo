@@ -1,17 +1,9 @@
-@import '@fontsource/montserrat/600.css';
-@import '@fontsource/montserrat/700.css';
-@import '@fontsource/open-sans/400.css';
-@import '@fontsource/open-sans/500.css';
-@import '@fontsource/open-sans/600.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: light;
-  --font-heading: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-  --font-body: 'Open Sans', 'Segoe UI', Arial, sans-serif;
 }
 
 html {
