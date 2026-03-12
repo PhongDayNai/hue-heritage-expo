@@ -133,7 +133,12 @@ export default function HomePortalModern() {
             </div>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               {gallery.map((item, idx) => (
-                <figure key={item.id} className={`group relative overflow-hidden rounded-lg ${idx === 0 ? 'col-span-2 h-40 sm:col-span-2' : 'aspect-square'}`}>
+                <figure
+                  key={item.id}
+                  className={`group relative overflow-hidden rounded-lg ${
+                    idx === 0 ? 'col-span-2 aspect-[2/1] sm:col-span-2' : 'aspect-square'
+                  }`}
+                >
                   <Image src={item.anh[0]} alt={item.tenDiaDiem} fill className="object-cover transition duration-500 group-hover:scale-105" />
                   <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-2 py-2 text-[11px] text-[#f9e8be]">
                     {item.tenDiaDiem}
