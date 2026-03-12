@@ -108,19 +108,24 @@ export default function HomePortalModern() {
               ))}
             </div>
 
-            <div className="mb-4 mt-9 flex items-center gap-3">
-              <h2 className="font-[var(--font-heading)] text-2xl text-hueRed">🧭 Thông tin cần biết</h2>
-              <span className="h-[2px] flex-1 bg-gradient-to-r from-hueGold to-transparent" />
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {infoCards.map((card) => (
-                <article key={card.title} className="rounded-xl border border-[#dcc09a] border-t-[3px] border-t-hueGold bg-white p-4 text-center shadow-sm">
-                  <div className="text-3xl">{card.icon}</div>
-                  <h3 className="mt-2 text-sm font-semibold text-hueRed">{card.title}</h3>
-                  <p className="mt-1 text-xs leading-5 text-neutral-600">{card.text}</p>
-                </article>
-              ))}
-            </div>
+            {/*
+              Tạm ẩn section "Thông tin cần biết" theo yêu cầu.
+              Khi cần bật lại, bỏ comment toàn bộ khối bên dưới.
+
+              <div className="mb-4 mt-9 flex items-center gap-3">
+                <h2 className="font-[var(--font-heading)] text-2xl text-hueRed">🧭 Thông tin cần biết</h2>
+                <span className="h-[2px] flex-1 bg-gradient-to-r from-hueGold to-transparent" />
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {infoCards.map((card) => (
+                  <article key={card.title} className="rounded-xl border border-[#dcc09a] border-t-[3px] border-t-hueGold bg-white p-4 text-center shadow-sm">
+                    <div className="text-3xl">{card.icon}</div>
+                    <h3 className="mt-2 text-sm font-semibold text-hueRed">{card.title}</h3>
+                    <p className="mt-1 text-xs leading-5 text-neutral-600">{card.text}</p>
+                  </article>
+                ))}
+              </div>
+            */}
 
             <div className="mb-4 mt-9 flex items-center gap-3">
               <h2 className="font-[var(--font-heading)] text-2xl text-hueRed">🖼️ Thư viện</h2>
