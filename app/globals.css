@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: light;
-  --font-heading: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", serif;
-  --font-body: Tahoma, "Segoe UI", "Noto Sans", Arial, sans-serif;
+  --font-heading: "Noto Serif", "DejaVu Serif", "Times New Roman", serif;
+  --font-body: "Noto Sans", "DejaVu Sans", "Segoe UI", Arial, sans-serif;
 }
 
 html {

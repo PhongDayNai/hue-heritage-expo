@@ -1,3 +1,5 @@
+'use client';
+
 import culture from '@/data/culture.json';
 import food from '@/data/food.json';
 import news from '@/data/news.json';
@@ -5,6 +7,8 @@ import scenic from '@/data/scenic.json';
 import library from '@/data/library.json';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import SpotlightModal from '../ui/SpotlightModal';
 
 const quickLinks = [
   { icon: '🎟️', label: 'Vé điện tử', href: '/ho-tro' },
@@ -22,7 +26,11 @@ const infoCards = [
   { icon: '💰', title: 'Chi phí', text: 'Mức chi phí tham khảo cho vé, ăn uống và dịch vụ đi kèm.' }
 ];
 
+type Scenic = (typeof scenic)[number];
+
 export default function HomePortalModern() {
+  const [activeSpot, setActiveSpot] = useState<Scenic | null>(null);
+
   const hero = scenic[1] || scenic[0];
   const upcoming = news.slice(0, 4);
   const gallery = scenic.slice(0, 6);
@@ -163,7 +171,12 @@ export default function HomePortalModern() {
               </div>
               <div className="p-4">
                 {sideScenic.map((item) => (
-                  <div key={item.id} className="flex gap-3 border-b border-dashed border-[#dcc09a] py-2.5 last:border-b-0">
+                  <button
+                    type="button"
+                    key={item.id}
+                    onClick={() => setActiveSpot(item)}
+                    className="flex w-full gap-3 border-b border-dashed border-[#dcc09a] py-2.5 text-left transition hover:bg-[#fbf6ea] last:border-b-0"
+                  >
                     <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md">
                       <Image src={item.anh[0]} alt={item.tenDiaDiem} fill className="object-cover" />
                     </div>
@@ -171,24 +184,29 @@ export default function HomePortalModern() {
                       <h4 className="text-sm font-semibold text-hueInk">{item.tenDiaDiem}</h4>
                       <p className="line-clamp-1 text-xs text-neutral-500">{item.gioiThieuNgan}</p>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
 
-            <div className="mb-5 overflow-hidden rounded-xl border border-[#dcc09a] bg-white shadow-sm">
-              <div className="bg-[linear-gradient(to_right,#7a1f1f,#5f1515)] px-4 py-2.5 font-[var(--font-heading)] text-sm text-[#f8ebc8]">
-                ⚡ Liên kết nhanh
+            {/*
+              Tạm ẩn section "Liên kết nhanh" theo yêu cầu.
+              Khi cần bật lại, bỏ comment toàn bộ khối bên dưới.
+
+              <div className="mb-5 overflow-hidden rounded-xl border border-[#dcc09a] bg-white shadow-sm">
+                <div className="bg-[linear-gradient(to_right,#7a1f1f,#5f1515)] px-4 py-2.5 font-[var(--font-heading)] text-sm text-[#f8ebc8]">
+                  ⚡ Liên kết nhanh
+                </div>
+                <div className="grid grid-cols-2 gap-2 p-3">
+                  {quickLinks.map((item) => (
+                    <Link key={item.label} href={item.href} className="rounded border border-[#dcc09a] bg-[#f7ebcd] px-2 py-2 text-center text-xs font-medium text-hueInk transition hover:bg-hueGold">
+                      <span className="mb-1 block text-base">{item.icon}</span>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <div className="grid grid-cols-2 gap-2 p-3">
-                {quickLinks.map((item) => (
-                  <Link key={item.label} href={item.href} className="rounded border border-[#dcc09a] bg-[#f7ebcd] px-2 py-2 text-center text-xs font-medium text-hueInk transition hover:bg-hueGold">
-                    <span className="mb-1 block text-base">{item.icon}</span>
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            */}
 
             <div className="overflow-hidden rounded-xl border border-[#dcc09a] bg-white shadow-sm">
               <div className="bg-[linear-gradient(to_right,#7a1f1f,#5f1515)] px-4 py-2.5 font-[var(--font-heading)] text-sm text-[#f8ebc8]">
@@ -204,6 +222,17 @@ export default function HomePortalModern() {
           </aside>
         </div>
       </section>
+
+      <SpotlightModal
+        open={!!activeSpot}
+        onClose={() => setActiveSpot(null)}
+        title={activeSpot?.tenDiaDiem || ''}
+        shortDesc={activeSpot?.gioiThieuNgan}
+        fullDesc={activeSpot?.gioiThieuDayDu}
+        image={activeSpot?.anh?.[0]}
+        chips={activeSpot?.dichVu || []}
+        address={activeSpot?.diaChi}
+      />
     </>
   );
 }
