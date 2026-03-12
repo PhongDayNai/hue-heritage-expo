@@ -2,6 +2,7 @@ import culture from '@/data/culture.json';
 import food from '@/data/food.json';
 import news from '@/data/news.json';
 import scenic from '@/data/scenic.json';
+import library from '@/data/library.json';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -26,6 +27,8 @@ export default function HomePortalModern() {
   const upcoming = news.slice(0, 4);
   const gallery = scenic.slice(0, 6);
   const sideScenic = scenic.slice(0, 4);
+  const hasVideo = Array.isArray(library.videos) && library.videos.length > 0;
+  const hasInfographic = Array.isArray(library.infographics) && library.infographics.length > 0;
 
   return (
     <>
@@ -133,8 +136,8 @@ export default function HomePortalModern() {
             </div>
             <div className="mb-4 flex border-b-2 border-[#dcc09a]">
               <button className="-mb-[2px] border-b-2 border-hueRed px-4 py-2 text-sm font-medium text-hueRed">Hình ảnh</button>
-              <button className="px-4 py-2 text-sm font-medium text-neutral-500">Video</button>
-              <button className="px-4 py-2 text-sm font-medium text-neutral-500">Infographic</button>
+              {hasVideo && <button className="px-4 py-2 text-sm font-medium text-neutral-500">Video</button>}
+              {hasInfographic && <button className="px-4 py-2 text-sm font-medium text-neutral-500">Infographic</button>}
             </div>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               {gallery.map((item, idx) => (
