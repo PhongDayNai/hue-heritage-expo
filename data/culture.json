@@ -1,0 +1,26 @@
+[
+  {
+    "id": "nha-nhac",
+    "chuDe": "Nhã nhạc cung đình Huế",
+    "tomTat": "Di sản phi vật thể của nhân loại, phản ánh tinh hoa âm nhạc cung đình triều Nguyễn.",
+    "noiDungDayDu": "Nhã nhạc cung đình Huế là loại hình âm nhạc bác học, từng phục vụ nghi lễ triều đình. Hiện nay, nhã nhạc vừa được bảo tồn trong không gian biểu diễn truyền thống, vừa đưa vào hoạt động du lịch văn hoá.",
+    "anh": "/images/culture/culture-1.jpg",
+    "diemNhan": "UNESCO công nhận là Di sản văn hoá phi vật thể đại diện của nhân loại."
+  },
+  {
+    "id": "ao-dai-ngu-than",
+    "chuDe": "Áo dài ngũ thân",
+    "tomTat": "Biểu tượng trang phục truyền thống gắn với thẩm mỹ và lễ nghi Huế.",
+    "noiDungDayDu": "Áo dài ngũ thân thể hiện triết lý sống và tinh thần chuẩn mực của người Huế xưa. Việc phục dựng, trình diễn áo dài trong lễ hội tạo cầu nối giữa di sản và đời sống đương đại.",
+    "anh": "/images/culture/culture-2.jpg",
+    "diemNhan": "Giá trị văn hoá sống, có tính ứng dụng trong giáo dục và du lịch."
+  },
+  {
+    "id": "le-hoi-dan-gian",
+    "chuDe": "Lễ hội dân gian vùng Huế",
+    "tomTat": "Chuỗi lễ hội mang đậm bản sắc cộng đồng ven sông, ven biển và làng cổ.",
+    "noiDungDayDu": "Các lễ hội như Cầu Ngư, vật làng Sình, đua trải... phản ánh đời sống tín ngưỡng, tinh thần cộng đồng và kỹ năng tổ chức văn hoá truyền thống của cư dân địa phương.",
+    "anh": "/images/culture/culture-3.jpg",
+    "diemNhan": "Kết nối giá trị cộng đồng - du lịch - giáo dục địa phương."
+  }
+]

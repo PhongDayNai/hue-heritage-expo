@@ -1,0 +1,11 @@
+services:
+  hue-heritage-expo:
+    container_name: hue-heritage-expo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "6060:3000"
+    environment:
+      - NODE_ENV=production
