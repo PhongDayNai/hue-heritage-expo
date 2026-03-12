@@ -1,17 +1,5 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Be_Vietnam_Pro } from 'next/font/google';
 import './globals.css';
-
-const heading = Playfair_Display({
-  subsets: ['latin', 'vietnamese'],
-  variable: '--font-heading'
-});
-
-const body = Be_Vietnam_Pro({
-  subsets: ['latin', 'vietnamese'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-body'
-});
 
 export const metadata: Metadata = {
   title: 'HueHeritage Expo | Danh lam thắng cảnh Huế',
@@ -25,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${heading.variable} ${body.variable}`}>
+    <html lang="vi">
       <body className="font-[var(--font-body)] antialiased">{children}</body>
     </html>
   );
