@@ -1,10 +1,58 @@
-@import '@fontsource/merriweather/400.css';
-@import '@fontsource/merriweather/700.css';
-@import '@fontsource/merriweather/900.css';
-@import '@fontsource/be-vietnam-pro/400.css';
-@import '@fontsource/be-vietnam-pro/500.css';
-@import '@fontsource/be-vietnam-pro/600.css';
-@import '@fontsource/be-vietnam-pro/700.css';
+@font-face {
+  font-family: 'Merriweather Local';
+  src: url('/fonts/merriweather/Merriweather_24pt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Merriweather Local';
+  src: url('/fonts/merriweather/Merriweather_24pt-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Merriweather Local';
+  src: url('/fonts/merriweather/Merriweather_24pt-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro Local';
+  src: url('/fonts/be-vietnam-pro/BeVietnamPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro Local';
+  src: url('/fonts/be-vietnam-pro/BeVietnamPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro Local';
+  src: url('/fonts/be-vietnam-pro/BeVietnamPro-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro Local';
+  src: url('/fonts/be-vietnam-pro/BeVietnamPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -12,8 +60,8 @@
 
 :root {
   color-scheme: light;
-  --font-heading: 'Merriweather', serif;
-  --font-body: 'Be Vietnam Pro', sans-serif;
+  --font-heading: 'Merriweather Local', serif;
+  --font-body: 'Be Vietnam Pro Local', sans-serif;
 }
 
 html {
