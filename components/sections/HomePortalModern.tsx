@@ -7,7 +7,7 @@ import scenic from '@/data/scenic.json';
 import library from '@/data/library.json';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SpotlightModal from '../ui/SpotlightModal';
 
 const quickLinks = [
@@ -30,6 +30,17 @@ type Scenic = (typeof scenic)[number];
 
 export default function HomePortalModern() {
   const [activeSpot, setActiveSpot] = useState<Scenic | null>(null);
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    if (!showSplash) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [showSplash]);
 
   const hero = scenic[1] || scenic[0];
   const upcoming = news.slice(0, 4);
@@ -40,6 +51,48 @@ export default function HomePortalModern() {
 
   return (
     <>
+      {showSplash && (
+        <div className="fixed inset-0 z-[120] bg-[#120b08]/95 backdrop-blur-sm">
+          <div className="section-wrap flex min-h-screen items-center py-8">
+            <div className="grid w-full overflow-hidden rounded-3xl border border-hueGold/40 bg-[#1b120e] shadow-[0_30px_80px_rgba(0,0,0,0.55)] lg:grid-cols-[1.1fr_1fr]">
+              <div className="relative min-h-[320px]">
+                <Image src="/images/featured/splash-hue.jpg" alt="Splash Huế" fill priority className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+              </div>
+
+              <div className="flex flex-col justify-center p-6 md:p-9">
+                <span className="inline-flex w-fit rounded bg-hueGold px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-hueInk">
+                  HueHeritage Expo
+                </span>
+                <h2 className="mt-4 font-[var(--font-heading)] text-3xl leading-tight text-[#f8eecf] md:text-4xl">
+                  Chào mừng anh đến với không gian du lịch Huế số hoá
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-[#e7d5ac] md:text-base">
+                  Khám phá danh lam, văn hoá và ẩm thực Huế qua trải nghiệm trực quan. Anh bấm vào nút bên dưới để vào trang chính.
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setShowSplash(false)}
+                    className="rounded-md bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk hover:brightness-105"
+                  >
+                    Vào trang chủ
+                  </button>
+                  <Link
+                    href="/danh-lam"
+                    onClick={() => setShowSplash(false)}
+                    className="rounded-md border border-hueGold/60 px-5 py-2.5 text-sm font-semibold text-hueGold hover:bg-white/10"
+                  >
+                    Xem danh lam
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="border-b border-hueGold/30 bg-white/90">
         <div className="section-wrap py-2 text-xs text-neutral-600">
           <Link href="/" className="text-hueRed hover:underline">
@@ -97,33 +150,6 @@ export default function HomePortalModern() {
       </section>
 
       <section className="section-wrap pt-8 md:pt-10">
-        <div className="mb-7 grid items-stretch gap-5 overflow-hidden rounded-2xl border border-[#dcc09a] bg-white shadow-[0_10px_40px_rgba(91,40,18,0.12)] lg:grid-cols-[1.1fr_1fr]">
-          <div className="relative min-h-[260px]">
-            <Image src="/images/featured/splash-hue.jpg" alt="Điểm nhấn du lịch Huế" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-          </div>
-          <div className="flex flex-col justify-center p-5 md:p-7">
-            <span className="inline-flex w-fit rounded bg-hueGold px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-hueInk">
-              Splash giới thiệu
-            </span>
-            <h2 className="mt-3 font-[var(--font-heading)] text-2xl leading-tight text-hueRed md:text-3xl">
-              Huế - Hành trình di sản giữa thiên nhiên và chiều sâu văn hoá
-            </h2>
-            <p className="mt-3 text-sm leading-7 text-neutral-700">
-              Không gian splash giúp anh mở đầu trang chủ nổi bật hơn: hình ảnh trực quan bên trái, thông điệp cốt lõi bên phải,
-              đồng bộ tông màu vàng - đỏ hiện có và dễ dùng khi trình bày demo.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Link href="/danh-lam" className="rounded-md bg-hueRed px-4 py-2 text-sm font-semibold text-white hover:brightness-110">
-                Xem danh lam nổi bật
-              </Link>
-              <Link href="/tin-tuc" className="rounded-md border border-[#d6b688] px-4 py-2 text-sm font-semibold text-hueRed hover:bg-[#fcf7ec]">
-                Cập nhật sự kiện
-              </Link>
-            </div>
-          </div>
-        </div>
-
         <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_300px]">
           <main>
             <div className="mb-4 flex items-center gap-3">
