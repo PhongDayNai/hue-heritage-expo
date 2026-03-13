@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, Search, X } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 const items = [
   { label: 'Trang chủ', href: '/' },
@@ -19,6 +19,7 @@ export default function Topbar() {
   const [open, setOpen] = useState(false);
   const [compactMobile, setCompactMobile] = useState(false);
   const pathname = usePathname();
+  const openedAtScrollYRef = useRef<number | null>(null);
 
   const currentLabel = useMemo(
     () => items.find((item) => item.href === pathname)?.label || 'Trang chủ',
@@ -27,6 +28,7 @@ export default function Topbar() {
 
   useEffect(() => {
     setOpen(false);
+    openedAtScrollYRef.current = null;
   }, [pathname]);
 
   useEffect(() => {
@@ -37,11 +39,16 @@ export default function Topbar() {
         return;
       }
 
-      const shouldCompact = window.scrollY > 220;
+      const currentY = window.scrollY;
+      const shouldCompact = currentY > 220;
       setCompactMobile(shouldCompact);
 
-      if (shouldCompact && open) {
-        setOpen(false);
+      if (open && openedAtScrollYRef.current !== null) {
+        const delta = Math.abs(currentY - openedAtScrollYRef.current);
+        if (delta > 18) {
+          setOpen(false);
+          openedAtScrollYRef.current = null;
+        }
       }
     };
 
@@ -85,7 +92,10 @@ export default function Topbar() {
             <p className="truncate text-sm font-semibold text-[#f5e6c0]">{currentLabel}</p>
             <button
               className="rounded-md border border-white/30 p-2 text-white"
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                openedAtScrollYRef.current = window.scrollY;
+                setOpen(true);
+              }}
               aria-label="Mở topbar"
             >
               <Menu size={18} />
@@ -122,7 +132,13 @@ export default function Topbar() {
 
           <button
             className="ml-auto rounded-lg border border-white/30 p-2 text-white lg:hidden"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => {
+              setOpen((v) => {
+                const next = !v;
+                openedAtScrollYRef.current = next ? window.scrollY : null;
+                return next;
+              });
+            }}
             aria-label="Mở menu"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
