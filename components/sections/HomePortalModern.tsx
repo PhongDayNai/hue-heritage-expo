@@ -68,9 +68,9 @@ export default function HomePortalModern() {
       {showSplash && (
         <div className="fixed inset-0 z-[120] bg-[#120b08]">
           <div className="section-wrap flex min-h-screen items-center py-8">
-            <div className="grid w-full overflow-hidden rounded-3xl border border-hueGold/40 bg-[#1b120e] shadow-[0_30px_80px_rgba(0,0,0,0.55)] lg:grid-cols-[1.05fr_1fr]">
-              <div className="relative min-h-[320px] bg-[#120b08]">
-                <Image src="/images/featured/splash-hue.jpg" alt="Splash Huế" fill priority className="object-contain object-left" />
+            <div className="grid w-full overflow-hidden rounded-3xl border border-hueGold/40 bg-[#1b120e] shadow-[0_30px_80px_rgba(0,0,0,0.55)] lg:grid-cols-[1.1fr_1fr]">
+              <div className="relative min-h-[320px]">
+                <Image src="/images/featured/splash-hue.jpg" alt="Splash Huế" fill priority className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
               </div>
 
