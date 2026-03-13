@@ -103,11 +103,11 @@ export default function Topbar() {
           </div>
 
           <div
-            className={`overflow-hidden border-t border-white/15 bg-hueRed transition-all duration-300 ease-out ${
-              open ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'
+            className={`origin-top overflow-hidden border-t border-white/15 bg-hueRed transition-[max-height,opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              open ? 'max-h-[460px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-1'
             }`}
           >
-            <div className="section-wrap py-3">
+            <div className="section-wrap py-3 transition-opacity duration-300 ease-out">
               <div className="grid gap-1">
                 {items.map((item) => {
                   const active = pathname === item.href;
@@ -115,8 +115,8 @@ export default function Topbar() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`rounded-md px-3 py-2 text-sm transition ${
-                        active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'
+                      className={`rounded-md px-3 py-2 text-sm transition-all duration-300 ${
+                        active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:translate-x-1'
                       }`}
                       onClick={() => {
                         setOpen(false);
