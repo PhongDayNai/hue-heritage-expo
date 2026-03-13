@@ -69,9 +69,14 @@ export default function HomePortalModern() {
         <div className="fixed inset-0 z-[120] bg-[#120b08]">
           <div className="section-wrap flex min-h-screen items-center py-8">
             <div className="grid w-full overflow-hidden rounded-3xl border border-hueGold/40 bg-[#1b120e] shadow-[0_30px_80px_rgba(0,0,0,0.55)] lg:grid-cols-[1.1fr_1fr]">
-              <div className="relative min-h-[320px]">
-                <Image src="/images/featured/splash-hue.jpg" alt="Splash Huế" fill priority className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+              <div className="relative min-h-[320px] bg-[#1a110d]">
+                <Image
+                  src="/images/featured/splash-hue.jpg"
+                  alt="Splash Huế"
+                  fill
+                  priority
+                  className="object-cover object-left"
+                />
               </div>
 
               <div className="flex flex-col justify-center p-6 md:p-9">
