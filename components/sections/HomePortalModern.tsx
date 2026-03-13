@@ -70,13 +70,16 @@ export default function HomePortalModern() {
           <div className="section-wrap flex min-h-screen items-center py-8">
             <div className="grid w-full overflow-hidden rounded-3xl border border-hueGold/40 bg-[#1b120e] shadow-[0_30px_80px_rgba(0,0,0,0.55)] lg:grid-cols-[1.1fr_1fr]">
               <div className="relative min-h-[320px] bg-[#1a110d]">
-                <Image
-                  src="/images/featured/splash-hue.jpg"
-                  alt="Splash Huế"
-                  fill
-                  priority
-                  className="object-cover object-left"
-                />
+                <div className="flex h-full min-h-[320px] items-center justify-center p-6 md:p-10">
+                  <Image
+                    src="/images/featured/splash-logo.svg"
+                    alt="Logo splash Huế"
+                    width={340}
+                    height={340}
+                    priority
+                    className="h-auto w-[72%] max-w-[340px]"
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col justify-center p-6 md:p-9">
