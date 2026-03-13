@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, Search, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const items = [
   { label: 'Trang chủ', href: '/' },
@@ -18,6 +18,10 @@ const items = [
 export default function Topbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -64,7 +68,7 @@ export default function Topbar() {
         </div>
       </header>
 
-      <nav className="sticky top-0 z-50 border-b border-hueGold/70 bg-hueRed/95 backdrop-blur">
+      <nav className="relative z-50 border-b border-hueGold/70 bg-hueRed/95 backdrop-blur lg:sticky lg:top-0">
         <div className="section-wrap hidden items-center lg:flex">
           {items.map((item) => {
             const active = pathname === item.href;
@@ -82,29 +86,31 @@ export default function Topbar() {
           })}
         </div>
 
-        {open && (
-          <div className="border-t border-white/15 bg-hueRed lg:hidden">
-            <div className="section-wrap py-3">
-              <div className="grid gap-1">
-                {items.map((item) => {
-                  const active = pathname === item.href;
-                  return (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className={`rounded-md px-3 py-2 text-sm ${
-                        active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'
-                      }`}
-                      onClick={() => setOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  );
-                })}
-              </div>
+        <div
+          className={`overflow-hidden border-t border-white/15 bg-hueRed transition-all duration-300 ease-out lg:hidden ${
+            open ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="section-wrap py-3">
+            <div className="grid gap-1">
+              {items.map((item) => {
+                const active = pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`rounded-md px-3 py-2 text-sm transition ${
+                      active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'
+                    }`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </>
   );
