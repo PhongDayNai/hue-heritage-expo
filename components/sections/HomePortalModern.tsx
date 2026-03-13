@@ -89,8 +89,11 @@ export default function HomePortalModern() {
                 <div className="mt-6">
                   <div className="h-2 w-full overflow-hidden rounded-full bg-white/20">
                     <div
-                      className="h-full rounded-full bg-hueGold transition-[width] duration-[2000ms] ease-linear"
-                      style={{ width: `${splashProgress}%` }}
+                      className="h-full w-full rounded-full bg-hueGold transition-transform duration-[2000ms] ease-linear"
+                      style={{
+                        transform: `scaleX(${splashProgress / 100})`,
+                        transformOrigin: 'center'
+                      }}
                     />
                   </div>
                 </div>
