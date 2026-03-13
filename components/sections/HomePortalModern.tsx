@@ -87,7 +87,7 @@ export default function HomePortalModern() {
                 </p>
 
                 <div className="mt-6">
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-white/20">
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-transparent">
                     <div
                       className="h-full w-full rounded-full bg-hueGold transition-transform duration-[2000ms] ease-linear"
                       style={{
