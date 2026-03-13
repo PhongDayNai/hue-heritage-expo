@@ -71,7 +71,7 @@ export default function Topbar() {
     };
   }, [open]);
 
-  const hideFullMobileHeader = compactMobile && !open;
+  const hideFullMobileHeader = compactMobile;
 
   return (
     <>
@@ -86,20 +86,49 @@ export default function Topbar() {
         </div>
       </div>
 
-      {compactMobile && !open && (
+      {compactMobile && (
         <div className="sticky top-0 z-[60] border-b border-hueGold/70 bg-hueRed/95 backdrop-blur lg:hidden">
           <div className="section-wrap flex items-center justify-between py-2.5">
-            <p className="truncate text-sm font-semibold text-[#f5e6c0]">{currentLabel}</p>
+            <p className="truncate pr-3 text-sm font-semibold text-[#f5e6c0]">{currentLabel}</p>
             <button
               className="rounded-md border border-white/30 p-2 text-white"
               onClick={() => {
                 openedAtScrollYRef.current = window.scrollY;
-                setOpen(true);
+                setOpen((v) => !v);
               }}
-              aria-label="Mở topbar"
+              aria-label={open ? 'Đóng topbar' : 'Mở topbar'}
             >
-              <Menu size={18} />
+              {open ? <X size={18} /> : <Menu size={18} />}
             </button>
+          </div>
+
+          <div
+            className={`overflow-hidden border-t border-white/15 bg-hueRed transition-all duration-300 ease-out ${
+              open ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <div className="section-wrap py-3">
+              <div className="grid gap-1">
+                {items.map((item) => {
+                  const active = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`rounded-md px-3 py-2 text-sm transition ${
+                        active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'
+                      }`}
+                      onClick={() => {
+                        setOpen(false);
+                        openedAtScrollYRef.current = null;
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       )}
