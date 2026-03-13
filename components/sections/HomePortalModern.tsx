@@ -66,7 +66,7 @@ export default function HomePortalModern() {
   return (
     <>
       {showSplash && (
-        <div className="fixed inset-0 z-[120] bg-[#120b08]/95 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[120] bg-[#120b08]">
           <div className="section-wrap flex min-h-screen items-center py-8">
             <div className="grid w-full overflow-hidden rounded-3xl border border-hueGold/40 bg-[#1b120e] shadow-[0_30px_80px_rgba(0,0,0,0.55)] lg:grid-cols-[1.1fr_1fr]">
               <div className="relative min-h-[320px]">
