@@ -31,6 +31,7 @@ type Scenic = (typeof scenic)[number];
 export default function HomePortalModern() {
   const [activeSpot, setActiveSpot] = useState<Scenic | null>(null);
   const [showSplash, setShowSplash] = useState(true);
+  const [splashProgress, setSplashProgress] = useState(0);
 
   useEffect(() => {
     if (!showSplash) return;
@@ -39,6 +40,19 @@ export default function HomePortalModern() {
 
     return () => {
       document.body.style.overflow = previousOverflow;
+    };
+  }, [showSplash]);
+
+  useEffect(() => {
+    if (!showSplash) return;
+
+    setSplashProgress(0);
+    const frame = requestAnimationFrame(() => setSplashProgress(100));
+    const timer = setTimeout(() => setShowSplash(false), 2000);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(timer);
     };
   }, [showSplash]);
 
@@ -68,24 +82,18 @@ export default function HomePortalModern() {
                   Chào mừng anh đến với không gian du lịch Huế số hoá
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-[#e7d5ac] md:text-base">
-                  Khám phá danh lam, văn hoá và ẩm thực Huế qua trải nghiệm trực quan. Anh bấm vào nút bên dưới để vào trang chính.
+                  Khám phá danh lam, văn hoá và ẩm thực Huế qua trải nghiệm trực quan.
+                  Splash sẽ tự chuyển vào trang chính sau vài giây.
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setShowSplash(false)}
-                    className="rounded-md bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk hover:brightness-105"
-                  >
-                    Vào trang chủ
-                  </button>
-                  <Link
-                    href="/danh-lam"
-                    onClick={() => setShowSplash(false)}
-                    className="rounded-md border border-hueGold/60 px-5 py-2.5 text-sm font-semibold text-hueGold hover:bg-white/10"
-                  >
-                    Xem danh lam
-                  </Link>
+                <div className="mt-6">
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-white/20">
+                    <div
+                      className="h-full rounded-full bg-hueGold transition-[width] duration-[2000ms] ease-linear"
+                      style={{ width: `${splashProgress}%` }}
+                    />
+                  </div>
+                  <p className="mt-2 text-xs text-[#e7d5ac]">Đang tải giao diện... {Math.round(splashProgress)}%</p>
                 </div>
               </div>
             </div>
