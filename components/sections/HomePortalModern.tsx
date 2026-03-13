@@ -96,7 +96,34 @@ export default function HomePortalModern() {
         </div>
       </section>
 
-      <section className="section-wrap py-8 md:py-10">
+      <section className="section-wrap pt-8 md:pt-10">
+        <div className="mb-7 grid items-stretch gap-5 overflow-hidden rounded-2xl border border-[#dcc09a] bg-white shadow-[0_10px_40px_rgba(91,40,18,0.12)] lg:grid-cols-[1.1fr_1fr]">
+          <div className="relative min-h-[260px]">
+            <Image src="/images/featured/splash-hue.jpg" alt="Điểm nhấn du lịch Huế" fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+          </div>
+          <div className="flex flex-col justify-center p-5 md:p-7">
+            <span className="inline-flex w-fit rounded bg-hueGold px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-hueInk">
+              Splash giới thiệu
+            </span>
+            <h2 className="mt-3 font-[var(--font-heading)] text-2xl leading-tight text-hueRed md:text-3xl">
+              Huế - Hành trình di sản giữa thiên nhiên và chiều sâu văn hoá
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-neutral-700">
+              Không gian splash giúp anh mở đầu trang chủ nổi bật hơn: hình ảnh trực quan bên trái, thông điệp cốt lõi bên phải,
+              đồng bộ tông màu vàng - đỏ hiện có và dễ dùng khi trình bày demo.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link href="/danh-lam" className="rounded-md bg-hueRed px-4 py-2 text-sm font-semibold text-white hover:brightness-110">
+                Xem danh lam nổi bật
+              </Link>
+              <Link href="/tin-tuc" className="rounded-md border border-[#d6b688] px-4 py-2 text-sm font-semibold text-hueRed hover:bg-[#fcf7ec]">
+                Cập nhật sự kiện
+              </Link>
+            </div>
+          </div>
+        </div>
+
         <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_300px]">
           <main>
             <div className="mb-4 flex items-center gap-3">
