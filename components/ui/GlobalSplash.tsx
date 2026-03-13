@@ -1,17 +1,18 @@
 'use client';
 
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+let hasShownSplashInThisLoad = false;
+
 export default function GlobalSplash() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(() => !hasShownSplashInThisLoad);
   const [progress, setProgress] = useState(0);
-  const pathname = usePathname();
-  const router = useRouter();
 
   useEffect(() => {
     if (!showSplash) return;
+
+    hasShownSplashInThisLoad = true;
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -20,7 +21,6 @@ export default function GlobalSplash() {
     const frame = requestAnimationFrame(() => setProgress(100));
     const timer = setTimeout(() => {
       setShowSplash(false);
-      if (pathname !== '/') router.replace('/');
     }, 2000);
 
     return () => {
@@ -28,7 +28,7 @@ export default function GlobalSplash() {
       clearTimeout(timer);
       document.body.style.overflow = previousOverflow;
     };
-  }, [showSplash, pathname, router]);
+  }, [showSplash]);
 
   if (!showSplash) return null;
 
