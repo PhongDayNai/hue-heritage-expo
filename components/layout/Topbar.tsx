@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, Search, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const items = [
   { label: 'Trang chủ', href: '/' },
@@ -17,11 +17,54 @@ const items = [
 
 export default function Topbar() {
   const [open, setOpen] = useState(false);
+  const [compactMobile, setCompactMobile] = useState(false);
   const pathname = usePathname();
+
+  const currentLabel = useMemo(
+    () => items.find((item) => item.href === pathname)?.label || 'Trang chủ',
+    [pathname]
+  );
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const isMobile = window.innerWidth < 1024;
+      if (!isMobile) {
+        setCompactMobile(false);
+        return;
+      }
+
+      const shouldCompact = window.scrollY > 220;
+      setCompactMobile(shouldCompact);
+
+      if (shouldCompact && open) {
+        setOpen(false);
+      }
+    };
+
+    const onResize = () => {
+      if (window.innerWidth >= 1024) {
+        setCompactMobile(false);
+        setOpen(false);
+      } else {
+        onScroll();
+      }
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+    };
+  }, [open]);
+
+  const hideFullMobileHeader = compactMobile && !open;
 
   return (
     <>
@@ -36,7 +79,26 @@ export default function Topbar() {
         </div>
       </div>
 
-      <header className="border-b-2 border-hueGold/80 bg-[linear-gradient(140deg,#1a0c06_0%,#3b1a08_55%,#5d2d10_100%)]">
+      {compactMobile && !open && (
+        <div className="sticky top-0 z-[60] border-b border-hueGold/70 bg-hueRed/95 backdrop-blur lg:hidden">
+          <div className="section-wrap flex items-center justify-between py-2.5">
+            <p className="truncate text-sm font-semibold text-[#f5e6c0]">{currentLabel}</p>
+            <button
+              className="rounded-md border border-white/30 p-2 text-white"
+              onClick={() => setOpen(true)}
+              aria-label="Mở topbar"
+            >
+              <Menu size={18} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      <header
+        className={`border-b-2 border-hueGold/80 bg-[linear-gradient(140deg,#1a0c06_0%,#3b1a08_55%,#5d2d10_100%)] ${
+          hideFullMobileHeader ? 'hidden lg:block' : ''
+        }`}
+      >
         <div className="section-wrap flex items-center gap-4 py-4">
           <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full border-2 border-hueGold/80 bg-[radial-gradient(circle,#d4a017_0%,#7a4c08_100%)] text-2xl shadow-[0_0_20px_rgba(212,160,23,0.35)]">
             🏯
@@ -68,7 +130,7 @@ export default function Topbar() {
         </div>
       </header>
 
-      <nav className="relative z-50 border-b border-hueGold/70 bg-hueRed/95 backdrop-blur lg:sticky lg:top-0">
+      <nav className={`relative z-50 border-b border-hueGold/70 bg-hueRed/95 backdrop-blur lg:sticky lg:top-0 ${hideFullMobileHeader ? 'hidden lg:block' : ''}`}>
         <div className="section-wrap hidden items-center lg:flex">
           {items.map((item) => {
             const active = pathname === item.href;
