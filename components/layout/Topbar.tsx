@@ -25,13 +25,9 @@ export default function Topbar() {
         <div className="section-wrap flex items-center justify-between">
           <span>🏯 HueHeritage Expo - Nền tảng giới thiệu danh lam, văn hoá và ẩm thực Huế</span>
           <div className="flex items-center gap-4">
-            <Link href="/" className="hover:text-white">
-              Trang chủ UBND
-            </Link>
             <Link href="/ho-tro" className="hover:text-white">
               Liên hệ
             </Link>
-            <span className="text-hueGold">English</span>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ import scenic from '@/data/scenic.json';
 import library from '@/data/library.json';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SpotlightModal from '../ui/SpotlightModal';
 
 const quickLinks = [
@@ -30,31 +30,6 @@ type Scenic = (typeof scenic)[number];
 
 export default function HomePortalModern() {
   const [activeSpot, setActiveSpot] = useState<Scenic | null>(null);
-  const [showSplash, setShowSplash] = useState(true);
-  const [splashProgress, setSplashProgress] = useState(0);
-
-  useEffect(() => {
-    if (!showSplash) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [showSplash]);
-
-  useEffect(() => {
-    if (!showSplash) return;
-
-    setSplashProgress(0);
-    const frame = requestAnimationFrame(() => setSplashProgress(100));
-    const timer = setTimeout(() => setShowSplash(false), 2000);
-
-    return () => {
-      cancelAnimationFrame(frame);
-      clearTimeout(timer);
-    };
-  }, [showSplash]);
 
   const hero = scenic[1] || scenic[0];
   const upcoming = news.slice(0, 4);
@@ -65,52 +40,7 @@ export default function HomePortalModern() {
 
   return (
     <>
-      {showSplash && (
-        <div className="fixed inset-0 z-[120] bg-[#120b08]">
-          <div className="section-wrap flex min-h-screen items-center py-8">
-            <div className="grid w-full overflow-hidden rounded-3xl border border-hueGold/40 bg-[#1b120e] shadow-[0_30px_80px_rgba(0,0,0,0.55)] lg:grid-cols-[1.1fr_1fr]">
-              <div className="relative min-h-[320px] bg-[#1a110d]">
-                <div className="flex h-full min-h-[320px] items-center justify-center p-6 md:p-10">
-                  <Image
-                    src="/images/featured/splash-logo.svg"
-                    alt="Logo splash Huế"
-                    width={340}
-                    height={340}
-                    priority
-                    className="h-auto w-[72%] max-w-[340px]"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-center p-6 md:p-9">
-                <span className="inline-flex w-fit rounded bg-hueGold px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-hueInk">
-                  HueHeritage Expo
-                </span>
-                <h2 className="mt-4 font-[var(--font-heading)] text-3xl leading-tight text-[#f8eecf] md:text-4xl">
-                  Chào mừng anh đến với không gian du lịch Huế số hoá
-                </h2>
-                <p className="mt-4 text-sm leading-7 text-[#e7d5ac] md:text-base">
-                  Khám phá danh lam, văn hoá và ẩm thực Huế qua trải nghiệm trực quan.
-                  Splash sẽ tự chuyển vào trang chính sau vài giây.
-                </p>
-
-                <div className="mt-6">
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-transparent">
-                    <div
-                      className="h-full w-full rounded-full bg-hueGold transition-transform duration-[2000ms] ease-linear"
-                      style={{
-                        transform: `scaleX(${splashProgress / 100})`,
-                        transformOrigin: 'center'
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
+      
       <div className="border-b border-hueGold/30 bg-white/90">
         <div className="section-wrap py-2 text-xs text-neutral-600">
           <Link href="/" className="text-hueRed hover:underline">
