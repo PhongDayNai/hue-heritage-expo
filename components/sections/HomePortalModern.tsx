@@ -93,7 +93,6 @@ export default function HomePortalModern() {
                       style={{ width: `${splashProgress}%` }}
                     />
                   </div>
-                  <p className="mt-2 text-xs text-[#e7d5ac]">Đang tải giao diện... {Math.round(splashProgress)}%</p>
                 </div>
               </div>
             </div>
