@@ -21,9 +21,9 @@ export default function Topbar() {
 
   return (
     <>
-      <div className="hidden border-b border-hueGold/25 bg-hueRed py-1 text-[12px] text-[#f4ddb0] md:block">
+      <div className="hidden border-b border-hueGold/25 bg-hueRed py-1 text-[12px] text-[#f4ddb0] md:block font-[var(--font-body)]">
         <div className="section-wrap flex items-center justify-between">
-          <span>🏯 HueHeritage Expo - Nền tảng giới thiệu danh lam, văn hoá và ẩm thực Huế</span>
+          <span>HueHeritage Expo - Nền tảng giới thiệu danh lam, văn hoá và ẩm thực Huế</span>
           <div className="flex items-center gap-4">
             <Link href="/ho-tro" className="hover:text-white">
               Liên hệ

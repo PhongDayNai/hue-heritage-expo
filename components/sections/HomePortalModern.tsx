@@ -43,11 +43,9 @@ export default function HomePortalModern() {
       
       <div className="border-b border-hueGold/30 bg-white/90">
         <div className="section-wrap py-2 text-xs text-neutral-600">
-          <Link href="/" className="text-hueRed hover:underline">
-            Trang chủ
-          </Link>
+          <span className="text-hueRed">Cổng thông tin Du lịch Huế</span>
           <span className="mx-2 text-hueGold">›</span>
-          <span>Thông tin du khách</span>
+          <span>Hành trình khám phá</span>
         </div>
       </div>
 
