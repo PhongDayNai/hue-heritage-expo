@@ -5,6 +5,7 @@ import food from '@/data/food.json';
 import news from '@/data/news.json';
 import scenic from '@/data/scenic.json';
 import library from '@/data/library.json';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -53,12 +54,13 @@ export default function HomePortalModern() {
     const cover = album.anh?.[0];
     const expanded = !!expandedAlbums[album.id];
     const photos = expanded
-      ? (album.anh || []).slice(1).map((src, idx) => ({
+      ? (album.anh || []).map((src, idx) => ({
           key: `${album.id}-photo-${idx}`,
           type: 'photo' as const,
           src,
           title: album.tenDiaDiem,
-          albumId: album.id
+          albumId: album.id,
+          photoIndex: idx
         }))
       : [];
 
@@ -184,35 +186,46 @@ export default function HomePortalModern() {
               {hasVideo && <button className="px-4 py-2 text-sm font-medium text-neutral-500">Video</button>}
               {hasInfographic && <button className="px-4 py-2 text-sm font-medium text-neutral-500">Infographic</button>}
             </div>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {galleryTiles.map((tile) =>
-                tile.type === 'album' ? (
-                  <button
-                    key={tile.key}
-                    type="button"
-                    onClick={() => toggleAlbum(tile.albumId)}
-                    className="group relative aspect-square overflow-hidden rounded-lg text-left"
-                  >
-                    {tile.src ? <Image src={tile.src} alt={tile.title} fill className="object-cover transition duration-500 group-hover:scale-105" /> : null}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/20" />
-                    <div className="absolute left-2 top-2 rounded-full border border-white/45 bg-black/45 px-2 py-0.5 text-[10px] font-semibold text-white">
-                      Album · {tile.count} ảnh
-                    </div>
-                    <figcaption className="absolute inset-x-0 bottom-0 px-2 py-2 text-[11px] font-semibold text-[#f9e8be]">
-                      {tile.title}
-                      <span className="ml-2 text-[10px] text-white/85">{tile.expanded ? 'Thu gọn' : 'Mở album'}</span>
-                    </figcaption>
-                  </button>
-                ) : (
-                  <figure key={tile.key} className="group relative aspect-square overflow-hidden rounded-lg">
-                    <Image src={tile.src} alt={tile.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
-                    <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-2 py-2 text-[11px] text-[#f9e8be]">
-                      {tile.title}
-                    </figcaption>
-                  </figure>
-                )
-              )}
-            </div>
+            <motion.div layout className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              <AnimatePresence initial={false} mode="popLayout">
+                {galleryTiles.map((tile) =>
+                  tile.type === 'album' ? (
+                    <motion.button
+                      layout
+                      key={tile.key}
+                      type="button"
+                      onClick={() => toggleAlbum(tile.albumId)}
+                      className="group relative aspect-square overflow-hidden rounded-lg text-left"
+                    >
+                      {tile.src ? <Image src={tile.src} alt={tile.title} fill className="object-cover transition duration-500 group-hover:scale-105" /> : null}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/20" />
+                      <div className="absolute left-2 top-2 rounded-full border border-white/45 bg-black/45 px-2 py-0.5 text-[10px] font-semibold text-white">
+                        Album · {tile.count} ảnh
+                      </div>
+                      <figcaption className="absolute inset-x-0 bottom-0 px-2 py-2 text-[11px] font-semibold text-[#f9e8be]">
+                        {tile.title}
+                        <span className="ml-2 text-[10px] text-white/85">{tile.expanded ? 'Thu gọn' : 'Mở album'}</span>
+                      </figcaption>
+                    </motion.button>
+                  ) : (
+                    <motion.figure
+                      layout
+                      key={tile.key}
+                      initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                      transition={{ duration: 0.28, ease: 'easeOut', delay: Math.min((tile.photoIndex || 0) * 0.015, 0.18) }}
+                      className="group relative aspect-square overflow-hidden rounded-lg"
+                    >
+                      <Image src={tile.src} alt={tile.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                      <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-2 py-2 text-[11px] text-[#f9e8be]">
+                        {tile.title}
+                      </figcaption>
+                    </motion.figure>
+                  )
+                )}
+              </AnimatePresence>
+            </motion.div>
 
             {hasMoreAlbums && (
               <div className="mt-4 flex justify-center">
