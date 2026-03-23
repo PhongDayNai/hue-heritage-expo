@@ -13,6 +13,7 @@ type Props = {
   fullDesc?: string;
   image?: string;
   images?: string[];
+  videos?: string[];
   chips?: string[];
   address?: string;
 };
@@ -25,6 +26,7 @@ export default function SpotlightModal({
   fullDesc,
   image,
   images = [],
+  videos = [],
   chips = [],
   address
 }: Props) {
@@ -263,6 +265,20 @@ export default function SpotlightModal({
                             >
                               {chip}
                             </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {videos.length > 0 && (
+                        <div className="mt-5 space-y-3">
+                          {videos.map((videoSrc, index) => (
+                            <video
+                              key={`${videoSrc}-${index}`}
+                              src={videoSrc}
+                              controls
+                              preload="metadata"
+                              className="w-full rounded-xl border border-neutral-200 bg-black shadow-sm"
+                            />
                           ))}
                         </div>
                       )}

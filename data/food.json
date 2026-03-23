@@ -5,8 +5,11 @@
     "tenQuan": "Bún bò Mệ Kéo",
     "mucGia": "35.000 - 55.000đ",
     "moTaNgan": "Nước dùng đậm vị, sợi bún to, topping đầy đặn.",
-    "anh": "/images/food/food-1.jpg",
-    "diaChi": "20 Bạch Đằng, TP Huế"
+    "anh": [
+      "/images/food/food-1.jpg"
+    ],
+    "diaChi": "20 Bạch Đằng, TP Huế",
+    "videos": []
   },
   {
     "id": "com-hen",
@@ -14,8 +17,11 @@
     "tenQuan": "Quán Hến Cồn",
     "mucGia": "15.000 - 30.000đ",
     "moTaNgan": "Món ăn dân dã đặc trưng Cồn Hến, vị cay mặn hài hòa.",
-    "anh": "/images/food/food-2.jpg",
-    "diaChi": "Cồn Hến, TP Huế"
+    "anh": [
+      "/images/food/food-2.jpg"
+    ],
+    "diaChi": "Cồn Hến, TP Huế",
+    "videos": []
   },
   {
     "id": "banh-khoai",
@@ -23,8 +29,11 @@
     "tenQuan": "Lạc Thiện",
     "mucGia": "25.000 - 45.000đ",
     "moTaNgan": "Vỏ giòn, nhân tôm thịt, chấm nước lèo đặc trưng.",
-    "anh": "/images/food/food-3.jpg",
-    "diaChi": "6 Đinh Tiên Hoàng, TP Huế"
+    "anh": [
+      "/images/food/food-3.jpg"
+    ],
+    "diaChi": "6 Đinh Tiên Hoàng, TP Huế",
+    "videos": []
   },
   {
     "id": "che-hue",
@@ -32,8 +41,11 @@
     "tenQuan": "Chè Hẻm",
     "mucGia": "12.000 - 25.000đ",
     "moTaNgan": "Nhiều loại chè truyền thống mang hương vị cung đình.",
-    "anh": "/images/food/food-4.jpg",
-    "diaChi": "29 Hùng Vương, TP Huế"
+    "anh": [
+      "/images/food/food-4.jpg"
+    ],
+    "diaChi": "29 Hùng Vương, TP Huế",
+    "videos": []
   },
   {
     "id": "nem-lui",
@@ -41,8 +53,11 @@
     "tenQuan": "Nem lụi Bà Tý",
     "mucGia": "40.000 - 70.000đ",
     "moTaNgan": "Nem nướng thơm, ăn cùng rau sống và nước chấm đậm đà.",
-    "anh": "/images/food/food-5.jpg",
-    "diaChi": "81 Đào Duy Từ, TP Huế"
+    "anh": [
+      "/images/food/food-5.jpg"
+    ],
+    "diaChi": "81 Đào Duy Từ, TP Huế",
+    "videos": []
   },
   {
     "id": "banh-beo",
@@ -50,8 +65,11 @@
     "tenQuan": "Quán O Lé",
     "mucGia": "20.000 - 50.000đ",
     "moTaNgan": "Bộ bánh Huế truyền thống, nhỏ gọn, tinh tế trong hương vị.",
-    "anh": "/images/food/food-6.jpg",
-    "diaChi": "104/17/9 Kim Long, TP Huế"
+    "anh": [
+      "/images/food/food-6.jpg"
+    ],
+    "diaChi": "104/17/9 Kim Long, TP Huế",
+    "videos": []
   },
   {
     "id": "ca-xanh-nuong-binh-dien",
@@ -59,8 +77,16 @@
     "tenQuan": "Đặc sản địa phương",
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Cá suối nướng theo phong cách bản địa, giữ vị ngọt tự nhiên và mùi khói bếp đặc trưng.",
-    "anh": "/images/food/ca-xanh-nuong-binh-dien.jpg",
-    "diaChi": "Khu vực Bình Điền, TX Hương Trà"
+    "anh": [
+      "/images/food/ca-xanh-nuong-binh-dien/img-01.jpg",
+      "/images/food/ca-xanh-nuong-binh-dien/img-02.jpg",
+      "/images/food/ca-xanh-nuong-binh-dien/img-03.jpg",
+      "/images/food/ca-xanh-nuong-binh-dien/img-04.jpg",
+      "/images/food/ca-xanh-nuong-binh-dien/img-05.jpg",
+      "/images/food/ca-xanh-nuong-binh-dien/img-06.jpg"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": []
   },
   {
     "id": "heo-ban-gac-bep-binh-dien",
@@ -68,8 +94,18 @@
     "tenQuan": "Đặc sản địa phương",
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Món thịt heo bản chế biến thủ công, đậm vị khói và gia vị rừng, phù hợp làm quà đặc sản.",
-    "anh": "/images/food/heo-ban-gac-bep-binh-dien.jpg",
-    "diaChi": "Khu vực Bình Điền, TX Hương Trà"
+    "anh": [
+      "/images/food/heo-ban-gac-bep-binh-dien/img-01.jpg",
+      "/images/food/heo-ban-gac-bep-binh-dien/img-02.jpg",
+      "/images/food/heo-ban-gac-bep-binh-dien/img-03.jpg",
+      "/images/food/heo-ban-gac-bep-binh-dien/img-04.jpg",
+      "/images/food/heo-ban-gac-bep-binh-dien/img-05.jpg",
+      "/images/food/heo-ban-gac-bep-binh-dien/img-06.jpg"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": [
+      "/videos/food/heo-ban-gac-bep-binh-dien/video-01.mp4"
+    ]
   },
   {
     "id": "xoi-nep-than-binh-dien",
@@ -77,8 +113,12 @@
     "tenQuan": "Bếp địa phương",
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Món xôi truyền thống dẻo thơm, gắn với nếp sinh hoạt và lễ cúng của cư dân địa phương.",
-    "anh": "/images/food/xoi-nep-than-binh-dien.jpg",
-    "diaChi": "Khu vực Bình Điền, TX Hương Trà"
+    "anh": [
+      "/images/food/xoi-nep-than-binh-dien/img-01.jpg",
+      "/images/food/xoi-nep-than-binh-dien/img-02.jpg"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": []
   },
   {
     "id": "bup-chuoi-bop-binh-dien",
@@ -86,8 +126,12 @@
     "tenQuan": "Ẩm thực bản địa",
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Món dân dã thanh mát, cân bằng vị chua - cay - mặn - ngọt, dễ kết hợp trong bữa ăn vùng cao.",
-    "anh": "/images/food/bup-chuoi-bop-binh-dien.jpg",
-    "diaChi": "Khu vực Bình Điền, TX Hương Trà"
+    "anh": [
+      "/images/food/bup-chuoi-bop-binh-dien/img-01.jpg",
+      "/images/food/bup-chuoi-bop-binh-dien/img-02.webp"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": []
   },
   {
     "id": "heo-ban-nuong-binh-dien",
@@ -95,7 +139,15 @@
     "tenQuan": "Ẩm thực bản địa",
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Thịt heo bản nướng than, tẩm ướp gia vị bản địa cho hương vị đậm đà đặc trưng vùng gò đồi.",
-    "anh": "/images/food/heo-ban-nuong-binh-dien.jpg",
-    "diaChi": "Khu vực Bình Điền, TX Hương Trà"
+    "anh": [
+      "/images/food/heo-ban-nuong-binh-dien/img-01.jpg",
+      "/images/food/heo-ban-nuong-binh-dien/img-02.jpg",
+      "/images/food/heo-ban-nuong-binh-dien/img-03.jpg",
+      "/images/food/heo-ban-nuong-binh-dien/img-04.jpg",
+      "/images/food/heo-ban-nuong-binh-dien/img-05.jpg",
+      "/images/food/heo-ban-nuong-binh-dien/img-06.jpg"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": []
   }
 ]

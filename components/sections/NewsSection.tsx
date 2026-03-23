@@ -1,8 +1,16 @@
+'use client';
+
 import news from '@/data/news.json';
 import Image from 'next/image';
+import { useState } from 'react';
 import AnimatedCard from '../ui/AnimatedCard';
+import SpotlightModal from '../ui/SpotlightModal';
+
+type News = (typeof news)[number];
 
 export default function NewsSection() {
+  const [active, setActive] = useState<News | null>(null);
+
   return (
     <section id="tin-tuc" className="bg-white/70 py-12 md:py-16">
       <div className="section-wrap">
@@ -12,9 +20,12 @@ export default function NewsSection() {
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {news.map((item, idx) => (
             <AnimatedCard key={item.id} delay={idx * 0.06}>
-              <article className="overflow-hidden rounded-2xl border border-hueGold/20 bg-white">
+              <article
+                className="cursor-pointer overflow-hidden rounded-2xl border border-hueGold/20 bg-white"
+                onClick={() => setActive(item)}
+              >
                 <div className="relative h-40">
-                  <Image src={item.anh} alt={item.tieuDe} fill className="object-cover" />
+                  <Image src={item.anh?.[0] || '/images/featured/binhdien-1.jpg'} alt={item.tieuDe} fill className="object-cover" />
                 </div>
                 <div className="space-y-2 p-4">
                   <p className="text-xs font-medium text-hueRed">{new Date(item.thoiGian).toLocaleDateString('vi-VN')}</p>
@@ -27,6 +38,19 @@ export default function NewsSection() {
           ))}
         </div>
       </div>
+
+      <SpotlightModal
+        open={!!active}
+        onClose={() => setActive(null)}
+        title={active?.tieuDe || ''}
+        shortDesc={active?.moTaNgan}
+        fullDesc={active?.moTaDayDu || active?.moTaNgan}
+        image={active?.anh?.[0]}
+        images={active?.anh || []}
+        videos={active?.videos || []}
+        chips={active ? [new Date(active.thoiGian).toLocaleDateString('vi-VN')] : []}
+        address={active?.diaDiem}
+      />
     </section>
   );
 }

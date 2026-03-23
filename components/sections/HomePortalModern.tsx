@@ -146,7 +146,7 @@ export default function HomePortalModern() {
               {upcoming.map((item) => (
                 <article key={item.id} className="overflow-hidden rounded-xl border border-[#dcc09a] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
                   <div className="relative h-40">
-                    <Image src={item.anh} alt={item.tieuDe} fill className="object-cover" />
+                    <Image src={item.anh?.[0] || '/images/featured/binhdien-1.jpg'} alt={item.tieuDe} fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   </div>
                   <div className="p-4">

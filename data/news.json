@@ -5,7 +5,23 @@
     "thoiGian": "2026-02-12",
     "diaDiem": "Chợ Bình Điền, TX Hương Trà, TP Huế",
     "moTaNgan": "Sự kiện cộng đồng với hoạt động giao thương, ẩm thực và giao lưu văn hóa vùng cao trong 2 ngày 12-13/02/2026.",
-    "anh": "/images/featured/phien-cho-binh-dien-2026.jpg"
+    "anh": [
+      "/images/featured/phien-cho-binh-dien-2026/img-01.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-02.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-03.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-04.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-05.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-06.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-07.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-08.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-09.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-10.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-11.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-12.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-13.jpg"
+    ],
+    "videos": [],
+    "moTaDayDu": "Phiên chợ vùng cao Bình Điền diễn ra với chuỗi hoạt động văn hóa, ẩm thực và giao thương cộng đồng."
   },
   {
     "id": "su-kien-1",
@@ -13,7 +29,10 @@
     "thoiGian": "2026-03-20",
     "diaDiem": "TX Hương Trà, TP Huế",
     "moTaNgan": "Tăng cường quảng bá điểm đến sinh thái phía tây Huế với lộ trình trải nghiệm mới.",
-    "anh": "/images/featured/binhdien-1.jpg"
+    "anh": [
+      "/images/featured/binhdien-1.jpg"
+    ],
+    "videos": []
   },
   {
     "id": "su-kien-2",
@@ -21,7 +40,10 @@
     "thoiGian": "2026-04-05",
     "diaDiem": "Trung tâm TP Huế",
     "moTaNgan": "Giới thiệu món Huế tiêu biểu và kết nối chuỗi quán địa phương.",
-    "anh": "/images/food/food-1.jpg"
+    "anh": [
+      "/images/food/food-1.jpg"
+    ],
+    "videos": []
   },
   {
     "id": "su-kien-3",
@@ -29,7 +51,10 @@
     "thoiGian": "2026-04-18",
     "diaDiem": "TP Huế",
     "moTaNgan": "Tăng cường giáo dục di sản địa phương cho học sinh, sinh viên.",
-    "anh": "/images/culture/culture-1.jpg"
+    "anh": [
+      "/images/culture/culture-1.jpg"
+    ],
+    "videos": []
   },
   {
     "id": "su-kien-4",
@@ -37,6 +62,9 @@
     "thoiGian": "2026-05-02",
     "diaDiem": "Xã Bình Điền",
     "moTaNgan": "Đề xuất giải pháp cân bằng giữa khai thác du lịch và bảo tồn môi trường.",
-    "anh": "/images/featured/binhdien-2.jpg"
+    "anh": [
+      "/images/featured/binhdien-2.jpg"
+    ],
+    "videos": []
   }
 ]

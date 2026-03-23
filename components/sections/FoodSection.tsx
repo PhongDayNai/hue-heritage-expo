@@ -27,7 +27,7 @@ export default function FoodSection() {
                 onClick={() => setActive(item)}
               >
                 <div className="relative h-44">
-                  <Image src={item.anh} alt={item.tenMon} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                  <Image src={item.anh?.[0] || '/images/food/food-1.jpg'} alt={item.tenMon} fill className="object-cover transition duration-500 group-hover:scale-105" />
                 </div>
                 <div className="space-y-2 p-4 text-sm">
                   <p>
@@ -53,7 +53,9 @@ export default function FoodSection() {
         title={active?.tenMon || ''}
         shortDesc={active ? `${active.tenQuan} · ${active.mucGia}` : ''}
         fullDesc={active?.moTaNgan}
-        image={active?.anh}
+        image={active?.anh?.[0]}
+        images={active?.anh || []}
+        videos={active?.videos || []}
         chips={active ? [active.tenQuan, active.mucGia] : []}
         address={active?.diaChi}
       />

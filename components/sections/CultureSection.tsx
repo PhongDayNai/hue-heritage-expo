@@ -26,7 +26,7 @@ export default function CultureSection() {
               onClick={() => setActive(item)}
             >
               <div className="relative min-h-44">
-                <Image src={item.anh} alt={item.chuDe} fill className="object-cover" />
+                <Image src={item.anh?.[0] || '/images/culture/culture-1.jpg'} alt={item.chuDe} fill className="object-cover" />
               </div>
               <div className="md:col-span-2 p-5">
                 <h3 className="text-xl font-semibold text-hueRed">{item.chuDe}</h3>
@@ -45,7 +45,9 @@ export default function CultureSection() {
         title={active?.chuDe || ''}
         shortDesc={active?.tomTat}
         fullDesc={active?.noiDungDayDu}
-        image={active?.anh}
+        image={active?.anh?.[0]}
+        images={active?.anh || []}
+        videos={active?.videos || []}
         chips={active?.diemNhan ? [active.diemNhan] : []}
       />
     </section>
