@@ -49,6 +49,33 @@ export default function HomePortalModern() {
     setExpandedAlbums((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
+  const galleryTiles = visibleAlbums.flatMap((album) => {
+    const cover = album.anh?.[0];
+    const expanded = !!expandedAlbums[album.id];
+    const photos = expanded
+      ? (album.anh || []).slice(1).map((src, idx) => ({
+          key: `${album.id}-photo-${idx}`,
+          type: 'photo' as const,
+          src,
+          title: album.tenDiaDiem,
+          albumId: album.id
+        }))
+      : [];
+
+    return [
+      {
+        key: `${album.id}-album`,
+        type: 'album' as const,
+        src: cover,
+        title: album.tenDiaDiem,
+        count: (album.anh || []).length,
+        albumId: album.id,
+        expanded
+      },
+      ...photos
+    ];
+  });
+
   return (
     <>
       
@@ -157,43 +184,34 @@ export default function HomePortalModern() {
               {hasVideo && <button className="px-4 py-2 text-sm font-medium text-neutral-500">Video</button>}
               {hasInfographic && <button className="px-4 py-2 text-sm font-medium text-neutral-500">Infographic</button>}
             </div>
-            <div className="space-y-3">
-              {visibleAlbums.map((item) => {
-                const albumThumb = item.anh?.[0];
-                const isExpanded = !!expandedAlbums[item.id];
-                const albumImages = item.anh || [];
-
-                return (
-                  <div key={item.id} className="overflow-hidden rounded-xl border border-[#dcc09a] bg-white shadow-sm">
-                    <button
-                      type="button"
-                      onClick={() => toggleAlbum(item.id)}
-                      className="flex w-full items-center gap-3 p-3 text-left transition hover:bg-[#fbf6ea]"
-                    >
-                      <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-md bg-neutral-100">
-                        {albumThumb ? (
-                          <Image src={albumThumb} alt={item.tenDiaDiem} fill className="object-cover" />
-                        ) : null}
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm font-semibold text-hueInk">{item.tenDiaDiem}</p>
-                        <p className="text-xs text-neutral-500">{albumImages.length} ảnh</p>
-                      </div>
-                      <span className="text-xs font-semibold text-hueRed">{isExpanded ? 'Thu gọn' : 'Mở album'}</span>
-                    </button>
-
-                    {isExpanded && albumImages.length > 0 && (
-                      <div className="grid grid-cols-2 gap-2 border-t border-[#dcc09a] p-3 sm:grid-cols-3">
-                        {albumImages.map((src, idx) => (
-                          <figure key={`${item.id}-${idx}`} className="group relative aspect-square overflow-hidden rounded-lg">
-                            <Image src={src} alt={`${item.tenDiaDiem} ${idx + 1}`} fill className="object-cover transition duration-500 group-hover:scale-105" />
-                          </figure>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              {galleryTiles.map((tile) =>
+                tile.type === 'album' ? (
+                  <button
+                    key={tile.key}
+                    type="button"
+                    onClick={() => toggleAlbum(tile.albumId)}
+                    className="group relative aspect-square overflow-hidden rounded-lg text-left"
+                  >
+                    {tile.src ? <Image src={tile.src} alt={tile.title} fill className="object-cover transition duration-500 group-hover:scale-105" /> : null}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/20" />
+                    <div className="absolute left-2 top-2 rounded-full border border-white/45 bg-black/45 px-2 py-0.5 text-[10px] font-semibold text-white">
+                      Album · {tile.count} ảnh
+                    </div>
+                    <figcaption className="absolute inset-x-0 bottom-0 px-2 py-2 text-[11px] font-semibold text-[#f9e8be]">
+                      {tile.title}
+                      <span className="ml-2 text-[10px] text-white/85">{tile.expanded ? 'Thu gọn' : 'Mở album'}</span>
+                    </figcaption>
+                  </button>
+                ) : (
+                  <figure key={tile.key} className="group relative aspect-square overflow-hidden rounded-lg">
+                    <Image src={tile.src} alt={tile.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                    <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-2 py-2 text-[11px] text-[#f9e8be]">
+                      {tile.title}
+                    </figcaption>
+                  </figure>
+                )
+              )}
             </div>
 
             {hasMoreAlbums && (
