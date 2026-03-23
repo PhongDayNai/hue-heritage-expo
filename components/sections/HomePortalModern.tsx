@@ -7,7 +7,7 @@ import scenic from '@/data/scenic.json';
 import library from '@/data/library.json';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import SpotlightModal from '../ui/SpotlightModal';
 
 const quickLinks = [
@@ -28,15 +28,38 @@ const infoCards = [
 
 type Scenic = (typeof scenic)[number];
 
+type GalleryImage = {
+  key: string;
+  src: string;
+  title: string;
+};
+
+const GALLERY_BATCH = 9; // ~3 hàng ở layout 3 cột
+
 export default function HomePortalModern() {
   const [activeSpot, setActiveSpot] = useState<Scenic | null>(null);
+  const [galleryVisibleCount, setGalleryVisibleCount] = useState(GALLERY_BATCH);
 
   const hero = scenic[1] || scenic[0];
   const upcoming = news.slice(0, 4);
-  const gallery = scenic.slice(0, 6);
   const sideScenic = scenic.slice(0, 4);
   const hasVideo = Array.isArray(library.videos) && library.videos.length > 0;
   const hasInfographic = Array.isArray(library.infographics) && library.infographics.length > 0;
+
+  const galleryImages = useMemo<GalleryImage[]>(
+    () =>
+      scenic.flatMap((item) =>
+        (item.anh || []).map((src, idx) => ({
+          key: `${item.id}-${idx}`,
+          src,
+          title: item.tenDiaDiem
+        }))
+      ),
+    []
+  );
+
+  const visibleGallery = galleryImages.slice(0, galleryVisibleCount);
+  const hasMoreGallery = galleryVisibleCount < galleryImages.length;
 
   return (
     <>
@@ -147,20 +170,27 @@ export default function HomePortalModern() {
               {hasInfographic && <button className="px-4 py-2 text-sm font-medium text-neutral-500">Infographic</button>}
             </div>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {gallery.map((item, idx) => (
-                <figure
-                  key={item.id}
-                  className={`group relative overflow-hidden rounded-lg ${
-                    idx === 0 ? 'col-span-2 aspect-[2/1] sm:col-span-2' : 'aspect-square'
-                  }`}
-                >
-                  <Image src={item.anh[0]} alt={item.tenDiaDiem} fill className="object-cover transition duration-500 group-hover:scale-105" />
+              {visibleGallery.map((item) => (
+                <figure key={item.key} className="group relative aspect-square overflow-hidden rounded-lg">
+                  <Image src={item.src} alt={item.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
                   <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-2 py-2 text-[11px] text-[#f9e8be]">
-                    {item.tenDiaDiem}
+                    {item.title}
                   </figcaption>
                 </figure>
               ))}
             </div>
+
+            {hasMoreGallery && (
+              <div className="mt-4 flex justify-center">
+                <button
+                  type="button"
+                  onClick={() => setGalleryVisibleCount((prev) => prev + GALLERY_BATCH)}
+                  className="rounded-md border border-hueGold/50 bg-white px-4 py-2 text-sm font-semibold text-hueRed transition hover:bg-hueGold/10"
+                >
+                  Xem thêm
+                </button>
+              </div>
+            )}
           </main>
 
           <aside>
