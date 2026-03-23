@@ -11,7 +11,7 @@ const config: Config = {
         hueRed: '#7a1f1f',
         hueGold: '#c49b3d',
         hueInk: '#1f1a17',
-        hueBg: '#f8f4ed'
+        hueBg: '#fdfaf5'
       },
       boxShadow: {
         glow: '0 10px 40px rgba(196,155,61,0.25)'

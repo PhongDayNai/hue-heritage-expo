@@ -198,7 +198,7 @@ export default function HomePortalModern() {
                       className="group relative aspect-square overflow-hidden rounded-lg text-left"
                     >
                       {tile.src ? <Image src={tile.src} alt={tile.title} fill className="object-cover transition duration-500 group-hover:scale-105" /> : null}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/8" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/20" />
                       <div className="absolute left-2 top-2 rounded-full border border-white/45 bg-black/45 px-2 py-0.5 text-[10px] font-semibold text-white">
                         Album · {tile.count} ảnh
                       </div>
