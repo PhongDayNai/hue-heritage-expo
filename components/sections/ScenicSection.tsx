@@ -89,6 +89,7 @@ export default function ScenicSection() {
         shortDesc={active?.gioiThieuNgan}
         fullDesc={active?.gioiThieuDayDu}
         image={active?.anh?.[0]}
+        images={active?.anh || []}
         chips={active?.dichVu || []}
         address={active?.diaChi}
       />

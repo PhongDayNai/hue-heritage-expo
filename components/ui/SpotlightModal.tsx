@@ -1,9 +1,9 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, ChevronUp, MapPin, Sparkles, X } from 'lucide-react';
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, MapPin, Sparkles, X } from 'lucide-react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 type Props = {
   open: boolean;
@@ -12,6 +12,7 @@ type Props = {
   shortDesc?: string;
   fullDesc?: string;
   image?: string;
+  images?: string[];
   chips?: string[];
   address?: string;
 };
@@ -23,14 +24,38 @@ export default function SpotlightModal({
   shortDesc,
   fullDesc,
   image,
+  images = [],
   chips = [],
   address
 }: Props) {
   const [expanded, setExpanded] = useState(false);
+  const [mainIndex, setMainIndex] = useState(0);
+  const [bgIndex, setBgIndex] = useState(0);
+
+  const gallery = useMemo(() => {
+    if (images.length > 0) return images;
+    return image ? [image] : [];
+  }, [images, image]);
+
+  const hasGallery = gallery.length > 0;
 
   useEffect(() => {
-    if (open) setExpanded(false);
+    if (open) {
+      setExpanded(false);
+      setMainIndex(0);
+      setBgIndex(0);
+    }
   }, [open, title]);
+
+  useEffect(() => {
+    if (!open || gallery.length <= 1) return;
+
+    const timer = window.setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % gallery.length);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, [open, gallery.length]);
 
   useEffect(() => {
     if (!open) return;
@@ -74,6 +99,9 @@ export default function SpotlightModal({
     };
   }, [open]);
 
+  const nextMain = () => setMainIndex((prev) => (prev + 1) % gallery.length);
+  const prevMain = () => setMainIndex((prev) => (prev - 1 + gallery.length) % gallery.length);
+
   return (
     <AnimatePresence>
       {open && (
@@ -83,12 +111,24 @@ export default function SpotlightModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <div className="absolute inset-0">
-            {image ? (
-              <Image src={image} alt={title} fill className="object-cover" />
-            ) : (
-              <div className="h-full w-full bg-neutral-900" />
-            )}
+          <div className="pointer-events-none absolute inset-0">
+            <AnimatePresence mode="wait">
+              {hasGallery ? (
+                <motion.div
+                  key={gallery[bgIndex]}
+                  className="absolute inset-0"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.9, ease: 'easeOut' }}
+                >
+                  <Image src={gallery[bgIndex]} alt={title} fill className="object-cover" />
+                </motion.div>
+              ) : (
+                <div className="h-full w-full bg-neutral-900" />
+              )}
+            </AnimatePresence>
+
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(196,155,61,0.26),transparent_38%),linear-gradient(130deg,rgba(16,8,7,0.9),rgba(14,10,9,0.76))]" />
             <div className="absolute inset-0 backdrop-blur-[2px]" />
           </div>
@@ -115,13 +155,45 @@ export default function SpotlightModal({
 
                 <div className="grid min-h-[70vh] lg:grid-cols-[1.05fr_1fr]">
                   <div className="relative min-h-[320px] border-b border-white/15 lg:min-h-full lg:border-b-0 lg:border-r lg:border-white/15">
-                    {image ? (
-                      <Image src={image} alt={title} fill className="object-cover" />
-                    ) : (
-                      <div className="h-full w-full bg-neutral-900" />
-                    )}
+                    <AnimatePresence mode="wait">
+                      {hasGallery ? (
+                        <motion.div
+                          key={gallery[mainIndex]}
+                          className="absolute inset-0"
+                          initial={{ opacity: 0.2, scale: 1.02 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0.2, scale: 0.99 }}
+                          transition={{ duration: 0.45, ease: 'easeOut' }}
+                        >
+                          <Image src={gallery[mainIndex]} alt={title} fill className="object-cover" />
+                        </motion.div>
+                      ) : (
+                        <div className="h-full w-full bg-neutral-900" />
+                      )}
+                    </AnimatePresence>
 
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0d0908]/85 via-[#120d0b]/45 to-transparent" />
+
+                    {gallery.length > 1 && (
+                      <>
+                        <button
+                          type="button"
+                          onClick={prevMain}
+                          className="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/40 bg-black/40 p-2.5 text-white transition hover:bg-black/70"
+                          aria-label="Ảnh trước"
+                        >
+                          <ChevronLeft size={18} />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={nextMain}
+                          className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/40 bg-black/40 p-2.5 text-white transition hover:bg-black/70"
+                          aria-label="Ảnh tiếp theo"
+                        >
+                          <ChevronRight size={18} />
+                        </button>
+                      </>
+                    )}
 
                     <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
                       <p className="inline-flex items-center gap-1.5 rounded-full border border-hueGold/45 bg-hueGold/20 px-3 py-1 text-[11px] font-semibold tracking-[0.14em] text-hueGold">
@@ -134,6 +206,12 @@ export default function SpotlightModal({
 
                       {shortDesc && (
                         <p className="mt-3 max-w-2xl text-sm leading-7 text-white/90 sm:text-base">{shortDesc}</p>
+                      )}
+
+                      {gallery.length > 1 && (
+                        <p className="mt-3 text-xs font-medium text-white/85">
+                          Ảnh {mainIndex + 1}/{gallery.length}
+                        </p>
                       )}
                     </div>
                   </div>
