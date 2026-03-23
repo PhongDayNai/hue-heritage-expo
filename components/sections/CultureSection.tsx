@@ -25,8 +25,14 @@ export default function CultureSection() {
               className="grid cursor-pointer gap-0 overflow-hidden rounded-2xl border border-hueGold/25 bg-white md:grid-cols-3"
               onClick={() => setActive(item)}
             >
-              <div className="relative min-h-44">
-                <Image src={item.anh?.[0] || '/images/culture/culture-1.jpg'} alt={item.chuDe} fill className="object-cover" />
+              <div className="relative min-h-44 bg-neutral-100">
+                {item.anh?.[0] ? (
+                  <Image src={item.anh[0]} alt={item.chuDe} fill className="object-cover" />
+                ) : (
+                  <div className="flex h-full items-center justify-center text-xs font-medium text-neutral-500">
+                    Chưa có ảnh từ thư mục nguồn
+                  </div>
+                )}
               </div>
               <div className="md:col-span-2 p-5">
                 <h3 className="text-xl font-semibold text-hueRed">{item.chuDe}</h3>

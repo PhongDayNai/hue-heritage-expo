@@ -77,14 +77,7 @@
     "tenQuan": "Đặc sản địa phương",
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Cá suối nướng theo phong cách bản địa, giữ vị ngọt tự nhiên và mùi khói bếp đặc trưng.",
-    "anh": [
-      "/images/food/ca-xanh-nuong-binh-dien/img-01.jpg",
-      "/images/food/ca-xanh-nuong-binh-dien/img-02.jpg",
-      "/images/food/ca-xanh-nuong-binh-dien/img-03.jpg",
-      "/images/food/ca-xanh-nuong-binh-dien/img-04.jpg",
-      "/images/food/ca-xanh-nuong-binh-dien/img-05.jpg",
-      "/images/food/ca-xanh-nuong-binh-dien/img-06.jpg"
-    ],
+    "anh": [],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": []
   },
@@ -94,14 +87,7 @@
     "tenQuan": "Đặc sản địa phương",
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Món thịt heo bản chế biến thủ công, đậm vị khói và gia vị rừng, phù hợp làm quà đặc sản.",
-    "anh": [
-      "/images/food/heo-ban-gac-bep-binh-dien/img-01.jpg",
-      "/images/food/heo-ban-gac-bep-binh-dien/img-02.jpg",
-      "/images/food/heo-ban-gac-bep-binh-dien/img-03.jpg",
-      "/images/food/heo-ban-gac-bep-binh-dien/img-04.jpg",
-      "/images/food/heo-ban-gac-bep-binh-dien/img-05.jpg",
-      "/images/food/heo-ban-gac-bep-binh-dien/img-06.jpg"
-    ],
+    "anh": [],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [
       "/videos/food/heo-ban-gac-bep-binh-dien/video-01.mp4"
@@ -139,14 +125,7 @@
     "tenQuan": "Ẩm thực bản địa",
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Thịt heo bản nướng than, tẩm ướp gia vị bản địa cho hương vị đậm đà đặc trưng vùng gò đồi.",
-    "anh": [
-      "/images/food/heo-ban-nuong-binh-dien/img-01.jpg",
-      "/images/food/heo-ban-nuong-binh-dien/img-02.jpg",
-      "/images/food/heo-ban-nuong-binh-dien/img-03.jpg",
-      "/images/food/heo-ban-nuong-binh-dien/img-04.jpg",
-      "/images/food/heo-ban-nuong-binh-dien/img-05.jpg",
-      "/images/food/heo-ban-nuong-binh-dien/img-06.jpg"
-    ],
+    "anh": [],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": []
   }

@@ -26,8 +26,14 @@ export default function FoodSection() {
                 className="group cursor-pointer overflow-hidden rounded-2xl border border-hueGold/20 bg-white"
                 onClick={() => setActive(item)}
               >
-                <div className="relative h-44">
-                  <Image src={item.anh?.[0] || '/images/food/food-1.jpg'} alt={item.tenMon} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                <div className="relative h-44 bg-neutral-100">
+                  {item.anh?.[0] ? (
+                    <Image src={item.anh[0]} alt={item.tenMon} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                  ) : (
+                    <div className="flex h-full items-center justify-center px-3 text-center text-xs font-medium text-neutral-500">
+                      Chưa có ảnh từ thư mục nguồn
+                    </div>
+                  )}
                 </div>
                 <div className="space-y-2 p-4 text-sm">
                   <p>

@@ -24,8 +24,14 @@ export default function NewsSection() {
                 className="cursor-pointer overflow-hidden rounded-2xl border border-hueGold/20 bg-white"
                 onClick={() => setActive(item)}
               >
-                <div className="relative h-40">
-                  <Image src={item.anh?.[0] || '/images/featured/binhdien-1.jpg'} alt={item.tieuDe} fill className="object-cover" />
+                <div className="relative h-40 bg-neutral-100">
+                  {item.anh?.[0] ? (
+                    <Image src={item.anh[0]} alt={item.tieuDe} fill className="object-cover" />
+                  ) : (
+                    <div className="flex h-full items-center justify-center text-xs font-medium text-neutral-500">
+                      Chưa có ảnh từ thư mục nguồn
+                    </div>
+                  )}
                 </div>
                 <div className="space-y-2 p-4">
                   <p className="text-xs font-medium text-hueRed">{new Date(item.thoiGian).toLocaleDateString('vi-VN')}</p>
