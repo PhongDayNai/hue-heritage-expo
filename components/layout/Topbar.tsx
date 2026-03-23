@@ -88,7 +88,7 @@ export default function Topbar() {
 
       {compactMobile && (
         <div className="sticky top-0 z-[60] border-b border-hueGold/70 bg-hueRed/95 backdrop-blur lg:hidden">
-          <div className="section-wrap flex items-center justify-between py-2.5">
+          <div className="section-wrap relative flex items-center justify-between py-2.5">
             <p className="truncate pr-3 text-sm font-semibold text-[#f5e6c0]">{currentLabel}</p>
             <button
               className="rounded-md border border-white/30 p-2 text-white"
@@ -100,33 +100,33 @@ export default function Topbar() {
             >
               {open ? <X size={18} /> : <Menu size={18} />}
             </button>
-          </div>
 
-          <div
-            className={`origin-top overflow-hidden border-t border-white/15 bg-hueRed transition-[max-height,opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              open ? 'max-h-[460px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-1'
-            }`}
-          >
-            <div className="section-wrap py-3 transition-opacity duration-300 ease-out">
-              <div className="grid gap-1">
-                {items.map((item) => {
-                  const active = pathname === item.href;
-                  return (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className={`rounded-md px-3 py-2 text-sm transition-all duration-300 ${
-                        active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:translate-x-1'
-                      }`}
-                      onClick={() => {
-                        setOpen(false);
-                        openedAtScrollYRef.current = null;
-                      }}
-                    >
-                      {item.label}
-                    </Link>
-                  );
-                })}
+            <div
+              className={`absolute left-0 right-0 top-full z-[70] origin-top overflow-hidden border-t border-hueGold/30 bg-hueRed/95 shadow-[0_14px_30px_rgba(0,0,0,0.35)] transition-[max-height,opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                open ? 'max-h-[460px] opacity-100 translate-y-0' : 'pointer-events-none max-h-0 opacity-0 -translate-y-1'
+              }`}
+            >
+              <div className="section-wrap py-3 transition-opacity duration-300 ease-out">
+                <div className="grid gap-1">
+                  {items.map((item) => {
+                    const active = pathname === item.href;
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`rounded-md px-3 py-2 text-sm transition-all duration-300 ${
+                          active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:translate-x-1'
+                        }`}
+                        onClick={() => {
+                          setOpen(false);
+                          openedAtScrollYRef.current = null;
+                        }}
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
