@@ -45,11 +45,20 @@
       "/images/culture/cho-phien-binh-dien/img-05.jpg",
       "/images/culture/cho-phien-binh-dien/img-06.jpg",
       "/images/culture/cho-phien-binh-dien/img-07.jpg",
-      "/images/culture/cho-phien-binh-dien/img-08.jpg"
+      "/images/culture/cho-phien-binh-dien/img-08.jpg",
+      "/images/culture/cho-phien-binh-dien/img-10.jpg",
+      "/images/culture/cho-phien-binh-dien/img-11.jpg",
+      "/images/culture/cho-phien-binh-dien/img-12.jpg",
+      "/images/culture/cho-phien-binh-dien/img-13.jpg",
+      "/images/culture/cho-phien-binh-dien/img-14.jpg",
+      "/images/culture/cho-phien-binh-dien/img-15.jpg",
+      "/images/culture/cho-phien-binh-dien/img-16.jpg",
+      "/images/culture/cho-phien-binh-dien/img-17.jpg"
     ],
     "diemNhan": "Không gian văn hóa cộng đồng gắn với sản vật và nhịp sống vùng bán sơn địa.",
     "videos": [
-      "/videos/culture/cho-phien-binh-dien/video-01.mp4"
+      "/videos/culture/cho-phien-binh-dien/video-01.mp4",
+      "/videos/culture/cho-phien-binh-dien/video-02.mp4"
     ]
   },
   {
@@ -57,10 +66,16 @@
     "chuDe": "Bình Điền giữa đại ngàn",
     "tomTat": "Bức tranh đời sống bản địa Pa Hy, Cơ Tu gắn với sông rừng và văn hóa truyền thống.",
     "noiDungDayDu": "Nội dung giới thiệu Bình Điền như một không gian “hồn đất, hồn người”, nơi di sản văn hóa được lưu giữ qua sinh hoạt, lễ hội và ẩm thực. Chủ đề phù hợp cho truyền thông bản sắc địa phương và phát triển du lịch cộng đồng bền vững.",
-    "anh": [],
+    "anh": [
+      "/images/culture/binh-dien-dai-ngan/img-01.jpg",
+      "/images/culture/binh-dien-dai-ngan/img-02.jpg",
+      "/images/culture/binh-dien-dai-ngan/img-03.jpg",
+      "/images/culture/binh-dien-dai-ngan/img-04.jpg"
+    ],
     "diemNhan": "Nổi bật giá trị bản sắc dân tộc thiểu số trong phát triển du lịch địa phương.",
     "videos": [
-      "/videos/culture/binh-dien-dai-ngan/video-01.mp4"
+      "/videos/culture/binh-dien-dai-ngan/video-01.mp4",
+      "/videos/culture/binh-dien-dai-ngan/video-02.mp4"
     ]
   },
   {
@@ -73,7 +88,12 @@
       "/images/culture/khong-gian-van-hoa-ban-dia/img-02.jpg",
       "/images/culture/khong-gian-van-hoa-ban-dia/img-03.jpg",
       "/images/culture/khong-gian-van-hoa-ban-dia/img-04.jpg",
-      "/images/culture/khong-gian-van-hoa-ban-dia/img-05.jpg"
+      "/images/culture/khong-gian-van-hoa-ban-dia/img-05.jpg",
+      "/images/culture/khong-gian-van-hoa-ban-dia/img-07.jpg",
+      "/images/culture/khong-gian-van-hoa-ban-dia/img-08.jpg",
+      "/images/culture/khong-gian-van-hoa-ban-dia/img-09.jpg",
+      "/images/culture/khong-gian-van-hoa-ban-dia/img-10.jpg",
+      "/images/culture/khong-gian-van-hoa-ban-dia/img-11.jpg"
     ],
     "diemNhan": "Phù hợp làm album trực quan cho truyền thông văn hóa - giáo dục địa phương.",
     "videos": []

@@ -18,7 +18,21 @@
       "/images/featured/phien-cho-binh-dien-2026/img-10.jpg",
       "/images/featured/phien-cho-binh-dien-2026/img-11.jpg",
       "/images/featured/phien-cho-binh-dien-2026/img-12.jpg",
-      "/images/featured/phien-cho-binh-dien-2026/img-13.jpg"
+      "/images/featured/phien-cho-binh-dien-2026/img-13.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-15.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-16.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-17.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-18.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-19.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-20.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-21.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-22.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-23.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-24.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-25.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-26.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-27.jpg",
+      "/images/featured/phien-cho-binh-dien-2026/img-28.jpg"
     ],
     "videos": [],
     "moTaDayDu": "Phiên chợ vùng cao Bình Điền diễn ra với chuỗi hoạt động văn hóa, ẩm thực và giao thương cộng đồng."
@@ -66,5 +80,49 @@
       "/images/featured/binhdien-2.jpg"
     ],
     "videos": []
+  },
+  {
+    "id": "su-kien-ca-nhac-binh-dien-2026",
+    "tieuDe": "Hoạt động ca nhạc cộng đồng Bình Điền",
+    "thoiGian": "2026-03-23",
+    "diaDiem": "Khu vực Bình Điền, TX Hương Trà, TP Huế",
+    "moTaNgan": "Giao lưu văn nghệ cộng đồng với các tiết mục ca nhạc địa phương.",
+    "anh": [
+      "/images/featured/ca-nhac/img-01.jpg",
+      "/images/featured/ca-nhac/img-02.jpg",
+      "/images/featured/ca-nhac/img-03.jpg",
+      "/images/featured/ca-nhac/img-04.jpg"
+    ],
+    "videos": [],
+    "moTaDayDu": "Bộ ảnh ghi lại các hoạt động ca nhạc cộng đồng, góp phần tăng sức hút cho chuỗi sự kiện địa phương."
+  },
+  {
+    "id": "su-kien-chay-cong-dong-binh-dien-2026",
+    "tieuDe": "Chạy cộng đồng Bình Điền",
+    "thoiGian": "2026-03-23",
+    "diaDiem": "Khu vực Bình Điền, TX Hương Trà, TP Huế",
+    "moTaNgan": "Hoạt động chạy phong trào kết hợp truyền thông du lịch và lối sống lành mạnh.",
+    "anh": [
+      "/images/featured/chay/img-01.jpg",
+      "/images/featured/chay/img-02.jpg",
+      "/images/featured/chay/img-03.jpg"
+    ],
+    "videos": [],
+    "moTaDayDu": "Sự kiện chạy cộng đồng kết nối người dân và du khách, lan tỏa hình ảnh điểm đến năng động."
+  },
+  {
+    "id": "su-kien-bong-da-binh-dien-2026",
+    "tieuDe": "Giải bóng đá phong trào Bình Điền",
+    "thoiGian": "2026-03-23",
+    "diaDiem": "Khu vực Bình Điền, TX Hương Trà, TP Huế",
+    "moTaNgan": "Hoạt động thể thao cộng đồng tăng cường giao lưu và gắn kết địa phương.",
+    "anh": [
+      "/images/featured/da-bong/img-01.jpg",
+      "/images/featured/da-bong/img-02.jpg",
+      "/images/featured/da-bong/img-03.jpg",
+      "/images/featured/da-bong/img-04.jpg"
+    ],
+    "videos": [],
+    "moTaDayDu": "Bộ ảnh phản ánh không khí thi đấu sôi nổi của các đội bóng phong trào tại Bình Điền."
   }
 ]
