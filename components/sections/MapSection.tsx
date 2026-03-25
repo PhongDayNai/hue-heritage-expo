@@ -9,7 +9,7 @@ export default function MapSection() {
       <div className="mt-8 overflow-hidden rounded-2xl border border-hueGold/25 bg-white">
         <iframe
           title="Bản đồ Huế"
-          src="https://www.google.com/maps?output=embed&q=16.3008984,107.4440254&z=15"
+          src="https://www.google.com/maps?output=embed&q=B%C3%ACnh%20%C4%90i%E1%BB%81n%2C%20Tx.%20H%C6%B0%C6%A1ng%20Tr%C3%A0%2C%20Hu%E1%BA%BF%2C%20Vi%E1%BB%87t%20Nam&z=15"
           className="h-[420px] w-full"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
