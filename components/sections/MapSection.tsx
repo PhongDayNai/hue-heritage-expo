@@ -9,7 +9,7 @@ export default function MapSection() {
       <div className="mt-8 overflow-hidden rounded-2xl border border-hueGold/25 bg-white">
         <iframe
           title="Bản đồ Huế"
-          src="https://www.google.com/maps?q=Hue%20Vietnam&z=11&output=embed"
+          src="https://www.google.com/maps?q=https://maps.app.goo.gl/AmyHWVHjoAaeisPE7&z=16&output=embed"
           className="h-[420px] w-full"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
