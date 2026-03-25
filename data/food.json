@@ -104,20 +104,56 @@
     ]
   },
   {
-    "id": "banh-nam-banh-loc-banh-it-ram",
-    "tenMon": "Bánh nậm, bánh lọc, bánh ít ram",
+    "id": "banh-nam-hue",
+    "tenMon": "Bánh nậm Huế",
+    "moTaNgan": "Bánh nậm mềm mịn, thanh vị, gói lá chuối và ăn cùng nước mắm chua ngọt.",
+    "anh": [
+      "/images/food/banh-nam-banh-loc-banh-it-ram/img-01.jpg"
+    ],
+    "moTaDayDu": "Bánh nậm Huế – Mềm mịn, thanh nhẹ của Huế Bánh nậm Huế mang đến hương vị nhẹ nhàng, tinh tế Bánh nậm Huế mang đến hương vị nhẹ nhàng, tinh tế Bánh nậm là một trong những món bánh truyền thống đặc trưng của Huế, mang đậm nét tinh tế trong ẩm thực cố đô. Món bánh này gây ấn tượng bởi vẻ ngoài giản dị – được gói trong lá chuối thành những miếng dẹt, nhỏ gọn. Bánh được làm từ bột gạo xay mịn, trải mỏng rồi cho nhân tôm thịt lên trên. Sau đó gói lại và hấp chín, tạo nên lớp bánh mềm mịn, thơm nhẹ mùi lá chuối. Khi ăn, bánh có độ dẻo vừa phải, tan nhẹ trong miệng, kết hợp với vị đậm đà của nhân tôm thịt bên trên. Điểm đặc biệt của bánh nậm chính là sự nhẹ nhàng và thanh vị . Không quá béo, không quá đậm, món bánh mang đến cảm giác dễ ăn, phù hợp với mọi lứa tuổi. Khi chấm cùng nước mắm chua ngọt cay nhẹ, hương vị càng trở nên hài hòa và hấp dẫn hơn. Bánh nậm không chỉ là món ăn, mà còn thể hiện sự tinh tế, khéo léo của người Huế trong từng chi tiết nhỏ.",
     "tenQuan": "Đặc sản địa phương",
     "mucGia": "Đang cập nhật",
-    "moTaNgan": "Nhóm bánh truyền thống xứ Huế được người dân địa phương chế biến trong các dịp thường nhật và lễ tết.",
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": []
+  },
+  {
+    "id": "banh-loc-hue",
+    "tenMon": "Bánh lọc Huế",
+    "moTaNgan": "Bánh lọc dai trong, nhân tôm thịt đậm đà, chấm nước mắm ớt đặc trưng.",
     "anh": [
-      "/images/food/banh-nam-banh-loc-banh-it-ram/img-01.jpg",
-      "/images/food/banh-nam-banh-loc-banh-it-ram/img-02.jpg",
-      "/images/food/banh-nam-banh-loc-banh-it-ram/img-03.jpg",
+      "/images/food/banh-nam-banh-loc-banh-it-ram/img-02.jpg"
+    ],
+    "moTaDayDu": "Bánh lọc Huế – Dai dẻo, đậm đà khó quên Bánh lọc Huế mang đến hương vị dai giòn, đậm đà đặc trưng Bánh lọc Huế mang đến hương vị dai giòn, đậm đà đặc trưng Khác với bánh nậm, bánh lọc Huế lại gây ấn tượng bởi độ dai và trong của lớp vỏ. Bánh được làm từ bột năng, khi hấp lên trở nên trong suốt, có thể nhìn thấy phần nhân bên trong. Nhân bánh thường gồm tôm và thịt ba chỉ rim đậm vị, có màu sắc hấp dẫn. Khi ăn, lớp vỏ bánh dai dai, kết hợp với vị béo của thịt, vị ngọt của tôm và chút cay nhẹ của nước mắm ớt, tạo nên một hương vị rất riêng. Bánh lọc có hai loại phổ biến: Bánh lọc gói lá (hấp trong lá chuối) Bánh lọc trần (không gói, ăn trực tiếp) Dù ở dạng nào, bánh lọc Huế vẫn giữ được nét đặc trưng là dai – đậm – cay nhẹ , khiến người ăn dễ “ghiền”. Gợi ý: Bạn có thể thưởng thức ở chợ Bình Điền( nếu muốn thưởng thức trọn ven hãy ghé thăm vào các phiên chợ hằng năm) ",
+    "tenQuan": "Đặc sản địa phương",
+    "mucGia": "Đang cập nhật",
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": []
+  },
+  {
+    "id": "banh-it-ram-hue",
+    "tenMon": "Bánh ít ram Huế",
+    "moTaNgan": "Sự kết hợp giòn - dẻo độc đáo giữa lớp ram chiên và bánh ít nhân tôm thịt.",
+    "anh": [
+      "/images/food/banh-nam-banh-loc-banh-it-ram/img-03.jpg"
+    ],
+    "moTaDayDu": "Bánh ít ram Huế – Giòn dai hòa quyện độc đáo Bánh ít ram Huế mang đến sự kết hợp giòn – dẻo đầy thú vị Bánh ít ram Huế mang đến sự kết hợp giòn – dẻo đầy thú vị Bánh ít ram là một trong những món bánh độc đáo nhất của Huế bởi sự kết hợp hai lớp hoàn toàn khác nhau trong cùng một món ăn. Phần dưới là bánh ram – được chiên vàng giòn, có độ giòn rụm hấp dẫn. Phần trên là bánh ít – làm từ bột nếp dẻo, bên trong có nhân tôm thịt đậm đà. Hai phần này được kết hợp lại thành một chiếc bánh nhỏ xinh nhưng đầy đủ hương vị. Khi ăn, bạn sẽ cảm nhận rõ: Độ giòn tan của lớp ram bên dưới Độ dẻo mềm của bánh ít phía trên Vị đậm đà của nhân tôm thịt Chấm thêm nước mắm chua cay, món bánh trở nên trọn vẹn với đủ vị: giòn – dẻo – béo – mặn – cay. Bánh ít ram không chỉ ngon mà còn thể hiện sự sáng tạo trong ẩm thực Huế – biến những nguyên liệu quen thuộc thành một món ăn độc đáo, khó quên. Gợi ý: Bạn có thể thưởng thức ở chợ Bình Điền( nếu muốn thưởng thức trọn ven hãy ghé thăm vào các phiên chợ hằng năm) ",
+    "tenQuan": "Đặc sản địa phương",
+    "mucGia": "Đang cập nhật",
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": []
+  },
+  {
+    "id": "banh-beo-hue-binh-dien",
+    "tenMon": "Bánh bèo Huế",
+    "moTaNgan": "Bánh bèo chén nhỏ xinh, mềm mịn, ăn với tôm chấy, mỡ hành và nước mắm.",
+    "anh": [
       "/images/food/banh-nam-banh-loc-banh-it-ram/img-04.jpg"
     ],
+    "moTaDayDu": "Bánh bèo Huế – Nhỏ xinh, đậm đà của Huế Bánh bèo Huế mang đến hương vị mềm mịn, đậm đà tinh tế Bánh bèo Huế mang đến hương vị mềm mịn, đậm đà tinh tế Bánh bèo là một trong những món bánh đặc trưng và quen thuộc nhất của ẩm thực Huế. Không cầu kỳ về hình thức nhưng lại mang trong mình sự tinh tế rất riêng, bánh bèo đã trở thành món ăn gắn liền với đời sống thường ngày của người dân cố đô. Bánh được làm từ bột gạo, hấp trong những chén nhỏ xinh, tạo nên từng chiếc bánh trắng mịn, mềm và hơi dai. Chính cách đựng trong chén này đã tạo nên nét đặc trưng riêng, khiến bánh bèo Huế khác biệt so với các vùng khác. Phần “linh hồn” của bánh nằm ở lớp nhân bên trên. Thông thường, bánh bèo được phủ tôm chấy, mỡ hành và đôi khi có thêm da heo chiên giòn. Khi ăn, người ta chan nước mắm chua ngọt cay nhẹ vào từng chén nhỏ, tạo nên sự hòa quyện hoàn hảo giữa các hương vị. Cảm giác khi thưởng thức bánh bèo rất đặc biệt: Độ mềm mịn của bánh Vị đậm đà của tôm chấy Độ béo nhẹ của mỡ hành Và chút cay nồng của nước mắm ớt Tất cả hòa quyện tạo nên một món ăn tuy nhỏ bé nhưng lại vô cùng cuốn hút. Người ăn thường dùng muỗng nhỏ để ăn từng chén, vừa thưởng thức vừa cảm nhận sự tinh tế trong từng miếng bánh. Bánh bèo không chỉ ngon mà còn mang đậm nét văn hóa Huế – nhẹ nhàng, tỉ mỉ và đầy tinh tế. Đây là món ăn thường xuất hiện trong các buổi quà vặt, họp mặt hay đơn giản là những buổi chiều thong thả. Dạo quanh Huế, bạn sẽ dễ dàng bắt gặp những quán bánh bèo nhỏ, bày đầy những chén bánh trắng xinh. Chỉ cần ngồi xuống, thưởng thức vài chén bánh nóng hổi, bạn đã có thể cảm nhận được trọn vẹn cái “chất Huế” – giản dị nhưng sâu sắc. Gợi ý: Bạn có thể thưởng thức ở chợ Bình Điền( nếu muốn thưởng thức trọn ven hãy ghé thăm vào các phiên chợ hằng năm)",
+    "tenQuan": "Đặc sản địa phương",
+    "mucGia": "Đang cập nhật",
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
-    "videos": [],
-    "moTaDayDu": "Bánh nậm Huế – Mềm mịn, thanh nhẹ của Huế Bánh nậm Huế mang đến hương vị nhẹ nhàng, tinh tế Bánh nậm Huế mang đến hương vị nhẹ nhàng, tinh tế Bánh nậm là một trong những món bánh truyền thống đặc trưng của Huế, mang đậm nét tinh tế trong ẩm thực cố đô. Món bánh này gây ấn tượng bởi vẻ ngoài giản dị – được gói trong lá chuối thành những miếng dẹt, nhỏ gọn. Bánh được làm từ bột gạo xay mịn, trải mỏng rồi cho nhân tôm thịt lên trên. Sau đó gói lại và hấp chín, tạo nên lớp bánh mềm mịn, thơm nhẹ mùi lá chuối. Khi ăn, bánh có độ dẻo vừa phải, tan nhẹ trong miệng, kết hợp với vị đậm đà của nhân tôm thịt bên trên. Điểm đặc biệt của bánh nậm chính là sự nhẹ nhàng và thanh vị . Không quá béo, không quá đậm, món bánh mang đến cảm giác dễ ăn, phù hợp với mọi lứa tuổi. Khi chấm cùng nước mắm chua ngọt cay nhẹ, hương vị càng trở nên hài hòa và hấp dẫn hơn. Bánh nậm không chỉ là món ăn, mà còn thể hiện sự tinh tế, khéo léo của người Huế trong từng chi tiết nhỏ. Bánh lọc Huế – Dai dẻo, đậm đà khó quên Bánh lọc Huế mang đến hương vị dai giòn, đậm đà đặc trưng Bánh lọc Huế mang đến hương vị dai giòn, đậm đà đặc trưng Khác với bánh nậm, bánh lọc Huế lại gây ấn tượng bởi độ dai và trong của lớp vỏ. Bánh được làm từ bột năng, khi hấp lên trở nên trong suốt, có thể nhìn thấy phần nhân bên trong. Nhân bánh thường gồm tôm và thịt ba chỉ rim đậm vị, có màu sắc hấp dẫn. Khi ăn, lớp vỏ bánh dai dai, kết hợp với vị béo của thịt, vị ngọt của tôm và chút cay nhẹ của nước mắm ớt, tạo nên một hương vị rất riêng. Bánh lọc có hai loại phổ biến: Bánh lọc gói lá (hấp trong lá chuối) Bánh lọc trần (không gói, ăn trực tiếp) Dù ở dạng nào, bánh lọc Huế vẫn giữ được nét đặc trưng là dai – đậm – cay nhẹ , khiến người ăn dễ “ghiền”. Gợi ý: Bạn có thể thưởng thức ở chợ Bình Điền( nếu muốn thưởng thức trọn ven hãy ghé thăm vào các phiên chợ hằng năm) Bánh ít ram Huế – Giòn dai hòa quyện độc đáo Bánh ít ram Huế mang đến sự kết hợp giòn – dẻo đầy thú vị Bánh ít ram Huế mang đến sự kết hợp giòn – dẻo đầy thú vị Bánh ít ram là một trong những món bánh độc đáo nhất của Huế bởi sự kết hợp hai lớp hoàn toàn khác nhau trong cùng một món ăn. Phần dưới là bánh ram – được chiên vàng giòn, có độ giòn rụm hấp dẫn. Phần trên là bánh ít – làm từ bột nếp dẻo, bên trong có nhân tôm thịt đậm đà. Hai phần này được kết hợp lại thành một chiếc bánh nhỏ xinh nhưng đầy đủ hương vị. Khi ăn, bạn sẽ cảm nhận rõ: Độ giòn tan của lớp ram bên dưới Độ dẻo mềm của bánh ít phía trên Vị đậm đà của nhân tôm thịt Chấm thêm nước mắm chua cay, món bánh trở nên trọn vẹn với đủ vị: giòn – dẻo – béo – mặn – cay. Bánh ít ram không chỉ ngon mà còn thể hiện sự sáng tạo trong ẩm thực Huế – biến những nguyên liệu quen thuộc thành một món ăn độc đáo, khó quên. Gợi ý: Bạn có thể thưởng thức ở chợ Bình Điền( nếu muốn thưởng thức trọn ven hãy ghé thăm vào các phiên chợ hằng năm) Bánh bèo Huế – Nhỏ xinh, đậm đà của Huế Bánh bèo Huế mang đến hương vị mềm mịn, đậm đà tinh tế Bánh bèo Huế mang đến hương vị mềm mịn, đậm đà tinh tế Bánh bèo là một trong những món bánh đặc trưng và quen thuộc nhất của ẩm thực Huế. Không cầu kỳ về hình thức nhưng lại mang trong mình sự tinh tế rất riêng, bánh bèo đã trở thành món ăn gắn liền với đời sống thường ngày của người dân cố đô. Bánh được làm từ bột gạo, hấp trong những chén nhỏ xinh, tạo nên từng chiếc bánh trắng mịn, mềm và hơi dai. Chính cách đựng trong chén này đã tạo nên nét đặc trưng riêng, khiến bánh bèo Huế khác biệt so với các vùng khác. Phần “linh hồn” của bánh nằm ở lớp nhân bên trên. Thông thường, bánh bèo được phủ tôm chấy, mỡ hành và đôi khi có thêm da heo chiên giòn. Khi ăn, người ta chan nước mắm chua ngọt cay nhẹ vào từng chén nhỏ, tạo nên sự hòa quyện hoàn hảo giữa các hương vị. Cảm giác khi thưởng thức bánh bèo rất đặc biệt: Độ mềm mịn của bánh Vị đậm đà của tôm chấy Độ béo nhẹ của mỡ hành Và chút cay nồng của nước mắm ớt Tất cả hòa quyện tạo nên một món ăn tuy nhỏ bé nhưng lại vô cùng cuốn hút. Người ăn thường dùng muỗng nhỏ để ăn từng chén, vừa thưởng thức vừa cảm nhận sự tinh tế trong từng miếng bánh. Bánh bèo không chỉ ngon mà còn mang đậm nét văn hóa Huế – nhẹ nhàng, tỉ mỉ và đầy tinh tế. Đây là món ăn thường xuất hiện trong các buổi quà vặt, họp mặt hay đơn giản là những buổi chiều thong thả. Dạo quanh Huế, bạn sẽ dễ dàng bắt gặp những quán bánh bèo nhỏ, bày đầy những chén bánh trắng xinh. Chỉ cần ngồi xuống, thưởng thức vài chén bánh nóng hổi, bạn đã có thể cảm nhận được trọn vẹn cái “chất Huế” – giản dị nhưng sâu sắc. Gợi ý: Bạn có thể thưởng thức ở chợ Bình Điền( nếu muốn thưởng thức trọn ven hãy ghé thăm vào các phiên chợ hằng năm)"
+    "videos": []
   },
   {
     "id": "banh-sung-trau-quat",
