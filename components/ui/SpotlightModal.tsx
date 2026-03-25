@@ -233,10 +233,25 @@ export default function SpotlightModal({
                         <p className="mt-3 max-w-2xl text-sm leading-7 text-white/90 sm:text-base">{shortDesc}</p>
                       )}
 
-                      {mediaItems.length > 0 && (
-                        <p className="mt-3 text-xs font-medium text-white/85">
-                          Media {mainIndex + 1}/{mediaItems.length}
-                        </p>
+                      {mediaItems.length > 1 && (
+                        <div className="mt-3 flex flex-wrap items-center gap-2">
+                          {mediaItems.map((media, index) => {
+                            const active = index === mainIndex;
+                            return (
+                              <button
+                                key={`${media.type}-${media.src}-${index}`}
+                                type="button"
+                                onClick={() => setMainIndex(index)}
+                                aria-label={`Media ${index + 1}`}
+                                className={`h-2.5 w-2.5 rounded-full border transition ${
+                                  active
+                                    ? 'border-hueGold bg-hueGold shadow-[0_0_10px_rgba(196,155,61,0.9)]'
+                                    : 'border-white/60 bg-white/35 hover:bg-white/55'
+                                }`}
+                              />
+                            );
+                          })}
+                        </div>
                       )}
                     </div>
                   </div>
