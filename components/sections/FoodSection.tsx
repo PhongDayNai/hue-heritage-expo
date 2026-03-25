@@ -6,7 +6,9 @@ import { useState } from 'react';
 import AnimatedCard from '../ui/AnimatedCard';
 import SpotlightModal from '../ui/SpotlightModal';
 
-type Food = (typeof food)[number];
+type Food = (typeof food)[number] & {
+  moTaDayDu?: string;
+};
 
 export default function FoodSection() {
   const [active, setActive] = useState<Food | null>(null);
@@ -58,7 +60,7 @@ export default function FoodSection() {
         onClose={() => setActive(null)}
         title={active?.tenMon || ''}
         shortDesc={active ? `${active.tenQuan} · ${active.mucGia}` : ''}
-        fullDesc={active?.moTaNgan}
+        fullDesc={(active as any)?.moTaDayDu || active?.moTaNgan}
         image={active?.anh?.[0]}
         images={active?.anh || []}
         videos={active?.videos || []}

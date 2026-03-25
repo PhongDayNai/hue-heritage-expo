@@ -18,6 +18,11 @@ type Props = {
   address?: string;
 };
 
+type MediaItem = {
+  type: 'image' | 'video';
+  src: string;
+};
+
 export default function SpotlightModal({
   open,
   onClose,
@@ -34,12 +39,18 @@ export default function SpotlightModal({
   const [mainIndex, setMainIndex] = useState(0);
   const [bgIndex, setBgIndex] = useState(0);
 
-  const gallery = useMemo(() => {
+  const galleryImages = useMemo(() => {
     if (images.length > 0) return images;
     return image ? [image] : [];
   }, [images, image]);
 
-  const hasGallery = gallery.length > 0;
+  const mediaItems = useMemo<MediaItem[]>(() => {
+    const media: MediaItem[] = galleryImages.map((src) => ({ type: 'image', src }));
+    media.push(...videos.map((src) => ({ type: 'video' as const, src })));
+    return media;
+  }, [galleryImages, videos]);
+
+  const hasMedia = mediaItems.length > 0;
 
   useEffect(() => {
     if (open) {
@@ -50,14 +61,14 @@ export default function SpotlightModal({
   }, [open, title]);
 
   useEffect(() => {
-    if (!open || gallery.length <= 1) return;
+    if (!open || galleryImages.length <= 1) return;
 
     const timer = window.setInterval(() => {
-      setBgIndex((prev) => (prev + 1) % gallery.length);
+      setBgIndex((prev) => (prev + 1) % galleryImages.length);
     }, 5000);
 
     return () => window.clearInterval(timer);
-  }, [open, gallery.length]);
+  }, [open, galleryImages.length]);
 
   useEffect(() => {
     if (!open) return;
@@ -101,8 +112,8 @@ export default function SpotlightModal({
     };
   }, [open]);
 
-  const nextMain = () => setMainIndex((prev) => (prev + 1) % gallery.length);
-  const prevMain = () => setMainIndex((prev) => (prev - 1 + gallery.length) % gallery.length);
+  const nextMain = () => setMainIndex((prev) => (prev + 1) % mediaItems.length);
+  const prevMain = () => setMainIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
 
   return (
     <AnimatePresence>
@@ -115,16 +126,16 @@ export default function SpotlightModal({
         >
           <div className="pointer-events-none absolute inset-0">
             <AnimatePresence mode="wait">
-              {hasGallery ? (
+              {galleryImages.length > 0 ? (
                 <motion.div
-                  key={gallery[bgIndex]}
+                  key={galleryImages[bgIndex]}
                   className="absolute inset-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.9, ease: 'easeOut' }}
                 >
-                  <Image src={gallery[bgIndex]} alt={title} fill className="object-cover" />
+                  <Image src={galleryImages[bgIndex]} alt={title} fill className="object-cover" />
                 </motion.div>
               ) : (
                 <div className="h-full w-full bg-neutral-900" />
@@ -158,16 +169,28 @@ export default function SpotlightModal({
                 <div className="grid min-h-[70vh] lg:grid-cols-[1.05fr_1fr]">
                   <div className="relative min-h-[320px] border-b border-white/15 lg:min-h-full lg:border-b-0 lg:border-r lg:border-white/15">
                     <AnimatePresence mode="wait">
-                      {hasGallery ? (
+                      {hasMedia ? (
                         <motion.div
-                          key={gallery[mainIndex]}
+                          key={`${mediaItems[mainIndex].type}-${mediaItems[mainIndex].src}`}
                           className="absolute inset-0"
                           initial={{ opacity: 0.2, scale: 1.02 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0.2, scale: 0.99 }}
                           transition={{ duration: 0.45, ease: 'easeOut' }}
                         >
-                          <Image src={gallery[mainIndex]} alt={title} fill className="object-cover" />
+                          {mediaItems[mainIndex].type === 'image' ? (
+                            <Image src={mediaItems[mainIndex].src} alt={title} fill className="object-cover" />
+                          ) : (
+                            <video
+                              src={mediaItems[mainIndex].src}
+                              controls
+                              autoPlay
+                              muted
+                              loop
+                              playsInline
+                              className="h-full w-full bg-black object-contain"
+                            />
+                          )}
                         </motion.div>
                       ) : (
                         <div className="h-full w-full bg-neutral-900" />
@@ -176,13 +199,13 @@ export default function SpotlightModal({
 
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0d0908]/85 via-[#120d0b]/45 to-transparent" />
 
-                    {gallery.length > 1 && (
+                    {mediaItems.length > 1 && (
                       <>
                         <button
                           type="button"
                           onClick={prevMain}
                           className="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/40 bg-black/40 p-2.5 text-white transition hover:bg-black/70"
-                          aria-label="Ảnh trước"
+                          aria-label="Media trước"
                         >
                           <ChevronLeft size={18} />
                         </button>
@@ -190,7 +213,7 @@ export default function SpotlightModal({
                           type="button"
                           onClick={nextMain}
                           className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/40 bg-black/40 p-2.5 text-white transition hover:bg-black/70"
-                          aria-label="Ảnh tiếp theo"
+                          aria-label="Media tiếp theo"
                         >
                           <ChevronRight size={18} />
                         </button>
@@ -210,9 +233,9 @@ export default function SpotlightModal({
                         <p className="mt-3 max-w-2xl text-sm leading-7 text-white/90 sm:text-base">{shortDesc}</p>
                       )}
 
-                      {gallery.length > 1 && (
+                      {mediaItems.length > 0 && (
                         <p className="mt-3 text-xs font-medium text-white/85">
-                          Ảnh {mainIndex + 1}/{gallery.length}
+                          Media {mainIndex + 1}/{mediaItems.length}
                         </p>
                       )}
                     </div>
@@ -265,20 +288,6 @@ export default function SpotlightModal({
                             >
                               {chip}
                             </span>
-                          ))}
-                        </div>
-                      )}
-
-                      {videos.length > 0 && (
-                        <div className="mt-5 space-y-3">
-                          {videos.map((videoSrc, index) => (
-                            <video
-                              key={`${videoSrc}-${index}`}
-                              src={videoSrc}
-                              controls
-                              preload="metadata"
-                              className="w-full rounded-xl border border-neutral-200 bg-black shadow-sm"
-                            />
                           ))}
                         </div>
                       )}
