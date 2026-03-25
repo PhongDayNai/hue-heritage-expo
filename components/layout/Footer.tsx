@@ -1,11 +1,17 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
     <footer className="mt-14 border-t-2 border-hueGold bg-[linear-gradient(135deg,#1a0a04,#2d1407)] text-[#d0b27a]">
       <div className="section-wrap grid gap-8 py-10 md:grid-cols-[1.7fr_1fr_1fr]">
         <div>
-          <h3 className="font-[var(--font-heading)] text-xl text-hueGold">🏯 Trang thông tin Du lịch Huế</h3>
+          <h3 className="flex items-center gap-3 font-[var(--font-heading)] text-xl text-hueGold">
+            <span className="relative h-8 w-8 overflow-hidden rounded-full border border-hueGold/70">
+              <Image src="/images/featured/logo-cndl.jpeg" alt="Logo Huế" fill className="object-cover" />
+            </span>
+            <span>Trang thông tin Du lịch Huế</span>
+          </h3>
           <p className="mt-3 text-sm leading-7">
             Cổng thông tin tổng hợp danh lam thắng cảnh, ẩm thực, văn hoá và sự kiện của Huế theo cách trực quan,
             dễ tra cứu và phù hợp trình bày học thuật.

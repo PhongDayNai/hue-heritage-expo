@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, Search, X } from 'lucide-react';
@@ -139,8 +140,8 @@ export default function Topbar() {
         }`}
       >
         <div className="section-wrap flex items-center gap-4 py-4">
-          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full border-2 border-hueGold/80 bg-[radial-gradient(circle,#d4a017_0%,#7a4c08_100%)] text-2xl shadow-[0_0_20px_rgba(212,160,23,0.35)]">
-            🏯
+          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-hueGold/80 shadow-[0_0_20px_rgba(212,160,23,0.35)]">
+            <Image src="/images/featured/logo-cndl.jpeg" alt="Logo Huế" fill className="object-cover" />
           </div>
 
           <div>

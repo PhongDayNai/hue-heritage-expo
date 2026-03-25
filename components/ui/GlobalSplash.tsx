@@ -38,14 +38,15 @@ export default function GlobalSplash() {
         <div className="grid w-full overflow-hidden rounded-3xl border border-hueGold/40 bg-[#1b120e] shadow-[0_30px_80px_rgba(0,0,0,0.55)] lg:grid-cols-[1.05fr_1fr]">
           <div className="relative min-h-[320px] bg-[#1a110d]">
             <div className="flex h-full min-h-[320px] items-center justify-center p-6 md:p-10">
-              <Image
-                src="/images/featured/splash-logo.svg"
-                alt="Logo splash Huế"
-                width={340}
-                height={340}
-                priority
-                className="h-auto w-[72%] max-w-[340px]"
-              />
+              <div className="relative h-[220px] w-[220px] overflow-hidden rounded-full border-4 border-hueGold/80 shadow-[0_0_28px_rgba(212,160,23,0.45)] md:h-[280px] md:w-[280px]">
+                <Image
+                  src="/images/featured/logo-cndl.jpeg"
+                  alt="Logo splash Huế"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
 
