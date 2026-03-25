@@ -55,6 +55,7 @@ export default function CultureSection() {
         images={active?.anh || []}
         videos={active?.videos || []}
         chips={active?.diemNhan ? [active.diemNhan] : []}
+        mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
       />
     </section>
   );

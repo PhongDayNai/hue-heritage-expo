@@ -86,6 +86,7 @@ export default function FoodSection() {
         videos={active?.videos || []}
         chips={active ? [active.tenQuan, active.mucGia] : []}
         address={active?.diaChi}
+        mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
       />
     </section>
   );

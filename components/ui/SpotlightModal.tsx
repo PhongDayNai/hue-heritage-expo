@@ -16,6 +16,7 @@ type Props = {
   videos?: string[];
   chips?: string[];
   address?: string;
+  mapUrls?: string[];
 };
 
 type MediaItem = {
@@ -33,7 +34,8 @@ export default function SpotlightModal({
   images = [],
   videos = [],
   chips = [],
-  address
+  address,
+  mapUrls = []
 }: Props) {
   const [mainIndex, setMainIndex] = useState(0);
   const [bgIndex, setBgIndex] = useState(0);
@@ -292,6 +294,22 @@ export default function SpotlightModal({
                             <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
                           </span>
                         </p>
+                      )}
+
+                      {mapUrls.length > 0 && (
+                        <div className="mt-3 space-y-2">
+                          {mapUrls.map((url, idx) => (
+                            <a
+                              key={`${url}-${idx}`}
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex rounded-full border border-hueGold/50 bg-hueGold/10 px-3 py-1 text-xs font-semibold text-hueRed hover:bg-hueGold/20"
+                            >
+                              Mở Google Maps {mapUrls.length > 1 ? `#${idx + 1}` : ''}
+                            </a>
+                          ))}
+                        </div>
                       )}
                     </div>
                   </div>

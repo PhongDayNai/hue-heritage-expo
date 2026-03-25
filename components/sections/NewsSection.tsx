@@ -56,6 +56,7 @@ export default function NewsSection() {
         videos={active?.videos || []}
         chips={active ? [new Date(active.thoiGian).toLocaleDateString('vi-VN')] : []}
         address={active?.diaDiem}
+        mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
       />
     </section>
   );

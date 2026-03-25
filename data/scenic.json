@@ -313,7 +313,8 @@
     "diaChi": "Khu vực Bình Điền, TX Hương Trà, TP Huế",
     "videos": [
       "/videos/scenic/binh-dien-retreat/video-01.mp4"
-    ]
+    ],
+    "mapUrl": "https://maps.app.goo.gl/NojogV6VZrmCLRGY9?g_st=ipc"
   },
   {
     "id": "gee-garden",
@@ -359,7 +360,8 @@
     "videos": [
       "/videos/scenic/gee-garden/video-01.mp4",
       "/videos/scenic/gee-garden/video-02.mp4"
-    ]
+    ],
+    "mapUrl": "https://maps.app.goo.gl/m8pLeEJoFETYU6zLA"
   },
   {
     "id": "ami-binh-dien",
@@ -395,7 +397,8 @@
     "videos": [
       "/videos/scenic/ami-binh-dien/video-01.mp4",
       "/videos/scenic/ami-binh-dien/video-02.mp4"
-    ]
+    ],
+    "mapUrl": "https://maps.app.goo.gl/qKwjfj8evu6hYWx69"
   },
   {
     "id": "thuy-dien-binh-dien",
