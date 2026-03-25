@@ -2,7 +2,7 @@
 
 import food from '@/data/food.json';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import AnimatedCard from '../ui/AnimatedCard';
 import SpotlightModal from '../ui/SpotlightModal';
 
@@ -13,6 +13,12 @@ type Food = (typeof food)[number] & {
 export default function FoodSection() {
   const [active, setActive] = useState<Food | null>(null);
 
+  const intro = useMemo(
+    () => food.find((item) => item.id === 'anh-huong-den-am-thuc-binh-dien') as Food | undefined,
+    []
+  );
+  const foodItems = useMemo(() => food.filter((item) => item.id !== 'anh-huong-den-am-thuc-binh-dien'), []);
+
   return (
     <section id="am-thuc" className="bg-white/70 py-12 md:py-16">
       <div className="section-wrap">
@@ -21,8 +27,22 @@ export default function FoodSection() {
           Mỗi mục hiển thị ngắn gọn: Tên món - Tên quán - Mức giá; mở chi tiết để xem thêm thông tin.
         </p>
 
+        {intro && (
+          <article className="mt-8 rounded-2xl border border-hueGold/30 bg-white p-5 md:p-6">
+            <h3 className="text-xl font-semibold text-hueRed">Giới thiệu ẩm thực Bình Điền</h3>
+            <p className="mt-3 text-sm leading-7 text-neutral-700 line-clamp-5">{intro.moTaDayDu || intro.moTaNgan}</p>
+            <button
+              type="button"
+              className="mt-4 text-sm font-semibold text-hueRed"
+              onClick={() => setActive(intro)}
+            >
+              Xem chi tiết
+            </button>
+          </article>
+        )}
+
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {food.map((item, idx) => (
+          {foodItems.map((item, idx) => (
             <AnimatedCard key={item.id} delay={idx * 0.05}>
               <article
                 className="group cursor-pointer overflow-hidden rounded-2xl border border-hueGold/20 bg-white"

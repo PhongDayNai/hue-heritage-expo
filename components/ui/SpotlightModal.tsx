@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, MapPin, Sparkles, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, MapPin, Sparkles, X } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -35,7 +35,6 @@ export default function SpotlightModal({
   chips = [],
   address
 }: Props) {
-  const [expanded, setExpanded] = useState(false);
   const [mainIndex, setMainIndex] = useState(0);
   const [bgIndex, setBgIndex] = useState(0);
 
@@ -54,7 +53,6 @@ export default function SpotlightModal({
 
   useEffect(() => {
     if (open) {
-      setExpanded(false);
       setMainIndex(0);
       setBgIndex(0);
     }
@@ -262,13 +260,7 @@ export default function SpotlightModal({
                     </div>
 
                     <div className="flex-1 px-5 py-5 sm:px-7 sm:py-6">
-                      <div
-                        className={`relative rounded-xl ${
-                          expanded
-                            ? 'max-h-[250px] overflow-y-auto pr-1 sm:max-h-[290px]'
-                            : 'max-h-[250px] overflow-hidden sm:max-h-[290px]'
-                        }`}
-                      >
+                      <div className="relative rounded-xl max-h-[250px] overflow-y-auto pr-1 sm:max-h-[290px]">
                         {fullDesc ? (
                           <p className="text-[15px] leading-8 text-neutral-800">{fullDesc}</p>
                         ) : (
@@ -277,28 +269,8 @@ export default function SpotlightModal({
                           </p>
                         )}
 
-                        {!expanded && fullDesc && fullDesc.length > 220 && (
-                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#f8f4ed] to-transparent" />
-                        )}
                       </div>
 
-                      {fullDesc && fullDesc.length > 220 && (
-                        <button
-                          type="button"
-                          onClick={() => setExpanded((v) => !v)}
-                          className="mt-3 inline-flex items-center gap-2 rounded-full border border-hueGold/60 bg-white px-4 py-2 text-sm font-semibold text-hueRed transition hover:bg-hueGold/10"
-                        >
-                          {expanded ? (
-                            <>
-                              Thu gọn <ChevronUp size={16} />
-                            </>
-                          ) : (
-                            <>
-                              Xem đầy đủ <ChevronDown size={16} />
-                            </>
-                          )}
-                        </button>
-                      )}
 
                       {chips.length > 0 && (
                         <div className="mt-6 flex flex-wrap gap-2">
