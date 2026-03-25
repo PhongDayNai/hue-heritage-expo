@@ -36,7 +36,8 @@
       "Du lịch nhóm"
     ],
     "diaChi": "Khu vực lòng hồ Bình Điền, TX Hương Trà",
-    "videos": []
+    "videos": [],
+    "mapUrl": "https://maps.app.goo.gl/E8AMtANUKkK5UjYa8?g_st=ic"
   },
   {
     "id": "khe-day",
@@ -59,7 +60,8 @@
       "Giáo dục môi trường"
     ],
     "diaChi": "Giáp ranh Bình Điền - Bình Thành, TX Hương Trà",
-    "videos": []
+    "videos": [],
+    "mapUrl": "https://maps.app.goo.gl/vbRvHbEKQrsCMeTK7?g_st=ic"
   },
   {
     "id": "suoi-mau",
@@ -81,7 +83,8 @@
       "Chụp ảnh thiên nhiên"
     ],
     "diaChi": "Xã Hồng Tiến, TX Hương Trà",
-    "videos": []
+    "videos": [],
+    "mapUrl": "https://maps.app.goo.gl/h6ciusXZcbqAt5iC8?g_st=ic"
   },
   {
     "id": "thien-mu",
@@ -215,7 +218,8 @@
       "Sự kiện ngoài trời"
     ],
     "diaChi": "Khu vực Bình Tiến - gần cầu treo Bình Thành cũ",
-    "videos": []
+    "videos": [],
+    "mapUrl": "https://maps.app.goo.gl/MLvBvNr1Ay7A8zn99?g_st=ic"
   },
   {
     "id": "pha-tam-giang",
@@ -314,7 +318,10 @@
     "videos": [
       "/videos/scenic/binh-dien-retreat/video-01.mp4"
     ],
-    "mapUrl": "https://maps.app.goo.gl/NojogV6VZrmCLRGY9?g_st=ipc"
+    "mapUrls": [
+      "https://maps.app.goo.gl/NojogV6VZrmCLRGY9?g_st=ipc",
+      "https://maps.app.goo.gl/aohPqu6rAJJdusHR7?g_st=ic"
+    ]
   },
   {
     "id": "gee-garden",
@@ -421,7 +428,8 @@
       "Du lịch tuyến điểm"
     ],
     "diaChi": "Xã Bình Điền, TX Hương Trà, TP Huế",
-    "videos": []
+    "videos": [],
+    "mapUrl": "https://maps.app.goo.gl/VpF4XQhcNxZPRDPR7?g_st=ic"
   },
   {
     "id": "cac-khe-khac",
@@ -439,6 +447,7 @@
       "Picnic",
       "Chụp ảnh"
     ],
-    "diaChi": "Khu vực ven lòng hồ Bình Điền, TX Hương Trà, TP Huế"
+    "diaChi": "Khu vực ven lòng hồ Bình Điền, TX Hương Trà, TP Huế",
+    "mapUrl": "https://maps.app.goo.gl/vtgtcgTwYPWxXNzR6"
   }
 ]
