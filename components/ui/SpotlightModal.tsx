@@ -52,6 +52,7 @@ export default function SpotlightModal({
   }, [galleryImages, videos]);
 
   const hasMedia = mediaItems.length > 0;
+  const primaryMapUrl = mapUrls[0];
 
   useEffect(() => {
     if (open) {
@@ -288,28 +289,26 @@ export default function SpotlightModal({
                       )}
 
                       {address && (
-                        <p className="mt-5 inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
-                          <MapPin size={16} className="mt-0.5 text-hueRed" />
-                          <span>
-                            <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
-                          </span>
-                        </p>
-                      )}
-
-                      {mapUrls.length > 0 && (
-                        <div className="mt-3 space-y-2">
-                          {mapUrls.map((url, idx) => (
-                            <a
-                              key={`${url}-${idx}`}
-                              href={url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex rounded-full border border-hueGold/50 bg-hueGold/10 px-3 py-1 text-xs font-semibold text-hueRed hover:bg-hueGold/20"
-                            >
-                              Mở Google Maps {mapUrls.length > 1 ? `#${idx + 1}` : ''}
-                            </a>
-                          ))}
-                        </div>
+                        primaryMapUrl ? (
+                          <a
+                            href={primaryMapUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-5 inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
+                          >
+                            <MapPin size={16} className="mt-0.5 text-hueRed" />
+                            <span>
+                              <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
+                            </span>
+                          </a>
+                        ) : (
+                          <p className="mt-5 inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
+                            <MapPin size={16} className="mt-0.5 text-hueRed" />
+                            <span>
+                              <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
+                            </span>
+                          </p>
+                        )
                       )}
                     </div>
                   </div>
