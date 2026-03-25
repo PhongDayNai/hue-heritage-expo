@@ -262,7 +262,13 @@ export default function SpotlightModal({
                     </div>
 
                     <div className="flex-1 px-5 py-5 sm:px-7 sm:py-6">
-                      <div className={`relative ${expanded ? '' : 'max-h-[250px] overflow-hidden sm:max-h-[290px]'}`}>
+                      <div
+                        className={`relative rounded-xl ${
+                          expanded
+                            ? 'max-h-[250px] overflow-y-auto pr-1 sm:max-h-[290px]'
+                            : 'max-h-[250px] overflow-hidden sm:max-h-[290px]'
+                        }`}
+                      >
                         {fullDesc ? (
                           <p className="text-[15px] leading-8 text-neutral-800">{fullDesc}</p>
                         ) : (
