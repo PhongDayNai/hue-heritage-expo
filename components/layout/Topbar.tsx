@@ -73,6 +73,9 @@ export default function Topbar() {
   }, [open]);
 
   const hideFullMobileHeader = compactMobile;
+  const navLabelStyle = {
+    fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'
+  } as const;
 
   return (
     <>
@@ -90,7 +93,7 @@ export default function Topbar() {
       {compactMobile && (
         <div className="sticky top-0 z-[60] border-b border-hueGold/70 bg-hueRed/95 backdrop-blur lg:hidden">
           <div className="section-wrap relative flex items-center justify-between py-2.5">
-            <p className="truncate pr-3 text-sm font-semibold text-[#f5e6c0]">{currentLabel}</p>
+            <p className="truncate pr-3 text-sm font-semibold text-[#f5e6c0]" style={navLabelStyle}>{currentLabel}</p>
             <button
               className="rounded-md border border-white/30 p-2 text-white"
               onClick={() => {
@@ -115,6 +118,7 @@ export default function Topbar() {
                       <Link
                         key={item.href}
                         href={item.href}
+                        style={navLabelStyle}
                         className={`rounded-md px-3 py-2 text-sm leading-6 transition-all duration-300 ${
                           active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:translate-x-1'
                         }`}
@@ -184,6 +188,7 @@ export default function Topbar() {
               <Link
                 key={item.href}
                 href={item.href}
+                style={navLabelStyle}
                 className={`border-r border-hueGold/20 px-4 py-3 text-sm font-medium leading-6 transition ${
                   active ? 'bg-hueGold text-hueInk' : 'text-[#f5e6c0] hover:bg-hueGold hover:text-hueInk'
                 }`}
@@ -207,6 +212,7 @@ export default function Topbar() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    style={navLabelStyle}
                     className={`rounded-md px-3 py-2 text-sm leading-6 transition ${
                       active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'
                     }`}
