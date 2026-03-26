@@ -91,7 +91,7 @@ export default function Topbar() {
       </div>
 
       {compactMobile && (
-        <div className="sticky top-0 z-[60] border-b border-hueGold/70 bg-hueRed/95 backdrop-blur lg:hidden">
+        <div className="sticky top-0 z-[60] border-b border-hueGold/70 bg-hueRed/95 lg:hidden">
           <div className="section-wrap relative flex items-center justify-between py-2.5">
             <p className="truncate pr-3 text-sm font-semibold text-[#f5e6c0]" style={navLabelStyle}>{currentLabel}</p>
             <button
@@ -180,7 +180,7 @@ export default function Topbar() {
         </div>
       </header>
 
-      <nav className={`relative z-50 border-b border-hueGold/70 bg-hueRed/95 backdrop-blur lg:sticky lg:top-0 ${hideFullMobileHeader ? 'hidden lg:block' : ''}`}>
+      <nav className={`relative z-50 border-b border-hueGold/70 bg-hueRed/95 lg:sticky lg:top-0 ${hideFullMobileHeader ? 'hidden lg:block' : ''}`}>
         <div className="section-wrap hidden items-center lg:flex">
           {items.map((item) => {
             const active = pathname === item.href;
