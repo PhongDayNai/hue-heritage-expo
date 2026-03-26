@@ -54,29 +54,6 @@ export default function SpotlightModal({
   const hasMedia = mediaItems.length > 0;
   const primaryMapUrl = mapUrls[0];
 
-  const detailLines = useMemo(() => {
-    if (!fullDesc) return [] as string[];
-
-    let text = fullDesc
-      .replace(/\r/g, ' ')
-      .replace(/\u00A0/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim();
-
-    // Chuẩn hóa khoảng trắng quanh dấu câu cơ bản
-    text = text.replace(/\s+([,.;:!?])/g, '$1');
-    text = text.replace(/([,.;:!?])([^\s])/g, '$1 $2');
-
-    // Chỉ tách dòng tại đầu mục thật sự
-    text = text.replace(/\s+(?=[IVXLCDM]{1,8}\.\s)/g, '\n');
-    text = text.replace(/\s+(?=\d+\-\s)/g, '\n');
-
-    return text
-      .split('\n')
-      .map((line) => line.trim())
-      .filter(Boolean);
-  }, [fullDesc]);
-
   useEffect(() => {
     if (open) {
       setMainIndex(0);
@@ -287,21 +264,8 @@ export default function SpotlightModal({
 
                     <div className="flex-1 px-5 py-5 sm:px-7 sm:py-6">
                       <div className="relative rounded-xl max-h-[50vh] overflow-y-auto pr-1">
-                        {detailLines.length > 0 ? (
-                          <div className="space-y-3 text-[15px] leading-8 text-neutral-800">
-                            {detailLines.map((line, idx) => {
-                              const isRomanHeaderLine = /^[IVXLCDM]{1,8}\.\s+/.test(line);
-
-                              return (
-                                <p
-                                  key={`${idx}-${line.slice(0, 24)}`}
-                                  className={isRomanHeaderLine ? 'pt-1 font-semibold text-neutral-900' : ''}
-                                >
-                                  {line}
-                                </p>
-                              );
-                            })}
-                          </div>
+                        {fullDesc ? (
+                          <p className="text-[15px] leading-8 text-neutral-800">{fullDesc}</p>
                         ) : (
                           <p className="text-[15px] leading-8 text-neutral-600">
                             Nội dung chi tiết đang được cập nhật.
