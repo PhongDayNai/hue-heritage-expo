@@ -53,6 +53,7 @@ export default function SpotlightModal({
 
   const hasMedia = mediaItems.length > 0;
   const primaryMapUrl = mapUrls[0];
+  const shouldPinAddressBottom = (fullDesc?.length || 0) > 420;
 
   useEffect(() => {
     if (open) {
@@ -294,7 +295,7 @@ export default function SpotlightModal({
                             href={primaryMapUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-auto inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
+                            className={`${shouldPinAddressBottom ? 'mt-auto' : 'mt-5'} inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10`}
                           >
                             <MapPin size={16} className="mt-0.5 text-hueRed" />
                             <span>
@@ -302,7 +303,7 @@ export default function SpotlightModal({
                             </span>
                           </a>
                         ) : (
-                          <p className="mt-auto inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
+                          <p className={`${shouldPinAddressBottom ? 'mt-auto' : 'mt-5'} inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm`}>
                             <MapPin size={16} className="mt-0.5 text-hueRed" />
                             <span>
                               <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
