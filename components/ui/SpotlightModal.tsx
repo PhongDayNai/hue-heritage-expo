@@ -53,7 +53,6 @@ export default function SpotlightModal({
 
   const hasMedia = mediaItems.length > 0;
   const primaryMapUrl = mapUrls[0];
-  const shouldPinAddressBottom = (fullDesc?.length || 0) > 420;
 
   useEffect(() => {
     if (open) {
@@ -263,8 +262,8 @@ export default function SpotlightModal({
                       <p className="text-xs font-semibold tracking-[0.12em] text-hueRed/90">THÔNG TIN CHI TIẾT</p>
                     </div>
 
-                    <div className="flex flex-1 flex-col px-5 py-5 sm:px-7 sm:py-6">
-                      <div className="relative rounded-xl max-h-[250px] overflow-y-auto pr-1 sm:max-h-[290px]">
+                    <div className="flex-1 px-5 py-5 sm:px-7 sm:py-6">
+                      <div className="relative rounded-xl max-h-[42vh] overflow-y-auto pr-1">
                         {fullDesc ? (
                           <p className="text-[15px] leading-8 text-neutral-800">{fullDesc}</p>
                         ) : (
@@ -295,7 +294,7 @@ export default function SpotlightModal({
                             href={primaryMapUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`${shouldPinAddressBottom ? 'mt-auto' : 'mt-5'} inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10`}
+                            className="mt-5 inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
                           >
                             <MapPin size={16} className="mt-0.5 text-hueRed" />
                             <span>
@@ -303,7 +302,7 @@ export default function SpotlightModal({
                             </span>
                           </a>
                         ) : (
-                          <p className={`${shouldPinAddressBottom ? 'mt-auto' : 'mt-5'} inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm`}>
+                          <p className="mt-5 inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
                             <MapPin size={16} className="mt-0.5 text-hueRed" />
                             <span>
                               <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
