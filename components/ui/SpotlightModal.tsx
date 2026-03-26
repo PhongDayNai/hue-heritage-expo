@@ -53,6 +53,7 @@ export default function SpotlightModal({
 
   const hasMedia = mediaItems.length > 0;
   const primaryMapUrl = mapUrls[0];
+  const detailLines = useMemo(() => (fullDesc || '').split('\n'), [fullDesc]);
 
   useEffect(() => {
     if (open) {
@@ -265,7 +266,24 @@ export default function SpotlightModal({
                     <div className="flex-1 px-5 py-5 sm:px-7 sm:py-6">
                       <div className="relative rounded-xl max-h-[50vh] overflow-y-auto pr-1">
                         {fullDesc ? (
-                          <p className="whitespace-pre-line text-[15px] leading-8 text-neutral-800">{fullDesc}</p>
+                          <div className="space-y-2 text-[15px] leading-8 text-neutral-800">
+                            {detailLines.map((rawLine, idx) => {
+                              const line = rawLine.trim();
+                              if (!line) return <div key={`blank-${idx}`} className="h-2" />;
+
+                              const isRoman = /^[IVXLCDM]{1,8}\.\s+/i.test(line);
+                              const isNumeric = /^\d+[\-.)]?\s+/.test(line);
+
+                              return (
+                                <p
+                                  key={`${idx}-${line.slice(0, 24)}`}
+                                  className={isRoman ? 'font-bold text-neutral-900' : isNumeric ? 'font-semibold text-neutral-900' : ''}
+                                >
+                                  {line}
+                                </p>
+                              );
+                            })}
+                          </div>
                         ) : (
                           <p className="text-[15px] leading-8 text-neutral-600">
                             Nội dung chi tiết đang được cập nhật.
