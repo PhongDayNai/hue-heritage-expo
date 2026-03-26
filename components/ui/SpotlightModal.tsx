@@ -57,12 +57,32 @@ export default function SpotlightModal({
   const detailLines = useMemo(() => {
     if (!fullDesc) return [] as string[];
 
-    let text = fullDesc.replace(/\s+/g, ' ').trim();
+    let text = fullDesc
+      .replace(/\r/g, ' ')
+      .replace(/\u00A0/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
 
-    // Tách tiêu đề mục kiểu I., II., III....
-    text = text.replace(/\s+(?=([IVXLCDM]{1,8}\.\s))/g, '\n');
-    // Tách tiểu mục kiểu 1- / 2- hoặc 1. / 2.
-    text = text.replace(/\s+(?=(\d+[-.]\s))/g, '\n');
+    // Sửa các trường hợp đứt dòng sai kiểu: "năm 1975".
+    text = text.replace(/năm\s+(\d{4})/gi, 'năm $1');
+
+    // Tách trước các mục lớn: I., II., III...
+    text = text.replace(/\s+(?=([IVXLCDM]{1,8}\.\s+[A-ZÀ-Ỹ]))/g, '\n');
+
+    // Nếu tiêu đề mục lớn đang dính phần thân, tách xuống dòng.
+    text = text.replace(
+      /([IVXLCDM]{1,8}\.\s+[A-ZÀ-Ỹ0-9 ,“”"'’()\-]{4,120}?)(\s+(?=[A-ZÀ-Ỹ][a-zà-ỹ]))/g,
+      '$1\n'
+    );
+
+    // Tách tiểu mục kiểu 1- ...
+    text = text.replace(/\s+(?=(\d+\-\s))/g, '\n');
+
+    // Nếu tiểu mục dính luôn thân bài, tách sau tiêu đề ngắn.
+    text = text.replace(/(\d+\-\s+[^\n]{6,140}?)(\s+(?=[A-ZÀ-Ỹ][a-zà-ỹ]))/g, '$1\n');
+
+    // Tách nhẹ các đoạn sau dấu kết câu để dễ đọc hơn.
+    text = text.replace(/([.!?]\s+)(?=[A-ZÀ-Ỹ][a-zà-ỹ]{2,})/g, '$1\n');
 
     return text
       .split('\n')
@@ -283,21 +303,14 @@ export default function SpotlightModal({
                         {detailLines.length > 0 ? (
                           <div className="space-y-3 text-[15px] leading-8 text-neutral-800">
                             {detailLines.map((line, idx) => {
-                              const romanMatch = line.match(/^([IVXLCDM]{1,8}\.)(\s.*)?$/);
-
-                              if (romanMatch) {
-                                const marker = romanMatch[1];
-                                const content = (romanMatch[2] || '').trim();
-                                return (
-                                  <p key={`${idx}-${line.slice(0, 24)}`} className="pt-1 text-neutral-800">
-                                    <span className="font-semibold text-neutral-900">{marker}</span>
-                                    {content ? ` ${content}` : ''}
-                                  </p>
-                                );
-                              }
+                              const isRomanHeaderLine = /^[IVXLCDM]{1,8}\.\s+/.test(line);
+                              const isNumberHeaderLine = /^\d+\-\s+/.test(line);
 
                               return (
-                                <p key={`${idx}-${line.slice(0, 24)}`}>
+                                <p
+                                  key={`${idx}-${line.slice(0, 24)}`}
+                                  className={isRomanHeaderLine || isNumberHeaderLine ? 'pt-1 font-semibold text-neutral-900' : ''}
+                                >
                                   {line}
                                 </p>
                               );
