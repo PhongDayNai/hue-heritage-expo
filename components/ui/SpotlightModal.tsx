@@ -54,6 +54,22 @@ export default function SpotlightModal({
   const hasMedia = mediaItems.length > 0;
   const primaryMapUrl = mapUrls[0];
 
+  const detailLines = useMemo(() => {
+    if (!fullDesc) return [] as string[];
+
+    let text = fullDesc.replace(/\s+/g, ' ').trim();
+
+    // Tách tiêu đề mục kiểu I., II., III....
+    text = text.replace(/\s+(?=([IVXLCDM]{1,8}\.\s))/g, '\n');
+    // Tách tiểu mục kiểu 1- / 2- hoặc 1. / 2.
+    text = text.replace(/\s+(?=(\d+[-.]\s))/g, '\n');
+
+    return text
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean);
+  }, [fullDesc]);
+
   useEffect(() => {
     if (open) {
       setMainIndex(0);
@@ -264,8 +280,21 @@ export default function SpotlightModal({
 
                     <div className="flex-1 px-5 py-5 sm:px-7 sm:py-6">
                       <div className="relative rounded-xl max-h-[50vh] overflow-y-auto pr-1">
-                        {fullDesc ? (
-                          <p className="text-[15px] leading-8 text-neutral-800">{fullDesc}</p>
+                        {detailLines.length > 0 ? (
+                          <div className="space-y-3 text-[15px] leading-8 text-neutral-800">
+                            {detailLines.map((line, idx) => {
+                              const isRomanHeader = /^[IVXLCDM]{1,8}\.\s/.test(line);
+                              const isNumberHeader = /^\d+[-.]\s/.test(line);
+                              return (
+                                <p
+                                  key={`${idx}-${line.slice(0, 24)}`}
+                                  className={isRomanHeader || isNumberHeader ? 'pt-1 font-semibold text-neutral-900' : ''}
+                                >
+                                  {line}
+                                </p>
+                              );
+                            })}
+                          </div>
                         ) : (
                           <p className="text-[15px] leading-8 text-neutral-600">
                             Nội dung chi tiết đang được cập nhật.
