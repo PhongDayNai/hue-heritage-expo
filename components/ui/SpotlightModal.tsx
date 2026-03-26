@@ -283,13 +283,21 @@ export default function SpotlightModal({
                         {detailLines.length > 0 ? (
                           <div className="space-y-3 text-[15px] leading-8 text-neutral-800">
                             {detailLines.map((line, idx) => {
-                              const isRomanHeader = /^[IVXLCDM]{1,8}\.\s/.test(line);
-                              const isNumberHeader = /^\d+[-.]\s/.test(line);
+                              const romanMatch = line.match(/^([IVXLCDM]{1,8}\.)(\s.*)?$/);
+
+                              if (romanMatch) {
+                                const marker = romanMatch[1];
+                                const content = (romanMatch[2] || '').trim();
+                                return (
+                                  <p key={`${idx}-${line.slice(0, 24)}`} className="pt-1 text-neutral-800">
+                                    <span className="font-semibold text-neutral-900">{marker}</span>
+                                    {content ? ` ${content}` : ''}
+                                  </p>
+                                );
+                              }
+
                               return (
-                                <p
-                                  key={`${idx}-${line.slice(0, 24)}`}
-                                  className={isRomanHeader || isNumberHeader ? 'pt-1 font-semibold text-neutral-900' : ''}
-                                >
+                                <p key={`${idx}-${line.slice(0, 24)}`}>
                                   {line}
                                 </p>
                               );
