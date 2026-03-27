@@ -73,6 +73,7 @@ export default function FoodSection() {
                       .map((line) => line.trim())
                       .filter(Boolean);
                     const mapUrl = ((item as any).mapUrl as string | undefined) || ((item as any).mapUrls as string[] | undefined)?.[0];
+                    const phone = ((item as any).sdt as string | undefined) || undefined;
 
                     return (
                       <AnimatedCard key={item.id} delay={(sectionIdx * 0.05) + idx * 0.05}>
@@ -104,7 +105,17 @@ export default function FoodSection() {
                             <p className="mt-3 line-clamp-1 leading-7 text-neutral-700">{preview}</p>
                           )}
 
-                          <div className="mt-4 border-t border-hueGold/20 pt-3">
+                          <div className="mt-4 border-t border-hueGold/20 pt-3 space-y-2">
+                            {phone && (
+                              <a
+                                href={`tel:${phone.replace(/\s+/g, '')}`}
+                                onClick={(e) => e.stopPropagation()}
+                                className="inline-flex items-center text-sm font-medium text-hueRed underline-offset-2 hover:underline"
+                              >
+                                📞 {phone}
+                              </a>
+                            )}
+
                             {mapUrl ? (
                               <a
                                 href={mapUrl}
