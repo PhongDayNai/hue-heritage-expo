@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { SHOW_SERVICES } from '@/config/featureFlags';
 
 export default function Footer() {
   return (
@@ -21,9 +22,10 @@ export default function Footer() {
         <div>
           <h4 className="border-b border-hueGold/35 pb-2 text-sm font-semibold uppercase tracking-wider text-hueGold">Điều hướng</h4>
           <div className="mt-3 grid gap-2 text-sm">
-            <Link href="/danh-lam" className="hover:text-[#f0cd82]">Danh lam thắng cảnh</Link>
             <Link href="/am-thuc" className="hover:text-[#f0cd82]">Ẩm thực</Link>
+            {SHOW_SERVICES && <Link href="/dich-vu" className="hover:text-[#f0cd82]">Dịch vụ</Link>}
             <Link href="/van-hoa" className="hover:text-[#f0cd82]">Văn hoá</Link>
+            <Link href="/danh-lam" className="hover:text-[#f0cd82]">Danh lam thắng cảnh</Link>
           </div>
         </div>
 

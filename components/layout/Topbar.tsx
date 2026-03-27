@@ -6,10 +6,13 @@ import { usePathname } from 'next/navigation';
 import { Menu, Search, X } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import { SHOW_SERVICES } from '@/config/featureFlags';
+
 const items = [
   { label: 'Trang chủ', href: '/' },
   { label: 'Danh lam thắng cảnh', href: '/danh-lam' },
   { label: 'Ẩm thực', href: '/am-thuc' },
+  ...(SHOW_SERVICES ? [{ label: 'Dịch vụ', href: '/dich-vu' }] : []),
   { label: 'Văn hoá', href: '/van-hoa' },
   { label: 'Tin tức - Sự kiện', href: '/tin-tuc' },
   { label: 'Bản đồ', href: '/ban-do' },

@@ -2,6 +2,7 @@
 
 import culture from '@/data/culture.json';
 import food from '@/data/food.json';
+import services from '@/data/services.json';
 import news from '@/data/news.json';
 import scenic from '@/data/scenic.json';
 import library from '@/data/library.json';
@@ -10,11 +11,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import SpotlightModal from '../ui/SpotlightModal';
+import { SHOW_SERVICES } from '@/config/featureFlags';
 
 const quickLinks = [
   { icon: '🎟️', label: 'Vé điện tử', href: '/ho-tro' },
   { icon: '🗺️', label: 'Bản đồ', href: '/ban-do' },
   { icon: '🍜', label: 'Ẩm thực', href: '/am-thuc' },
+  ...(SHOW_SERVICES ? [{ icon: '🧰', label: 'Dịch vụ', href: '/dich-vu' }] : []),
   { icon: '🏨', label: 'Lưu trú', href: '/ho-tro' },
   { icon: '📞', label: 'Liên hệ', href: '/ho-tro' },
   { icon: '📰', label: 'Tin tức', href: '/tin-tuc' }
@@ -23,7 +26,7 @@ const quickLinks = [
 const infoCards = [
   { icon: '🎟️', title: 'Vé tham quan', text: 'Tổng hợp hình thức mua vé thuận tiện cho từng nhóm du khách.' },
   { icon: '🚌', title: 'Di chuyển', text: 'Gợi ý phương tiện phù hợp theo từng tuyến tham quan trong ngày.' },
-  { icon: '🗺️', title: 'Điểm đến', text: 'Sắp xếp lộ trình ghé thăm theo khu vực trung tâm và ngoại thành.' },
+  { icon: '🧰', title: 'Dịch vụ', text: 'Thông tin taxi, make up, thuê trang phục và spa tại Bình Điền.' },
   { icon: '💰', title: 'Chi phí', text: 'Mức chi phí tham khảo cho vé, ăn uống và dịch vụ đi kèm.' }
 ];
 
@@ -291,6 +294,9 @@ export default function HomePortalModern() {
               <div className="p-4 text-sm">
                 <div className="flex justify-between border-b border-dashed border-[#dcc09a] py-2"><span className="text-neutral-500">Danh lam</span><strong className="text-hueRed">{scenic.length}</strong></div>
                 <div className="flex justify-between border-b border-dashed border-[#dcc09a] py-2"><span className="text-neutral-500">Ẩm thực</span><strong className="text-hueRed">{food.length}</strong></div>
+                {SHOW_SERVICES && (
+                  <div className="flex justify-between border-b border-dashed border-[#dcc09a] py-2"><span className="text-neutral-500">Dịch vụ</span><strong className="text-hueRed">{services.length}</strong></div>
+                )}
                 <div className="flex justify-between border-b border-dashed border-[#dcc09a] py-2"><span className="text-neutral-500">Văn hoá</span><strong className="text-hueRed">{culture.length}</strong></div>
                 <div className="flex justify-between py-2"><span className="text-neutral-500">Tin sự kiện</span><strong className="text-hueRed">{news.length}</strong></div>
               </div>
