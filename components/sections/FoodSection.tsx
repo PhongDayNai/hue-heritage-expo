@@ -68,12 +68,24 @@ export default function FoodSection() {
                     const isExpanded = expandedRestaurantId === item.id;
                     const preview = item.moTaNgan || item.moTaDayDu || 'Đang cập nhật nội dung.';
                     const full = item.moTaDayDu || item.moTaNgan || 'Đang cập nhật nội dung.';
+                    const lines = full
+                      .split('\n')
+                      .map((line) => line.trim())
+                      .filter(Boolean);
+                    const mapUrl = ((item as any).mapUrl as string | undefined) || ((item as any).mapUrls as string[] | undefined)?.[0];
 
                     return (
                       <AnimatedCard key={item.id} delay={(sectionIdx * 0.05) + idx * 0.05}>
-                        <button
-                          type="button"
+                        <article
+                          role="button"
+                          tabIndex={0}
                           onClick={() => setExpandedRestaurantId(isExpanded ? null : item.id)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                              e.preventDefault();
+                              setExpandedRestaurantId(isExpanded ? null : item.id);
+                            }
+                          }}
                           className={`w-full rounded-xl border p-5 text-left text-sm transition ${
                             isExpanded
                               ? 'cursor-zoom-out border-hueGold/45 bg-hueGold/10'
@@ -81,14 +93,33 @@ export default function FoodSection() {
                           }`}
                         >
                           <h4 className="text-base font-semibold leading-6 text-hueRed">{item.tenMon}</h4>
-                          <p
-                            className={`mt-3 leading-7 text-neutral-700 ${
-                              isExpanded ? 'whitespace-pre-line' : 'line-clamp-1'
-                            }`}
-                          >
-                            {isExpanded ? full : preview}
-                          </p>
-                        </button>
+
+                          {isExpanded ? (
+                            <div className="mt-3 space-y-2 leading-7 text-neutral-700">
+                              {lines.map((line, lineIdx) => (
+                                <p key={`${item.id}-line-${lineIdx}`}>{line}</p>
+                              ))}
+                            </div>
+                          ) : (
+                            <p className="mt-3 line-clamp-1 leading-7 text-neutral-700">{preview}</p>
+                          )}
+
+                          <div className="mt-4 border-t border-hueGold/20 pt-3">
+                            {mapUrl ? (
+                              <a
+                                href={mapUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="inline-flex items-center text-sm font-medium text-hueRed underline-offset-2 hover:underline"
+                              >
+                                📍 {item.diaChi || 'Mở Google Maps'}
+                              </a>
+                            ) : (
+                              <p className="text-sm text-neutral-600">📍 {item.diaChi || 'Đang cập nhật địa chỉ'}</p>
+                            )}
+                          </div>
+                        </article>
                       </AnimatedCard>
                     );
                   })}
