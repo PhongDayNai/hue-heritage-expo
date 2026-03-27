@@ -28,6 +28,7 @@ export function setFeatureFlags(next: FeatureFlags): FeatureFlags {
     showServices: !!next.showServices
   };
 
+  fs.mkdirSync(path.dirname(FLAGS_PATH), { recursive: true });
   fs.writeFileSync(FLAGS_PATH, JSON.stringify(safe, null, 2) + '\n', 'utf8');
   return safe;
 }
