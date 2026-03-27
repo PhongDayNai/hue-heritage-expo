@@ -11,17 +11,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import SpotlightModal from '../ui/SpotlightModal';
-import { SHOW_SERVICES } from '@/config/featureFlags';
-
-const quickLinks = [
-  { icon: '🎟️', label: 'Vé điện tử', href: '/ho-tro' },
-  { icon: '🗺️', label: 'Bản đồ', href: '/ban-do' },
-  { icon: '🍜', label: 'Ẩm thực', href: '/am-thuc' },
-  ...(SHOW_SERVICES ? [{ icon: '🧰', label: 'Dịch vụ', href: '/dich-vu' }] : []),
-  { icon: '🏨', label: 'Lưu trú', href: '/ho-tro' },
-  { icon: '📞', label: 'Liên hệ', href: '/ho-tro' },
-  { icon: '📰', label: 'Tin tức', href: '/tin-tuc' }
-];
+import { useFeatureFlags } from '@/lib/useFeatureFlags';
 
 const infoCards = [
   { icon: '🎟️', title: 'Vé tham quan', text: 'Tổng hợp hình thức mua vé thuận tiện cho từng nhóm du khách.' },
@@ -38,6 +28,17 @@ export default function HomePortalModern() {
   const [activeSpot, setActiveSpot] = useState<Scenic | null>(null);
   const [albumVisibleCount, setAlbumVisibleCount] = useState(ALBUM_BATCH);
   const [expandedAlbums, setExpandedAlbums] = useState<Record<string, boolean>>({});
+  const { flags } = useFeatureFlags();
+
+  const quickLinks = [
+    { icon: '🎟️', label: 'Vé điện tử', href: '/ho-tro' },
+    { icon: '🗺️', label: 'Bản đồ', href: '/ban-do' },
+    { icon: '🍜', label: 'Ẩm thực', href: '/am-thuc' },
+    ...(flags.showServices ? [{ icon: '🧰', label: 'Dịch vụ', href: '/dich-vu' }] : []),
+    { icon: '🏨', label: 'Lưu trú', href: '/ho-tro' },
+    { icon: '📞', label: 'Liên hệ', href: '/ho-tro' },
+    { icon: '📰', label: 'Tin tức', href: '/tin-tuc' }
+  ];
 
   const hero = scenic[1] || scenic[0];
   const upcoming = news.slice(0, 4);
@@ -294,7 +295,7 @@ export default function HomePortalModern() {
               <div className="p-4 text-sm">
                 <div className="flex justify-between border-b border-dashed border-[#dcc09a] py-2"><span className="text-neutral-500">Danh lam</span><strong className="text-hueRed">{scenic.length}</strong></div>
                 <div className="flex justify-between border-b border-dashed border-[#dcc09a] py-2"><span className="text-neutral-500">Ẩm thực</span><strong className="text-hueRed">{food.length}</strong></div>
-                {SHOW_SERVICES && (
+                {flags.showServices && (
                   <div className="flex justify-between border-b border-dashed border-[#dcc09a] py-2"><span className="text-neutral-500">Dịch vụ</span><strong className="text-hueRed">{services.length}</strong></div>
                 )}
                 <div className="flex justify-between border-b border-dashed border-[#dcc09a] py-2"><span className="text-neutral-500">Văn hoá</span><strong className="text-hueRed">{culture.length}</strong></div>

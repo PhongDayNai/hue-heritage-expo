@@ -1,8 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { SHOW_SERVICES } from '@/config/featureFlags';
+import { useFeatureFlags } from '@/lib/useFeatureFlags';
 
 export default function Footer() {
+  const { flags } = useFeatureFlags();
+
   return (
     <footer className="mt-14 border-t-2 border-hueGold bg-[linear-gradient(135deg,#1a0a04,#2d1407)] text-[#d0b27a]">
       <div className="section-wrap grid gap-8 py-10 md:grid-cols-[1.7fr_1fr_1fr]">
@@ -23,7 +27,7 @@ export default function Footer() {
           <h4 className="border-b border-hueGold/35 pb-2 text-sm font-semibold uppercase tracking-wider text-hueGold">Điều hướng</h4>
           <div className="mt-3 grid gap-2 text-sm">
             <Link href="/am-thuc" className="hover:text-[#f0cd82]">Ẩm thực</Link>
-            {SHOW_SERVICES && <Link href="/dich-vu" className="hover:text-[#f0cd82]">Dịch vụ</Link>}
+            {flags.showServices && <Link href="/dich-vu" className="hover:text-[#f0cd82]">Dịch vụ</Link>}
             <Link href="/van-hoa" className="hover:text-[#f0cd82]">Văn hoá</Link>
             <Link href="/danh-lam" className="hover:text-[#f0cd82]">Danh lam thắng cảnh</Link>
           </div>
