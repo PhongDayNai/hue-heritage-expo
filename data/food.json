@@ -24,18 +24,20 @@
     "anh": [],
     "diaChi": "Thôn Phú Lợi, xã Bình Điền, TP. Huế",
     "videos": [],
-    "moTaDayDu": "Địa chỉ: thôn Phú Lợi, xã bình điền, TP.Huế\nBờ sông quán\nSđt:0902545952\nCác món nổi bật: Gà đồi nướng 170k/phần\nLẩu các loại: cá trê, dê, bò. 120-150k/phần\nDê hấp 150k/phần"
+    "moTaDayDu": "Địa chỉ: thôn Phú Lợi, xã bình điền, TP.Huế\nBờ sông quán\nSđt:0902545952\nCác món nổi bật: Gà đồi nướng 170k/phần\nLẩu các loại: cá trê, dê, bò. 120-150k/phần\nDê hấp 150k/phần",
+    "mapUrl": "https://maps.app.goo.gl/EDe9UH5Di776o6ft7"
   },
   {
     "id": "quan-be-den",
     "tenMon": "Quán Bé Đen",
     "tenQuan": "Các quán ăn",
     "mucGia": "Đang cập nhật",
-    "moTaNgan": "Quán ăn địa phương gần cầu Bình Điền, phù hợp dừng chân thưởng thức đặc sản.",
+    "moTaNgan": "Quán Bé Đen tại thôn Bình Lợi, nổi bật với Cá Lấu um chuối, Rau má trộn tóp mỡ và Ếch um măng chua.",
     "anh": [],
-    "diaChi": "Thôn Phú Lợi, xã Bình Điền, TP. Huế",
+    "diaChi": "Thôn Bình Lợi, xã Bình Điền, TP. Huế",
     "videos": [],
-    "moTaDayDu": "Thông tin chi tiết đang được cập nhật từ bộ dữ liệu mới (khkt_binhdien.zip)."
+    "moTaDayDu": "Địa chỉ: thôn Bình Lợi, xã Bình Điền, TP. Huế\nQuán Bé Đen\nSđt: 0985211410\nCác món nổi bật:\n- Cá Lấu um chuối: 150-200k/phần\n- Rau má trộn tóp mỡ: 70k/phần\n- Ếch um măng chua: 80k/phần",
+    "mapUrl": "https://maps.app.goo.gl/LW9b53RXgtgXtR2o6"
   },
   {
     "id": "quan-ht",
@@ -46,7 +48,8 @@
     "anh": [],
     "diaChi": "Thôn An Vinh, xã Bình Điền, TP. Huế",
     "videos": [],
-    "moTaDayDu": "Địa chỉ:Thôn An Vinh, xã Bình điền,Tp.Huế\nQUÁN NHẬU HT\nsđt:0932147284\n0867866162\nMón nổi bật: Dê hấp 150k/phần\nCanh mướp đắng cá thát lát 100k/phần\nTôm rang me, hấp, xóc tỏi, sốt thái 100k/phần\nCá lóc um măng 100k/phần\nCác lẩu các loại: cá leo, cá bớp, bò, dê, cá lóc 120-170k/phần"
+    "moTaDayDu": "Địa chỉ:Thôn An Vinh, xã Bình điền,Tp.Huế\nQUÁN NHẬU HT\nsđt:0932147284\n0867866162\nMón nổi bật: Dê hấp 150k/phần\nCanh mướp đắng cá thát lát 100k/phần\nTôm rang me, hấp, xóc tỏi, sốt thái 100k/phần\nCá lóc um măng 100k/phần\nCác lẩu các loại: cá leo, cá bớp, bò, dê, cá lóc 120-170k/phần",
+    "mapUrl": "https://maps.app.goo.gl/XFrSb1Qx5KokgjR68"
   },
   {
     "id": "quan-nhan-anh",
@@ -57,7 +60,8 @@
     "anh": [],
     "diaChi": "Xã Bình Điền, TP. Huế",
     "videos": [],
-    "moTaDayDu": "Địa chỉ:Thôn Đông Hòa, Xã Bình điền, Tp.Huế\nNhà hàng Nhân Ánh (Bình Điền )\nSđt:0398327894\nCác món nổi bật: Lẩu Cá Leo 120k/phần\nCanh nấm mối (theo mùa) 150k/phần\nBánh cuốn thịt heo 90k/phần"
+    "moTaDayDu": "Địa chỉ:Thôn Đông Hòa, Xã Bình điền, Tp.Huế\nNhà hàng Nhân Ánh (Bình Điền )\nSđt:0398327894\nCác món nổi bật: Lẩu Cá Leo 120k/phần\nCanh nấm mối (theo mùa) 150k/phần\nBánh cuốn thịt heo 90k/phần",
+    "mapUrl": "https://maps.app.goo.gl/bU5UDUDiQDTgV3vo9"
   },
   {
     "id": "quan-oc-xinh",
@@ -68,7 +72,8 @@
     "anh": [],
     "diaChi": "Xã Bình Điền, TP. Huế",
     "videos": [],
-    "moTaDayDu": "Địa chỉ: Thôn An Vinh, xã Bình Điền, Tp.Huế\nQuán Ốc Xinh\nsđt:0362677548\nCác món nổi bật: Bạch Tuộc hấp 90k/phần\nBa chỉ nướng 50k/phần\nHàu nướng mỡ hành 60k/phần\nCàng ghẹ rang me 70k/phần"
+    "moTaDayDu": "Địa chỉ: Thôn An Vinh, xã Bình Điền, Tp.Huế\nQuán Ốc Xinh\nsđt:0362677548\nCác món nổi bật: Bạch Tuộc hấp 90k/phần\nBa chỉ nướng 50k/phần\nHàu nướng mỡ hành 60k/phần\nCàng ghẹ rang me 70k/phần",
+    "mapUrl": "https://maps.app.goo.gl/4fxYDVa82ktaxTLz7"
   },
   {
     "id": "banh-beo-hue-binh-dien",
