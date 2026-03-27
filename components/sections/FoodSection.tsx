@@ -63,7 +63,7 @@ export default function FoodSection() {
               <h3 className="mb-4 text-xl font-semibold text-hueRed">{sectionName}</h3>
 
               {sectionName === 'Các quán ăn' ? (
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {items.map((item, idx) => {
                     const isExpanded = expandedRestaurantId === item.id;
                     const preview = item.moTaNgan || item.moTaDayDu || 'Đang cập nhật nội dung.';
@@ -71,23 +71,24 @@ export default function FoodSection() {
 
                     return (
                       <AnimatedCard key={item.id} delay={(sectionIdx * 0.05) + idx * 0.05}>
-                        <article className="rounded-xl border border-hueGold/20 bg-white p-4 text-sm">
-                          <div className="flex items-start justify-between gap-3">
-                            <div>
-                              <h4 className="font-semibold text-hueRed">{item.tenMon}</h4>
-                              <p className={`${isExpanded ? 'mt-2 whitespace-pre-line text-neutral-700' : 'mt-2 line-clamp-1 text-neutral-700'}`}>
-                                {isExpanded ? full : preview}
-                              </p>
-                            </div>
-                            <button
-                              type="button"
-                              className="shrink-0 text-xs font-semibold text-hueRed"
-                              onClick={() => setExpandedRestaurantId(isExpanded ? null : item.id)}
-                            >
-                              {isExpanded ? 'Thu gọn' : 'Mở rộng'}
-                            </button>
-                          </div>
-                        </article>
+                        <button
+                          type="button"
+                          onClick={() => setExpandedRestaurantId(isExpanded ? null : item.id)}
+                          className={`w-full rounded-xl border p-5 text-left text-sm transition ${
+                            isExpanded
+                              ? 'cursor-zoom-out border-hueGold/45 bg-hueGold/10'
+                              : 'cursor-pointer border-hueGold/20 bg-white hover:border-hueGold/40 hover:bg-hueGold/5'
+                          }`}
+                        >
+                          <h4 className="text-base font-semibold leading-6 text-hueRed">{item.tenMon}</h4>
+                          <p
+                            className={`mt-3 leading-7 text-neutral-700 ${
+                              isExpanded ? 'whitespace-pre-line' : 'line-clamp-1'
+                            }`}
+                          >
+                            {isExpanded ? full : preview}
+                          </p>
+                        </button>
                       </AnimatedCard>
                     );
                   })}
