@@ -17,7 +17,7 @@ export default function ScenicSection() {
     <section id="danh-lam" className="section-wrap py-12 md:py-16">
       <h2 className="section-title">Danh lam thắng cảnh</h2>
       <p className="section-subtitle">
-        Khám phá 15 danh lam tiêu biểu của Huế với phần giới thiệu cô đọng, hình ảnh trực quan và gợi ý dịch vụ đi kèm. Bấm vào từng địa điểm để mở thông tin chi tiết nổi bật và đầy đủ hơn.
+        Khám phá các danh lam thắng cảnh tiêu biểu của Bình Điền với mô tả ngắn gọn, hình ảnh trực quan và thông tin dịch vụ đi kèm. Bấm vào từng địa điểm để xem đầy đủ nội dung chi tiết.
       </p>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">

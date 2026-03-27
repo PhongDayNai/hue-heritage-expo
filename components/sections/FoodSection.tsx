@@ -12,6 +12,7 @@ type Food = (typeof food)[number] & {
 
 export default function FoodSection() {
   const [active, setActive] = useState<Food | null>(null);
+  const [expandedRestaurantId, setExpandedRestaurantId] = useState<string | null>(null);
 
   const intro = useMemo(
     () => food.find((item) => item.id === 'anh-huong-den-am-thuc-binh-dien') as Food | undefined,
@@ -60,38 +61,71 @@ export default function FoodSection() {
           {sections.map(([sectionName, items], sectionIdx) => (
             <div key={sectionName}>
               <h3 className="mb-4 text-xl font-semibold text-hueRed">{sectionName}</h3>
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {items.map((item, idx) => (
-                  <AnimatedCard key={item.id} delay={(sectionIdx * 0.05) + idx * 0.05}>
-                    <article
-                      className="group cursor-pointer overflow-hidden rounded-2xl border border-hueGold/20 bg-white"
-                      onClick={() => setActive(item)}
-                    >
-                      <div className="relative h-44 bg-neutral-100">
-                        {item.anh?.[0] ? (
-                          <Image src={item.anh[0]} alt={item.tenMon} fill className="object-cover transition duration-500 group-hover:scale-105" />
-                        ) : (
-                          <div className="flex h-full items-center justify-center px-3 text-center text-xs font-medium text-neutral-500">
-                            Chưa có ảnh từ thư mục nguồn
+
+              {sectionName === 'Các quán ăn' ? (
+                <div className="space-y-3">
+                  {items.map((item, idx) => {
+                    const isExpanded = expandedRestaurantId === item.id;
+                    const preview = item.moTaNgan || item.moTaDayDu || 'Đang cập nhật nội dung.';
+                    const full = item.moTaDayDu || item.moTaNgan || 'Đang cập nhật nội dung.';
+
+                    return (
+                      <AnimatedCard key={item.id} delay={(sectionIdx * 0.05) + idx * 0.05}>
+                        <article className="rounded-xl border border-hueGold/20 bg-white p-4 text-sm">
+                          <div className="flex items-start justify-between gap-3">
+                            <div>
+                              <h4 className="font-semibold text-hueRed">{item.tenMon}</h4>
+                              <p className={`${isExpanded ? 'mt-2 whitespace-pre-line text-neutral-700' : 'mt-2 line-clamp-1 text-neutral-700'}`}>
+                                {isExpanded ? full : preview}
+                              </p>
+                            </div>
+                            <button
+                              type="button"
+                              className="shrink-0 text-xs font-semibold text-hueRed"
+                              onClick={() => setExpandedRestaurantId(isExpanded ? null : item.id)}
+                            >
+                              {isExpanded ? 'Thu gọn' : 'Mở rộng'}
+                            </button>
                           </div>
-                        )}
-                      </div>
-                      <div className="space-y-2 p-4 text-sm">
-                        <p>
-                          <span className="font-semibold text-hueRed">Tên món:</span> {item.tenMon}
-                        </p>
-                        <p>
-                          <span className="font-semibold text-hueRed">Tên quán:</span> {item.tenQuan}
-                        </p>
-                        <p>
-                          <span className="font-semibold text-hueRed">Mức giá:</span> {item.mucGia}
-                        </p>
-                        <button className="pt-1 text-sm font-semibold text-hueRed">Xem chi tiết</button>
-                      </div>
-                    </article>
-                  </AnimatedCard>
-                ))}
-              </div>
+                        </article>
+                      </AnimatedCard>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                  {items.map((item, idx) => (
+                    <AnimatedCard key={item.id} delay={(sectionIdx * 0.05) + idx * 0.05}>
+                      <article
+                        className="group cursor-pointer overflow-hidden rounded-2xl border border-hueGold/20 bg-white"
+                        onClick={() => setActive(item)}
+                      >
+                        <div className="relative h-44 bg-neutral-100">
+                          {item.anh?.[0] ? (
+                            <Image src={item.anh[0]} alt={item.tenMon} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                          ) : (
+                            <div className="flex h-full items-center justify-center px-3 text-center text-xs font-medium text-neutral-500">
+                              Chưa có ảnh từ thư mục nguồn
+                            </div>
+                          )}
+                        </div>
+                        <div className="space-y-2 p-4 text-sm">
+                          <p>
+                            <span className="font-semibold text-hueRed">Tên món:</span> {item.tenMon}
+                          </p>
+                          <p>
+                            <span className="font-semibold text-hueRed">Tên quán:</span> {item.tenQuan}
+                          </p>
+                          <p>
+                            <span className="font-semibold text-hueRed">Mức giá:</span> {item.mucGia}
+                          </p>
+                          <button className="pt-1 text-sm font-semibold text-hueRed">Xem chi tiết</button>
+                        </div>
+                      </article>
+                    </AnimatedCard>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
