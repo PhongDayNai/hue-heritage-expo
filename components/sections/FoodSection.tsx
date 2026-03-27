@@ -73,7 +73,6 @@ export default function FoodSection() {
                       .map((line) => line.trim())
                       .filter(Boolean);
                     const mapUrl = ((item as any).mapUrl as string | undefined) || ((item as any).mapUrls as string[] | undefined)?.[0];
-                    const phone = ((item as any).sdt as string | undefined) || undefined;
 
                     return (
                       <AnimatedCard key={item.id} delay={(sectionIdx * 0.05) + idx * 0.05}>
@@ -97,25 +96,40 @@ export default function FoodSection() {
 
                           {isExpanded ? (
                             <div className="mt-3 space-y-2 leading-7 text-neutral-700">
-                              {lines.map((line, lineIdx) => (
-                                <p key={`${item.id}-line-${lineIdx}`}>{line}</p>
-                              ))}
+                              {lines.map((line, lineIdx) => {
+                                const contactMatch = line.match(/^Liên hệ:\s*(.+)$/i);
+                                const phones = contactMatch
+                                  ? (contactMatch[1].match(/\d[\d\s]{7,}\d/g) || []).map((p) => p.trim())
+                                  : [];
+
+                                if (contactMatch && phones.length > 0) {
+                                  return (
+                                    <p key={`${item.id}-line-${lineIdx}`}>
+                                      <span>Liên hệ: </span>
+                                      {phones.map((phone, idxPhone) => (
+                                        <span key={`${item.id}-phone-${idxPhone}`}>
+                                          {idxPhone > 0 ? ' · ' : ''}
+                                          <a
+                                            href={`tel:${phone.replace(/\s+/g, '')}`}
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="font-medium text-hueRed underline-offset-2 hover:underline"
+                                          >
+                                            {phone}
+                                          </a>
+                                        </span>
+                                      ))}
+                                    </p>
+                                  );
+                                }
+
+                                return <p key={`${item.id}-line-${lineIdx}`}>{line}</p>;
+                              })}
                             </div>
                           ) : (
                             <p className="mt-3 line-clamp-1 leading-7 text-neutral-700">{preview}</p>
                           )}
 
-                          <div className="mt-4 border-t border-hueGold/20 pt-3 space-y-2">
-                            {phone && (
-                              <a
-                                href={`tel:${phone.replace(/\s+/g, '')}`}
-                                onClick={(e) => e.stopPropagation()}
-                                className="inline-flex items-center text-sm font-medium text-hueRed underline-offset-2 hover:underline"
-                              >
-                                📞 {phone}
-                              </a>
-                            )}
-
+                          <div className="mt-4 border-t border-hueGold/20 pt-3">
                             {mapUrl ? (
                               <a
                                 href={mapUrl}
