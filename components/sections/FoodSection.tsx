@@ -19,6 +19,21 @@ export default function FoodSection() {
   );
   const foodItems = useMemo(() => food.filter((item) => item.id !== 'anh-huong-den-am-thuc-binh-dien'), []);
 
+  const sections = useMemo(() => {
+    const order = ['Các quán ăn', 'Các món vỉa hè', 'Đặc sản'];
+    const grouped = new Map<string, Food[]>();
+
+    for (const key of order) grouped.set(key, []);
+
+    for (const item of foodItems) {
+      const key = item.tenQuan || 'Khác';
+      if (!grouped.has(key)) grouped.set(key, []);
+      grouped.get(key)!.push(item as Food);
+    }
+
+    return Array.from(grouped.entries()).filter(([, items]) => items.length > 0);
+  }, [foodItems]);
+
   return (
     <section id="am-thuc" className="bg-white/70 py-12 md:py-16">
       <div className="section-wrap">
@@ -41,36 +56,43 @@ export default function FoodSection() {
           </article>
         )}
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {foodItems.map((item, idx) => (
-            <AnimatedCard key={item.id} delay={idx * 0.05}>
-              <article
-                className="group cursor-pointer overflow-hidden rounded-2xl border border-hueGold/20 bg-white"
-                onClick={() => setActive(item)}
-              >
-                <div className="relative h-44 bg-neutral-100">
-                  {item.anh?.[0] ? (
-                    <Image src={item.anh[0]} alt={item.tenMon} fill className="object-cover transition duration-500 group-hover:scale-105" />
-                  ) : (
-                    <div className="flex h-full items-center justify-center px-3 text-center text-xs font-medium text-neutral-500">
-                      Chưa có ảnh từ thư mục nguồn
-                    </div>
-                  )}
-                </div>
-                <div className="space-y-2 p-4 text-sm">
-                  <p>
-                    <span className="font-semibold text-hueRed">Tên món:</span> {item.tenMon}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-hueRed">Tên quán:</span> {item.tenQuan}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-hueRed">Mức giá:</span> {item.mucGia}
-                  </p>
-                  <button className="pt-1 text-sm font-semibold text-hueRed">Xem chi tiết</button>
-                </div>
-              </article>
-            </AnimatedCard>
+        <div className="mt-8 space-y-10">
+          {sections.map(([sectionName, items], sectionIdx) => (
+            <div key={sectionName}>
+              <h3 className="mb-4 text-xl font-semibold text-hueRed">{sectionName}</h3>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {items.map((item, idx) => (
+                  <AnimatedCard key={item.id} delay={(sectionIdx * 0.05) + idx * 0.05}>
+                    <article
+                      className="group cursor-pointer overflow-hidden rounded-2xl border border-hueGold/20 bg-white"
+                      onClick={() => setActive(item)}
+                    >
+                      <div className="relative h-44 bg-neutral-100">
+                        {item.anh?.[0] ? (
+                          <Image src={item.anh[0]} alt={item.tenMon} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                        ) : (
+                          <div className="flex h-full items-center justify-center px-3 text-center text-xs font-medium text-neutral-500">
+                            Chưa có ảnh từ thư mục nguồn
+                          </div>
+                        )}
+                      </div>
+                      <div className="space-y-2 p-4 text-sm">
+                        <p>
+                          <span className="font-semibold text-hueRed">Tên món:</span> {item.tenMon}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-hueRed">Tên quán:</span> {item.tenQuan}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-hueRed">Mức giá:</span> {item.mucGia}
+                        </p>
+                        <button className="pt-1 text-sm font-semibold text-hueRed">Xem chi tiết</button>
+                      </div>
+                    </article>
+                  </AnimatedCard>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
