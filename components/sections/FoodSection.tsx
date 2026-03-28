@@ -36,6 +36,40 @@ export default function FoodSection() {
     return Array.from(grouped.entries()).filter(([, items]) => items.length > 0);
   }, [foodItems]);
 
+  const activeMapEntries = useMemo(() => {
+    if (!active) return [] as { label: string; url: string }[];
+
+    const lines = ((active as any)?.moTaDayDu || '')
+      .split('\n')
+      .map((line: string) => line.trim())
+      .filter(Boolean);
+
+    const entries: { label: string; url: string }[] = [];
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      if (!/^https?:\/\//i.test(line)) continue;
+
+      const url = line;
+      let label = lines[i - 1] || '';
+      label = label.replace(/^[-+•]\s*/, '').replace(/^Gợi ý:\s*/i, '').trim();
+
+      if (!label) continue;
+
+      if (/gần chợ Bình Điền$/i.test(label) && !/TX\s*Hương\s*Trà/i.test(label)) {
+        label = `${label}, TX Hương Trà`;
+      }
+
+      label = label.replace(/Tp\.Huế/gi, 'TP. Huế').replace(/TP\.Huế/g, 'TP. Huế');
+
+      if (!entries.some((e) => e.url === url)) {
+        entries.push({ label, url });
+      }
+    }
+
+    return entries;
+  }, [active]);
+
   return (
     <section id="am-thuc" className="bg-white/70 py-12 md:py-16">
       <div className="section-wrap">
@@ -227,6 +261,7 @@ export default function FoodSection() {
         chips={active ? [active.tenQuan, active.mucGia] : []}
         address={active?.diaChi}
         mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
+        mapEntries={activeMapEntries}
       />
     </section>
   );

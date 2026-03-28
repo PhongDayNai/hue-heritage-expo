@@ -5,6 +5,11 @@ import { ChevronLeft, ChevronRight, Facebook, MapPin, Phone, Sparkles, X } from 
 import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 
+type MapEntry = {
+  label: string;
+  url: string;
+};
+
 type Props = {
   open: boolean;
   onClose: () => void;
@@ -18,6 +23,7 @@ type Props = {
   chips?: string[];
   address?: string;
   mapUrls?: string[];
+  mapEntries?: MapEntry[];
   enableContactEnhancements?: boolean;
 };
 
@@ -39,6 +45,7 @@ export default function SpotlightModal({
   chips = [],
   address,
   mapUrls = [],
+  mapEntries = [],
   enableContactEnhancements = false
 }: Props) {
   const [mainIndex, setMainIndex] = useState(0);
@@ -56,13 +63,27 @@ export default function SpotlightModal({
   }, [galleryImages, videos]);
 
   const hasMedia = mediaItems.length > 0;
-  const uniqueMapUrls = useMemo(() => {
-    const out: string[] = [];
-    for (const u of mapUrls) {
-      if (typeof u === 'string' && u.trim() && !out.includes(u.trim())) out.push(u.trim());
+  const normalizedMapEntries = useMemo(() => {
+    const out: MapEntry[] = [];
+
+    for (const e of mapEntries) {
+      if (!e || typeof e.label !== 'string' || typeof e.url !== 'string') continue;
+      const label = e.label.trim();
+      const url = e.url.trim();
+      if (!label || !url) continue;
+      if (!out.some((x) => x.url === url)) out.push({ label, url });
     }
+
+    for (const u of mapUrls) {
+      if (typeof u !== 'string' || !u.trim()) continue;
+      const url = u.trim();
+      if (!out.some((x) => x.url === url)) {
+        out.push({ label: `Google Maps ${out.length + 1}`, url });
+      }
+    }
+
     return out;
-  }, [mapUrls]);
+  }, [mapEntries, mapUrls]);
   const detailLines = useMemo(() => {
     const lines = (fullDesc || '').split('\n');
 
@@ -389,7 +410,7 @@ export default function SpotlightModal({
                         </div>
                       )}
 
-                      {(address || uniqueMapUrls.length > 0) && (
+                      {(address || normalizedMapEntries.length > 0) && (
                         <div className="mt-5 space-y-2">
                           {address && (
                             <p className="inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
@@ -400,17 +421,17 @@ export default function SpotlightModal({
                             </p>
                           )}
 
-                          {uniqueMapUrls.map((url, idx) => (
+                          {normalizedMapEntries.map((entry, idx) => (
                             <a
-                              key={`${url}-${idx}`}
-                              href={url}
+                              key={`${entry.url}-${idx}`}
+                              href={entry.url}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
                             >
                               <MapPin size={16} className="mt-0.5 text-hueRed" />
                               <span>
-                                <span className="font-semibold text-neutral-900">Google Maps {idx + 1}:</span> {url}
+                                <span className="font-semibold text-neutral-900">{entry.label}:</span> {entry.url}
                               </span>
                             </a>
                           ))}
