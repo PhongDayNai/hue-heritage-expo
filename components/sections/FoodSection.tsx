@@ -2,6 +2,7 @@
 
 import food from '@/data/food.json';
 import Image from 'next/image';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
 import AnimatedCard from '../ui/AnimatedCard';
 import SpotlightModal from '../ui/SpotlightModal';
@@ -64,105 +65,112 @@ export default function FoodSection() {
 
               {sectionName === 'Các quán ăn' ? (
                 <div className="space-y-4">
-                  {items.map((item, idx) => {
-                    const isExpanded = expandedRestaurantId === item.id;
-                    const preview = item.moTaNgan || item.moTaDayDu || 'Đang cập nhật nội dung.';
-                    const full = item.moTaDayDu || item.moTaNgan || 'Đang cập nhật nội dung.';
-                    const lines = full
-                      .split('\n')
-                      .map((line) => line.trim())
-                      .filter(Boolean);
-                    const mapUrl = ((item as any).mapUrl as string | undefined) || ((item as any).mapUrls as string[] | undefined)?.[0];
+                  <div className="flex flex-wrap gap-3">
+                    {items.map((item, idx) => {
+                      const isExpanded = expandedRestaurantId === item.id;
 
-                    return (
-                      <AnimatedCard key={item.id} delay={(sectionIdx * 0.05) + idx * 0.05}>
-                        <article
-                          role="button"
-                          tabIndex={0}
-                          onClick={() => setExpandedRestaurantId(isExpanded ? null : item.id)}
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                              e.preventDefault();
-                              setExpandedRestaurantId(isExpanded ? null : item.id);
-                            }
-                          }}
-                          className={`w-full rounded-xl border p-5 text-left text-sm transition ${
-                            isExpanded
-                              ? 'cursor-zoom-out border-hueGold/45 bg-hueGold/10'
-                              : 'cursor-pointer border-hueGold/20 bg-white hover:border-hueGold/40 hover:bg-hueGold/5'
-                          }`}
+                      return (
+                        <AnimatedCard key={item.id} delay={(sectionIdx * 0.05) + idx * 0.05}>
+                          <button
+                            type="button"
+                            onClick={() => setExpandedRestaurantId(isExpanded ? null : item.id)}
+                            className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+                              isExpanded
+                                ? 'border-hueRed bg-hueRed text-white'
+                                : 'border-hueGold/30 bg-white text-hueInk hover:border-hueGold/60 hover:bg-hueGold/10'
+                            }`}
+                          >
+                            {item.tenMon}
+                          </button>
+                        </AnimatedCard>
+                      );
+                    })}
+                  </div>
+
+                  <AnimatePresence mode="wait">
+                    {expandedRestaurantId && (() => {
+                      const selected = items.find((item) => item.id === expandedRestaurantId);
+                      if (!selected) return null;
+
+                      const full = selected.moTaDayDu || selected.moTaNgan || 'Đang cập nhật nội dung.';
+                      const lines = full
+                        .split('\n')
+                        .map((line) => line.trim())
+                        .filter(Boolean);
+                      const mapUrl = ((selected as any).mapUrl as string | undefined) || ((selected as any).mapUrls as string[] | undefined)?.[0];
+
+                      return (
+                        <motion.article
+                          key={selected.id}
+                          initial={{ opacity: 0, y: -10, height: 0 }}
+                          animate={{ opacity: 1, y: 0, height: 'auto' }}
+                          exit={{ opacity: 0, y: -6, height: 0 }}
+                          transition={{ duration: 0.25, ease: 'easeOut' }}
+                          className="overflow-hidden rounded-xl border border-hueGold/45 bg-hueGold/10 p-5 text-sm"
                         >
-                          <div className="relative mb-4 h-44 overflow-hidden rounded-xl border border-hueGold/20 bg-neutral-100">
-                            {item.anh?.[0] ? (
-                              <Image
-                                src={item.anh[0]}
-                                alt={item.tenMon}
-                                fill
-                                className="object-cover transition duration-500 group-hover:scale-105"
-                              />
-                            ) : (
-                              <div className="flex h-full items-center justify-center px-3 text-center text-xs font-medium text-neutral-500">
-                                Chưa có ảnh từ thư mục nguồn
-                              </div>
-                            )}
-                          </div>
-
-                          <h4 className="text-base font-semibold leading-6 text-hueRed">{item.tenMon}</h4>
-
-                          {isExpanded ? (
-                            <div className="mt-3 space-y-2 leading-7 text-neutral-700">
-                              {lines.map((line, lineIdx) => {
-                                const contactMatch = line.match(/^Liên hệ:\s*(.+)$/i);
-                                const phones = contactMatch
-                                  ? (contactMatch[1].match(/\d[\d\s]{7,}\d/g) || []).map((p) => p.trim())
-                                  : [];
-
-                                if (contactMatch && phones.length > 0) {
-                                  return (
-                                    <p key={`${item.id}-line-${lineIdx}`}>
-                                      <span>Liên hệ: </span>
-                                      {phones.map((phone, idxPhone) => (
-                                        <span key={`${item.id}-phone-${idxPhone}`}>
-                                          {idxPhone > 0 ? ' · ' : ''}
-                                          <a
-                                            href={`tel:${phone.replace(/\s+/g, '')}`}
-                                            onClick={(e) => e.stopPropagation()}
-                                            className="font-medium text-hueRed underline-offset-2 hover:underline"
-                                          >
-                                            {phone}
-                                          </a>
-                                        </span>
-                                      ))}
-                                    </p>
-                                  );
-                                }
-
-                                return <p key={`${item.id}-line-${lineIdx}`}>{line}</p>;
-                              })}
+                          <div className="grid gap-4 md:grid-cols-[220px_1fr]">
+                            <div className="relative h-44 overflow-hidden rounded-xl border border-hueGold/20 bg-neutral-100">
+                              {selected.anh?.[0] ? (
+                                <Image src={selected.anh[0]} alt={selected.tenMon} fill className="object-cover" />
+                              ) : (
+                                <div className="flex h-full items-center justify-center px-3 text-center text-xs font-medium text-neutral-500">
+                                  Chưa có ảnh từ thư mục nguồn
+                                </div>
+                              )}
                             </div>
-                          ) : (
-                            <p className="mt-3 line-clamp-1 leading-7 text-neutral-700">{preview}</p>
-                          )}
 
-                          <div className="mt-4 border-t border-hueGold/20 pt-3">
-                            {mapUrl ? (
-                              <a
-                                href={mapUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                                className="inline-flex items-center text-sm font-medium text-hueRed underline-offset-2 hover:underline"
-                              >
-                                📍 {item.diaChi || 'Mở Google Maps'}
-                              </a>
-                            ) : (
-                              <p className="text-sm text-neutral-600">📍 {item.diaChi || 'Đang cập nhật địa chỉ'}</p>
-                            )}
+                            <div>
+                              <h4 className="text-base font-semibold leading-6 text-hueRed">{selected.tenMon}</h4>
+                              <div className="mt-3 space-y-2 leading-7 text-neutral-700">
+                                {lines.map((line, lineIdx) => {
+                                  const contactMatch = line.match(/^Liên hệ:\s*(.+)$/i);
+                                  const phones = contactMatch
+                                    ? (contactMatch[1].match(/\d[\d\s]{7,}\d/g) || []).map((p) => p.trim())
+                                    : [];
+
+                                  if (contactMatch && phones.length > 0) {
+                                    return (
+                                      <p key={`${selected.id}-line-${lineIdx}`}>
+                                        <span>Liên hệ: </span>
+                                        {phones.map((phone, idxPhone) => (
+                                          <span key={`${selected.id}-phone-${idxPhone}`}>
+                                            {idxPhone > 0 ? ' · ' : ''}
+                                            <a
+                                              href={`tel:${phone.replace(/\s+/g, '')}`}
+                                              className="font-medium text-hueRed underline-offset-2 hover:underline"
+                                            >
+                                              {phone}
+                                            </a>
+                                          </span>
+                                        ))}
+                                      </p>
+                                    );
+                                  }
+
+                                  return <p key={`${selected.id}-line-${lineIdx}`}>{line}</p>;
+                                })}
+                              </div>
+
+                              <div className="mt-4 border-t border-hueGold/20 pt-3">
+                                {mapUrl ? (
+                                  <a
+                                    href={mapUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center text-sm font-medium text-hueRed underline-offset-2 hover:underline"
+                                  >
+                                    📍 {selected.diaChi || 'Mở Google Maps'}
+                                  </a>
+                                ) : (
+                                  <p className="text-sm text-neutral-600">📍 {selected.diaChi || 'Đang cập nhật địa chỉ'}</p>
+                                )}
+                              </div>
+                            </div>
                           </div>
-                        </article>
-                      </AnimatedCard>
-                    );
-                  })}
+                        </motion.article>
+                      );
+                    })()}
+                  </AnimatePresence>
                 </div>
               ) : (
                 <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
