@@ -18,7 +18,9 @@
     "tenQuan": "Các quán ăn",
     "mucGia": "Theo món",
     "moTaNgan": "Quán ven sông Hữu Trạch, phù hợp nhóm bạn với các món nướng và lẩu đặc sản địa phương.",
-    "anh": [],
+    "anh": [
+      "/assets/food/bo-song-quan/img-01.jpg"
+    ],
     "diaChi": "Thôn Phú Lợi, xã Bình Điền, TP. Huế",
     "videos": [],
     "moTaDayDu": "Thông tin nổi bật:\n- Gà đồi nướng: 170k/phần\n- Lẩu các loại (cá trê, dê, bò): 120–150k/phần\n- Dê hấp: 150k/phần\n\nLiên hệ: 0902545952",
@@ -31,7 +33,9 @@
     "tenQuan": "Các quán ăn",
     "mucGia": "Theo món",
     "moTaNgan": "Quán dân dã tại Bình Lợi, nổi bật với cá lấu um chuối, rau má trộn tóp mỡ và ếch um măng chua.",
-    "anh": [],
+    "anh": [
+      "/assets/food/quan-be-den/img-01.jpg"
+    ],
     "diaChi": "Thôn Bình Lợi, xã Bình Điền, TP. Huế",
     "videos": [],
     "moTaDayDu": "Thông tin nổi bật:\n- Cá lấu um chuối: 150–200k/phần\n- Rau má trộn tóp mỡ: 70k/phần\n- Ếch um măng chua: 80k/phần\n\nLiên hệ: 0985211410",
@@ -57,7 +61,9 @@
     "tenQuan": "Các quán ăn",
     "mucGia": "Theo món",
     "moTaNgan": "Nhà hàng Nhân Ánh tại Đông Hòa, phù hợp khách gia đình với món lẩu cá leo và đặc sản theo mùa.",
-    "anh": [],
+    "anh": [
+      "/assets/food/quan-nhan-anh/img-01.jpg"
+    ],
     "diaChi": "Xã Bình Điền, TP. Huế",
     "videos": [],
     "moTaDayDu": "Thông tin nổi bật:\n- Lẩu cá leo: 120k/phần\n- Canh nấm mối (theo mùa): 150k/phần\n- Bánh cuốn thịt heo: 90k/phần\n\nLiên hệ: 0398327894",
@@ -70,7 +76,9 @@
     "tenQuan": "Các quán ăn",
     "mucGia": "Theo món",
     "moTaNgan": "Quán ốc bình dân tại An Vinh, nổi bật với bạch tuộc hấp, hàu nướng và các món hải sản sốt me.",
-    "anh": [],
+    "anh": [
+      "/assets/food/quan-oc-xinh/img-01.jpg"
+    ],
     "diaChi": "Xã Bình Điền, TP. Huế",
     "videos": [],
     "moTaDayDu": "Thông tin nổi bật:\n- Bạch tuộc hấp: 90k/phần\n- Ba chỉ nướng: 50k/phần\n- Hàu nướng mỡ hành: 60k/phần\n- Càng ghẹ rang me: 70k/phần\n\nLiên hệ: 0362677548",
