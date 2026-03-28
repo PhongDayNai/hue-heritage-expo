@@ -170,11 +170,11 @@
     "mucGia": "25.000 - 40.000 đồng/tô",
     "moTaNgan": "Bún bò Huế có nước dùng đậm đà từ xương và sả, kết hợp sợi bún to, thịt bò, giò heo và rau sống.",
     "anh": [
+      "/assets/food/bun-bo-hue/img-05.jpg",
       "/assets/food/bun-bo-hue/img-01.png",
       "/assets/food/bun-bo-hue/img-02.png",
       "/assets/food/bun-bo-hue/img-03.jpg",
       "/assets/food/bun-bo-hue/img-04.jpg",
-      "/assets/food/bun-bo-hue/img-05.jpg",
       "/assets/food/bun-bo-hue/img-06.jpg"
     ],
     "diaChi": "Chợ Bình Điền, TX Hương Trà",
@@ -193,9 +193,9 @@
     "mucGia": "15.000 - 30.000 đồng/phần",
     "moTaNgan": "Cơm hến - bún hến là món dân dã đậm chất Huế, hài hòa giữa hến xào, rau sống, đậu phộng và mắm ruốc.",
     "anh": [
+      "/assets/food/bun-hen-com-hen/img-03.jpg",
       "/assets/food/bun-hen-com-hen/img-01.png",
       "/assets/food/bun-hen-com-hen/img-02.jpg",
-      "/assets/food/bun-hen-com-hen/img-03.jpg",
       "/assets/food/bun-hen-com-hen/img-04.jpg"
     ],
     "diaChi": "Chợ Bình Điền, TX Hương Trà",
@@ -215,8 +215,8 @@
     "mucGia": "15.000 - 25.000 đồng/phần",
     "moTaNgan": "Bún mắm nêm có hương vị đậm, nồng và cuốn hút; ăn cùng thịt heo, chả, rau sống tạo cảm giác rất “bắt vị”.",
     "anh": [
-      "/assets/food/bun-mam-nem/img-01.png",
       "/assets/food/bun-mam-nem/img-02.png",
+      "/assets/food/bun-mam-nem/img-01.png",
       "/assets/food/bun-mam-nem/img-03.jpg",
       "/assets/food/bun-mam-nem/img-04.jpg"
     ],
@@ -250,8 +250,8 @@
     "mucGia": "10.000 - 20.000 đồng/ly",
     "moTaNgan": "Chè Huế tại Bình Điền có vị ngọt thanh, đa dạng loại chè và phù hợp dùng tráng miệng trong ngày nóng.",
     "anh": [
-      "/assets/food/che-binh-dien/img-01.jpg",
-      "/assets/food/che-binh-dien/img-02.jpg"
+      "/assets/food/che-binh-dien/img-02.jpg",
+      "/assets/food/che-binh-dien/img-01.jpg"
     ],
     "diaChi": "Chợ Bình Điền, TX Hương Trà",
     "videos": [],
