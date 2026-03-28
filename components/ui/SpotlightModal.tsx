@@ -56,7 +56,13 @@ export default function SpotlightModal({
   }, [galleryImages, videos]);
 
   const hasMedia = mediaItems.length > 0;
-  const primaryMapUrl = mapUrls[0];
+  const uniqueMapUrls = useMemo(() => {
+    const out: string[] = [];
+    for (const u of mapUrls) {
+      if (typeof u === 'string' && u.trim() && !out.includes(u.trim())) out.push(u.trim());
+    }
+    return out;
+  }, [mapUrls]);
   const detailLines = useMemo(() => {
     const lines = (fullDesc || '').split('\n');
 
@@ -383,27 +389,32 @@ export default function SpotlightModal({
                         </div>
                       )}
 
-                      {address && (
-                        primaryMapUrl ? (
-                          <a
-                            href={primaryMapUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-5 inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
-                          >
-                            <MapPin size={16} className="mt-0.5 text-hueRed" />
-                            <span>
-                              <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
-                            </span>
-                          </a>
-                        ) : (
-                          <p className="mt-5 inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
-                            <MapPin size={16} className="mt-0.5 text-hueRed" />
-                            <span>
-                              <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
-                            </span>
-                          </p>
-                        )
+                      {(address || uniqueMapUrls.length > 0) && (
+                        <div className="mt-5 space-y-2">
+                          {address && (
+                            <p className="inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
+                              <MapPin size={16} className="mt-0.5 text-hueRed" />
+                              <span>
+                                <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
+                              </span>
+                            </p>
+                          )}
+
+                          {uniqueMapUrls.map((url, idx) => (
+                            <a
+                              key={`${url}-${idx}`}
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
+                            >
+                              <MapPin size={16} className="mt-0.5 text-hueRed" />
+                              <span>
+                                <span className="font-semibold text-neutral-900">Google Maps {idx + 1}:</span> {url}
+                              </span>
+                            </a>
+                          ))}
+                        </div>
                       )}
                     </div>
                   </div>
