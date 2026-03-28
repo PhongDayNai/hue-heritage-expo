@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, MapPin, Sparkles, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, MapPin, Phone, Sparkles, X } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -290,6 +290,39 @@ export default function SpotlightModal({
 
                               const isRoman = /^[IVXLCDM]{1,8}\.\s+/i.test(line);
                               const isNumeric = /^\d+[\-.)]?\s+/.test(line);
+
+                              const match = line.match(/^-\s*(.+?):\s*(https?:\/\/\S+)\s*\|\s*SĐT:\s*([0-9\s.+-]+)/i);
+                              if (match) {
+                                const pageName = match[1].trim();
+                                const fbUrl = match[2].trim();
+                                const phoneRaw = match[3].trim();
+                                const phoneHref = phoneRaw.replace(/\s+/g, '');
+
+                                return (
+                                  <div
+                                    key={`${idx}-${line.slice(0, 24)}`}
+                                    className="flex flex-wrap items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2"
+                                  >
+                                    <a
+                                      href={fbUrl}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="inline-flex items-center gap-1.5 font-medium text-[#1877F2] hover:underline"
+                                    >
+                                      <ExternalLink size={14} />
+                                      {pageName}
+                                    </a>
+                                    <span className="text-neutral-400">|</span>
+                                    <a
+                                      href={`tel:${phoneHref}`}
+                                      className="inline-flex items-center gap-1.5 font-medium text-hueRed hover:underline"
+                                    >
+                                      <Phone size={14} />
+                                      SĐT: {phoneRaw}
+                                    </a>
+                                  </div>
+                                );
+                              }
 
                               return (
                                 <p
