@@ -41,7 +41,7 @@ export default function FoodSection() {
       <div className="section-wrap">
         <h2 className="section-title">Ẩm thực Huế</h2>
         <p className="section-subtitle">
-          Mỗi mục hiển thị ngắn gọn: Tên món - Tên quán - Mức giá; mở chi tiết để xem thêm thông tin.
+          Khám phá ẩm thực Bình Điền theo từng nhóm món, bấm vào từng mục để xem thông tin chi tiết.
         </p>
 
         {intro && (
@@ -217,6 +217,7 @@ export default function FoodSection() {
         title={active?.tenMon || ''}
         shortDesc={active ? `${active.tenQuan} · ${active.mucGia}` : ''}
         fullDesc={(active as any)?.moTaDayDu || active?.moTaNgan}
+        fullDescTitle={(active as any)?.id === 'anh-huong-den-am-thuc-binh-dien' ? 'Giới thiệu ẩm thực Bình Điền' : undefined}
         image={active?.anh?.[0]}
         images={active?.anh || []}
         videos={active?.videos || []}
