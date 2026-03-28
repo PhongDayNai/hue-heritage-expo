@@ -6,7 +6,9 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Các yếu tố bản địa và văn hóa vùng cao góp phần tạo nên bản sắc ẩm thực Bình Điền.",
     "anh": [
-      "/assets/food/anh-huong-den-am-thuc-binh-dien/img-01.jpg"
+      "/images/food/anh-huong-den-am-thuc-binh-dien/img-01.jpg",
+      "/images/food/anh-huong-den-am-thuc-binh-dien/img-02.jpg",
+      "/images/food/anh-huong-den-am-thuc-binh-dien/img-03.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -128,9 +130,9 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Bánh ép Huế Bánh ép Huế là món ăn vặt dân dã nổi tiếng của Huế, có nguồn gốc từ vùng Thuận An.",
     "anh": [
-      "/assets/food/banh-ep/img-01.png",
-      "/assets/food/banh-ep/img-02.png",
-      "/assets/food/banh-ep/img-03.jpg"
+      "/images/food/banh-ep/img-01.png",
+      "/images/food/banh-ep/img-02.png",
+      "/images/food/banh-ep/img-03.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -162,12 +164,12 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "<w:left w:space=\"0\" w:sz=\"0\" w:val=\"nil\"/><w:bottom w:space=\"0\" w:sz=\"0\" w:val=\"nil\"/><w:right w:space=\"0\" w:sz=\"0\" w:val=\"nil\"/><w:between w:space=\"0\" w:sz=\"0\" w:val=\"nil\"/></w:p…",
     "anh": [
-      "/assets/food/bun-bo-hue/img-01.png",
-      "/assets/food/bun-bo-hue/img-02.png",
-      "/assets/food/bun-bo-hue/img-03.jpg",
-      "/assets/food/bun-bo-hue/img-04.jpg",
-      "/assets/food/bun-bo-hue/img-05.jpg",
-      "/assets/food/bun-bo-hue/img-06.jpg"
+      "/images/food/bun-bo-hue/img-01.png",
+      "/images/food/bun-bo-hue/img-02.png",
+      "/images/food/bun-bo-hue/img-03.jpg",
+      "/images/food/bun-bo-hue/img-04.jpg",
+      "/images/food/bun-bo-hue/img-05.jpg",
+      "/images/food/bun-bo-hue/img-06.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -185,10 +187,10 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Cơm hến – Bún hến – Hương vị dân dã của Huế Cơm hến – bún hến mang đến hương vị đậm đà, cay nồng đặc trưng Cơm hến – bún hến mang đến hương vị đậm đà, cay nồng đặc trưng Nhắc đến…",
     "anh": [
-      "/assets/food/bun-hen-com-hen/img-01.png",
-      "/assets/food/bun-hen-com-hen/img-02.jpg",
-      "/assets/food/bun-hen-com-hen/img-03.jpg",
-      "/assets/food/bun-hen-com-hen/img-04.jpg"
+      "/images/food/bun-hen-com-hen/img-01.png",
+      "/images/food/bun-hen-com-hen/img-02.jpg",
+      "/images/food/bun-hen-com-hen/img-03.jpg",
+      "/images/food/bun-hen-com-hen/img-04.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -207,10 +209,10 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Bún mắm nêm – Hương vị đậm đà của Huế Bún mắm nêm mang đến hương vị đậm đà, mặn mà khó quên Bún mắm nêm mang đến hương vị đậm đà, mặn mà khó quên Trong bản đồ ẩm thực miền Trung,…",
     "anh": [
-      "/assets/food/bun-mam-nem/img-01.png",
-      "/assets/food/bun-mam-nem/img-02.png",
-      "/assets/food/bun-mam-nem/img-03.jpg",
-      "/assets/food/bun-mam-nem/img-04.jpg"
+      "/images/food/bun-mam-nem/img-01.png",
+      "/images/food/bun-mam-nem/img-02.png",
+      "/images/food/bun-mam-nem/img-03.jpg",
+      "/images/food/bun-mam-nem/img-04.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -227,8 +229,8 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Bún thịt nướng Huế – Hương vị dân dã của Huế Bún thịt nướng Huế mang đến hương vị thơm ngon, đậm đà khó cưỡng Bún thịt nướng Huế mang đến hương vị thơm ngon, đậm đà khó cưỡng Tron…",
     "anh": [
-      "/assets/food/bun-thit-nuong/img-01.jpg",
-      "/assets/food/bun-thit-nuong/img-02.jpg"
+      "/images/food/bun-thit-nuong/img-01.jpg",
+      "/images/food/bun-thit-nuong/img-02.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -242,8 +244,8 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Chè Huế – Hương vị ngọt ngào của Huế Chè Huế mang đến hương vị thanh mát, tinh tế và đa dạng Chè Huế mang đến hương vị thanh mát, tinh tế và đa dạng Nhắc đến ẩm thực Huế, bên cạnh…",
     "anh": [
-      "/assets/food/che-binh-dien/img-01.jpg",
-      "/assets/food/che-binh-dien/img-02.jpg"
+      "/images/food/che-binh-dien/img-01.jpg",
+      "/images/food/che-binh-dien/img-02.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -260,8 +262,8 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "<w:left w:space=\"0\" w:sz=\"0\" w:val=\"nil\"/><w:bottom w:space=\"0\" w:sz=\"0\" w:val=\"nil\"/><w:right w:space=\"0\" w:sz=\"0\" w:val=\"nil\"/><w:between w:space=\"0\" w:sz=\"0\" w:val=\"nil\"/></w:p…",
     "anh": [
-      "/assets/food/nem-hue/img-01.jpg",
-      "/assets/food/nem-hue/img-02.jpg"
+      "/images/food/nem-hue/img-01.jpg",
+      "/images/food/nem-hue/img-02.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -275,8 +277,8 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Tré Huế – Món nhắm dân dã của Huế Tré Huế mang đến hương vị chua cay, giòn dai đầy cuốn hút Tré Huế mang đến hương vị chua cay, giòn dai đầy cuốn hút Nhắc đến ẩm thực Huế, bên cạn…",
     "anh": [
-      "/assets/food/tre-hue/img-01.jpg",
-      "/assets/food/tre-hue/img-02.jpg"
+      "/images/food/tre-hue/img-01.jpg",
+      "/images/food/tre-hue/img-02.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -289,8 +291,8 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Bánh Sừng Trâu - Món ăn truyền thống đặc biệt của đồng bào Cơ Tu Nếu bạn từng nghĩ Huế chỉ là kinh thành cổ kính với những món ăn cung đình cầu kỳ, hãy một lần ngược dòng lên xã B…",
     "anh": [
-      "/assets/food/banh-sung-trau-quat/img-01.png",
-      "/assets/food/banh-sung-trau-quat/img-02.jpg"
+      "/images/food/banh-sung-trau-quat/img-01.png",
+      "/images/food/banh-sung-trau-quat/img-02.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -303,8 +305,8 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Búp chuối bóp Búp Chuối Bóp: Hương Vị Vườn Quê Và Những Mảnh Kí ức Yên Ả Giữa dòng chảy hối hả của cuộc sống hiện đại với đủ đầy những món ngon vật lạ, có bao giờ lòng bạn chợt th…",
     "anh": [
-      "/assets/food/bup-chuoi-bop-binh-dien/img-01.webp",
-      "/assets/food/bup-chuoi-bop-binh-dien/img-02.jpg"
+      "/images/food/bup-chuoi-bop-binh-dien/img-01.webp",
+      "/images/food/bup-chuoi-bop-binh-dien/img-02.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -317,7 +319,7 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Cá xanh nướng Khi đến với Bình Điền, thực khách lại bị &quot;bỏ bùa&quot; bởi mùi thơm nức mũi của Cá niên nướng bên bếp lửa nhà sàn.",
     "anh": [
-      "/assets/food/ca-xanh-nuong-binh-dien/img-01.jpg"
+      "/images/food/ca-xanh-nuong-binh-dien/img-01.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -330,9 +332,9 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Gà đồi nướng than với lớp da vàng giòn và hương thơm đặc trưng.",
     "anh": [
-      "/assets/food/ga-doi-nuong/img-01.jpg",
-      "/assets/food/ga-doi-nuong/img-02.jpg",
-      "/assets/food/ga-doi-nuong/img-03.jpg"
+      "/images/food/ga-doi-nuong/img-01.jpg",
+      "/images/food/ga-doi-nuong/img-02.jpg",
+      "/images/food/ga-doi-nuong/img-03.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -345,11 +347,11 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Heo Bản Gác Bếp Bình Điền – Chút Nồng Nàn Giữa Khói Bếp Đại Ngàn Trong cái se se lạnh của vùng bán sơn địa Bình Điền, không có gì mời gọi và thân thuộc hơn hình ảnh những dải thịt…",
     "anh": [
-      "/assets/food/heo-ban-gac-bep-binh-dien/img-01.jpg"
+      "/images/food/heo-ban-gac-bep-binh-dien/img-01.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [
-      "/assets/food/heo-ban-gac-bep-binh-dien/video-01.mp4"
+      "/videos/food/heo-ban-gac-bep-binh-dien/video-01.mp4"
     ],
     "moTaDayDu": "Heo Bản Gác Bếp Bình Điền – Chút Nồng Nàn Giữa Khói Bếp Đại Ngàn\nTrong cái se se lạnh của vùng bán sơn địa Bình Điền, không có gì mời gọi và thân thuộc hơn hình ảnh những dải thịt heo bản treo lủng lẳng trên gác bếp, ám màu khói thời gian. Heo bản gác bếp không chỉ đơn thuần là một phương pháp dự trữ thực phẩm thông minh của người đồng bào Cơ Tu mà đã trở thành một &quot;di sản&quot; vị giác, gói trọn cả hương vị núi rừng và tấm lòng hiếu khách của con người nơi đây.\n1. Nguồn nguyên liệu từ những triền đồi tự nhiên\nSự khác biệt của món ăn này bắt đầu ngay từ khâu chọn nguyên liệu. Heo bản ở Bình Điền không phải là loại heo nuôi công nghiệp mà là giống heo cỏ, heo đen được chăn thả tự nhiên trên những sườn đồi và cánh rừng thưa. Chúng tự tìm kiếm nguồn thức ăn từ rau củ dại và ngô khoai, chính vì vậy thớ thịt thường rất chắc, ít mỡ, bì dày và mang vị ngọt đậm đà, thơm tho đặc trưng mà không loại thịt nào dưới xuôi sánh kịp.\n2. Nghệ thuật tẩm ướp và &quot;thổi hồn&quot; bằng khói bếp\nQuy trình để tạo nên một miếng thịt heo gác bếp chuẩn vị là cả một sự kiên nhẫn và tỉ mỉ của người dân bản địa:\nGia vị mộc mạc: Thịt sau khi được thái thành từng dải dọc theo thớ sẽ được tẩm ướp cùng muối hạt, ớt bột và đặc biệt là hạt tiêu rừng (mắc khén) thơm nồng. Không cần những loại nước sốt cầu kỳ, chính những gia vị giản đơn từ núi rừng mới làm tôn lên được cái &quot;chất&quot; nguyên bản của thịt heo.\nHong khói qua ngày tháng: Những dải thịt được treo lên dàn tre phía trên bếp lửa bập bùng trong gian bếp chính. Thịt không được làm chín bằng lửa trực tiếp mà chín dần bằng hơi nóng và làn khói từ củi gỗ rừng khô (thường là gỗ ít nhựa để khói thơm hơn). Qua nhiều ngày đêm, lớp vỏ bên ngoài sẽ chuyển sang màu nâu đỏ sậm óng ả, trong khi bên trong vẫn giữ được màu hồng tươi và độ dai ngọt tự nhiên.\n3. Bản giao hưởng của vị giác và tình thân\nThưởng thức heo bản gác bếp vào những ngày mưa lạnh ở Bình Điền là một trải nghiệm chạm đến mọi giác quan:\nCách thưởng thức đúng điệu: Người ta thường lấy dải thịt xuống, vùi vào tro nóng hoặc nướng sơ qua trên than hồng cho dậy mùi khói, sau đó dùng chày gỗ đập nhẹ để thớ thịt mềm ra rồi xé nhỏ.\nHương vị đa tầng: Khi nhai chậm rãi, bạn sẽ cảm nhận được vị ngọt của thịt chín ám khói, vị cay nồng nàn của ớt và tiêu rừng, kết hợp với độ dai sần sật của lớp bì heo.\nSự gắn kết: Món ăn này ngon nhất khi được chia sẻ bên bếp lửa hồng, nơi mọi người quây quần kể cho nhau nghe những câu chuyện về nương rẫy, về mùa màng. Hơi ấm từ bếp lửa và vị đậm đà của thịt tạo nên một sợi dây gắn kết vô hình, xua tan đi cái giá lạnh của đại ngàn.\nGợi ý: bạn có thể mua món ăn này vào các phiên chợ Bình Điền hằng năm\nMức giá: 350-400 nghìn đồng/kg\nChợ Bình Điền"
   },
@@ -360,8 +362,8 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Heo bản nướng Hương vị đậm đà từ đại ngàn Bình Điền Nếu như Bánh giò Bến Hiệp là niềm tự hào của đất lúa Thái Bình, thì khi ngược dòng Hương Giang lên với vùng gò đồi xã Bình Điền…",
     "anh": [
-      "/assets/food/heo-ban-nuong-binh-dien/img-01.jpg",
-      "/assets/food/heo-ban-nuong-binh-dien/img-02.png"
+      "/images/food/heo-ban-nuong-binh-dien/img-01.jpg",
+      "/images/food/heo-ban-nuong-binh-dien/img-02.png"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -374,7 +376,7 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Gỏi rau má trộn tóp mỡ - Đặc sản Bình Điền -Rau má non Bình Điền: loại rau má đặc biệt chỉ có ở bình điền Không giống như loại rau má lá to, bóng bẩy thường thấy ở chợ phố, rau má…",
     "anh": [
-      "/assets/food/rau-ma/img-01.jpg"
+      "/images/food/rau-ma/img-01.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -387,7 +389,7 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "Vả trộn Huế – Món ăn dân dã của Huế Vả trộn Huế mang đến hương vị bùi béo, chua cay đầy hấp dẫn Vả trộn Huế mang đến hương vị bùi béo, chua cay đầy hấp dẫn Nhắc đến ẩm thực Huế, n…",
     "anh": [
-      "/assets/food/va-tron/img-01.jpg"
+      "/images/food/va-tron/img-01.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
@@ -400,7 +402,7 @@
     "mucGia": "Đang cập nhật",
     "moTaNgan": "XÔI NẾP THAN Xôi nếp than – từ lâu đã trở thành một phần quen thuộc trong đời sống hằng ngày của bà con Bình Điền.",
     "anh": [
-      "/assets/food/xoi-nep-than-binh-dien/img-01.jpg"
+      "/images/food/xoi-nep-than-binh-dien/img-01.jpg"
     ],
     "diaChi": "Khu vực Bình Điền, TX Hương Trà",
     "videos": [],
