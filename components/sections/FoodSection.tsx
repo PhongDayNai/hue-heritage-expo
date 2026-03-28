@@ -92,6 +92,21 @@ export default function FoodSection() {
                               : 'cursor-pointer border-hueGold/20 bg-white hover:border-hueGold/40 hover:bg-hueGold/5'
                           }`}
                         >
+                          <div className="relative mb-4 h-44 overflow-hidden rounded-xl border border-hueGold/20 bg-neutral-100">
+                            {item.anh?.[0] ? (
+                              <Image
+                                src={item.anh[0]}
+                                alt={item.tenMon}
+                                fill
+                                className="object-cover transition duration-500 group-hover:scale-105"
+                              />
+                            ) : (
+                              <div className="flex h-full items-center justify-center px-3 text-center text-xs font-medium text-neutral-500">
+                                Chưa có ảnh từ thư mục nguồn
+                              </div>
+                            )}
+                          </div>
+
                           <h4 className="text-base font-semibold leading-6 text-hueRed">{item.tenMon}</h4>
 
                           {isExpanded ? (
