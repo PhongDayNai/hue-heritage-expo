@@ -502,5 +502,66 @@
       "Chụp ảnh"
     ],
     "diaChi": "Bình Điền, TX Hương Trà, TP Huế"
+  },
+  {
+    "id": "nha-cua-tuoi-thanh-xuan",
+    "tenDiaDiem": "Nhà của tuổi thanh xuân",
+    "gioiThieuNgan": "Nhà của tuổi thanh xuân là một quán nhỏ mang đậm phong cách hoài niệm, nằm nép mình giữa lòng thành phố Huế. Ngay từ cái tên, quán đã gợi lên cảm giác gần gũi, như một góc ký ức dà",
+    "gioiThieuDayDu": "Nhà của tuổi thanh xuân là một quán nhỏ mang đậm phong cách hoài niệm, nằm nép mình giữa lòng thành phố Huế. Ngay từ cái tên, quán đã gợi lên cảm giác gần gũi, như một góc ký ức dành riêng cho những ai muốn tìm lại những tháng năm tươi đẹp của tuổi trẻ.\nKhông gian quán được trang trí theo phong cách vintage với bàn ghế gỗ, những bức tường phủ màu thời gian và các vật dụng xưa cũ. Ánh đèn vàng ấm áp kết hợp với âm nhạc nhẹ nhàng tạo nên một bầu không khí thư giãn, rất thích hợp để trò chuyện, học bài hay đơn giản là ngồi một mình suy ngẫm. Mỗi góc nhỏ trong quán đều có thể trở thành một background “sống ảo” đầy cảm xúc.\nKhông chỉ gây ấn tượng bởi không gian, quán còn phục vụ nhiều loại đồ uống đa dạng như cà phê, trà sữa, nước ép với hương vị dễ uống và giá cả hợp lý. Nhân viên thân thiện, dễ mến cũng là một điểm cộng khiến nhiều khách quay lại.\n“Nhà của tuổi thanh xuân” không chỉ là một quán cà phê, mà còn là nơi lưu giữ cảm xúc, nơi mỗi người có thể tạm dừng lại giữa nhịp sống vội vã để tận hưởng những phút giây bình yên.\nThời điểm phù hợp để đến: quanh năm.\nPhương tiện phù hợp nhất là xe máy, xe hơi.",
+    "anh": [
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-01.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-02.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-03.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-04.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-05.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-06.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-07.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-08.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-09.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-10.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-11.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-12.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-13.jpg"
+    ],
+    "dichVu": [
+      "Cà phê",
+      "Check-in",
+      "Không gian hoài niệm"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/video-01.mp4",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/video-02.mp4",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/video-03.mp4"
+    ]
+  },
+  {
+    "id": "dia-dao-khu-uy-tri-thien",
+    "tenDiaDiem": "Địa đạo khu Uỷ Trị Thiên",
+    "gioiThieuNgan": "Điểm tham quan lịch sử tại khu vực Bình Điền, phù hợp tìm hiểu tư liệu và check-in.",
+    "gioiThieuDayDu": "Địa đạo khu Uỷ Trị Thiên là điểm tham quan mang giá trị lịch sử tại khu vực Bình Điền, TX Hương Trà. Địa điểm phù hợp cho hoạt động tìm hiểu lịch sử địa phương kết hợp trải nghiệm tham quan thực địa.",
+    "anh": [
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-01.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-02.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-03.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-04.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-05.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-06.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-07.webp",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-08.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-09.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-10.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-11.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-12.webp"
+    ],
+    "dichVu": [
+      "Tham quan",
+      "Tìm hiểu lịch sử",
+      "Chụp ảnh"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": [
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/video-01.mp4"
+    ]
   }
 ]
