@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ExternalLink, MapPin, Phone, Sparkles, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Facebook, MapPin, Phone, Sparkles, X } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -309,16 +309,17 @@ export default function SpotlightModal({
                                       rel="noreferrer"
                                       className="inline-flex items-center gap-1.5 font-medium text-[#1877F2] hover:underline"
                                     >
-                                      <ExternalLink size={14} />
+                                      <Facebook size={14} />
                                       {pageName}
                                     </a>
                                     <span className="text-neutral-400">|</span>
+                                    <span className="text-neutral-700">SĐT:</span>
                                     <a
                                       href={`tel:${phoneHref}`}
                                       className="inline-flex items-center gap-1.5 font-medium text-hueRed hover:underline"
                                     >
                                       <Phone size={14} />
-                                      SĐT: {phoneRaw}
+                                      {phoneRaw}
                                     </a>
                                   </div>
                                 );
