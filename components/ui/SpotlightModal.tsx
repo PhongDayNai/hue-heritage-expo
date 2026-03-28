@@ -55,7 +55,18 @@ export default function SpotlightModal({
 
   const hasMedia = mediaItems.length > 0;
   const primaryMapUrl = mapUrls[0];
-  const detailLines = useMemo(() => (fullDesc || '').split('\n'), [fullDesc]);
+  const detailLines = useMemo(() => {
+    const lines = (fullDesc || '').split('\n');
+
+    if (fullDescTitle) {
+      const firstIdx = lines.findIndex((line) => line.trim().length > 0);
+      if (firstIdx >= 0 && lines[firstIdx].trim().toLowerCase() === fullDescTitle.trim().toLowerCase()) {
+        lines.splice(firstIdx, 1);
+      }
+    }
+
+    return lines;
+  }, [fullDesc, fullDescTitle]);
 
   useEffect(() => {
     if (open) {
