@@ -22,7 +22,7 @@ export default function FoodSection() {
   const foodItems = useMemo(() => food.filter((item) => item.id !== 'anh-huong-den-am-thuc-binh-dien'), []);
 
   const sections = useMemo(() => {
-    const order = ['Các quán ăn', 'Các món vỉa hè', 'Đặc sản'];
+    const order = ['Các quán ăn', 'Đặc sản', 'Các món vỉa hè'];
     const grouped = new Map<string, Food[]>();
 
     for (const key of order) grouped.set(key, []);
