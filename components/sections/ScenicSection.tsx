@@ -21,19 +21,28 @@ export default function ScenicSection() {
       </p>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-        {featured.map((item, idx) => (
+        {featured.map((item, idx) => {
+          const primaryImage = item.anh?.[0];
+
+          return (
           <AnimatedCard key={item.id} delay={(idx % 6) * 0.05}>
             <article
               onClick={() => setActive(item)}
               className="group relative cursor-pointer overflow-hidden rounded-[26px] border border-hueGold/35 bg-neutral-950 shadow-[0_20px_55px_rgba(31,26,23,0.35)]"
             >
               <div className="relative h-[370px] overflow-hidden">
-                <Image
-                  src={item.anh[0]}
-                  alt={item.tenDiaDiem}
-                  fill
-                  className="object-cover transition duration-700 group-hover:scale-110"
-                />
+                {primaryImage ? (
+                  <Image
+                    src={primaryImage}
+                    alt={item.tenDiaDiem}
+                    fill
+                    className="object-cover transition duration-700 group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center bg-neutral-900 text-sm text-white/70">
+                    Chưa có ảnh minh họa
+                  </div>
+                )}
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0a08]/88 via-[#251612]/35 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 h-36 bg-[radial-gradient(ellipse_at_bottom,rgba(196,155,61,0.35),transparent_70%)]" />
@@ -79,7 +88,8 @@ export default function ScenicSection() {
               </div>
             </article>
           </AnimatedCard>
-        ))}
+          );
+        })}
       </div>
 
       <SpotlightModal

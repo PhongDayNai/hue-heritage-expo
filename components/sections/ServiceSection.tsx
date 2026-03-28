@@ -103,6 +103,7 @@ export default function ServiceSection() {
         fullDesc={active?.moTaDayDu}
         image={active?.anh?.[0]}
         images={active?.anh || []}
+        enableContactEnhancements
       />
     </section>
   );

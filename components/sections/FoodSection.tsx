@@ -87,10 +87,11 @@ export default function FoodSection() {
                     })}
                   </div>
 
-                  <AnimatePresence mode="wait">
-                    {expandedRestaurantId && (() => {
-                      const selected = items.find((item) => item.id === expandedRestaurantId);
-                      if (!selected) return null;
+                  <motion.div layout className="relative">
+                    <AnimatePresence mode="popLayout">
+                      {expandedRestaurantId && (() => {
+                        const selected = items.find((item) => item.id === expandedRestaurantId);
+                        if (!selected) return null;
 
                       const full = selected.moTaDayDu || selected.moTaNgan || 'Đang cập nhật nội dung.';
                       const lines = full
@@ -102,14 +103,15 @@ export default function FoodSection() {
                       return (
                         <motion.article
                           key={selected.id}
-                          initial={{ opacity: 0, y: -10, height: 0 }}
-                          animate={{ opacity: 1, y: 0, height: 'auto' }}
-                          exit={{ opacity: 0, y: -6, height: 0 }}
-                          transition={{ duration: 0.25, ease: 'easeOut' }}
+                          layout
+                          initial={{ opacity: 0, y: 10, scale: 0.99 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -10, scale: 0.99 }}
+                          transition={{ duration: 0.22, ease: 'easeOut' }}
                           className="overflow-hidden rounded-xl border border-hueGold/45 bg-hueGold/10 p-5 text-sm"
                         >
-                          <div className="grid gap-4 md:grid-cols-[220px_1fr]">
-                            <div className="relative h-44 overflow-hidden rounded-xl border border-hueGold/20 bg-neutral-100">
+                          <div className="grid gap-4 md:grid-cols-[300px_1fr]">
+                            <div className="relative h-60 overflow-hidden rounded-xl border border-hueGold/20 bg-neutral-100">
                               {selected.anh?.[0] ? (
                                 <Image src={selected.anh[0]} alt={selected.tenMon} fill className="object-cover" />
                               ) : (
@@ -171,6 +173,7 @@ export default function FoodSection() {
                       );
                     })()}
                   </AnimatePresence>
+                </motion.div>
                 </div>
               ) : (
                 <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

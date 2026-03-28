@@ -18,6 +18,7 @@ type Props = {
   chips?: string[];
   address?: string;
   mapUrls?: string[];
+  enableContactEnhancements?: boolean;
 };
 
 type MediaItem = {
@@ -37,7 +38,8 @@ export default function SpotlightModal({
   videos = [],
   chips = [],
   address,
-  mapUrls = []
+  mapUrls = [],
+  enableContactEnhancements = false
 }: Props) {
   const [mainIndex, setMainIndex] = useState(0);
   const [bgIndex, setBgIndex] = useState(0);
@@ -291,38 +293,62 @@ export default function SpotlightModal({
                               const isRoman = /^[IVXLCDM]{1,8}\.\s+/i.test(line);
                               const isNumeric = /^\d+[\-.)]?\s+/.test(line);
 
-                              const match = line.match(/^-\s*(.+?):\s*(https?:\/\/\S+)\s*\|\s*SĐT:\s*([0-9\s.+-]+)/i);
-                              if (match) {
-                                const pageName = match[1].trim();
-                                const fbUrl = match[2].trim();
-                                const phoneRaw = match[3].trim();
-                                const phoneHref = phoneRaw.replace(/\s+/g, '');
+                              if (enableContactEnhancements) {
+                                const match = line.match(/^-\s*(.+?):\s*(https?:\/\/\S+)\s*\|\s*SĐT:\s*([0-9\s.+-]+)/i);
+                                if (match) {
+                                  const pageName = match[1].trim();
+                                  const fbUrl = match[2].trim();
+                                  const phoneRaw = match[3].trim();
+                                  const phoneHref = phoneRaw.replace(/\s+/g, '');
 
-                                return (
-                                  <div
-                                    key={`${idx}-${line.slice(0, 24)}`}
-                                    className="flex flex-wrap items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2"
-                                  >
+                                  return (
+                                    <div
+                                      key={`${idx}-${line.slice(0, 24)}`}
+                                      className="grid w-full grid-cols-[1fr_auto_1fr] items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2"
+                                    >
+                                      <a
+                                        href={fbUrl}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="inline-flex min-w-0 items-center gap-1.5 font-medium text-[#1877F2] hover:underline"
+                                      >
+                                        <Facebook size={14} />
+                                        <span className="truncate">{pageName}</span>
+                                      </a>
+
+                                      <span className="text-neutral-400">|</span>
+
+                                      <div className="inline-flex min-w-0 items-center justify-start gap-1.5 text-neutral-700">
+                                        <Phone size={14} />
+                                        <span>SĐT:</span>
+                                        <a
+                                          href={`tel:${phoneHref}`}
+                                          className="min-w-0 truncate font-medium text-hueRed hover:underline"
+                                        >
+                                          {phoneRaw}
+                                        </a>
+                                      </div>
+                                    </div>
+                                  );
+                                }
+
+                                const mapMatch = line.match(/^-\s*(.+?):\s*(https?:\/\/\S+)$/i);
+                                if (mapMatch && /maps\.app\.goo\.gl/i.test(mapMatch[2])) {
+                                  const placeName = mapMatch[1].trim();
+                                  const mapUrl = mapMatch[2].trim();
+                                  return (
                                     <a
-                                      href={fbUrl}
+                                      key={`${idx}-${line.slice(0, 24)}`}
+                                      href={mapUrl}
                                       target="_blank"
                                       rel="noreferrer"
-                                      className="inline-flex items-center gap-1.5 font-medium text-[#1877F2] hover:underline"
+                                      className="inline-flex w-full items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2 font-medium text-[#0f766e] hover:underline"
                                     >
-                                      <Facebook size={14} />
-                                      {pageName}
+                                      <MapPin size={14} />
+                                      {placeName}
                                     </a>
-                                    <span className="text-neutral-400">|</span>
-                                    <span className="text-neutral-700">SĐT:</span>
-                                    <a
-                                      href={`tel:${phoneHref}`}
-                                      className="inline-flex items-center gap-1.5 font-medium text-hueRed hover:underline"
-                                    >
-                                      <Phone size={14} />
-                                      {phoneRaw}
-                                    </a>
-                                  </div>
-                                );
+                                  );
+                                }
                               }
 
                               return (
