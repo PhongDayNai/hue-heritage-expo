@@ -1,6 +1,48 @@
+'use client';
+
+import { FormEvent, useRef, useState } from 'react';
 import support from '@/data/support.json';
 
+type ToastState = { type: 'success' | 'error'; message: string } | null;
+
 export default function SupportSection() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [toast, setToast] = useState<ToastState>(null);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+
+    const formEl = e.currentTarget;
+    const formData = new FormData(formEl);
+
+    setIsSubmitting(true);
+    setToast(null);
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/dhphong266@gmail.com', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json'
+        },
+        body: formData
+      });
+
+      if (!res.ok) {
+        throw new Error('Gửi góp ý thất bại');
+      }
+
+      setToast({ type: 'success', message: 'Đã gửi góp ý thành công ✅' });
+      formRef.current?.reset();
+    } catch (error) {
+      setToast({ type: 'error', message: 'Gửi chưa thành công, anh thử lại giúp em nhé.' });
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setToast(null), 3200);
+    }
+  };
+
   return (
     <section id="ho-tro" className="bg-hueInk py-12 text-white md:py-16">
       <div className="section-wrap">
@@ -49,16 +91,13 @@ export default function SupportSection() {
             </div>
           </div>
 
-          <form
-            className="rounded-2xl border border-hueGold/20 bg-white/5 p-5"
-            action="https://formsubmit.co/dhphong266@gmail.com"
-            method="POST"
-          >
+          <form ref={formRef} className="rounded-2xl border border-hueGold/20 bg-white/5 p-5" method="POST" onSubmit={handleSubmit}>
             <h3 className="text-lg font-semibold text-hueGold">Góp ý nhanh</h3>
             <p className="mt-1 text-xs text-white/70">Biểu mẫu gửi trực tiếp tới: dhphong266@gmail.com (miễn phí)</p>
 
             <input type="hidden" name="_subject" value="[Hue Heritage] Góp ý mới từ trang Hỗ trợ" />
             <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
             <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
 
             <div className="mt-4 space-y-3">
@@ -79,8 +118,23 @@ export default function SupportSection() {
                 placeholder="Nội dung góp ý"
                 required
               />
-              <button type="submit" className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105">
-                Gửi góp ý
+
+              {toast && (
+                <div
+                  className={`rounded-lg px-3 py-2 text-sm ${
+                    toast.type === 'success' ? 'bg-emerald-500/20 text-emerald-200' : 'bg-rose-500/20 text-rose-200'
+                  }`}
+                >
+                  {toast.message}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                {isSubmitting ? 'Đang gửi...' : 'Gửi góp ý'}
               </button>
             </div>
           </form>
