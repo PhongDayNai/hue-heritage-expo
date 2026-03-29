@@ -100,7 +100,6 @@ export default function SupportSection() {
             noValidate
           >
             <h3 className="text-lg font-semibold text-hueGold">Góp ý nhanh</h3>
-            <p className="mt-1 text-xs text-white/70">Góp ý sẽ mở ứng dụng email để gửi tới: {RECEIVER_EMAIL}</p>
 
             <div className="mt-4 space-y-3">
               <input
