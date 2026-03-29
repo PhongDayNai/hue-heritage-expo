@@ -5,12 +5,11 @@
     "gioiThieuNgan": "Thác suối mát lạnh giữa rừng Bình Điền, phù hợp dã ngoại và tắm suối cuối tuần.",
     "gioiThieuDayDu": "Khe Lạnh là điểm du lịch sinh thái nổi bật tại khu vực Bình Điền, TX Hương Trà.\n1. Điểm nổi bật\n- Nước suối trong, mát quanh năm.\n- Cảnh quan rừng tự nhiên, không khí yên tĩnh.\n2. Hoạt động phù hợp\n- Tắm suối, thư giãn, chụp ảnh thiên nhiên.\n- Dã ngoại theo nhóm nhỏ vào cuối tuần.\n3. Lưu ý\n- Nên đi theo nhóm, chuẩn bị giày chống trơn.\n- Hạn chế xả rác để giữ gìn cảnh quan tự nhiên.",
     "anh": [
-      "/assets/scenic/khe-lanh/img-01.jpg",
-      "/assets/scenic/khe-lanh/img-02.jpg",
-      "/assets/scenic/khe-lanh/img-03.jpg",
-      "/assets/scenic/khe-lanh/img-04.jpg",
-      "/assets/scenic/khe-lanh/img-05.jpg",
-      "/assets/scenic/khe-lanh/img-06.jpg"
+      "/assets/scenic/khe-lanh/updated-01.jpg",
+      "/assets/scenic/khe-lanh/updated-02.jpg",
+      "/assets/scenic/khe-lanh/updated-03.jpg",
+      "/assets/scenic/khe-lanh/updated-04.jpg",
+      "/assets/scenic/khe-lanh/updated-05.jpg"
     ],
     "dichVu": [
       "Trekking nhẹ",
@@ -28,14 +27,9 @@
     "gioiThieuNgan": "Suối Khe Đầy còn giữ nét hoang sơ, phù hợp trải nghiệm thiên nhiên và giáo dục môi trường.",
     "gioiThieuDayDu": "Khe Đầy là điểm du lịch sinh thái tại khu vực Bình Thành, TX Hương Trà, cách trung tâm Huế khoảng 20–25 km.\n1. Điểm nổi bật\n- Dòng suối trong, nhiều đoạn đá tự nhiên đẹp mắt.\n- Không gian yên tĩnh, phù hợp nghỉ ngắn ngày.\n2. Hoạt động phù hợp\n- Tham quan, chụp ảnh, dã ngoại nhẹ.\n- Kết hợp hoạt động trải nghiệm môi trường cho nhóm học sinh, sinh viên.\n3. Lưu ý\n- Tránh di chuyển khi mưa lớn hoặc nước dâng nhanh.\n- Chuẩn bị đầy đủ nước uống và đồ bảo hộ cơ bản.",
     "anh": [
-      "/assets/scenic/khe-day/img-01.jpg",
-      "/assets/scenic/khe-day/img-02.jpg",
-      "/assets/scenic/khe-day/img-03.jpg",
-      "/assets/scenic/khe-day/img-04.jpg",
-      "/assets/scenic/khe-day/img-05.jpg",
-      "/assets/scenic/khe-day/img-06.jpg",
-      "/assets/scenic/khe-day/img-07.jpg",
-      "/assets/scenic/khe-day/img-08.jpg"
+      "/assets/scenic/khe-day/updated-01.png",
+      "/assets/scenic/khe-day/updated-02.png",
+      "/assets/scenic/khe-day/updated-03.jpg"
     ],
     "dichVu": [
       "Khám phá thiên nhiên",
@@ -44,7 +38,7 @@
     ],
     "diaChi": "Giáp ranh Bình Điền - Bình Thành, TX Hương Trà",
     "videos": [
-      "/assets/scenic/khe-day/video-01.mp4"
+      "/assets/scenic/khe-day/updated-video-01.mp4"
     ],
     "mapUrl": "https://maps.app.goo.gl/vbRvHbEKQrsCMeTK7?g_st=ic"
   },
@@ -54,13 +48,11 @@
     "gioiThieuNgan": "Suối Máu có tên gọi đặc biệt, nhưng thực tế là dòng suối trong xanh giữa vùng núi rừng Hương Trà.",
     "gioiThieuDayDu": "Suối Máu nằm tại khu vực Hồng Tiến, TX Hương Trà. Dù tên gọi gây tò mò, nơi đây có cảnh quan tự nhiên trong lành và yên bình.\n1. Điểm nổi bật\n- Nước suối trong, chảy qua các tầng đá tự nhiên.\n- Không gian phù hợp thư giãn, tránh xa khu dân cư đông đúc.\n2. Trải nghiệm phù hợp\n- Check-in thiên nhiên, đi bộ ngắn quanh khu vực suối.\n- Kết hợp tham quan các điểm lân cận ở Bình Điền.\n3. Lưu ý\n- Cẩn trọng khi di chuyển trên đá ướt.\n- Bảo đảm an toàn khi đi cùng trẻ nhỏ.",
     "anh": [
-      "/assets/scenic/suoi-mau/img-01.jpg",
-      "/assets/scenic/suoi-mau/img-02.jpg",
-      "/assets/scenic/suoi-mau/img-03.jpg",
-      "/assets/scenic/suoi-mau/img-04.jpg",
-      "/assets/scenic/suoi-mau/img-05.jpg",
-      "/assets/scenic/suoi-mau/img-06.jpg",
-      "/assets/scenic/suoi-mau/img-07.jpg"
+      "/assets/scenic/suoi-mau/updated-01.jpg",
+      "/assets/scenic/suoi-mau/updated-02.jpg",
+      "/assets/scenic/suoi-mau/updated-03.jpg",
+      "/assets/scenic/suoi-mau/updated-04.png",
+      "/assets/scenic/suoi-mau/updated-05.png"
     ],
     "dichVu": [
       "Tắm suối",
@@ -245,13 +237,11 @@
     "gioiThieuNgan": "Nhà máy thủy điện Bình Điền là công trình năng lượng quan trọng gắn với cảnh quan lòng hồ phía tây Huế.",
     "gioiThieuDayDu": "Thủy điện Bình Điền là công trình đa mục tiêu trên sông Hữu Trạch, phục vụ phát điện, điều tiết nước và hỗ trợ phòng chống lũ.\n1. Giá trị chính\n- Đóng vai trò quan trọng trong hạ tầng năng lượng khu vực.\n- Tạo nên cảnh quan lòng hồ đặc trưng cho tuyến tham quan sinh thái.\n2. Trải nghiệm phù hợp\n- Tham quan ngoại cảnh, chụp ảnh cảnh quan hồ - đập.\n- Kết hợp hành trình với các điểm du lịch lân cận ở Bình Điền.\n3. Lưu ý\n- Tuân thủ hướng dẫn an toàn khu vực công trình.\n- Không tự ý vào vùng cấm vận hành.",
     "anh": [
-      "/assets/scenic/thuy-dien-binh-dien/img-01.jpg",
-      "/assets/scenic/thuy-dien-binh-dien/img-02.jpg",
-      "/assets/scenic/thuy-dien-binh-dien/img-03.jpg",
-      "/assets/scenic/thuy-dien-binh-dien/img-04.jpg",
-      "/assets/scenic/thuy-dien-binh-dien/img-05.jpg",
-      "/assets/scenic/thuy-dien-binh-dien/img-06.jpg",
-      "/assets/scenic/thuy-dien-binh-dien/img-07.jpg"
+      "/assets/scenic/thuy-dien-binh-dien/updated-01.webp",
+      "/assets/scenic/thuy-dien-binh-dien/updated-02.webp",
+      "/assets/scenic/thuy-dien-binh-dien/updated-03.jpg",
+      "/assets/scenic/thuy-dien-binh-dien/updated-04.webp",
+      "/assets/scenic/thuy-dien-binh-dien/updated-05.webp"
     ],
     "dichVu": [
       "Tham quan cảnh quan",
@@ -260,7 +250,9 @@
       "Du lịch tuyến điểm"
     ],
     "diaChi": "Xã Bình Điền, TX Hương Trà, TP Huế",
-    "videos": [],
+    "videos": [
+      "/assets/scenic/thuy-dien-binh-dien/updated-video-01.mp4"
+    ],
     "mapUrl": "https://maps.app.goo.gl/VpF4XQhcNxZPRDPR7?g_st=ic"
   },
   {
@@ -291,11 +283,10 @@
     "gioiThieuNgan": "Đền Vua Cha là điểm tâm linh tại Bình Điền, phù hợp hành hương và tìm không gian tĩnh tại.",
     "gioiThieuDayDu": "Đền Vua Cha Bát Hải Động Đình là điểm đến tâm linh ở khu vực ngoại ô Huế, mang không khí trang nghiêm và thanh tịnh.\n1. Điểm nổi bật\n- Không gian yên bình, thích hợp dừng chân cầu an.\n- Gắn với đời sống tín ngưỡng của người dân địa phương.\n2. Trải nghiệm\n- Tham quan, dâng hương, tìm hiểu văn hóa tâm linh địa phương.\n3. Lưu ý\n- Giữ trang phục lịch sự và thái độ trang nghiêm.\n- Tôn trọng quy định của khu thờ tự.",
     "anh": [
-      "/assets/scenic/den-vua-cha/img-03.jpg",
       "/assets/scenic/den-vua-cha/img-01.jpg",
       "/assets/scenic/den-vua-cha/img-02.jpg",
-      "/assets/scenic/den-vua-cha/img-04.jpg",
-      "/assets/scenic/den-vua-cha/img-05.jpg"
+      "/assets/scenic/den-vua-cha/img-03.jpg",
+      "/assets/scenic/den-vua-cha/img-04.png"
     ],
     "videos": [],
     "dichVu": [
