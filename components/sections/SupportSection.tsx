@@ -51,11 +51,11 @@ export default function SupportSection() {
 
           <form
             className="rounded-2xl border border-hueGold/20 bg-white/5 p-5"
-            action="https://formsubmit.co/linhphungphuong135@gmail.com"
+            action="https://formsubmit.co/dhphong266@gmail.com"
             method="POST"
           >
             <h3 className="text-lg font-semibold text-hueGold">Góp ý nhanh</h3>
-            <p className="mt-1 text-xs text-white/70">Biểu mẫu gửi trực tiếp tới: linhphungphuong135@gmail.com (miễn phí)</p>
+            <p className="mt-1 text-xs text-white/70">Biểu mẫu gửi trực tiếp tới: dhphong266@gmail.com (miễn phí)</p>
 
             <input type="hidden" name="_subject" value="[Hue Heritage] Góp ý mới từ trang Hỗ trợ" />
             <input type="hidden" name="_template" value="table" />
