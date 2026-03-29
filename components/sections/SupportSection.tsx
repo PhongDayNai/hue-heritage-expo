@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, MouseEvent, useRef, useState } from 'react';
 import support from '@/data/support.json';
 
 type ToastState = { type: 'success' | 'error' | 'info'; message: string } | null;
@@ -11,20 +11,40 @@ export default function SupportSection() {
   const formRef = useRef<HTMLFormElement>(null);
   const [toast, setToast] = useState<ToastState>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [debugLogs, setDebugLogs] = useState<string[]>([]);
+
+  const pushLog = (msg: string) => {
+    const line = `[${new Date().toLocaleTimeString('vi-VN')}] ${msg}`;
+    console.log('[SupportForm]', line);
+    setDebugLogs((prev) => [line, ...prev].slice(0, 10));
+  };
 
   const showToast = (type: 'success' | 'error' | 'info', message: string, timeout = 3200) => {
     setToast({ type, message });
+    pushLog(`Toast(${type}): ${message}`);
     setTimeout(() => setToast(null), timeout);
+  };
+
+  const handleButtonClick = (_e: MouseEvent<HTMLButtonElement>) => {
+    pushLog('Click nút "Gửi góp ý"');
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (isSubmitting) return;
+    pushLog('onSubmit đã chạy');
+
+    if (isSubmitting) {
+      pushLog('Bị chặn vì isSubmitting=true');
+      return;
+    }
 
     const formData = new FormData(e.currentTarget);
     const fullName = String(formData.get('Ho ten') || '').trim();
     const phone = String(formData.get('So dien thoai') || '').trim();
     const message = String(formData.get('Noi dung gop y') || '').trim();
+
+    pushLog(`Payload: hoTen="${fullName}", sdt="${phone}", noiDungLength=${message.length}`);
+
     setIsSubmitting(true);
     showToast('info', 'Đang mở ứng dụng email để gửi góp ý...');
 
@@ -32,6 +52,7 @@ export default function SupportSection() {
     const body = `Họ tên: ${fullName}\nSố điện thoại: ${phone || '(không có)'}\n\nNội dung góp ý:\n${message}`;
     const mailtoUrl = `mailto:${RECEIVER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+    pushLog(`Điều hướng mailto: ${mailtoUrl.slice(0, 120)}...`);
     window.location.href = mailtoUrl;
 
     formRef.current?.reset();
@@ -124,11 +145,27 @@ export default function SupportSection() {
 
               <button
                 type="submit"
+                onClick={handleButtonClick}
                 disabled={isSubmitting}
                 className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {isSubmitting ? 'Đang gửi...' : 'Gửi góp ý'}
               </button>
+
+              <div className="rounded-lg border border-white/20 bg-black/20 p-3 text-xs text-white/80">
+                <p className="font-semibold text-hueGold">Client debug log</p>
+                {debugLogs.length === 0 ? (
+                  <p className="mt-1 text-white/60">Chưa có log. Anh bấm thử nút để kiểm tra event.</p>
+                ) : (
+                  <ul className="mt-2 space-y-1">
+                    {debugLogs.map((log) => (
+                      <li key={log} className="break-all">
+                        • {log}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
           </form>
         </div>
