@@ -158,24 +158,7 @@ export default function SpotlightModal({
     return () => window.removeEventListener('keydown', onEsc);
   }, [open, onClose]);
 
-  useEffect(() => {
-    if (!open) return;
 
-    const { body, documentElement } = document;
-    const prevBodyOverflow = body.style.overflow;
-    const prevBodyTouchAction = body.style.touchAction;
-    const prevHtmlOverflow = documentElement.style.overflow;
-
-    body.style.overflow = 'hidden';
-    body.style.touchAction = 'none';
-    documentElement.style.overflow = 'hidden';
-
-    return () => {
-      body.style.overflow = prevBodyOverflow;
-      body.style.touchAction = prevBodyTouchAction;
-      documentElement.style.overflow = prevHtmlOverflow;
-    };
-  }, [open]);
 
   const nextMain = () => {
     if (mediaItems.length === 0) return;
