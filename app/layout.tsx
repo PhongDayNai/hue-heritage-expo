@@ -4,7 +4,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'HueHeritage Expo | Danh lam thắng cảnh Huế',
   description:
-    'Website giới thiệu danh lam thắng cảnh, ẩm thực, văn hoá Huế phục vụ nghiên cứu và trình bày khoa học kỹ thuật.',
+    'Cổng thông tin tổng hợp danh lam thắng cảnh, ẩm thực, văn hoá và sự kiện của Bình Điền - Huế theo cách trực quan, dễ tra cứu và phù hợp trình bày học thuật.',
   icons: {
     icon: '/images/featured/logo-cndl.jpeg',
     shortcut: '/images/featured/logo-cndl.jpeg',

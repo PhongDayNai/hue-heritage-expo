@@ -143,7 +143,7 @@ export default function Topbar() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={`rounded-md px-3 py-2 text-sm transition-all duration-300 ${
+                        className={`rounded-md px-3 py-2 text-[15px] transition-all duration-300 ${
                           active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:translate-x-1'
                         }`}
                         onClick={() => {
@@ -217,7 +217,7 @@ export default function Topbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`border-r border-hueGold/20 px-4 py-3 text-sm font-medium transition ${
+                className={`border-r border-hueGold/20 px-4 py-3 text-[15px] font-medium transition ${
                   active ? 'bg-hueGold text-hueInk' : 'text-[#f5e6c0] hover:bg-hueGold hover:text-hueInk'
                 }`}
               >
@@ -240,7 +240,7 @@ export default function Topbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`rounded-md px-3 py-2 text-sm transition ${
+                    className={`rounded-md px-3 py-2 text-[15px] transition ${
                       active ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10'
                     }`}
                     onClick={() => setOpen(false)}

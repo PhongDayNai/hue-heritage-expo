@@ -36,7 +36,6 @@ export default function Footer() {
         <div>
           <h4 className="border-b border-hueGold/35 pb-2 text-sm font-semibold uppercase tracking-wider text-hueGold">Liên hệ</h4>
           <div className="mt-3 space-y-2 text-sm">
-            <p>Hỗ trợ nhanh: 0399 029 409</p>
             <p>Email: dulichhue@hue.gov.vn</p>
             <p>Địa bàn: TP Huế</p>
           </div>
