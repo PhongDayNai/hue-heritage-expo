@@ -29,14 +29,19 @@ export default function SupportSection() {
         body: formData
       });
 
-      if (!res.ok) {
-        throw new Error('Gửi góp ý thất bại');
+      const payload = await res.json().catch(() => null);
+      const ok = res.ok && (payload?.success === true || payload?.success === 'true');
+
+      if (!ok) {
+        const apiMsg = typeof payload?.message === 'string' ? payload.message : '';
+        throw new Error(apiMsg || 'Gửi góp ý thất bại');
       }
 
       setToast({ type: 'success', message: 'Đã gửi góp ý thành công ✅' });
       formRef.current?.reset();
     } catch (error) {
-      setToast({ type: 'error', message: 'Gửi chưa thành công, anh thử lại giúp em nhé.' });
+      const message = error instanceof Error ? error.message : 'Gửi chưa thành công, anh thử lại giúp em nhé.';
+      setToast({ type: 'error', message });
     } finally {
       setIsSubmitting(false);
       setTimeout(() => setToast(null), 3200);
