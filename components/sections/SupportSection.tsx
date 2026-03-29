@@ -14,16 +14,34 @@ export default function SupportSection() {
             <h3 className="text-lg font-semibold text-hueGold">Liên hệ hỗ trợ</h3>
             <div className="mt-4 space-y-3">
               {support.hotlines.map((item) => (
-                <div key={`${item.label}-${item.phone}`} className="rounded-xl bg-white/5 px-4 py-3">
-                  <p className="text-sm font-semibold text-white">{item.label}</p>
-                  <p className="mt-0.5 text-xs text-white/70">{item.role}</p>
-                  <div className="mt-2 flex flex-wrap items-center gap-3 text-sm">
-                    <a href={`tel:${item.phone}`} className="font-semibold text-hueGold hover:underline">
-                      {item.phone}
+                <div
+                  key={`${item.label}-${item.phone}`}
+                  className="rounded-2xl border border-hueGold/30 bg-gradient-to-br from-white/10 to-white/5 px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p className="text-base font-semibold text-white">{item.label}</p>
+                      <p className="mt-1 text-xs text-white/70">{item.role}</p>
+                    </div>
+                    <span className="rounded-full border border-hueGold/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-hueGold">
+                      Ưu tiên
+                    </span>
+                  </div>
+
+                  <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                    <a
+                      href={`tel:${item.phone}`}
+                      className="inline-flex items-center justify-center rounded-lg bg-hueGold px-3 py-2 text-sm font-semibold text-hueInk hover:brightness-105"
+                    >
+                      📞 {item.phone}
                     </a>
-                    <span className="text-white/40">|</span>
-                    <a href={item.facebook} target="_blank" rel="noreferrer" className="text-white/85 hover:underline">
-                      Facebook
+                    <a
+                      href={item.facebook}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center rounded-lg border border-white/25 px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
+                    >
+                      Facebook trật tự xã
                     </a>
                   </div>
                 </div>

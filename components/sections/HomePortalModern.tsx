@@ -97,21 +97,18 @@ export default function HomePortalModern() {
         <div className="absolute inset-0">
           <Image src={hero.anh[0]} alt={hero.tenDiaDiem} fill priority className="object-cover opacity-35" />
         </div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_45%,rgba(184,134,11,.30),transparent_45%),linear-gradient(120deg,rgba(22,10,7,.92),rgba(47,20,11,.82))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_45%,rgba(184,134,11,.16),transparent_45%),linear-gradient(120deg,rgba(22,10,7,.62),rgba(47,20,11,.5))]" />
 
         <div className="section-wrap relative z-10 grid gap-6 py-14 lg:grid-cols-[1fr_320px] lg:items-center">
           <div>
             <span className="inline-flex rounded bg-hueGold px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-hueInk">
               Di sản văn hoá thế giới
             </span>
-            <h1 className="mt-4 font-[var(--font-heading)] text-4xl leading-tight text-[#f8eecf] md:text-5xl">
-              Khám phá Cố đô Huế
-              <span className="block text-hueGold">Không gian du lịch sống động, hiện đại và giàu bản sắc</span>
+            <h1 className="mt-4 font-[var(--font-heading)] text-5xl leading-tight text-[#f8eecf] md:text-6xl">
+              Khám phá Bình Điền
+              <span className="block text-4xl md:text-5xl">Chạm đến bình yên</span>
+              <span className="mt-2 block text-3xl text-hueGold md:text-4xl">Trải nghiệm thiên nhiên nguyên sơ, lưu giữ những khoảnh khắc đáng nhớ</span>
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#e6d3a3] md:text-base">
-              Lấy cảm hứng từ bố cục cổng thông tin truyền thống, giao diện mới ưu tiên trình bày rõ ràng, dễ đọc và
-              có điểm nhấn thị giác để anh sử dụng khi demo sản phẩm.
-            </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/danh-lam" className="rounded-md bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk hover:brightness-105">
                 🗺️ Khám phá ngay

@@ -2,16 +2,19 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Menu, Search, X } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 
 import { useFeatureFlags } from '@/lib/useFeatureFlags';
 
 export default function Topbar() {
   const [open, setOpen] = useState(false);
   const [compactMobile, setCompactMobile] = useState(false);
+  const [keyword, setKeyword] = useState('');
+  const [searching, setSearching] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
   const openedAtScrollYRef = useRef<number | null>(null);
   const { flags } = useFeatureFlags();
 
@@ -80,6 +83,24 @@ export default function Topbar() {
   }, [open]);
 
   const hideFullMobileHeader = compactMobile;
+
+  const onSearch = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const q = keyword.trim();
+    if (!q || searching) return;
+
+    try {
+      setSearching(true);
+      const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
+      const data = await res.json();
+      const first = data?.results?.[0];
+      if (first?.href) {
+        router.push(first.href);
+      }
+    } finally {
+      setSearching(false);
+    }
+  };
 
   return (
     <>
@@ -156,16 +177,21 @@ export default function Topbar() {
             <p className="mt-1 text-[11px] text-[#e8d5a0] md:text-xs">Khám phá danh lam - văn hoá - ẩm thực theo trải nghiệm hiện đại</p>
           </div>
 
-          <div className="ml-auto hidden overflow-hidden rounded-md border border-hueGold/70 bg-white/10 md:flex">
+          <form
+            onSubmit={onSearch}
+            className="ml-auto hidden overflow-hidden rounded-md border border-hueGold/70 bg-white/10 md:flex"
+          >
             <input
               type="text"
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
               placeholder="Tìm kiếm..."
               className="w-44 bg-transparent px-3 py-2 text-sm text-white placeholder:text-[#ccb075] focus:outline-none"
             />
-            <button className="bg-hueGold px-3 text-hueInk" aria-label="Tìm kiếm">
+            <button className="bg-hueGold px-3 text-hueInk" aria-label="Tìm kiếm" disabled={searching}>
               <Search size={16} />
             </button>
-          </div>
+          </form>
 
           <button
             className="ml-auto rounded-lg border border-white/30 p-2 text-white lg:hidden"

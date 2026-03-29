@@ -4,7 +4,19 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'HueHeritage Expo | Danh lam thắng cảnh Huế',
   description:
-    'Website giới thiệu danh lam thắng cảnh, ẩm thực, văn hoá Huế phục vụ nghiên cứu và trình bày khoa học kỹ thuật.'
+    'Website giới thiệu danh lam thắng cảnh, ẩm thực, văn hoá Huế phục vụ nghiên cứu và trình bày khoa học kỹ thuật.',
+  icons: {
+    icon: '/images/featured/logo-cndl.jpeg',
+    shortcut: '/images/featured/logo-cndl.jpeg',
+    apple: '/images/featured/logo-cndl.jpeg'
+  },
+  openGraph: {
+    images: ['/images/featured/logo-cndl.jpeg']
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/featured/logo-cndl.jpeg']
+  }
 };
 
 export default function RootLayout({
