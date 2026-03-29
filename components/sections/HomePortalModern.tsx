@@ -95,7 +95,7 @@ export default function HomePortalModern() {
 
       <section className="relative overflow-hidden border-b border-hueGold/20 bg-hueInk">
         <div className="absolute inset-0">
-          <Image src={hero.anh[0]} alt={hero.tenDiaDiem} fill priority className="object-cover opacity-35" />
+          <Image src="/images/featured/hero-bg-20260329.jpg" alt={hero.tenDiaDiem} fill priority className="object-cover opacity-35" />
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_45%,rgba(184,134,11,.16),transparent_45%),linear-gradient(120deg,rgba(22,10,7,.62),rgba(47,20,11,.5))]" />
 
