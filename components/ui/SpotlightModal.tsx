@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Facebook, MapPin, Phone, Sparkles, X } from 'lucide-react';
 import Image from 'next/image';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 type MapEntry = {
   label: string;
@@ -52,6 +52,7 @@ export default function SpotlightModal({
 }: Props) {
   const [mainIndex, setMainIndex] = useState(0);
   const [bgIndex, setBgIndex] = useState(0);
+  const scrollLockYRef = useRef(0);
 
   const galleryImages = useMemo(() => {
     if (images.length > 0) return images;
@@ -93,7 +94,12 @@ export default function SpotlightModal({
     return out;
   }, [mapEntries, mapUrls, showMapEntriesList]);
   const detailLines = useMemo(() => {
-    const lines = (fullDesc || '').split('\n');
+    const normalized = (fullDesc || '')
+      .replace(/\s+(?=\d+\.\s+)/g, '\n')
+      .replace(/\s+(?=[IVXLCDM]{1,6}\.\s+)/gi, '\n')
+      .replace(/\s+(?=-\s+)/g, '\n');
+
+    const lines = normalized.split('\n');
 
     if (fullDescTitle) {
       const firstIdx = lines.findIndex((line) => line.trim().length > 0);
@@ -158,7 +164,39 @@ export default function SpotlightModal({
     return () => window.removeEventListener('keydown', onEsc);
   }, [open, onClose]);
 
+  useEffect(() => {
+    if (!open) return;
 
+    const { body, documentElement } = document;
+    const lockY = window.scrollY;
+    scrollLockYRef.current = lockY;
+
+    const prevBody = {
+      overflow: body.style.overflow,
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+      touchAction: body.style.touchAction
+    };
+    const prevHtmlOverflow = documentElement.style.overflow;
+
+    body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+    body.style.top = `-${lockY}px`;
+    body.style.width = '100%';
+    body.style.touchAction = 'none';
+    documentElement.style.overflow = 'hidden';
+
+    return () => {
+      body.style.overflow = prevBody.overflow;
+      body.style.position = prevBody.position;
+      body.style.top = prevBody.top;
+      body.style.width = prevBody.width;
+      body.style.touchAction = prevBody.touchAction;
+      documentElement.style.overflow = prevHtmlOverflow;
+      window.scrollTo(0, scrollLockYRef.current);
+    };
+  }, [open]);
 
   const nextMain = () => {
     if (mediaItems.length === 0) return;
@@ -200,18 +238,18 @@ export default function SpotlightModal({
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(196,155,61,0.16),transparent_38%),linear-gradient(130deg,rgba(16,8,7,0.9),rgba(14,10,9,0.8))]" />
           </div>
 
-          <div className="absolute inset-0 overflow-y-auto px-3 py-4 sm:px-6 sm:py-8">
+          <div className="absolute inset-0 overflow-hidden px-3 py-4 sm:px-6 sm:py-8">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.22, ease: 'easeOut' }}
-              className="mx-auto w-full max-w-6xl"
+              className="mx-auto flex h-full w-full max-w-6xl items-center"
               role="dialog"
               aria-modal="true"
               aria-label={title}
             >
-              <div className="relative overflow-hidden rounded-[28px] border border-hueGold/30 bg-[#0f0b0a]/72 shadow-[0_18px_42px_rgba(0,0,0,0.42)]">
+              <div className="relative h-[88vh] w-full overflow-hidden rounded-[28px] border border-hueGold/30 bg-[#0f0b0a]/72 shadow-[0_18px_42px_rgba(0,0,0,0.42)]">
                 <button
                   onClick={onClose}
                   className="absolute right-4 top-4 z-20 rounded-full border border-white/35 bg-black/45 p-2 text-white transition hover:bg-black/65"
@@ -220,7 +258,7 @@ export default function SpotlightModal({
                   <X size={18} />
                 </button>
 
-                <div className="grid min-h-[70vh] lg:grid-cols-[1.05fr_1fr]">
+                <div className="grid h-full min-h-0 lg:grid-cols-[1.05fr_1fr]">
                   <div className="relative min-h-[320px] border-b border-white/15 lg:min-h-full lg:border-b-0 lg:border-r lg:border-white/15">
                     <AnimatePresence mode="wait">
                       {currentMedia ? (
@@ -314,17 +352,17 @@ export default function SpotlightModal({
                     </div>
                   </div>
 
-                  <div className="flex flex-col bg-[#f8f9f4]">
+                  <div className="flex h-full min-h-0 flex-col bg-[#f8f9f4]">
                     <div className="border-b border-neutral-200/80 px-5 py-4 sm:px-7">
                       <p className="text-xs font-semibold tracking-[0.12em] text-hueRed/90">THÔNG TIN CHI TIẾT</p>
                     </div>
 
-                    <div className="flex-1 px-5 py-5 sm:px-7 sm:py-6">
+                    <div className="flex min-h-0 flex-1 flex-col px-5 py-5 sm:px-7 sm:py-6">
                       {fullDescTitle && (
                         <h4 className="mb-3 text-lg font-semibold text-hueRed">{fullDescTitle}</h4>
                       )}
 
-                      <div className="relative rounded-xl max-h-[50vh] overflow-y-auto pr-1">
+                      <div className="relative min-h-0 flex-1 rounded-xl overflow-y-auto pr-1">
                         {fullDesc ? (
                           <div className="space-y-2 text-[15px] leading-8 text-neutral-800">
                             {detailLines.map((rawLine, idx) => {
