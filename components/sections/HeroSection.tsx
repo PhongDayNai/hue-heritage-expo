@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden border-b border-hueGold/20 bg-hueInk">
       <div className="absolute inset-0 opacity-25">
-        <Image src="/images/featured/binhdien-1.jpg" alt="Huế" fill className="object-cover" priority />
+        <Image src="/images/featured/hero-bg-20260329.jpg" alt="Huế" fill className="object-cover" priority />
       </div>
       <div className="absolute inset-0 bg-gradient-to-r from-hueInk/95 via-hueInk/80 to-hueInk/50" />
 
