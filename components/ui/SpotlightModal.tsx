@@ -364,7 +364,10 @@ export default function SpotlightModal({
                       <div className="relative min-h-0 flex-1 rounded-xl overflow-y-auto pr-1">
                         {fullDesc ? (
                           <div className="space-y-2 text-[15px] leading-8 text-neutral-800">
-                            {detailLines.map((rawLine, idx) => {
+                            {(() => {
+                              const firstTextIndex = detailLines.findIndex((x) => x.trim().length > 0);
+
+                              return detailLines.map((rawLine, idx) => {
                               const line = rawLine.trim();
                               if (!line) return <div key={`blank-${idx}`} className="h-2" />;
 
@@ -477,15 +480,29 @@ export default function SpotlightModal({
                                 }
                               }
 
+                              const shouldBoldIntro =
+                                enableContactEnhancements &&
+                                idx === firstTextIndex &&
+                                /^(Phương tiện di chuyển tại Bình Điền|Thuê trang phục|Dịch vụ make up|Dịch vụ spa)$/i.test(line);
+
                               return (
                                 <p
                                   key={`${idx}-${line.slice(0, 24)}`}
-                                  className={isRoman ? 'font-bold text-neutral-900' : isNumeric ? 'font-semibold text-neutral-900' : ''}
+                                  className={
+                                    shouldBoldIntro
+                                      ? 'font-bold text-neutral-900'
+                                      : isRoman
+                                      ? 'font-bold text-neutral-900'
+                                      : isNumeric
+                                      ? 'font-semibold text-neutral-900'
+                                      : ''
+                                  }
                                 >
                                   {line}
                                 </p>
                               );
-                            })}
+                            });
+                            })()}
                           </div>
                         ) : (
                           <p className="text-[15px] leading-8 text-neutral-600">
