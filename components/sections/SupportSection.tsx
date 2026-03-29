@@ -1,71 +1,6 @@
-'use client';
-
-import { FormEvent, useRef, useState } from 'react';
 import support from '@/data/support.json';
 
-type ToastState = { type: 'success' | 'error'; message: string } | null;
-
 export default function SupportSection() {
-  const formRef = useRef<HTMLFormElement>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [toast, setToast] = useState<ToastState>(null);
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (isSubmitting) return;
-
-    const formEl = e.currentTarget;
-    const formData = new FormData(formEl);
-
-    const hoTen = String(formData.get('Họ tên') || '').trim();
-    const noiDung = String(formData.get('Nội dung góp ý') || '').trim();
-
-    if (!hoTen || !noiDung) {
-      setToast({ type: 'error', message: 'Anh nhập giúp em Họ tên và Nội dung góp ý trước khi gửi nhé.' });
-      setTimeout(() => setToast(null), 3200);
-      return;
-    }
-
-    setIsSubmitting(true);
-    setToast({ type: 'success', message: 'Đang gửi góp ý...' });
-
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 12000);
-
-      const res = await fetch('https://formsubmit.co/ajax/dhphong266@gmail.com', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json'
-        },
-        body: formData,
-        signal: controller.signal
-      }).finally(() => clearTimeout(timer));
-
-      const payload = await res.json().catch(() => null);
-      const ok = res.ok && (payload?.success === true || payload?.success === 'true');
-
-      if (!ok) {
-        const apiMsg = typeof payload?.message === 'string' ? payload.message : '';
-        throw new Error(apiMsg || 'Gửi góp ý thất bại');
-      }
-
-      setToast({ type: 'success', message: 'Đã gửi góp ý thành công ✅' });
-      formRef.current?.reset();
-    } catch (error) {
-      const message =
-        error instanceof Error && error.name === 'AbortError'
-          ? 'Hết thời gian chờ phản hồi, anh thử lại giúp em nhé.'
-          : error instanceof Error
-            ? error.message
-            : 'Gửi chưa thành công, anh thử lại giúp em nhé.';
-      setToast({ type: 'error', message });
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setToast(null), 3200);
-    }
-  };
-
   return (
     <section id="ho-tro" className="bg-hueInk py-12 text-white md:py-16">
       <div className="section-wrap">
@@ -114,50 +49,34 @@ export default function SupportSection() {
             </div>
           </div>
 
-          <form ref={formRef} className="rounded-2xl border border-hueGold/20 bg-white/5 p-5" method="POST" onSubmit={handleSubmit}>
+          <form
+            className="rounded-2xl border border-hueGold/20 bg-white/5 p-5"
+            action="mailto:dhphong266@gmail.com"
+            method="post"
+            encType="text/plain"
+          >
             <h3 className="text-lg font-semibold text-hueGold">Góp ý nhanh</h3>
-            <p className="mt-1 text-xs text-white/70">Biểu mẫu gửi trực tiếp tới: dhphong266@gmail.com (miễn phí)</p>
-
-            <input type="hidden" name="_subject" value="[Hue Heritage] Góp ý mới từ trang Hỗ trợ" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
-
+            <p className="mt-1 text-xs text-white/70">Góp ý sẽ mở ứng dụng email để gửi tới: dhphong266@gmail.com</p>
             <div className="mt-4 space-y-3">
               <input
-                name="Họ tên"
+                name="Ho ten"
                 className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
                 placeholder="Họ tên"
                 required
               />
               <input
-                name="Số điện thoại"
+                name="So dien thoai"
                 className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
                 placeholder="Số điện thoại"
               />
               <textarea
-                name="Nội dung góp ý"
+                name="Noi dung gop y"
                 className="h-28 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
                 placeholder="Nội dung góp ý"
                 required
               />
-
-              {toast && (
-                <div
-                  className={`rounded-lg px-3 py-2 text-sm ${
-                    toast.type === 'success' ? 'bg-emerald-500/20 text-emerald-200' : 'bg-rose-500/20 text-rose-200'
-                  }`}
-                >
-                  {toast.message}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
-              >
-                {isSubmitting ? 'Đang gửi...' : 'Gửi góp ý'}
+              <button type="submit" className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105">
+                Gửi góp ý
               </button>
             </div>
           </form>
