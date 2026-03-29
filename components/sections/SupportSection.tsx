@@ -1,6 +1,60 @@
+'use client';
+
+import { FormEvent, useRef, useState } from 'react';
 import support from '@/data/support.json';
 
+type ToastState = { type: 'success' | 'error' | 'info'; message: string } | null;
+
+const RECEIVER_EMAIL = 'dhphong266@gmail.com';
+
 export default function SupportSection() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [toast, setToast] = useState<ToastState>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const showToast = (type: 'success' | 'error' | 'info', message: string, timeout = 3200) => {
+    setToast({ type, message });
+    setTimeout(() => setToast(null), timeout);
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+
+    const formData = new FormData(e.currentTarget);
+    const fullName = String(formData.get('Ho ten') || '').trim();
+    const phone = String(formData.get('So dien thoai') || '').trim();
+    const message = String(formData.get('Noi dung gop y') || '').trim();
+
+    if (!fullName) {
+      showToast('error', 'Vui lòng nhập Họ tên trước khi gửi.');
+      return;
+    }
+
+    if (!message) {
+      showToast('error', 'Vui lòng nhập Nội dung góp ý trước khi gửi.');
+      return;
+    }
+
+    if (phone && !/^[0-9+\s()-]{8,20}$/.test(phone)) {
+      showToast('error', 'Số điện thoại chưa đúng định dạng.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    showToast('info', 'Đang mở ứng dụng email để gửi góp ý...');
+
+    const subject = '[Hue Heritage] Góp ý mới từ trang Hỗ trợ';
+    const body = `Họ tên: ${fullName}\nSố điện thoại: ${phone || '(không có)'}\n\nNội dung góp ý:\n${message}`;
+    const mailtoUrl = `mailto:${RECEIVER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+
+    formRef.current?.reset();
+    setIsSubmitting(false);
+    showToast('success', 'Đã mở ứng dụng email. Anh kiểm tra và bấm gửi trong app mail nhé ✅', 4500);
+  };
+
   return (
     <section id="ho-tro" className="bg-hueInk py-12 text-white md:py-16">
       <div className="section-wrap">
@@ -49,20 +103,15 @@ export default function SupportSection() {
             </div>
           </div>
 
-          <form
-            className="rounded-2xl border border-hueGold/20 bg-white/5 p-5"
-            action="mailto:dhphong266@gmail.com"
-            method="post"
-            encType="text/plain"
-          >
+          <form ref={formRef} className="rounded-2xl border border-hueGold/20 bg-white/5 p-5" noValidate onSubmit={handleSubmit}>
             <h3 className="text-lg font-semibold text-hueGold">Góp ý nhanh</h3>
-            <p className="mt-1 text-xs text-white/70">Góp ý sẽ mở ứng dụng email để gửi tới: dhphong266@gmail.com</p>
+            <p className="mt-1 text-xs text-white/70">Góp ý sẽ mở ứng dụng email để gửi tới: {RECEIVER_EMAIL}</p>
+
             <div className="mt-4 space-y-3">
               <input
                 name="Ho ten"
                 className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
                 placeholder="Họ tên"
-                required
               />
               <input
                 name="So dien thoai"
@@ -73,10 +122,28 @@ export default function SupportSection() {
                 name="Noi dung gop y"
                 className="h-28 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
                 placeholder="Nội dung góp ý"
-                required
               />
-              <button type="submit" className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105">
-                Gửi góp ý
+
+              {toast && (
+                <div
+                  className={`rounded-lg px-3 py-2 text-sm ${
+                    toast.type === 'success'
+                      ? 'bg-emerald-500/20 text-emerald-200'
+                      : toast.type === 'error'
+                        ? 'bg-rose-500/20 text-rose-200'
+                        : 'bg-sky-500/20 text-sky-200'
+                  }`}
+                >
+                  {toast.message}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                {isSubmitting ? 'Đang gửi...' : 'Gửi góp ý'}
               </button>
             </div>
           </form>
