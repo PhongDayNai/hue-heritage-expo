@@ -3,7 +3,8 @@
 import { MouseEvent, useRef, useState } from 'react';
 import support from '@/data/support.json';
 
-type ToastState = { type: 'success' | 'error' | 'info'; message: string } | null;
+type ToastType = 'success' | 'error' | 'info';
+type ToastState = { type: ToastType; message: string } | null;
 
 const RECEIVER_EMAIL = 'dhphong266@gmail.com';
 
@@ -12,7 +13,7 @@ export default function SupportSection() {
   const [toast, setToast] = useState<ToastState>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const showToast = (type: 'success' | 'error' | 'info', message: string, timeout = 3200) => {
+  const showToast = (type: ToastType, message: string, timeout = 3200) => {
     setToast({ type, message });
     setTimeout(() => setToast(null), timeout);
   };
@@ -33,7 +34,7 @@ export default function SupportSection() {
     const message = String(formData.get('Noi dung gop y') || '').trim();
 
     setIsSubmitting(true);
-    showToast('info', 'Đang mở ứng dụng email để gửi góp ý...');
+    showToast('info', 'Đang xử lý góp ý...');
 
     const subject = '[Hue Heritage] Góp ý mới từ trang Hỗ trợ';
     const body = `Họ tên: ${fullName}\nSố điện thoại: ${phone || '(không có)'}\n\nNội dung góp ý:\n${message}`;
@@ -43,7 +44,13 @@ export default function SupportSection() {
 
     formRef.current.reset();
     setIsSubmitting(false);
-    showToast('success', 'Đã mở ứng dụng email. Anh kiểm tra và bấm gửi trong app mail nhé ✅', 4500);
+    showToast('success', 'Đã tạo nội dung góp ý, anh kiểm tra ứng dụng email để gửi nhé.', 4200);
+  };
+
+  const toastStyleByType: Record<ToastType, string> = {
+    success: 'border-emerald-300/30 bg-emerald-900/60 text-emerald-100',
+    error: 'border-rose-300/30 bg-rose-900/65 text-rose-100',
+    info: 'border-hueGold/35 bg-[#2a1a11]/90 text-[#f4ddb0]'
   };
 
   return (
@@ -118,20 +125,6 @@ export default function SupportSection() {
                 placeholder="Nội dung góp ý"
               />
 
-              {toast && (
-                <div
-                  className={`rounded-lg px-3 py-2 text-sm ${
-                    toast.type === 'success'
-                      ? 'bg-emerald-500/20 text-emerald-200'
-                      : toast.type === 'error'
-                        ? 'bg-rose-500/20 text-rose-200'
-                        : 'bg-sky-500/20 text-sky-200'
-                  }`}
-                >
-                  {toast.message}
-                </div>
-              )}
-
               <button
                 type="button"
                 onClick={handleButtonClick}
@@ -143,6 +136,16 @@ export default function SupportSection() {
           </form>
         </div>
       </div>
+
+      {toast && (
+        <div className="pointer-events-none fixed inset-x-0 bottom-6 z-[350] flex justify-center px-4">
+          <div
+            className={`w-full max-w-md rounded-2xl border px-4 py-3 text-sm shadow-[0_14px_30px_rgba(0,0,0,0.4)] backdrop-blur-md ${toastStyleByType[toast.type]}`}
+          >
+            <p className="text-center font-medium">{toast.message}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
