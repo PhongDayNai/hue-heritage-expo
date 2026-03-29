@@ -104,17 +104,6 @@ export default function Topbar() {
 
   return (
     <>
-      <div className="hidden border-b border-hueGold/25 bg-hueRed py-1 text-[12px] text-[#f4ddb0] md:block font-[var(--font-body)]">
-        <div className="section-wrap flex items-center justify-between">
-          <span>HueHeritage Expo - Nền tảng giới thiệu danh lam, văn hoá và ẩm thực Huế</span>
-          <div className="flex items-center gap-4">
-            <Link href="/ho-tro" className="hover:text-white">
-              Liên hệ
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {compactMobile && (
         <div className="sticky top-0 z-[60] border-b border-hueGold/70 bg-hueRed/95 backdrop-blur lg:hidden">
           <div className="section-wrap relative flex items-center justify-between py-2.5">
