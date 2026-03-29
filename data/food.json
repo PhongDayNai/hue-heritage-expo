@@ -1,0 +1,560 @@
+[
+  {
+    "id": "anh-huong-den-am-thuc-binh-dien",
+    "tenMon": "Ảnh hưởng đến ẩm thực Bình Điền",
+    "tenQuan": "Ẩm thực bản địa",
+    "mucGia": "Đang cập nhật",
+    "moTaNgan": "Ẩm thực Bình Điền được hình thành từ điều kiện địa lý bán sơn địa, dòng chảy lịch sử giao thương và sự giao thoa văn hóa giữa người Kinh với cộng đồng dân tộc vùng cao.",
+    "anh": [
+      "/assets/food/anh-huong-den-am-thuc-binh-dien/img-01.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Giới thiệu ẩm thực Bình Điền Ẩm thực Bình Điền mang bản sắc riêng nhờ sự kết hợp của ba yếu tố cốt lõi: địa lý, lịch sử và văn hóa cộng đồng.\n1. Yếu tố địa lý\n- Bình Điền nằm ở vùng bán sơn địa, chuyển tiếp giữa đồng bằng và miền núi.\n- Lưu vực sông Hữu Trạch bồi đắp phù sa, tạo điều kiện cho nhiều nông sản địa phương phát triển.\n- Địa hình gò đồi và rừng đệm thuận lợi cho chăn nuôi thả tự nhiên, tạo ra nguồn nguyên liệu tươi, chắc thịt và đậm vị.\n- Khí hậu mát hơn nội đô Huế giúp rau củ sinh trưởng ổn định quanh năm.\n2. Yếu tố lịch sử\n- Bình Điền nằm trên trục Quốc lộ 49, kết nối Huế với A Lưới và tuyến giao thương lên vùng cao.\n- Quá trình di dân, khai hoang sau năm 1975 tạo nên sự giao thoa trong thói quen nấu nướng.\n- Phong cách ẩm thực vì vậy thiên về sự mộc mạc, no đủ, đậm đà nhưng vẫn giữ nguyên vị nguyên liệu.\n3. Yếu tố văn hóa\n- Khu vực có sự giao thoa giữa người Kinh và cộng đồng dân tộc thiểu số (như Cơ Tu).\n- Nhiều kỹ thuật chế biến đặc trưng vùng cao như nướng, hong khói, dùng gia vị rừng được ứng dụng linh hoạt.\n- Văn hóa chợ phiên Bình Điền góp phần lan tỏa các món đặc sản địa phương, đồng thời giữ vai trò kết nối cộng đồng. Tổng hòa các yếu tố trên đã tạo nên một nền ẩm thực Bình Điền chân chất, gần gũi nhưng giàu bản sắc, phù hợp cả trải nghiệm hằng ngày lẫn khám phá du lịch."
+  },
+  {
+    "id": "bo-song-quan",
+    "tenMon": "Bờ Sông quán",
+    "tenQuan": "Các quán ăn",
+    "mucGia": "Theo món",
+    "moTaNgan": "Quán ven sông Hữu Trạch, phù hợp nhóm bạn với các món nướng và lẩu đặc sản địa phương.",
+    "anh": [
+      "/assets/food/bo-song-quan/img-01.jpg"
+    ],
+    "diaChi": "Thôn Phú Lợi, xã Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Thông tin nổi bật:\n- Gà đồi nướng: 170k/phần\n- Lẩu các loại (cá trê, dê, bò): 120–150k/phần\n- Dê hấp: 150k/phần Liên hệ: 0902545952",
+    "sdt": "0902545952",
+    "mapUrls": [
+      "https://maps.app.goo.gl/EDe9UH5Di776o6ft7"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Thôn Phú Lợi, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/EDe9UH5Di776o6ft7"
+      }
+    ]
+  },
+  {
+    "id": "quan-be-den",
+    "tenMon": "Quán Bé Đen",
+    "tenQuan": "Các quán ăn",
+    "mucGia": "Theo món",
+    "moTaNgan": "Quán dân dã tại Bình Lợi, nổi bật với cá lấu um chuối, rau má trộn tóp mỡ và ếch um măng chua.",
+    "anh": [
+      "/assets/food/quan-be-den/img-01.jpg"
+    ],
+    "diaChi": "Thôn Bình Lợi, xã Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Thông tin nổi bật:\n- Cá lấu um chuối: 150–200k/phần\n- Rau má trộn tóp mỡ: 70k/phần\n- Ếch um măng chua: 80k/phần Liên hệ: 0985211410",
+    "sdt": "0985211410",
+    "mapUrls": [
+      "https://maps.app.goo.gl/LW9b53RXgtgXtR2o6"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Thôn Bình Lợi, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/LW9b53RXgtgXtR2o6"
+      }
+    ]
+  },
+  {
+    "id": "quan-ht",
+    "tenMon": "Quán HT",
+    "tenQuan": "Các quán ăn",
+    "mucGia": "Theo món",
+    "moTaNgan": "Quán nhậu địa phương tại An Vinh, thực đơn đa dạng với dê hấp, hải sản và các món lẩu.",
+    "anh": [
+      "/assets/food/quan-ht/img-01.jpg"
+    ],
+    "diaChi": "Thôn An Vinh, xã Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Thông tin nổi bật:\n- Dê hấp: 150k/phần\n- Canh mướp đắng cá thát lát: 100k/phần\n- Tôm rang me / hấp / xóc tỏi / sốt Thái: 100k/phần\n- Cá lóc um măng: 100k/phần\n- Lẩu các loại (cá leo, cá bớp, bò, dê, cá lóc): 120–170k/phần Liên hệ: 0932147284 · 0867866162",
+    "sdt": "0932147284",
+    "mapUrls": [
+      "https://maps.app.goo.gl/XFrSb1Qx5KokgjR68"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Thôn An Vinh, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/XFrSb1Qx5KokgjR68"
+      }
+    ]
+  },
+  {
+    "id": "quan-nhan-anh",
+    "tenMon": "Quán Nhân Ánh",
+    "tenQuan": "Các quán ăn",
+    "mucGia": "Theo món",
+    "moTaNgan": "Nhà hàng Nhân Ánh tại Đông Hòa, phù hợp khách gia đình với món lẩu cá leo và đặc sản theo mùa.",
+    "anh": [
+      "/assets/food/quan-nhan-anh/img-01.jpg"
+    ],
+    "diaChi": "Thôn Đông Hòa, xã Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Thông tin nổi bật:\n- Lẩu cá leo: 120k/phần\n- Canh nấm mối (theo mùa): 150k/phần\n- Bánh cuốn thịt heo: 90k/phần Liên hệ: 0398327894",
+    "sdt": "0398327894",
+    "mapUrls": [
+      "https://maps.app.goo.gl/bU5UDUDiQDTgV3vo9"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Thôn Đông Hòa, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/bU5UDUDiQDTgV3vo9"
+      }
+    ]
+  },
+  {
+    "id": "quan-oc-xinh",
+    "tenMon": "Quán Ốc Xinh",
+    "tenQuan": "Các quán ăn",
+    "mucGia": "Theo món",
+    "moTaNgan": "Quán ốc bình dân tại An Vinh, nổi bật với bạch tuộc hấp, hàu nướng và các món hải sản sốt me.",
+    "anh": [
+      "/assets/food/quan-oc-xinh/img-01.jpg"
+    ],
+    "diaChi": "Thôn An Vinh, xã Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Thông tin nổi bật:\n- Bạch tuộc hấp: 90k/phần\n- Ba chỉ nướng: 50k/phần\n- Hàu nướng mỡ hành: 60k/phần\n- Càng ghẹ rang me: 70k/phần Liên hệ: 0362677548",
+    "sdt": "0362677548",
+    "mapUrls": [
+      "https://maps.app.goo.gl/4fxYDVa82ktaxTLz7"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Thôn An Vinh, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/4fxYDVa82ktaxTLz7"
+      }
+    ]
+  },
+  {
+    "id": "banh-beo-hue-binh-dien",
+    "tenMon": "Bánh bèo Huế",
+    "moTaNgan": "Bánh bèo Huế là món ăn dân dã với chén bánh nhỏ mềm mịn, ăn kèm tôm chấy, mỡ hành và nước mắm chua ngọt.",
+    "anh": [
+      "/assets/food/banh-beo-hue-binh-dien/img-01.jpg"
+    ],
+    "moTaDayDu": "Bánh bèo Huế là món ăn quen thuộc trong văn hóa ẩm thực cố đô.\n1. Đặc trưng món ăn\n- Bánh làm từ bột gạo, hấp trong chén nhỏ.\n- Dùng kèm tôm chấy, mỡ hành, da heo chiên giòn (tùy quán).\n2. Hương vị\n- Mềm, thơm nhẹ, dễ ăn.\n- Đậm đà khi chan nước mắm chua ngọt pha ớt.\n3. Gợi ý thưởng thức\n- Có thể tìm tại chợ Bình Điền và các quán ven Quốc lộ\n49. Giá tham khảo: 15.000\n- 20.000 đồng/phần.",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "15.000\n- 20.000 đồng/phần",
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "mapUrls": [
+      "https://maps.app.goo.gl/83ri2q63jnLGD62D9?g_st=ic"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Chợ Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/83ri2q63jnLGD62D9?g_st=ic"
+      }
+    ]
+  },
+  {
+    "id": "banh-loc-hue",
+    "tenMon": "Bánh lọc Huế",
+    "moTaNgan": "Bánh lọc Huế nổi bật với lớp bột trong dai mềm, nhân tôm thịt đậm vị, chấm nước mắm cay đặc trưng.",
+    "anh": [
+      "/assets/food/banh-loc-hue/img-01.jpg"
+    ],
+    "moTaDayDu": "Bánh lọc Huế là món bánh nổi tiếng với độ dai và vị đậm đà.\n1. Đặc điểm\n- Làm từ bột năng trong, nhân tôm thịt.\n- Có loại gói lá chuối và loại bánh lọc trần.\n2. Hương vị\n- Dai mềm, thơm mùi nhân, vị mặn ngọt hài hòa.\n- Thường ăn kèm nước mắm ớt.\n3. Gợi ý thưởng thức\n- Thường bán tại chợ Bình Điền, đặc biệt vào các phiên chợ. Giá tham khảo: 15.000\n- 20.000 đồng/phần.",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "15.000\n- 20.000 đồng/phần",
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "mapUrls": [
+      "https://maps.app.goo.gl/83ri2q63jnLGD62D9?g_st=ic"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Chợ Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/83ri2q63jnLGD62D9?g_st=ic"
+      }
+    ]
+  },
+  {
+    "id": "banh-nam-hue",
+    "tenMon": "Bánh nậm Huế",
+    "moTaNgan": "Bánh nậm Huế mềm mịn, thơm nhẹ mùi lá chuối, nhân tôm thịt thanh vị và dễ ăn.",
+    "anh": [
+      "/assets/food/banh-nam-hue/img-01.jpg"
+    ],
+    "moTaDayDu": "Bánh nậm Huế là món bánh truyền thống mang phong vị nhẹ nhàng, tinh tế.\n1. Đặc trưng\n- Bột gạo mịn, dàn mỏng trên lá chuối, thêm nhân tôm thịt.\n- Hấp chín nên giữ được độ mềm và mùi thơm lá.\n2. Hương vị\n- Mềm mịn, thanh vị, không ngấy.\n- Ăn ngon hơn khi chấm nước mắm pha ớt.\n3. Gợi ý thưởng thức\n- Có thể mua tại chợ Bình Điền và các quán ăn sáng địa phương. Giá tham khảo: 15.000\n- 20.000 đồng/phần.",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "15.000\n- 20.000 đồng/phần",
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "mapUrls": [
+      "https://maps.app.goo.gl/83ri2q63jnLGD62D9?g_st=ic"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Chợ Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/83ri2q63jnLGD62D9?g_st=ic"
+      }
+    ]
+  },
+  {
+    "id": "banh-ep",
+    "tenMon": "Bánh ép",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "20.000\n- 30.000 đồng/phần",
+    "moTaNgan": "Bánh ép Huế là món ăn vặt nổi tiếng với vị béo dai, hơi giòn, ăn nóng cùng rau sống và nước chấm cay.",
+    "anh": [
+      "/assets/food/banh-ep/img-03.jpg",
+      "/assets/food/banh-ep/img-01.png",
+      "/assets/food/banh-ep/img-02.png"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Bánh ép Huế là món ăn vặt phổ biến, dễ ăn và hợp khẩu vị nhiều người.\n1. Thành phần\n- Bột lọc ép với trứng, tôm hoặc thịt trên khuôn nóng.\n2. Hai kiểu thường gặp\n- Bánh ép khô: giòn nhẹ, đậm vị.\n- Bánh ép ướt: mềm dẻo, dễ ăn.\n3. Gợi ý thưởng thức\n- Nên ăn nóng tại chỗ để cảm nhận độ giòn và mùi thơm rõ nhất.\n- Có thể tìm ở khu vực chợ Bình Điền và dọc Quốc lộ\n49. Giá tham khảo: 20.000\n- 30.000 đồng/phần.",
+    "mapUrls": [
+      "https://maps.app.goo.gl/WfDPHujHUsUZE6197",
+      "https://maps.app.goo.gl/4VkKPzxPxDfuXXg66"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán mệ Bê: Thôn Hải Tân, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/WfDPHujHUsUZE6197"
+      },
+      {
+        "label": "Quán chị Linh: gần chợ Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/4VkKPzxPxDfuXXg66"
+      }
+    ]
+  },
+  {
+    "id": "banh-it-ram-hue",
+    "tenMon": "Bánh ít ram Huế",
+    "moTaNgan": "Bánh ít ram Huế kết hợp lớp ram giòn bên dưới và bánh ít dẻo bên trên, tạo cảm giác giòn\n- mềm hài hòa.",
+    "anh": [
+      "/assets/food/banh-it-ram-hue/img-01.jpg"
+    ],
+    "moTaDayDu": "Bánh ít ram Huế là món bánh đặc trưng với kết cấu độc đáo.\n1. Cấu trúc món ăn\n- Lớp dưới là ram chiên giòn.\n- Lớp trên là bánh ít dẻo, thường có nhân tôm thịt.\n2. Hương vị\n- Bên ngoài giòn, bên trong dẻo mềm.\n- Vị đậm đà, hợp ăn nhẹ hoặc ăn xế.\n3. Gợi ý thưởng thức\n- Thường có ở chợ Bình Điền và các quán ăn địa phương. Giá tham khảo: 15.000\n- 20.000 đồng/phần.",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "15.000\n- 20.000 đồng/phần",
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "mapUrls": [
+      "https://maps.app.goo.gl/83ri2q63jnLGD62D9?g_st=ic"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Chợ Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/83ri2q63jnLGD62D9?g_st=ic"
+      }
+    ]
+  },
+  {
+    "id": "bun-bo-hue",
+    "tenMon": "Bún bò Huế",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "25.000\n- 40.000 đồng/tô",
+    "moTaNgan": "Bún bò Huế có nước dùng đậm đà từ xương và sả, kết hợp sợi bún to, thịt bò, giò heo và rau sống.",
+    "anh": [
+      "/assets/food/bun-bo-hue/img-05.jpg",
+      "/assets/food/bun-bo-hue/img-01.png",
+      "/assets/food/bun-bo-hue/img-02.png",
+      "/assets/food/bun-bo-hue/img-03.jpg",
+      "/assets/food/bun-bo-hue/img-04.jpg",
+      "/assets/food/bun-bo-hue/img-06.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Bún bò Huế là món ăn biểu tượng của ẩm thực Huế, phổ biến tại Bình Điền.\n1. Thành phần chính\n- Nước dùng ninh xương, thơm sả và mắm ruốc.\n- Bún sợi to, thịt bò, giò heo, rau sống ăn kèm.\n2. Hương vị\n- Đậm đà, cân bằng vị mặn\n- ngọt\n- cay.\n- Phù hợp ăn sáng hoặc ăn trưa.\n3. Gợi ý thưởng thức\n- Nhiều quán dọc Quốc lộ 49 đoạn qua Bình Điền, ngon nhất buổi sáng. Giá tham khảo: 25.000\n- 40.000 đồng/tô.",
+    "mapUrls": [
+      "https://maps.app.goo.gl/2XnQwtcHEjLyLids5",
+      "https://maps.app.goo.gl/GyBziF9sxnLRZLvS8",
+      "https://maps.app.goo.gl/AdL4qfjbMDgvjiAs7"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến 1: Quốc lộ 49, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/2XnQwtcHEjLyLids5"
+      },
+      {
+        "label": "Quán phổ biến 2: Quốc lộ 49, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/GyBziF9sxnLRZLvS8"
+      },
+      {
+        "label": "Quán phổ biến 3: Quốc lộ 49, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/AdL4qfjbMDgvjiAs7"
+      }
+    ]
+  },
+  {
+    "id": "bun-hen-com-hen",
+    "tenMon": "Bún hến, cơm hến",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "15.000\n- 30.000 đồng/phần",
+    "moTaNgan": "Cơm hến\n- bún hến là món dân dã đậm chất Huế, hài hòa giữa hến xào, rau sống, đậu phộng và mắm ruốc.",
+    "anh": [
+      "/assets/food/bun-hen-com-hen/img-03.jpg",
+      "/assets/food/bun-hen-com-hen/img-01.png",
+      "/assets/food/bun-hen-com-hen/img-02.jpg",
+      "/assets/food/bun-hen-com-hen/img-04.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Cơm hến và bún hến là hai món quen thuộc với hương vị mộc mạc nhưng đậm đà.\n1. Thành phần\n- Hến xào, cơm hoặc bún, rau sống, đậu phộng, mắm ruốc.\n- Có thể dùng kèm nước hến nóng.\n2. Hương vị\n- Vị ngọt tự nhiên của hến, cay nhẹ và thơm đặc trưng.\n- Ăn gọn, phù hợp bữa sáng hoặc bữa nhẹ.\n3. Gợi ý thưởng thức\n- Các quán ăn dọc Quốc lộ 49 khu vực Bình Điền. Giá tham khảo: 15.000\n- 30.000 đồng/phần.",
+    "mapUrls": [
+      "https://maps.app.goo.gl/EGQVsV4YHc7hcQXQA",
+      "https://maps.app.goo.gl/fcbY4pKjqMVKXBqp6"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán bún, cơm hến o Nhím: Quốc lộ 49, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/EGQVsV4YHc7hcQXQA"
+      },
+      {
+        "label": "Quán Mùi: Quốc lộ 49, xã Bình Điền, TX Hương Trà (SĐT: 0354755459 - 0917207506)",
+        "url": "https://maps.app.goo.gl/fcbY4pKjqMVKXBqp6"
+      }
+    ]
+  },
+  {
+    "id": "bun-mam-nem",
+    "tenMon": "Bún mắm nêm",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "15.000\n- 25.000 đồng/phần",
+    "moTaNgan": "Bún mắm nêm có hương vị đậm, nồng và cuốn hút; ăn cùng thịt heo, chả, rau sống tạo cảm giác rất “bắt vị”.",
+    "anh": [
+      "/assets/food/bun-mam-nem/img-02.png",
+      "/assets/food/bun-mam-nem/img-01.png",
+      "/assets/food/bun-mam-nem/img-03.jpg",
+      "/assets/food/bun-mam-nem/img-04.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Bún mắm nêm là món dân dã đặc trưng của miền Trung, rất phổ biến ở Huế.\n1. Thành phần\n- Bún tươi, thịt heo, chả/nem (tùy quán), rau sống.\n- Mắm nêm pha là phần quyết định hương vị.\n2. Hương vị\n- Đậm, nồng, dậy mùi đặc trưng của mắm nêm.\n- Kết hợp tốt với rau sống và vị chua cay nhẹ.\n3. Gợi ý thưởng thức\n- Có tại chợ Bình Điền buổi sáng và các quán ven Quốc lộ 49 buổi chiều tối. Giá tham khảo: 15.000\n- 25.000 đồng/phần.",
+    "mapUrls": [
+      "https://maps.app.goo.gl/YYnC73MgDRAocNqZ9"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Quốc lộ 49, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/YYnC73MgDRAocNqZ9"
+      }
+    ]
+  },
+  {
+    "id": "bun-thit-nuong",
+    "tenMon": "Bún thịt nướng",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "15.000\n- 25.000 đồng/phần",
+    "moTaNgan": "Bún thịt nướng Huế thơm mùi thịt nướng, ăn cùng rau sống, đồ chua và nước chấm đậm đà.",
+    "anh": [
+      "/assets/food/bun-thit-nuong/updated-01.jpg",
+      "/assets/food/bun-thit-nuong/updated-02.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Bún thịt nướng là món ăn quen thuộc, dễ ăn và phù hợp nhiều thời điểm trong ngày.\n1. Thành phần\n- Bún tươi, thịt nướng, rau sống, đồ chua, đậu phộng.\n2. Hương vị\n- Thịt nướng thơm, vị mặn ngọt hài hòa.\n- Nước chấm giúp món ăn tròn vị hơn.\n3. Gợi ý thưởng thức\n- Có thể ăn sáng tại chợ Bình Điền hoặc ăn chiều tối ở các quán ven Quốc lộ\n49. Giá tham khảo: 15.000\n- 25.000 đồng/phần.",
+    "mapUrls": [
+      "https://maps.app.goo.gl/LYSJuaGNq35DfzvbA"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Quốc lộ 49, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/LYSJuaGNq35DfzvbA"
+      }
+    ]
+  },
+  {
+    "id": "che-binh-dien",
+    "tenMon": "Chè Bình Điền",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "10.000\n- 20.000 đồng/ly",
+    "moTaNgan": "Chè Huế tại Bình Điền có vị ngọt thanh, đa dạng loại chè và phù hợp dùng tráng miệng trong ngày nóng.",
+    "anh": [
+      "/assets/food/che-binh-dien/img-02.jpg",
+      "/assets/food/che-binh-dien/img-01.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Chè Huế là phần không thể thiếu trong trải nghiệm ẩm thực địa phương.\n1. Đặc trưng\n- Vị ngọt thanh, không gắt.\n- Nhiều loại như chè đậu, chè hạt sen, chè truyền thống theo mùa.\n2. Gợi ý thưởng thức\n- Bán phổ biến ở chợ Bình Điền buổi sáng và các phiên chợ.\n- Có thể tìm thêm tại các quán chè dọc Quốc lộ\n49. Giá tham khảo: 10.000\n- 20.000 đồng/ly.",
+    "mapUrls": [
+      "https://maps.app.goo.gl/UhGDcKWyGYkw56eK7",
+      "https://maps.app.goo.gl/Z1KrsUQUFh62d64V8"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Chợ Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/UhGDcKWyGYkw56eK7"
+      },
+      {
+        "label": "Quán chè Trương Định: Quốc lộ 49, xã Bình Điền, TX Hương Trà (SĐT: 0982002189)",
+        "url": "https://maps.app.goo.gl/Z1KrsUQUFh62d64V8"
+      }
+    ]
+  },
+  {
+    "id": "nem-hue",
+    "tenMon": "Nem Huế",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "20.000\n- 40.000 đồng/phần",
+    "moTaNgan": "Nem chua Huế có vị chua nhẹ, cay nồng, giòn dai; là món ăn quen thuộc trong bữa nhậu và tụ họp.",
+    "anh": [
+      "/assets/food/nem-hue/img-01.jpg",
+      "/assets/food/nem-hue/img-02.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Nem chua Huế là món ăn dân dã đặc trưng với vị lên men tự nhiên.\n1. Thành phần\n- Thịt heo xay, gia vị, gói lá chuối và ủ men.\n2. Hương vị\n- Chua nhẹ, cay thơm, giòn dai vừa phải.\n3. Gợi ý thưởng thức\n- Phổ biến ở các quán dọc Quốc lộ 49 đoạn qua Bình Điền, thường bán chiều tối. Giá tham khảo: 20.000\n- 40.000 đồng/phần.",
+    "mapUrls": [
+      "https://maps.app.goo.gl/83ri2q63jnLGD62D9?g_st=ic"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán phổ biến: Quốc lộ 49, xã Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/83ri2q63jnLGD62D9?g_st=ic"
+      }
+    ]
+  },
+  {
+    "id": "tre-hue",
+    "tenMon": "Tré Huế",
+    "tenQuan": "Các món vỉa hè",
+    "mucGia": "20.000\n- 40.000 đồng/phần",
+    "moTaNgan": "Tré Huế có vị chua cay đặc trưng, giòn dai, thường ăn cùng rau sống và bánh tráng.",
+    "anh": [
+      "/assets/food/tre-hue/updated-01.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Tré Huế là món đặc sản lên men mang hương vị đặc trưng của Huế.\n1. Thành phần\n- Thịt heo, bì heo, thính, tỏi, riềng; gói lá chuối và ủ men.\n2. Hương vị\n- Chua nhẹ, thơm, giòn dai, hợp làm món nhắm.\n3. Gợi ý thưởng thức\n- Cuốn bánh tráng, ăn kèm rau sống, chấm nước mắm ớt.\n- Có ở các quán dọc Quốc lộ 49, thường bán chiều tối. Giá tham khảo: 20.000\n- 40.000 đồng/phần."
+  },
+  {
+    "id": "banh-sung-trau-quat",
+    "tenMon": "Bánh sừng trâu (quát)",
+    "tenQuan": "Đặc sản",
+    "mucGia": "20.000\n- 30.000 đồng/phần",
+    "moTaNgan": "Bánh sừng trâu (bánh quát) là món truyền thống của đồng bào Cơ Tu tại Bình Điền, dẻo thơm từ nếp nương và thường có trong các phiên chợ vùng cao.",
+    "anh": [
+      "/assets/food/banh-sung-trau-quat/img-01.png",
+      "/assets/food/banh-sung-trau-quat/img-02.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Bánh sừng trâu (bánh quát) là món ăn truyền thống của đồng bào Cơ Tu ở Bình Điền.\n1. Đặc trưng món ăn\n- Bánh được gói nhọn hai đầu, hình cong như sừng trâu.\n- Nguyên liệu chính là nếp nương, gói bằng lá rừng nên thơm dịu.\n2. Hương vị\n- Độ dẻo bùi rõ, vị ngọt thanh tự nhiên từ nếp.\n- Phù hợp ăn nhẹ, mang theo khi đi chợ phiên hoặc dã ngoại.\n3. Gợi ý mua\n- Chợ Bình Điền và các hộ làm bánh tại địa phương. Giá tham khảo: 20.000\n- 30.000 đồng/phần."
+  },
+  {
+    "id": "bup-chuoi-bop-binh-dien",
+    "tenMon": "Búp chuối bóp",
+    "tenQuan": "Đặc sản",
+    "mucGia": "15.000\n- 20.000 đồng/phần",
+    "moTaNgan": "Búp chuối bóp là món dân dã, thanh mát, cân bằng vị giác với vị chát nhẹ của chuối non và vị chua cay mặn ngọt hài hòa.",
+    "anh": [
+      "/assets/food/bup-chuoi-bop-binh-dien/img-02.jpg",
+      "/assets/food/bup-chuoi-bop-binh-dien/img-01.webp"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Búp chuối bóp là món ăn dân dã quen thuộc trong bữa cơm địa phương.\n1. Thành phần chính\n- Búp chuối non thái mỏng.\n- Trộn cùng rau thơm, đậu phộng rang, chanh, tỏi, ớt và nước mắm.\n2. Hương vị\n- Giòn nhẹ, chát thanh của chuối non.\n- Hậu vị bùi béo từ đậu phộng, cân bằng bởi vị chua cay.\n3. Gợi ý thưởng thức\n- Dùng như món khai vị hoặc ăn kèm các món nướng.\n- Phù hợp thời tiết nóng nhờ vị thanh mát. Gợi ý địa điểm: quán cơm ven Quốc lộ 49 đoạn qua Bình Điền.\nGiá tham khảo: 15.000\n- 20.000 đồng/phần.",
+    "mapUrls": [
+      "https://maps.app.goo.gl/zSPzfhAt2tV3JvtWA"
+    ],
+    "mapEntries": [
+      {
+        "label": "Quán Cơm Toàn Lý: Thôn Đông Hòa, xã Bình Điền, TX Hương Trà (SĐT: 0987407654)",
+        "url": "https://maps.app.goo.gl/zSPzfhAt2tV3JvtWA"
+      }
+    ]
+  },
+  {
+    "id": "ca-xanh-nuong-binh-dien",
+    "tenMon": "Cá xanh nướng",
+    "tenQuan": "Đặc sản",
+    "mucGia": "120.000\n- 130.000 đồng/phần",
+    "moTaNgan": "Cá xanh nướng (cá niên) là món đặc sản suối Bình Điền, thịt săn chắc, ngọt thanh, nướng than giữ mùi thơm mộc của núi rừng.",
+    "anh": [
+      "/assets/food/ca-xanh-nuong-binh-dien/img-01.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Cá xanh nướng là món đặc sản tiêu biểu từ nguồn cá suối vùng Bình Điền.\n1. Nguyên liệu\n- Cá xanh (cá niên) sống ở suối nước trong, thịt chắc và ít tanh.\n2. Cách chế biến\n- Nướng than lửa vừa để da se giòn, thịt chín đều bên trong.\n- Ưu tiên nêm mộc để giữ vị ngọt tự nhiên.\n3. Cách ăn ngon\n- Chấm muối ớt hoặc muối tiêu chanh.\n- Có thể ăn kèm rau rừng và xôi trắng. Giá tham khảo: 120.000\n- 130.000 đồng/phần."
+  },
+  {
+    "id": "ga-doi-nuong",
+    "tenMon": "Gà đồi nướng",
+    "tenQuan": "Đặc sản",
+    "mucGia": "170.000\n- 180.000 đồng/con",
+    "moTaNgan": "Gà đồi nướng Bình Điền có lớp da vàng giòn, thịt chắc ngọt nhờ nuôi thả tự nhiên trên triền đồi.",
+    "anh": [
+      "/assets/food/ga-doi-nuong/img-01.jpg",
+      "/assets/food/ga-doi-nuong/img-02.jpg",
+      "/assets/food/ga-doi-nuong/img-03.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Gà đồi nướng là món được nhiều du khách chọn khi đến Bình Điền.\n1. Điểm nổi bật\n- Gà nuôi thả tự nhiên nên thịt săn, ít mỡ, vị ngọt rõ.\n- Nướng than thủ công giúp da vàng giòn, thơm đậm.\n2. Gia vị thường dùng\n- Muối, ớt, sả và một số lá thơm địa phương.\n3. Gợi ý thưởng thức\n- Chấm muối ớt chanh hoặc muối lá é.\n- Ăn kèm xôi hoặc rau sống. Giá tham khảo: 170.000\n- 180.000 đồng/con."
+  },
+  {
+    "id": "heo-ban-gac-bep-binh-dien",
+    "tenMon": "Heo bản gác bếp",
+    "tenQuan": "Đặc sản",
+    "mucGia": "350.000\n- 400.000 đồng/kg",
+    "moTaNgan": "Heo bản gác bếp Bình Điền có mùi khói đặc trưng, thịt dai ngọt, đậm vị gia vị rừng; phù hợp làm quà và dùng trong bữa nhậu.",
+    "anh": [
+      "/assets/food/heo-ban-gac-bep-binh-dien/img-01.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [
+      "/assets/food/heo-ban-gac-bep-binh-dien/video-01.mp4"
+    ],
+    "moTaDayDu": "Heo bản gác bếp là món truyền thống của vùng bán sơn địa Bình Điền.\n1. Nguyên liệu\n- Heo bản chăn thả tự nhiên, thớ thịt chắc, bì dày vừa phải.\n2. Cách làm\n- Thịt tẩm muối, ớt, tiêu rừng rồi treo hong khói nhiều ngày.\n- Thành phẩm có lớp ngoài nâu sậm, bên trong đỏ hồng.\n3. Cách dùng\n- Nướng lại hoặc hấp nhẹ, xé sợi chấm muối ớt xanh.\n- Dùng kèm rau sống, đồ chua hoặc cơm nóng. Gợi ý mua: chợ phiên Bình Điền.\nGiá tham khảo: 350.000\n- 400.000 đồng/kg."
+  },
+  {
+    "id": "heo-ban-nuong-binh-dien",
+    "tenMon": "Heo bản nướng",
+    "tenQuan": "Đặc sản",
+    "mucGia": "150.000\n- 170.000 đồng/phần",
+    "moTaNgan": "Heo bản nướng có vị đậm đà, thớ thịt săn và thơm mùi sả ớt; là món nhậu phổ biến tại khu vực Bình Điền.",
+    "anh": [
+      "/assets/food/heo-ban-nuong-binh-dien/img-01.jpg",
+      "/assets/food/heo-ban-nuong-binh-dien/img-02.png"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Heo bản nướng là món quen thuộc ở các quán ăn địa phương tại Bình Điền.\n1. Nguyên liệu\n- Heo bản nuôi thả, thịt chắc, da giòn nhẹ.\n2. Cách ướp và nướng\n- Ướp với sả, ớt, gia vị cơ bản.\n- Nướng than giúp dậy mùi thơm và giữ độ mọng của thịt.\n3. Gợi ý thưởng thức\n- Ăn kèm rau sống, dưa chua, nước chấm cay.\n- Phù hợp cho nhóm bạn, gia đình. Giá tham khảo: 150.000\n- 170.000 đồng/phần."
+  },
+  {
+    "id": "rau-ma",
+    "tenMon": "Rau má",
+    "tenQuan": "Đặc sản",
+    "mucGia": "50.000\n- 70.000 đồng/phần",
+    "moTaNgan": "Gỏi rau má trộn tóp mỡ là món đặc sản mát vị, kết hợp rau má non giòn nhẹ với tóp mỡ béo bùi và nước trộn chua cay.",
+    "anh": [
+      "/assets/food/rau-ma/img-01.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Gỏi rau má trộn tóp mỡ là món đặc sản dân dã nhưng rất được ưa chuộng ở Bình Điền.\n1. Thành phần\n- Rau má non, tóp mỡ thắng giòn, đậu phộng rang.\n- Nước trộn chua\n- cay\n- mặn\n- ngọt cân bằng.\n2. Hương vị\n- Rau má giòn, hơi đắng nhẹ và hậu ngọt.\n- Tóp mỡ tạo độ béo, tăng độ đậm đà cho món gỏi.\n3. Phù hợp khi nào\n- Làm món mở đầu hoặc ăn kèm các món nướng.\n- Dùng tốt trong thời tiết nóng. Giá tham khảo: 50.000\n- 70.000 đồng/phần."
+  },
+  {
+    "id": "va-tron",
+    "tenMon": "Vả trộn",
+    "tenQuan": "Đặc sản",
+    "mucGia": "40.000\n- 50.000 đồng/phần",
+    "moTaNgan": "Vả trộn là món dân dã kiểu Huế với vị bùi, béo, chua cay hài hòa; thường ăn kèm bánh tráng nướng.",
+    "anh": [
+      "/assets/food/va-tron/img-01.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Vả trộn là món ăn dân dã mang nét đặc trưng của ẩm thực Huế, phổ biến tại khu vực Bình Điền.\n1. Thành phần\n- Quả vả non luộc chín, thái mỏng.\n- Trộn cùng tôm, thịt ba chỉ, đậu phộng, mè, rau thơm.\n2. Hương vị\n- Bùi của vả, béo của thịt, ngọt của tôm.\n- Chua nhẹ, cay vừa và thơm mùi rau sống.\n3. Cách dùng\n- Ăn kèm bánh tráng nướng hoặc bánh tráng mè. Giá tham khảo: 40.000\n- 50.000 đồng/phần."
+  },
+  {
+    "id": "xoi-nep-than-binh-dien",
+    "tenMon": "Xôi nếp than",
+    "tenQuan": "Đặc sản",
+    "mucGia": "30.000\n- 40.000 đồng/kg nếp than",
+    "moTaNgan": "Xôi nếp than là món quen thuộc trong đời sống và lễ cúng của người dân Bình Điền, dẻo bùi, thơm nhẹ và giàu tính truyền thống.",
+    "anh": [
+      "/assets/food/xoi-nep-than-binh-dien/updated-01.jpg",
+      "/assets/food/xoi-nep-than-binh-dien/updated-02.jpg"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "moTaDayDu": "Xôi nếp than là món gắn bó lâu đời với đời sống người dân Bình Điền.\n1. Đặc điểm\n- Hạt nếp than dẻo, thơm và có vị bùi tự nhiên.\n- Thường xuất hiện trong bữa ăn hằng ngày và dịp lễ cúng.\n2. Giá trị văn hóa\n- Không chỉ là món ăn, còn là nét sinh hoạt và tín ngưỡng địa phương.\n3. Gợi ý mua\n- Nếp than thường được bán tại các phiên chợ Bình Điền để tự nấu xôi. Giá tham khảo: 30.000\n- 40.000 đồng/kg nếp than."
+  }
+]

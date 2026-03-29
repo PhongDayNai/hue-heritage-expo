@@ -1,0 +1,381 @@
+[
+  {
+    "id": "khe-lanh",
+    "tenDiaDiem": "Khe Lạnh",
+    "gioiThieuNgan": "Thác suối mát lạnh giữa rừng Bình Điền, phù hợp dã ngoại và tắm suối cuối tuần.",
+    "gioiThieuDayDu": "Khe Lạnh là điểm du lịch sinh thái nổi bật tại khu vực Bình Điền, TX Hương Trà.\n1. Điểm nổi bật\n- Nước suối trong, mát quanh năm.\n- Cảnh quan rừng tự nhiên, không khí yên tĩnh.\n2. Hoạt động phù hợp\n- Tắm suối, thư giãn, chụp ảnh thiên nhiên.\n- Dã ngoại theo nhóm nhỏ vào cuối tuần.\n3. Lưu ý\n- Nên đi theo nhóm, chuẩn bị giày chống trơn.\n- Hạn chế xả rác để giữ gìn cảnh quan tự nhiên.",
+    "anh": [
+      "/assets/scenic/khe-lanh/updated-01.jpg",
+      "/assets/scenic/khe-lanh/updated-02.jpg",
+      "/assets/scenic/khe-lanh/updated-03.jpg",
+      "/assets/scenic/khe-lanh/updated-04.jpg",
+      "/assets/scenic/khe-lanh/updated-05.jpg"
+    ],
+    "dichVu": [
+      "Trekking nhẹ",
+      "Tắm suối",
+      "Check-in",
+      "Du lịch nhóm"
+    ],
+    "diaChi": "Khu vực lòng hồ Bình Điền, TX Hương Trà",
+    "videos": [],
+    "mapUrl": "https://maps.app.goo.gl/E8AMtANUKkK5UjYa8?g_st=ic"
+  },
+  {
+    "id": "khe-day",
+    "tenDiaDiem": "Suối Khe Đầy",
+    "gioiThieuNgan": "Suối Khe Đầy còn giữ nét hoang sơ, phù hợp trải nghiệm thiên nhiên và giáo dục môi trường.",
+    "gioiThieuDayDu": "Khe Đầy là điểm du lịch sinh thái tại khu vực Bình Thành, TX Hương Trà, cách trung tâm Huế khoảng 20–25 km.\n1. Điểm nổi bật\n- Dòng suối trong, nhiều đoạn đá tự nhiên đẹp mắt.\n- Không gian yên tĩnh, phù hợp nghỉ ngắn ngày.\n2. Hoạt động phù hợp\n- Tham quan, chụp ảnh, dã ngoại nhẹ.\n- Kết hợp hoạt động trải nghiệm môi trường cho nhóm học sinh, sinh viên.\n3. Lưu ý\n- Tránh di chuyển khi mưa lớn hoặc nước dâng nhanh.\n- Chuẩn bị đầy đủ nước uống và đồ bảo hộ cơ bản.",
+    "anh": [
+      "/assets/scenic/khe-day/updated-01.png",
+      "/assets/scenic/khe-day/updated-02.png",
+      "/assets/scenic/khe-day/updated-03.jpg"
+    ],
+    "dichVu": [
+      "Khám phá thiên nhiên",
+      "Picnic",
+      "Giáo dục môi trường"
+    ],
+    "diaChi": "Giáp ranh Bình Điền - Bình Thành, TX Hương Trà",
+    "videos": [
+      "/assets/scenic/khe-day/updated-video-01.mp4"
+    ],
+    "mapUrl": "https://maps.app.goo.gl/vbRvHbEKQrsCMeTK7?g_st=ic"
+  },
+  {
+    "id": "suoi-mau",
+    "tenDiaDiem": "Suối Máu",
+    "gioiThieuNgan": "Suối Máu có tên gọi đặc biệt, nhưng thực tế là dòng suối trong xanh giữa vùng núi rừng Hương Trà.",
+    "gioiThieuDayDu": "Suối Máu nằm tại khu vực Hồng Tiến, TX Hương Trà. Dù tên gọi gây tò mò, nơi đây có cảnh quan tự nhiên trong lành và yên bình.\n1. Điểm nổi bật\n- Nước suối trong, chảy qua các tầng đá tự nhiên.\n- Không gian phù hợp thư giãn, tránh xa khu dân cư đông đúc.\n2. Trải nghiệm phù hợp\n- Check-in thiên nhiên, đi bộ ngắn quanh khu vực suối.\n- Kết hợp tham quan các điểm lân cận ở Bình Điền.\n3. Lưu ý\n- Cẩn trọng khi di chuyển trên đá ướt.\n- Bảo đảm an toàn khi đi cùng trẻ nhỏ.",
+    "anh": [
+      "/assets/scenic/suoi-mau/updated-01.jpg",
+      "/assets/scenic/suoi-mau/updated-02.jpg",
+      "/assets/scenic/suoi-mau/updated-03.jpg",
+      "/assets/scenic/suoi-mau/updated-04.png",
+      "/assets/scenic/suoi-mau/updated-05.png"
+    ],
+    "dichVu": [
+      "Tắm suối",
+      "Khám phá",
+      "Chụp ảnh thiên nhiên"
+    ],
+    "diaChi": "Xã Hồng Tiến, TX Hương Trà",
+    "videos": [],
+    "mapUrl": "https://maps.app.goo.gl/h6ciusXZcbqAt5iC8?g_st=ic"
+  },
+  {
+    "id": "doi-chuong-gio",
+    "tenDiaDiem": "Đồi Chuông Gió",
+    "gioiThieuNgan": "Đồi Chuông Gió là điểm check-in nổi bật tại Bình Điền với không gian thoáng, view đồi núi và mặt nước đẹp.",
+    "gioiThieuDayDu": "Đồi Chuông Gió nằm gần cầu treo Bình Thành, khu vực Bình Điền, TX Hương Trà.\n1. Điểm nổi bật\n- Tầm nhìn rộng, thích hợp ngắm cảnh chiều.\n- Không gian mở, nhiều góc chụp ảnh đẹp.\n2. Hoạt động phù hợp\n- Check-in, chụp ảnh, ngắm hoàng hôn.\n- Kết hợp tham quan các điểm du lịch sinh thái lân cận.\n3. Lưu ý\n- Nên đi vào thời tiết khô ráo.\n- Hạn chế đứng sát mép dốc khi chụp ảnh.",
+    "anh": [
+      "/assets/scenic/doi-chuong-gio/img-01.jpg",
+      "/assets/scenic/doi-chuong-gio/img-02.jpg",
+      "/assets/scenic/doi-chuong-gio/img-03.jpg",
+      "/assets/scenic/doi-chuong-gio/img-04.jpg",
+      "/assets/scenic/doi-chuong-gio/img-05.jpg",
+      "/assets/scenic/doi-chuong-gio/img-06.jpg",
+      "/assets/scenic/doi-chuong-gio/img-07.jpg",
+      "/assets/scenic/doi-chuong-gio/img-08.jpg",
+      "/assets/scenic/doi-chuong-gio/img-09.jpg",
+      "/assets/scenic/doi-chuong-gio/img-10.jpg",
+      "/assets/scenic/doi-chuong-gio/img-11.jpg",
+      "/assets/scenic/doi-chuong-gio/img-12.jpg",
+      "/assets/scenic/doi-chuong-gio/img-13.jpg"
+    ],
+    "dichVu": [
+      "Check-in",
+      "Picnic",
+      "Sự kiện ngoài trời"
+    ],
+    "diaChi": "Khu vực Bình Tiến - gần cầu treo Bình Thành cũ",
+    "videos": [],
+    "mapUrl": "https://maps.app.goo.gl/MLvBvNr1Ay7A8zn99?g_st=ic"
+  },
+  {
+    "id": "binh-dien-retreat",
+    "tenDiaDiem": "Bình Điền Retreat",
+    "gioiThieuNgan": "Bình Điền Retreat là điểm nghỉ dưỡng xanh, phù hợp thư giãn cuối tuần và trải nghiệm thiên nhiên.",
+    "gioiThieuDayDu": "Bình Điền Retreat mang phong cách nghỉ dưỡng gần gũi thiên nhiên tại khu vực Bình Điền, TX Hương Trà.\n1. Điểm nổi bật\n- Không gian yên tĩnh, nhiều cây xanh.\n- Phù hợp nghỉ ngơi ngắn ngày cho nhóm bạn, gia đình.\n2. Trải nghiệm\n- Cà phê, thư giãn, chụp ảnh.\n- Kết hợp hành trình tham quan đồi, suối, lòng hồ.\n3. Lưu ý\n- Nên đặt trước vào cuối tuần hoặc dịp lễ.\n- Kiểm tra thời tiết để tối ưu lịch trình.",
+    "anh": [
+      "/assets/scenic/binh-dien-retreat/img-01.jpg",
+      "/assets/scenic/binh-dien-retreat/img-02.jpg",
+      "/assets/scenic/binh-dien-retreat/img-03.jpg",
+      "/assets/scenic/binh-dien-retreat/img-04.jpg",
+      "/assets/scenic/binh-dien-retreat/img-05.jpg",
+      "/assets/scenic/binh-dien-retreat/img-06.jpg",
+      "/assets/scenic/binh-dien-retreat/img-07.jpg",
+      "/assets/scenic/binh-dien-retreat/img-08.jpg",
+      "/assets/scenic/binh-dien-retreat/img-09.jpg",
+      "/assets/scenic/binh-dien-retreat/img-10.jpg",
+      "/assets/scenic/binh-dien-retreat/img-11.jpg",
+      "/assets/scenic/binh-dien-retreat/img-12.jpg",
+      "/assets/scenic/binh-dien-retreat/img-13.jpg",
+      "/assets/scenic/binh-dien-retreat/img-14.jpg",
+      "/assets/scenic/binh-dien-retreat/img-15.jpg",
+      "/assets/scenic/binh-dien-retreat/img-16.jpg",
+      "/assets/scenic/binh-dien-retreat/img-17.jpg",
+      "/assets/scenic/binh-dien-retreat/img-18.jpg",
+      "/assets/scenic/binh-dien-retreat/img-19.jpg",
+      "/assets/scenic/binh-dien-retreat/img-20.jpg",
+      "/assets/scenic/binh-dien-retreat/img-21.jpg",
+      "/assets/scenic/binh-dien-retreat/img-22.jpg",
+      "/assets/scenic/binh-dien-retreat/img-23.jpg",
+      "/assets/scenic/binh-dien-retreat/img-24.jpg",
+      "/assets/scenic/binh-dien-retreat/img-25.jpg",
+      "/assets/scenic/binh-dien-retreat/img-26.jpg",
+      "/assets/scenic/binh-dien-retreat/img-27.jpg",
+      "/assets/scenic/binh-dien-retreat/img-28.jpg",
+      "/assets/scenic/binh-dien-retreat/img-29.jpg",
+      "/assets/scenic/binh-dien-retreat/img-30.jpg",
+      "/assets/scenic/binh-dien-retreat/img-31.jpg",
+      "/assets/scenic/binh-dien-retreat/img-32.jpg"
+    ],
+    "dichVu": [
+      "Cà phê sân vườn",
+      "Check-in",
+      "Nghỉ dưỡng ngắn ngày",
+      "Du lịch nhóm"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà, TP Huế",
+    "videos": [
+      "/assets/scenic/binh-dien-retreat/video-01.mp4",
+      "/assets/scenic/binh-dien-retreat/video-02.mp4"
+    ],
+    "mapUrls": [
+      "https://maps.app.goo.gl/NojogV6VZrmCLRGY9?g_st=ipc",
+      "https://maps.app.goo.gl/aohPqu6rAJJdusHR7?g_st=ic"
+    ]
+  },
+  {
+    "id": "gee-garden",
+    "tenDiaDiem": "Gee Garden",
+    "gioiThieuNgan": "Gee Garden là mô hình homestay - cà phê ven sông với không gian xanh và bungalow riêng tư.",
+    "gioiThieuDayDu": "Gee Garden Homestay phù hợp cho du khách muốn nghỉ dưỡng nhẹ nhàng tại Bình Điền.\n1. Điểm nổi bật\n- Không gian xanh, yên tĩnh.\n- Phù hợp check-in và nghỉ ngắn ngày.\n2. Dịch vụ phù hợp\n- Lưu trú, cà phê, chụp ảnh theo concept thiên nhiên.\n- Đi theo cặp đôi, nhóm bạn hoặc gia đình nhỏ.\n3. Lưu ý\n- Nên liên hệ trước để kiểm tra phòng trống.\n- Ưu tiên đi sớm để có nhiều thời gian trải nghiệm.",
+    "anh": [
+      "/assets/scenic/gee-garden/img-01.jpg",
+      "/assets/scenic/gee-garden/img-02.jpg",
+      "/assets/scenic/gee-garden/img-03.jpg",
+      "/assets/scenic/gee-garden/img-04.jpg",
+      "/assets/scenic/gee-garden/img-05.jpg",
+      "/assets/scenic/gee-garden/img-06.jpg",
+      "/assets/scenic/gee-garden/img-07.jpg",
+      "/assets/scenic/gee-garden/img-08.jpg",
+      "/assets/scenic/gee-garden/img-09.jpg",
+      "/assets/scenic/gee-garden/img-10.jpg",
+      "/assets/scenic/gee-garden/img-11.jpg",
+      "/assets/scenic/gee-garden/img-12.jpg",
+      "/assets/scenic/gee-garden/img-13.jpg",
+      "/assets/scenic/gee-garden/img-14.jpg",
+      "/assets/scenic/gee-garden/img-15.jpg",
+      "/assets/scenic/gee-garden/img-16.jpg",
+      "/assets/scenic/gee-garden/img-17.jpg",
+      "/assets/scenic/gee-garden/img-18.jpg",
+      "/assets/scenic/gee-garden/img-19.jpg",
+      "/assets/scenic/gee-garden/img-20.jpg",
+      "/assets/scenic/gee-garden/img-21.jpg",
+      "/assets/scenic/gee-garden/img-22.jpg",
+      "/assets/scenic/gee-garden/img-23.jpg",
+      "/assets/scenic/gee-garden/img-24.jpg",
+      "/assets/scenic/gee-garden/img-25.jpg",
+      "/assets/scenic/gee-garden/img-26.jpg",
+      "/assets/scenic/gee-garden/img-27.jpg"
+    ],
+    "dichVu": [
+      "Homestay",
+      "Cà phê",
+      "Hồ bơi",
+      "Chụp ảnh"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà, TP Huế",
+    "videos": [
+      "/assets/scenic/gee-garden/video-01.mp4",
+      "/assets/scenic/gee-garden/video-02.mp4"
+    ],
+    "mapUrl": "https://maps.app.goo.gl/m8pLeEJoFETYU6zLA"
+  },
+  {
+    "id": "ami-binh-dien",
+    "tenDiaDiem": "AMI Bình Điền",
+    "gioiThieuNgan": "AMI Bình Điền (Ami Garden) mang phong cách nghỉ dưỡng mộc mạc bên sông Hữu Trạch.",
+    "gioiThieuDayDu": "AMI Bình Điền là không gian nghỉ dưỡng thiên nhiên, phù hợp cho du khách cần sự yên tĩnh.\n1. Điểm nổi bật\n- Vị trí gần sông Hữu Trạch, không khí thoáng mát.\n- Phong cách mộc mạc, gần gũi thiên nhiên.\n2. Trải nghiệm\n- Nghỉ ngơi, đọc sách, chụp ảnh, thư giãn cuối tuần.\n- Kết hợp khám phá các điểm du lịch sinh thái Bình Điền.\n3. Lưu ý\n- Nên đặt lịch trước khi đi.\n- Chủ động phương tiện di chuyển cá nhân.",
+    "anh": [
+      "/assets/scenic/ami-binh-dien/img-01.jpg",
+      "/assets/scenic/ami-binh-dien/img-02.jpg",
+      "/assets/scenic/ami-binh-dien/img-03.jpg",
+      "/assets/scenic/ami-binh-dien/img-04.jpg",
+      "/assets/scenic/ami-binh-dien/img-05.jpg",
+      "/assets/scenic/ami-binh-dien/img-06.jpg",
+      "/assets/scenic/ami-binh-dien/img-07.jpg",
+      "/assets/scenic/ami-binh-dien/img-08.jpg",
+      "/assets/scenic/ami-binh-dien/img-09.jpg",
+      "/assets/scenic/ami-binh-dien/img-10.jpg",
+      "/assets/scenic/ami-binh-dien/img-11.jpg",
+      "/assets/scenic/ami-binh-dien/img-12.jpg",
+      "/assets/scenic/ami-binh-dien/img-13.jpg",
+      "/assets/scenic/ami-binh-dien/img-14.jpg",
+      "/assets/scenic/ami-binh-dien/img-15.jpg",
+      "/assets/scenic/ami-binh-dien/img-16.jpg",
+      "/assets/scenic/ami-binh-dien/img-17.jpg"
+    ],
+    "dichVu": [
+      "Bungalow",
+      "Nghỉ dưỡng",
+      "Cà phê",
+      "Check-in"
+    ],
+    "diaChi": "Ven sông Hữu Trạch, khu vực Bình Điền, TX Hương Trà",
+    "videos": [
+      "/assets/scenic/ami-binh-dien/video-01.mp4",
+      "/assets/scenic/ami-binh-dien/video-02.mp4"
+    ],
+    "mapUrl": "https://maps.app.goo.gl/qKwjfj8evu6hYWx69"
+  },
+  {
+    "id": "thuy-dien-binh-dien",
+    "tenDiaDiem": "Nhà máy thủy điện Bình Điền",
+    "gioiThieuNgan": "Nhà máy thủy điện Bình Điền là công trình năng lượng quan trọng gắn với cảnh quan lòng hồ phía tây Huế.",
+    "gioiThieuDayDu": "Thủy điện Bình Điền là công trình đa mục tiêu trên sông Hữu Trạch, phục vụ phát điện, điều tiết nước và hỗ trợ phòng chống lũ.\n1. Giá trị chính\n- Đóng vai trò quan trọng trong hạ tầng năng lượng khu vực.\n- Tạo nên cảnh quan lòng hồ đặc trưng cho tuyến tham quan sinh thái.\n2. Trải nghiệm phù hợp\n- Tham quan ngoại cảnh, chụp ảnh cảnh quan hồ - đập.\n- Kết hợp hành trình với các điểm du lịch lân cận ở Bình Điền.\n3. Lưu ý\n- Tuân thủ hướng dẫn an toàn khu vực công trình.\n- Không tự ý vào vùng cấm vận hành.",
+    "anh": [
+      "/assets/scenic/thuy-dien-binh-dien/updated-01.webp",
+      "/assets/scenic/thuy-dien-binh-dien/updated-02.webp",
+      "/assets/scenic/thuy-dien-binh-dien/updated-03.jpg",
+      "/assets/scenic/thuy-dien-binh-dien/updated-04.webp",
+      "/assets/scenic/thuy-dien-binh-dien/updated-05.webp"
+    ],
+    "dichVu": [
+      "Tham quan cảnh quan",
+      "Giáo dục trải nghiệm",
+      "Chụp ảnh",
+      "Du lịch tuyến điểm"
+    ],
+    "diaChi": "Xã Bình Điền, TX Hương Trà, TP Huế",
+    "videos": [
+      "/assets/scenic/thuy-dien-binh-dien/updated-video-01.mp4"
+    ],
+    "mapUrl": "https://maps.app.goo.gl/VpF4XQhcNxZPRDPR7?g_st=ic"
+  },
+  {
+    "id": "cac-khe-khac",
+    "tenDiaDiem": "Các khe, suối nhỏ ven lòng hồ Bình Điền",
+    "gioiThieuNgan": "Nhóm khe suối nhỏ với cảnh quan tự nhiên, phù hợp khám phá ngắn và chụp ảnh.",
+    "gioiThieuDayDu": "Khu vực gồm nhiều khe, suối nhỏ ven lòng hồ Bình Điền với cảnh quan mộc mạc và không khí trong lành, phù hợp cho các hoạt động trải nghiệm thiên nhiên quy mô nhỏ.",
+    "anh": [
+      "/assets/scenic/cac-khe-khac/img-01.jpg",
+      "/assets/scenic/cac-khe-khac/img-02.jpg",
+      "/assets/scenic/cac-khe-khac/img-03.png",
+      "/assets/scenic/cac-khe-khac/img-04.jpg"
+    ],
+    "videos": [
+      "/assets/scenic/cac-khe-khac/video-01.mp4"
+    ],
+    "dichVu": [
+      "Khám phá thiên nhiên",
+      "Picnic",
+      "Chụp ảnh"
+    ],
+    "diaChi": "Khu vực ven lòng hồ Bình Điền, TX Hương Trà, TP Huế",
+    "mapUrl": "https://maps.app.goo.gl/vtgtcgTwYPWxXNzR6"
+  },
+  {
+    "id": "den-vua-cha",
+    "tenDiaDiem": "Đền Vua Cha",
+    "gioiThieuNgan": "Đền Vua Cha là điểm tâm linh tại Bình Điền, phù hợp hành hương và tìm không gian tĩnh tại.",
+    "gioiThieuDayDu": "Đền Vua Cha Bát Hải Động Đình là điểm đến tâm linh ở khu vực ngoại ô Huế, mang không khí trang nghiêm và thanh tịnh.\n1. Điểm nổi bật\n- Không gian yên bình, thích hợp dừng chân cầu an.\n- Gắn với đời sống tín ngưỡng của người dân địa phương.\n2. Trải nghiệm\n- Tham quan, dâng hương, tìm hiểu văn hóa tâm linh địa phương.\n3. Lưu ý\n- Giữ trang phục lịch sự và thái độ trang nghiêm.\n- Tôn trọng quy định của khu thờ tự.",
+    "anh": [
+      "/assets/scenic/den-vua-cha/img-01.jpg",
+      "/assets/scenic/den-vua-cha/img-02.jpg",
+      "/assets/scenic/den-vua-cha/img-03.jpg",
+      "/assets/scenic/den-vua-cha/img-04.png"
+    ],
+    "videos": [],
+    "dichVu": [
+      "Tham quan",
+      "Văn hoá tâm linh",
+      "Chụp ảnh"
+    ],
+    "diaChi": "Bình Điền, TX Hương Trà, TP Huế"
+  },
+  {
+    "id": "nha-tho-binh-dien",
+    "tenDiaDiem": "Nhà thờ Bình Điền",
+    "gioiThieuNgan": "Nhà thờ Bình Điền là công trình tôn giáo tiêu biểu của khu vực, có kiến trúc đặc trưng và không gian trang nghiêm.",
+    "gioiThieuDayDu": "Nhà thờ Bình Điền thuộc địa bàn TX Hương Trà, là điểm sinh hoạt tôn giáo quan trọng của cộng đồng địa phương.\n1. Điểm nổi bật\n- Kiến trúc nhà thờ đặc trưng, không gian rộng thoáng.\n- Giá trị lịch sử - văn hóa gắn với đời sống giáo dân khu vực.\n2. Trải nghiệm\n- Tham quan kiến trúc ngoại cảnh và chụp ảnh lưu niệm.\n- Kết hợp hành trình với các điểm du lịch gần Bình Điền.\n3. Lưu ý\n- Tôn trọng thời gian sinh hoạt tôn giáo.\n- Giữ trật tự và ăn mặc phù hợp khi tham quan.",
+    "anh": [
+      "/assets/scenic/nha-tho-binh-dien/img-01.jpg",
+      "/assets/scenic/nha-tho-binh-dien/img-02.jpg",
+      "/assets/scenic/nha-tho-binh-dien/img-03.jpg",
+      "/assets/scenic/nha-tho-binh-dien/img-04.jpg",
+      "/assets/scenic/nha-tho-binh-dien/img-05.jpg",
+      "/assets/scenic/nha-tho-binh-dien/img-06.jpg"
+    ],
+    "videos": [],
+    "dichVu": [
+      "Tham quan",
+      "Kiến trúc",
+      "Chụp ảnh"
+    ],
+    "diaChi": "Bình Điền, TX Hương Trà, TP Huế"
+  },
+  {
+    "id": "nha-cua-tuoi-thanh-xuan",
+    "tenDiaDiem": "Nhà của tuổi thanh xuân",
+    "gioiThieuNgan": "Nhà của tuổi thanh xuân là quán cà phê phong cách hoài niệm, phù hợp check-in và thư giãn tại Bình Điền.",
+    "gioiThieuDayDu": "Nhà của tuổi thanh xuân là quán nhỏ theo phong cách hoài niệm, phù hợp với du khách yêu không gian nhẹ nhàng.\n1. Điểm nổi bật\n- Thiết kế ấm cúng, nhiều góc chụp ảnh đẹp.\n- Không khí yên tĩnh, phù hợp trò chuyện và thư giãn.\n2. Trải nghiệm\n- Thưởng thức đồ uống, check-in theo concept vintage.\n- Kết hợp dừng chân trong lịch trình tham quan Bình Điền.\n3. Lưu ý\n- Ưu tiên đến sớm để chọn góc ngồi đẹp.\n- Giữ vệ sinh và tôn trọng không gian chung.",
+    "anh": [
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-01.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-02.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-03.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-04.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-05.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-06.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-07.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-08.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-09.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-10.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-11.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-12.jpg",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/img-13.jpg"
+    ],
+    "dichVu": [
+      "Cà phê",
+      "Check-in",
+      "Không gian hoài niệm"
+    ],
+    "diaChi": "Chợ Bình Điền, TX Hương Trà",
+    "videos": [
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/video-01.mp4",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/video-02.mp4",
+      "/assets/scenic/nha-cua-tuoi-thanh-xuan/video-03.mp4"
+    ]
+  },
+  {
+    "id": "dia-dao-khu-uy-tri-thien",
+    "tenDiaDiem": "Địa đạo khu Uỷ Trị Thiên",
+    "gioiThieuNgan": "Điểm tham quan lịch sử tại khu vực Bình Điền, phù hợp tìm hiểu tư liệu và check-in.",
+    "gioiThieuDayDu": "Địa đạo khu Uỷ Trị Thiên là điểm tham quan mang giá trị lịch sử tại khu vực Bình Điền, TX Hương Trà. Địa điểm phù hợp cho hoạt động tìm hiểu lịch sử địa phương kết hợp trải nghiệm tham quan thực địa.",
+    "anh": [
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-01.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-02.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-03.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-04.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-05.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-06.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-07.webp",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-08.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-09.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-10.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-11.jpg",
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/img-12.webp"
+    ],
+    "dichVu": [
+      "Tham quan",
+      "Tìm hiểu lịch sử",
+      "Chụp ảnh"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": [
+      "/assets/scenic/dia-dao-khu-uy-tri-thien/video-01.mp4"
+    ]
+  }
+]
