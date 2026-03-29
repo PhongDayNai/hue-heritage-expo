@@ -51,7 +51,6 @@ export default function SpotlightModal({
   enableContactEnhancements = false
 }: Props) {
   const [mainIndex, setMainIndex] = useState(0);
-  const [bgIndex, setBgIndex] = useState(0);
 
   const galleryImages = useMemo(() => {
     if (images.length > 0) return images;
@@ -105,19 +104,9 @@ export default function SpotlightModal({
   useEffect(() => {
     if (open) {
       setMainIndex(0);
-      setBgIndex(0);
     }
   }, [open, title]);
 
-  useEffect(() => {
-    if (!open || galleryImages.length <= 1 || isVideoActive) return;
-
-    const timer = window.setInterval(() => {
-      setBgIndex((prev) => (prev + 1) % galleryImages.length);
-    }, 7000);
-
-    return () => window.clearInterval(timer);
-  }, [open, galleryImages.length, isVideoActive]);
 
   useEffect(() => {
     if (!open) return;
@@ -174,41 +163,29 @@ export default function SpotlightModal({
           exit={{ opacity: 0 }}
         >
           <div className="pointer-events-none absolute inset-0">
-            {!isVideoActive && (
-              <AnimatePresence mode="wait">
-                {galleryImages.length > 0 ? (
-                  <motion.div
-                    key={galleryImages[bgIndex]}
-                    className="absolute inset-0"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: 'easeOut' }}
-                  >
-                    <Image src={galleryImages[bgIndex]} alt={title} fill className="object-cover" />
-                  </motion.div>
-                ) : (
-                  <div className="h-full w-full bg-neutral-900" />
-                )}
-              </AnimatePresence>
+            {!isVideoActive && galleryImages.length > 0 ? (
+              <div className="absolute inset-0">
+                <Image src={galleryImages[0]} alt={title} fill className="object-cover" priority />
+              </div>
+            ) : (
+              <div className="h-full w-full bg-neutral-900" />
             )}
 
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(196,155,61,0.2),transparent_38%),linear-gradient(130deg,rgba(16,8,7,0.88),rgba(14,10,9,0.74))]" />
-            {!isVideoActive && <div className="absolute inset-0 backdrop-blur-[1px]" />}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(196,155,61,0.16),transparent_38%),linear-gradient(130deg,rgba(16,8,7,0.9),rgba(14,10,9,0.8))]" />
           </div>
 
           <div className="absolute inset-0 overflow-y-auto px-3 py-4 sm:px-6 sm:py-8">
             <motion.div
-              initial={{ opacity: 0, y: 24, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 20, scale: 0.98 }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.22, ease: 'easeOut' }}
               className="mx-auto w-full max-w-6xl"
               role="dialog"
               aria-modal="true"
               aria-label={title}
             >
-              <div className="relative overflow-hidden rounded-[28px] border border-hueGold/30 bg-[#0f0b0a]/70 shadow-[0_28px_80px_rgba(0,0,0,0.5)] backdrop-blur-md">
+              <div className="relative overflow-hidden rounded-[28px] border border-hueGold/30 bg-[#0f0b0a]/72 shadow-[0_18px_42px_rgba(0,0,0,0.42)]">
                 <button
                   onClick={onClose}
                   className="absolute right-4 top-4 z-20 rounded-full border border-white/35 bg-black/45 p-2 text-white transition hover:bg-black/65"
@@ -223,11 +200,11 @@ export default function SpotlightModal({
                       {hasMedia ? (
                         <motion.div
                           key={`${mediaItems[mainIndex].type}-${mediaItems[mainIndex].src}`}
-                          className="absolute inset-0"
-                          initial={{ opacity: 0.2, scale: 1.02 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0.2, scale: 0.99 }}
-                          transition={{ duration: 0.45, ease: 'easeOut' }}
+                          className="absolute inset-0 will-change-[opacity]"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.2, ease: 'linear' }}
                         >
                           {mediaItems[mainIndex].type === 'image' ? (
                             <Image src={mediaItems[mainIndex].src} alt={title} fill className="object-cover" />
