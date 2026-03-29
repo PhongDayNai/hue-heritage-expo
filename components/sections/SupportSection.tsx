@@ -51,26 +51,30 @@ export default function SupportSection() {
 
           <form
             className="rounded-2xl border border-hueGold/20 bg-white/5 p-5"
-            action="mailto:linhphungphuong135@gmail.com"
-            method="post"
-            encType="text/plain"
+            action="https://formsubmit.co/linhphungphuong135@gmail.com"
+            method="POST"
           >
             <h3 className="text-lg font-semibold text-hueGold">Góp ý nhanh</h3>
-            <p className="mt-1 text-xs text-white/70">Góp ý sẽ mở ứng dụng email để gửi tới: linhphungphuong135@gmail.com</p>
+            <p className="mt-1 text-xs text-white/70">Biểu mẫu gửi trực tiếp tới: linhphungphuong135@gmail.com (miễn phí)</p>
+
+            <input type="hidden" name="_subject" value="[Hue Heritage] Góp ý mới từ trang Hỗ trợ" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
+
             <div className="mt-4 space-y-3">
               <input
-                name="Ho ten"
+                name="Họ tên"
                 className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
                 placeholder="Họ tên"
                 required
               />
               <input
-                name="So dien thoai"
+                name="Số điện thoại"
                 className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
                 placeholder="Số điện thoại"
               />
               <textarea
-                name="Noi dung gop y"
+                name="Nội dung góp ý"
                 className="h-28 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
                 placeholder="Nội dung góp ý"
                 required
