@@ -25,22 +25,6 @@ export default function SupportSection() {
     const fullName = String(formData.get('Ho ten') || '').trim();
     const phone = String(formData.get('So dien thoai') || '').trim();
     const message = String(formData.get('Noi dung gop y') || '').trim();
-
-    if (!fullName) {
-      showToast('error', 'Vui lòng nhập Họ tên trước khi gửi.');
-      return;
-    }
-
-    if (!message) {
-      showToast('error', 'Vui lòng nhập Nội dung góp ý trước khi gửi.');
-      return;
-    }
-
-    if (phone && !/^[0-9+\s()-]{8,20}$/.test(phone)) {
-      showToast('error', 'Số điện thoại chưa đúng định dạng.');
-      return;
-    }
-
     setIsSubmitting(true);
     showToast('info', 'Đang mở ứng dụng email để gửi góp ý...');
 
