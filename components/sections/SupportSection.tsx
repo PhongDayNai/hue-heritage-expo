@@ -17,17 +17,30 @@ export default function SupportSection() {
     const formEl = e.currentTarget;
     const formData = new FormData(formEl);
 
+    const hoTen = String(formData.get('Họ tên') || '').trim();
+    const noiDung = String(formData.get('Nội dung góp ý') || '').trim();
+
+    if (!hoTen || !noiDung) {
+      setToast({ type: 'error', message: 'Anh nhập giúp em Họ tên và Nội dung góp ý trước khi gửi nhé.' });
+      setTimeout(() => setToast(null), 3200);
+      return;
+    }
+
     setIsSubmitting(true);
-    setToast(null);
+    setToast({ type: 'success', message: 'Đang gửi góp ý...' });
 
     try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 12000);
+
       const res = await fetch('https://formsubmit.co/ajax/dhphong266@gmail.com', {
         method: 'POST',
         headers: {
           Accept: 'application/json'
         },
-        body: formData
-      });
+        body: formData,
+        signal: controller.signal
+      }).finally(() => clearTimeout(timer));
 
       const payload = await res.json().catch(() => null);
       const ok = res.ok && (payload?.success === true || payload?.success === 'true');
@@ -40,7 +53,12 @@ export default function SupportSection() {
       setToast({ type: 'success', message: 'Đã gửi góp ý thành công ✅' });
       formRef.current?.reset();
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Gửi chưa thành công, anh thử lại giúp em nhé.';
+      const message =
+        error instanceof Error && error.name === 'AbortError'
+          ? 'Hết thời gian chờ phản hồi, anh thử lại giúp em nhé.'
+          : error instanceof Error
+            ? error.message
+            : 'Gửi chưa thành công, anh thử lại giúp em nhé.';
       setToast({ type: 'error', message });
     } finally {
       setIsSubmitting(false);
