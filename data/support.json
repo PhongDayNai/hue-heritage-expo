@@ -1,7 +1,28 @@
 {
   "hotlines": [
-    { "label": "Công an", "value": "113" },
-    { "label": "Trật tự xã", "value": "Đường dây địa phương" },
-    { "label": "Hỗ trợ nhanh", "value": "0399029409" }
+    {
+      "label": "Trật tự xã Bình Điền",
+      "role": "An ninh - trật tự địa phương",
+      "phone": "02343550248",
+      "facebook": "https://www.facebook.com/anttbinhdien"
+    },
+    {
+      "label": "Thắng Dương",
+      "role": "Tư vấn lịch trình tham quan",
+      "phone": "0901133726",
+      "facebook": "https://www.facebook.com/thang.duongcongchien"
+    },
+    {
+      "label": "Như Như",
+      "role": "Tư vấn ăn uống & trải nghiệm địa phương",
+      "phone": "0768426373",
+      "facebook": "https://www.facebook.com/tnhuw.2878"
+    },
+    {
+      "label": "Nhật Tâm",
+      "role": "Hỗ trợ thông tin điểm đến",
+      "phone": "0399029409",
+      "facebook": "https://www.facebook.com/nhattam.ngoquy.12"
+    }
   ]
 }
