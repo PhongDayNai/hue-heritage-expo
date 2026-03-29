@@ -65,6 +65,7 @@ export default function SpotlightModal({
   }, [galleryImages, videos]);
 
   const hasMedia = mediaItems.length > 0;
+  const isVideoActive = hasMedia && mediaItems[mainIndex]?.type === 'video';
   const normalizedMapEntries = useMemo(() => {
     if (!showMapEntriesList) return [] as MapEntry[];
 
@@ -109,14 +110,14 @@ export default function SpotlightModal({
   }, [open, title]);
 
   useEffect(() => {
-    if (!open || galleryImages.length <= 1) return;
+    if (!open || galleryImages.length <= 1 || isVideoActive) return;
 
     const timer = window.setInterval(() => {
       setBgIndex((prev) => (prev + 1) % galleryImages.length);
-    }, 5000);
+    }, 7000);
 
     return () => window.clearInterval(timer);
-  }, [open, galleryImages.length]);
+  }, [open, galleryImages.length, isVideoActive]);
 
   useEffect(() => {
     if (!open) return;
@@ -173,25 +174,27 @@ export default function SpotlightModal({
           exit={{ opacity: 0 }}
         >
           <div className="pointer-events-none absolute inset-0">
-            <AnimatePresence mode="wait">
-              {galleryImages.length > 0 ? (
-                <motion.div
-                  key={galleryImages[bgIndex]}
-                  className="absolute inset-0"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.9, ease: 'easeOut' }}
-                >
-                  <Image src={galleryImages[bgIndex]} alt={title} fill className="object-cover" />
-                </motion.div>
-              ) : (
-                <div className="h-full w-full bg-neutral-900" />
-              )}
-            </AnimatePresence>
+            {!isVideoActive && (
+              <AnimatePresence mode="wait">
+                {galleryImages.length > 0 ? (
+                  <motion.div
+                    key={galleryImages[bgIndex]}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                  >
+                    <Image src={galleryImages[bgIndex]} alt={title} fill className="object-cover" />
+                  </motion.div>
+                ) : (
+                  <div className="h-full w-full bg-neutral-900" />
+                )}
+              </AnimatePresence>
+            )}
 
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(196,155,61,0.26),transparent_38%),linear-gradient(130deg,rgba(16,8,7,0.9),rgba(14,10,9,0.76))]" />
-            <div className="absolute inset-0 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(196,155,61,0.2),transparent_38%),linear-gradient(130deg,rgba(16,8,7,0.88),rgba(14,10,9,0.74))]" />
+            {!isVideoActive && <div className="absolute inset-0 backdrop-blur-[1px]" />}
           </div>
 
           <div className="absolute inset-0 overflow-y-auto px-3 py-4 sm:px-6 sm:py-8">
@@ -231,11 +234,12 @@ export default function SpotlightModal({
                           ) : (
                             <video
                               src={mediaItems[mainIndex].src}
-                              controls
                               autoPlay
                               muted
                               loop
                               playsInline
+                              preload="metadata"
+                              controls={false}
                               className="h-full w-full bg-black object-contain"
                             />
                           )}

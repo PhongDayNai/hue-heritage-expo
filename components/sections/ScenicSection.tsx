@@ -1,7 +1,6 @@
 'use client';
 
 import scenic from '@/data/scenic.json';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useMemo, useState } from 'react';
 import AnimatedCard from '../ui/AnimatedCard';
@@ -47,24 +46,6 @@ export default function ScenicSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0a08]/88 via-[#251612]/35 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 h-36 bg-[radial-gradient(ellipse_at_bottom,rgba(196,155,61,0.35),transparent_70%)]" />
 
-                <motion.div
-                  initial={{ opacity: 0.35, scale: 0.95 }}
-                  animate={{ opacity: [0.35, 0.55, 0.35], scale: [0.95, 1.05, 0.95] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: idx * 0.15 }}
-                  className="pointer-events-none absolute -left-8 top-8 h-28 w-28 rounded-full border border-hueGold/35 bg-hueGold/15 blur-[1px]"
-                />
-                <motion.div
-                  initial={{ opacity: 0.25, y: 0 }}
-                  animate={{ opacity: [0.2, 0.45, 0.2], y: [0, -8, 0] }}
-                  transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: idx * 0.1 }}
-                  className="pointer-events-none absolute right-6 top-10 h-2 w-2 rounded-full bg-hueGold shadow-[0_0_16px_rgba(196,155,61,0.9)]"
-                />
-                <motion.div
-                  initial={{ opacity: 0.22, rotate: -10 }}
-                  animate={{ opacity: [0.18, 0.34, 0.18], rotate: [-10, 8, -10] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: idx * 0.2 }}
-                  className="pointer-events-none absolute bottom-24 right-8 h-14 w-14 rounded-xl border border-white/25"
-                />
 
                 <div className="absolute left-4 right-4 bottom-4 rounded-2xl border border-white/20 bg-gradient-to-br from-black/45 via-black/35 to-black/20 p-4 backdrop-blur-[2px]">
                   <h3 className="text-xl font-semibold leading-tight text-white drop-shadow-md">{item.tenDiaDiem}</h3>
@@ -100,6 +81,7 @@ export default function ScenicSection() {
         fullDesc={active?.gioiThieuDayDu}
         image={active?.anh?.[0]}
         images={active?.anh || []}
+        videos={active?.videos || []}
         chips={active?.dichVu || []}
         address={active?.diaChi}
         mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
