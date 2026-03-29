@@ -49,13 +49,33 @@ export default function SupportSection() {
             </div>
           </div>
 
-          <form className="rounded-2xl border border-hueGold/20 bg-white/5 p-5">
+          <form
+            className="rounded-2xl border border-hueGold/20 bg-white/5 p-5"
+            action="mailto:linhphungphuong135@gmail.com"
+            method="post"
+            encType="text/plain"
+          >
             <h3 className="text-lg font-semibold text-hueGold">Góp ý nhanh</h3>
+            <p className="mt-1 text-xs text-white/70">Góp ý sẽ mở ứng dụng email để gửi tới: linhphungphuong135@gmail.com</p>
             <div className="mt-4 space-y-3">
-              <input className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50" placeholder="Họ tên" />
-              <input className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50" placeholder="Số điện thoại" />
-              <textarea className="h-28 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50" placeholder="Nội dung góp ý" />
-              <button type="button" className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105">
+              <input
+                name="Ho ten"
+                className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
+                placeholder="Họ tên"
+                required
+              />
+              <input
+                name="So dien thoai"
+                className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
+                placeholder="Số điện thoại"
+              />
+              <textarea
+                name="Noi dung gop y"
+                className="h-28 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm outline-none placeholder:text-white/50"
+                placeholder="Nội dung góp ý"
+                required
+              />
+              <button type="submit" className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105">
                 Gửi góp ý
               </button>
             </div>
