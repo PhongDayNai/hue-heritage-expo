@@ -1,22 +1,5 @@
 [
   {
-    "id": "binh-dien-ho",
-    "tenDiaDiem": "Lòng hồ thủy điện Bình Điền",
-    "gioiThieuNgan": "Lòng hồ thủy điện Bình Điền nổi bật với cảnh quan sơn thủy hữu tình, đồng thời có giá trị lớn về cấp nước và trải nghiệm du lịch sinh thái.",
-    "gioiThieuDayDu": "Lòng hồ thủy điện Bình Điền là điểm nhấn cảnh quan quan trọng của khu vực phía tây Huế, vừa có giá trị hạ tầng thủy lợi - năng lượng, vừa giàu tiềm năng du lịch sinh thái.\n\n1. Thông số kỹ thuật chính\n- Dung tích hồ chứa: khoảng 423 triệu m³ nước.\n- Diện tích mặt nước: khoảng 18 km².\n\n2. Cấp nước\n- Tưới tiêu cho khoảng 11.630 ha đất nông nghiệp.\n- Cung cấp nước sinh hoạt.\n- Đẩy mặn cho vùng hạ lưu sông Hương.\n\n3. Du lịch & trải nghiệm\nKhông chỉ có giá trị kinh tế, lòng hồ còn là một điểm đến thiên nhiên rất đáng khám phá:\n- Check-in phong cảnh “sơn thủy hữu tình”: mặt hồ rộng, nước xanh, bao quanh bởi rừng núi tạo cảm giác như một “vịnh nhỏ” giữa lòng Huế.\n- Cắm trại - picnic ven hồ: không gian yên tĩnh, thoáng đãng, rất thích hợp đi nhóm bạn hoặc gia đình cuối tuần.\n- Ngắm bình minh & hoàng hôn: ánh sáng phản chiếu trên mặt hồ cực đẹp, đặc biệt lúc chiều tà.\n- Chèo thuyền / khám phá lòng hồ: có thể thuê thuyền của người dân địa phương để tham quan các nhánh hồ nhỏ.\n- Trải nghiệm đời sống người dân ven hồ: tìm hiểu nghề đánh bắt cá, nuôi cá lồng - một nét sinh hoạt đặc trưng.\n\n4. Gợi ý\n- Thời điểm đẹp: sáng sớm hoặc chiều mát.\n- Nên đi theo nhóm để đảm bảo an toàn và vui hơn.\n- Giữ gìn vệ sinh, bảo vệ cảnh quan tự nhiên.",
-    "anh": [
-      "/images/scenic/binh-dien-ho.jpg"
-    ],
-    "dichVu": [
-      "Ngắm cảnh",
-      "Đi thuyền",
-      "Cắm trại",
-      "Chụp ảnh"
-    ],
-    "diaChi": "Xã Bình Điền, TX Hương Trà, TP Huế",
-    "videos": []
-  },
-  {
     "id": "khe-lanh",
     "tenDiaDiem": "Khe Lạnh",
     "gioiThieuNgan": "Thác suối mát lạnh giữa rừng Bình Điền, phù hợp dã ngoại và tắm suối cuối tuần.",

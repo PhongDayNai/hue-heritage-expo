@@ -20,20 +20,20 @@ export default function Topbar() {
 
   const items = useMemo(
     () => [
-      { label: 'Trang chủ', href: '/' },
-      { label: 'Danh lam thắng cảnh', href: '/danh-lam' },
-      { label: 'Ẩm thực', href: '/am-thuc' },
-      ...(flags.showServices ? [{ label: 'Dịch vụ', href: '/dich-vu' }] : []),
-      { label: 'Văn hoá', href: '/van-hoa' },
-      { label: 'Tin tức - Sự kiện', href: '/tin-tuc' },
-      { label: 'Bản đồ', href: '/ban-do' },
-      { label: 'Hỗ trợ - Góp ý', href: '/ho-tro' }
+      { label: 'TRANG CHỦ', href: '/' },
+      { label: 'DANH LAM THẮNG CẢNH', href: '/danh-lam' },
+      { label: 'ẨM THỰC', href: '/am-thuc' },
+      ...(flags.showServices ? [{ label: 'DỊCH VỤ', href: '/dich-vu' }] : []),
+      { label: 'VĂN HOÁ', href: '/van-hoa' },
+      { label: 'TIN TỨC - SỰ KIỆN', href: '/tin-tuc' },
+      { label: 'BẢN ĐỒ', href: '/ban-do' },
+      { label: 'HỖ TRỢ - GÓP Ý', href: '/ho-tro' }
     ],
     [flags.showServices]
   );
 
   const currentLabel = useMemo(
-    () => items.find((item) => item.href === pathname)?.label || 'Trang chủ',
+    () => items.find((item) => item.href === pathname)?.label || 'TRANG CHỦ',
     [pathname, items]
   );
 
