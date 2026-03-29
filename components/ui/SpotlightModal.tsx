@@ -96,8 +96,7 @@ export default function SpotlightModal({
   const detailLines = useMemo(() => {
     const normalized = (fullDesc || '')
       .replace(/\s+(?=\d+\.\s+)/g, '\n')
-      .replace(/\s+(?=[IVXLCDM]{1,6}\.\s+)/gi, '\n')
-      .replace(/\s+(?=-\s+)/g, '\n');
+      .replace(/\s+(?=[IVXLCDM]{1,6}\.\s+)/gi, '\n');
 
     const lines = normalized.split('\n');
 
@@ -371,6 +370,32 @@ export default function SpotlightModal({
 
                               const isRoman = /^[IVXLCDM]{1,8}\.\s+/i.test(line);
                               const isNumeric = /^\d+[\-.)]?\s+/.test(line);
+
+                              const prevHeading = (() => {
+                                for (let i = idx - 1; i >= 0; i--) {
+                                  const t = (detailLines[i] || '').trim();
+                                  if (/^\d+[\-.)]?\s+/.test(t)) return t;
+                                }
+                                return '';
+                              })();
+                              const inPriceSection = /bảng giá|giá tham khảo/i.test(prevHeading);
+
+                              if (inPriceSection) {
+                                const priceLine = line.match(/^[\-•*+]?\s*([^:]{2,120}):\s*(.+)$/i);
+                                if (priceLine && !/https?:\/\//i.test(line) && !/SĐT\s*:/i.test(line)) {
+                                  const label = priceLine[1].trim();
+                                  const value = priceLine[2].trim();
+                                  return (
+                                    <div
+                                      key={`${idx}-${line.slice(0, 24)}`}
+                                      className="grid w-full grid-cols-[1fr_auto] items-start gap-3 rounded-lg border border-neutral-200 bg-white px-3 py-2"
+                                    >
+                                      <span className="font-medium text-neutral-800">{label}</span>
+                                      <span className="text-right text-sm font-semibold text-hueRed">{value}</span>
+                                    </div>
+                                  );
+                                }
+                              }
 
                               if (enableContactEnhancements) {
                                 const match = line.match(/^-\s*(.+?):\s*(https?:\/\/\S+)\s*\|\s*SĐT:\s*([0-9\s.+-]+)/i);
