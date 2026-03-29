@@ -239,7 +239,7 @@ export default function FoodSection() {
                             <span className="font-semibold text-hueRed">Tên món:</span> {item.tenMon}
                           </p>
                           <p>
-                            <span className="font-semibold text-hueRed">Tên quán:</span> {item.tenQuan}
+                            <span className="font-semibold text-hueRed">Thể loại món:</span> {item.tenQuan}
                           </p>
                           <p>
                             <span className="font-semibold text-hueRed">Mức giá:</span> {item.mucGia}
