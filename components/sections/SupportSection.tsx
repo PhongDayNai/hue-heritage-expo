@@ -16,7 +16,7 @@ export default function SupportSection() {
   const pushLog = (msg: string) => {
     const line = `[${new Date().toLocaleTimeString('vi-VN')}] ${msg}`;
     console.log('[SupportForm]', line);
-    setDebugLogs((prev) => [line, ...prev].slice(0, 10));
+    setDebugLogs((prev) => [line, ...prev].slice(0, 12));
   };
 
   const showToast = (type: 'success' | 'error' | 'info', message: string, timeout = 3200) => {
@@ -25,24 +25,24 @@ export default function SupportSection() {
     setTimeout(() => setToast(null), timeout);
   };
 
-  const handleButtonClick = (_e: MouseEvent<HTMLButtonElement>) => {
-    pushLog('Click nút "Gửi góp ý"');
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    pushLog('onSubmit đã chạy');
-
-    if (isSubmitting) {
-      pushLog('Bị chặn vì isSubmitting=true');
+  const openMailClient = (source: 'submit' | 'click') => {
+    if (!formRef.current) {
+      pushLog(`${source}: không tìm thấy formRef`);
+      showToast('error', 'Không tìm thấy form để gửi, anh tải lại trang giúp em.');
       return;
     }
 
-    const formData = new FormData(e.currentTarget);
+    if (isSubmitting) {
+      pushLog(`${source}: bị chặn vì isSubmitting=true`);
+      return;
+    }
+
+    const formData = new FormData(formRef.current);
     const fullName = String(formData.get('Ho ten') || '').trim();
     const phone = String(formData.get('So dien thoai') || '').trim();
     const message = String(formData.get('Noi dung gop y') || '').trim();
 
+    pushLog(`${source}: bắt đầu xử lý gửi`);
     pushLog(`Payload: hoTen="${fullName}", sdt="${phone}", noiDungLength=${message.length}`);
 
     setIsSubmitting(true);
@@ -52,12 +52,24 @@ export default function SupportSection() {
     const body = `Họ tên: ${fullName}\nSố điện thoại: ${phone || '(không có)'}\n\nNội dung góp ý:\n${message}`;
     const mailtoUrl = `mailto:${RECEIVER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    pushLog(`Điều hướng mailto: ${mailtoUrl.slice(0, 120)}...`);
+    pushLog(`Điều hướng mailto`);
     window.location.href = mailtoUrl;
 
-    formRef.current?.reset();
+    formRef.current.reset();
     setIsSubmitting(false);
     showToast('success', 'Đã mở ứng dụng email. Anh kiểm tra và bấm gửi trong app mail nhé ✅', 4500);
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    pushLog('Event: onSubmit');
+    openMailClient('submit');
+  };
+
+  const handleButtonClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    pushLog('Event: onClick nút Gửi góp ý');
+    openMailClient('click');
   };
 
   return (
@@ -108,7 +120,12 @@ export default function SupportSection() {
             </div>
           </div>
 
-          <form ref={formRef} className="rounded-2xl border border-hueGold/20 bg-white/5 p-5" noValidate onSubmit={handleSubmit}>
+          <form
+            ref={formRef}
+            className="relative z-[200] rounded-2xl border border-hueGold/20 bg-white/5 p-5 pointer-events-auto"
+            noValidate
+            onSubmit={handleSubmit}
+          >
             <h3 className="text-lg font-semibold text-hueGold">Góp ý nhanh</h3>
             <p className="mt-1 text-xs text-white/70">Góp ý sẽ mở ứng dụng email để gửi tới: {RECEIVER_EMAIL}</p>
 
@@ -144,13 +161,19 @@ export default function SupportSection() {
               )}
 
               <button
-                type="submit"
+                type="button"
                 onClick={handleButtonClick}
-                disabled={isSubmitting}
-                className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
+                className="rounded-xl bg-hueGold px-5 py-2.5 text-sm font-semibold text-hueInk transition hover:brightness-105"
               >
                 {isSubmitting ? 'Đang gửi...' : 'Gửi góp ý'}
               </button>
+
+              <a
+                href={`mailto:${RECEIVER_EMAIL}`}
+                className="inline-flex rounded-lg border border-white/30 px-3 py-2 text-xs text-white/80 hover:bg-white/10"
+              >
+                Không mở được? Bấm mở mail thủ công
+              </a>
 
               <div className="rounded-lg border border-white/20 bg-black/20 p-3 text-xs text-white/80">
                 <p className="font-semibold text-hueGold">Client debug log</p>
@@ -158,8 +181,8 @@ export default function SupportSection() {
                   <p className="mt-1 text-white/60">Chưa có log. Anh bấm thử nút để kiểm tra event.</p>
                 ) : (
                   <ul className="mt-2 space-y-1">
-                    {debugLogs.map((log) => (
-                      <li key={log} className="break-all">
+                    {debugLogs.map((log, idx) => (
+                      <li key={`${idx}-${log}`} className="break-all">
                         • {log}
                       </li>
                     ))}
