@@ -102,7 +102,7 @@ export default function HomePortalModern() {
         <div className="section-wrap relative z-10 grid gap-6 py-14 lg:grid-cols-[1fr_320px] lg:items-center">
           <div>
             <span className="inline-flex rounded bg-hueGold px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-hueInk">
-              Di sản văn hoá thế giới
+              Cẩm nang du lịch
             </span>
             <h1 className="mt-4 font-[var(--font-heading)] text-5xl leading-tight text-[#f8eecf] md:text-6xl">
               Khám phá Bình Điền
