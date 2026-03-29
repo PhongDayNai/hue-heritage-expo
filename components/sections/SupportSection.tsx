@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, MouseEvent, useRef, useState } from 'react';
+import { MouseEvent, useRef, useState } from 'react';
 import support from '@/data/support.json';
 
 type ToastState = { type: 'success' | 'error' | 'info'; message: string } | null;
@@ -11,39 +11,26 @@ export default function SupportSection() {
   const formRef = useRef<HTMLFormElement>(null);
   const [toast, setToast] = useState<ToastState>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [debugLogs, setDebugLogs] = useState<string[]>([]);
-
-  const pushLog = (msg: string) => {
-    const line = `[${new Date().toLocaleTimeString('vi-VN')}] ${msg}`;
-    console.log('[SupportForm]', line);
-    setDebugLogs((prev) => [line, ...prev].slice(0, 12));
-  };
 
   const showToast = (type: 'success' | 'error' | 'info', message: string, timeout = 3200) => {
     setToast({ type, message });
-    pushLog(`Toast(${type}): ${message}`);
     setTimeout(() => setToast(null), timeout);
   };
 
-  const openMailClient = (source: 'submit' | 'click') => {
+  const handleButtonClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
     if (!formRef.current) {
-      pushLog(`${source}: không tìm thấy formRef`);
       showToast('error', 'Không tìm thấy form để gửi, anh tải lại trang giúp em.');
       return;
     }
 
-    if (isSubmitting) {
-      pushLog(`${source}: bị chặn vì isSubmitting=true`);
-      return;
-    }
+    if (isSubmitting) return;
 
     const formData = new FormData(formRef.current);
     const fullName = String(formData.get('Ho ten') || '').trim();
     const phone = String(formData.get('So dien thoai') || '').trim();
     const message = String(formData.get('Noi dung gop y') || '').trim();
-
-    pushLog(`${source}: bắt đầu xử lý gửi`);
-    pushLog(`Payload: hoTen="${fullName}", sdt="${phone}", noiDungLength=${message.length}`);
 
     setIsSubmitting(true);
     showToast('info', 'Đang mở ứng dụng email để gửi góp ý...');
@@ -52,24 +39,11 @@ export default function SupportSection() {
     const body = `Họ tên: ${fullName}\nSố điện thoại: ${phone || '(không có)'}\n\nNội dung góp ý:\n${message}`;
     const mailtoUrl = `mailto:${RECEIVER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    pushLog(`Điều hướng mailto`);
     window.location.href = mailtoUrl;
 
     formRef.current.reset();
     setIsSubmitting(false);
     showToast('success', 'Đã mở ứng dụng email. Anh kiểm tra và bấm gửi trong app mail nhé ✅', 4500);
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    pushLog('Event: onSubmit');
-    openMailClient('submit');
-  };
-
-  const handleButtonClick = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    pushLog('Event: onClick nút Gửi góp ý');
-    openMailClient('click');
   };
 
   return (
@@ -124,7 +98,6 @@ export default function SupportSection() {
             ref={formRef}
             className="relative z-[200] rounded-2xl border border-hueGold/20 bg-white/5 p-5 pointer-events-auto"
             noValidate
-            onSubmit={handleSubmit}
           >
             <h3 className="text-lg font-semibold text-hueGold">Góp ý nhanh</h3>
             <p className="mt-1 text-xs text-white/70">Góp ý sẽ mở ứng dụng email để gửi tới: {RECEIVER_EMAIL}</p>
@@ -167,28 +140,6 @@ export default function SupportSection() {
               >
                 {isSubmitting ? 'Đang gửi...' : 'Gửi góp ý'}
               </button>
-
-              <a
-                href={`mailto:${RECEIVER_EMAIL}`}
-                className="inline-flex rounded-lg border border-white/30 px-3 py-2 text-xs text-white/80 hover:bg-white/10"
-              >
-                Không mở được? Bấm mở mail thủ công
-              </a>
-
-              <div className="rounded-lg border border-white/20 bg-black/20 p-3 text-xs text-white/80">
-                <p className="font-semibold text-hueGold">Client debug log</p>
-                {debugLogs.length === 0 ? (
-                  <p className="mt-1 text-white/60">Chưa có log. Anh bấm thử nút để kiểm tra event.</p>
-                ) : (
-                  <ul className="mt-2 space-y-1">
-                    {debugLogs.map((log, idx) => (
-                      <li key={`${idx}-${log}`} className="break-all">
-                        • {log}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
             </div>
           </form>
         </div>
