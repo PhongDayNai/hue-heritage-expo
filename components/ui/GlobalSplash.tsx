@@ -55,7 +55,7 @@ export default function GlobalSplash() {
               HueHeritage Expo
             </span>
             <h2 className="mt-4 font-[var(--font-heading)] text-3xl leading-tight text-[#f8eecf] md:text-4xl">
-              Chào mừng anh đến với không gian du lịch Huế số hoá
+              Chào mừng anh/chị đến với không gian du lịch Bình Điền - Huế số hoá
             </h2>
             <p className="mt-4 text-sm leading-7 text-[#e7d5ac] md:text-base">
               Khám phá danh lam, văn hoá và ẩm thực Huế qua trải nghiệm trực quan.

@@ -2,7 +2,7 @@
 
 import news from '@/data/news.json';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import AnimatedCard from '../ui/AnimatedCard';
 import SpotlightModal from '../ui/SpotlightModal';
 
@@ -11,37 +11,82 @@ type News = (typeof news)[number];
 export default function NewsSection() {
   const [active, setActive] = useState<News | null>(null);
 
+  const parseNewsDate = (raw?: string) => {
+    if (!raw) return null;
+    const normalized = raw.trim().replace(/\s*-\s*/g, '-');
+    const m = normalized.match(/^(\d{4}-\d{2}-\d{2})(?:\s+\d{2}:\d{2})?$/);
+    if (!m) return null;
+    const d = new Date(`${m[1]}T00:00:00`);
+    return Number.isNaN(d.getTime()) ? null : d;
+  };
+
+  const formatNewsDate = (raw?: string) => {
+    const d = parseNewsDate(raw);
+    return d ? d.toLocaleDateString('vi-VN') : raw || 'Đang cập nhật';
+  };
+
+  const { upcoming, past } = useMemo(() => {
+    const today = new Date();
+    const anchor = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+    const withDate = news
+      .map((item) => ({ item, date: parseNewsDate(item.thoiGian) }))
+      .sort((a, b) => {
+        if (!a.date && !b.date) return 0;
+        if (!a.date) return 1;
+        if (!b.date) return -1;
+        return a.date.getTime() - b.date.getTime();
+      });
+
+    const upcoming = withDate.filter(({ date }) => date && date.getTime() >= anchor.getTime()).map(({ item }) => item);
+    const past = withDate.filter(({ date }) => !date || date.getTime() < anchor.getTime()).map(({ item }) => item).reverse();
+
+    return { upcoming, past };
+  }, []);
+
   return (
     <section id="tin-tuc" className="bg-white/70 py-12 md:py-16">
       <div className="section-wrap">
         <h2 className="section-title">Tin tức - Sự kiện</h2>
         <p className="section-subtitle">Cập nhật các hoạt động mới nhất liên quan đến du lịch, văn hoá và phát triển địa phương.</p>
 
-        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {news.map((item, idx) => (
-            <AnimatedCard key={item.id} delay={idx * 0.06}>
-              <article
-                className="cursor-pointer overflow-hidden rounded-2xl border border-hueGold/20 bg-white"
-                onClick={() => setActive(item)}
-              >
-                <div className="relative h-40 bg-neutral-100">
-                  {item.anh?.[0] ? (
-                    <Image src={item.anh[0]} alt={item.tieuDe} fill className="object-cover" />
-                  ) : (
-                    <div className="flex h-full items-center justify-center text-xs font-medium text-neutral-500">
-                      Chưa có ảnh từ thư mục nguồn
-                    </div>
-                  )}
+        <div className="mt-8 space-y-10">
+          {[
+            { title: 'Sắp xảy ra', items: upcoming },
+            { title: 'Đã diễn ra', items: past }
+          ].map((group, groupIdx) =>
+            group.items.length > 0 ? (
+              <div key={group.title}>
+                <h3 className="mb-4 text-xl font-semibold text-hueRed">{group.title}</h3>
+                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+                  {group.items.map((item, idx) => (
+                    <AnimatedCard key={item.id} delay={(groupIdx * 0.08) + idx * 0.06}>
+                      <article
+                        className="cursor-pointer overflow-hidden rounded-2xl border border-hueGold/20 bg-white"
+                        onClick={() => setActive(item)}
+                      >
+                        <div className="relative h-40 bg-neutral-100">
+                          {item.anh?.[0] ? (
+                            <Image src={item.anh[0]} alt={item.tieuDe} fill className="object-cover" />
+                          ) : (
+                            <div className="flex h-full items-center justify-center text-xs font-medium text-neutral-500">
+                              Chưa có ảnh từ thư mục nguồn
+                            </div>
+                          )}
+                        </div>
+                        <div className="space-y-2 p-4">
+                          <p className="text-xs font-medium text-hueRed">{formatNewsDate(item.thoiGian)}</p>
+                          <h3 className="line-clamp-2 text-base font-semibold text-hueInk">{item.tieuDe}</h3>
+                          <p className="line-clamp-3 text-sm text-neutral-700">{item.moTaNgan}</p>
+                          <p className="text-xs text-neutral-600">{item.diaDiem}</p>
+                        </div>
+                      </article>
+                    </AnimatedCard>
+                  ))}
                 </div>
-                <div className="space-y-2 p-4">
-                  <p className="text-xs font-medium text-hueRed">{new Date(item.thoiGian).toLocaleDateString('vi-VN')}</p>
-                  <h3 className="line-clamp-2 text-base font-semibold text-hueInk">{item.tieuDe}</h3>
-                  <p className="line-clamp-3 text-sm text-neutral-700">{item.moTaNgan}</p>
-                  <p className="text-xs text-neutral-600">{item.diaDiem}</p>
-                </div>
-              </article>
-            </AnimatedCard>
-          ))}
+              </div>
+            ) : null
+          )}
         </div>
       </div>
 
@@ -54,7 +99,7 @@ export default function NewsSection() {
         image={active?.anh?.[0]}
         images={active?.anh || []}
         videos={active?.videos || []}
-        chips={active ? [new Date(active.thoiGian).toLocaleDateString('vi-VN')] : []}
+        chips={active ? [formatNewsDate(active.thoiGian)] : []}
         address={active?.diaDiem}
         mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
       />

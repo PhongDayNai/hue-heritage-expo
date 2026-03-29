@@ -24,6 +24,7 @@ type Props = {
   address?: string;
   mapUrls?: string[];
   mapEntries?: MapEntry[];
+  showMapEntriesList?: boolean;
   enableContactEnhancements?: boolean;
 };
 
@@ -46,6 +47,7 @@ export default function SpotlightModal({
   address,
   mapUrls = [],
   mapEntries = [],
+  showMapEntriesList = true,
   enableContactEnhancements = false
 }: Props) {
   const [mainIndex, setMainIndex] = useState(0);
@@ -64,6 +66,8 @@ export default function SpotlightModal({
 
   const hasMedia = mediaItems.length > 0;
   const normalizedMapEntries = useMemo(() => {
+    if (!showMapEntriesList) return [] as MapEntry[];
+
     const out: MapEntry[] = [];
 
     for (const e of mapEntries) {
@@ -83,7 +87,7 @@ export default function SpotlightModal({
     }
 
     return out;
-  }, [mapEntries, mapUrls]);
+  }, [mapEntries, mapUrls, showMapEntriesList]);
   const detailLines = useMemo(() => {
     const lines = (fullDesc || '').split('\n');
 
@@ -359,6 +363,28 @@ export default function SpotlightModal({
                                   );
                                 }
 
+                                const contactOnly = line.match(/^-\s*(.+?)\s*\|\s*SĐT:\s*([0-9\s.+-]+)/i);
+                                if (contactOnly) {
+                                  const contactName = contactOnly[1].trim();
+                                  const phoneRaw = contactOnly[2].trim();
+                                  const phoneHref = phoneRaw.replace(/\s+/g, '');
+                                  return (
+                                    <div
+                                      key={`${idx}-${line.slice(0, 24)}`}
+                                      className="flex w-full items-center justify-between gap-3 rounded-lg border border-neutral-200 bg-white px-3 py-2"
+                                    >
+                                      <span className="font-medium text-neutral-800">{contactName}</span>
+                                      <a
+                                        href={`tel:${phoneHref}`}
+                                        className="inline-flex items-center gap-1.5 font-medium text-hueRed hover:underline"
+                                      >
+                                        <Phone size={14} />
+                                        {phoneRaw}
+                                      </a>
+                                    </div>
+                                  );
+                                }
+
                                 const mapMatch = line.match(/^-\s*(.+?):\s*(https?:\/\/\S+)$/i);
                                 if (mapMatch && /maps\.app\.goo\.gl/i.test(mapMatch[2])) {
                                   const placeName = mapMatch[1].trim();
@@ -412,29 +438,46 @@ export default function SpotlightModal({
 
                       {(address || normalizedMapEntries.length > 0) && (
                         <div className="mt-5 space-y-2">
-                          {address && (
+                          {normalizedMapEntries.length === 0 && address && (
                             <p className="inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
-                              <MapPin size={16} className="mt-0.5 text-hueRed" />
+                              <MapPin size={18} className="mt-0.5 text-hueRed" />
                               <span>
                                 <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
                               </span>
                             </p>
                           )}
 
-                          {normalizedMapEntries.map((entry, idx) => (
-                            <a
-                              key={`${entry.url}-${idx}`}
-                              href={entry.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
-                            >
-                              <MapPin size={16} className="mt-0.5 text-hueRed" />
-                              <span>
-                                <span className="font-semibold text-neutral-900">{entry.label}:</span> {entry.url}
-                              </span>
-                            </a>
-                          ))}
+                          {normalizedMapEntries.map((entry, idx) => {
+                            const raw = entry.label.trim();
+                            let place = raw;
+                            let addressPart = '';
+
+                            if (raw.includes(':')) {
+                              const [first, ...rest] = raw.split(':');
+                              place = first.trim();
+                              addressPart = rest.join(':').trim();
+                            } else if (raw.includes(',')) {
+                              const [first, ...rest] = raw.split(',');
+                              place = first.trim();
+                              addressPart = rest.join(',').trim();
+                            }
+
+                            return (
+                              <a
+                                key={`${entry.url}-${idx}`}
+                                href={entry.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
+                              >
+                                <MapPin size={20} className="mt-0.5 text-hueRed" />
+                                <span>
+                                  <span className="font-semibold text-neutral-900">{place}:</span>
+                                  {addressPart ? <span className="text-neutral-700"> {addressPart}</span> : null}
+                                </span>
+                              </a>
+                            );
+                          })}
                         </div>
                       )}
                     </div>

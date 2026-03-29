@@ -152,7 +152,7 @@ export default function Topbar() {
           </div>
 
           <div>
-            <p className="font-[var(--font-heading)] text-xl leading-tight text-hueGold md:text-2xl">Trang thông tin Du lịch Huế</p>
+            <p className="font-[var(--font-heading)] text-xl leading-tight text-hueGold md:text-2xl">Trang thông tin Du lịch Bình Điền - Huế</p>
             <p className="mt-1 text-[11px] text-[#e8d5a0] md:text-xs">Khám phá danh lam - văn hoá - ẩm thực theo trải nghiệm hiện đại</p>
           </div>
 

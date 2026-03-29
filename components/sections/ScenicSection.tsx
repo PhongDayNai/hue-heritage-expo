@@ -103,6 +103,7 @@ export default function ScenicSection() {
         chips={active?.dichVu || []}
         address={active?.diaChi}
         mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
+        showMapEntriesList={false}
       />
     </section>
   );

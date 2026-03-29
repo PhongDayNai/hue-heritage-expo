@@ -3,9 +3,8 @@
     "id": "taxi",
     "tenDichVu": "Phương tiện di chuyển",
     "tomTat": "Dịch vụ phương tiện di chuyển tại Bình Điền giúp du khách đi lại thuận tiện giữa các điểm tham quan rải rác theo cung đường đồi núi, lòng hồ và rừng cây.",
-    "moTaDayDu": "Phương tiện di chuyển tại Bình Điền\n\nBình Điền có nhiều điểm tham quan nằm rải rác, vì vậy lựa chọn phương tiện phù hợp sẽ giúp hành trình thuận tiện và tiết kiệm thời gian hơn.\n\n1. Vì sao nên ưu tiên xe địa phương\n- Các tuyến đường đồi dốc, nhiều đoạn vắng và cách xa nhau.\n- Tài xế địa phương nắm rõ lộ trình, điểm dừng và giờ cao điểm.\n- Linh hoạt thời gian, phù hợp nhóm bạn hoặc gia đình đi theo lịch riêng.\n\n2. Trải nghiệm thực tế\n- Đón/trả tận nơi, không mất thời gian tìm đường.\n- Dễ kết hợp nhiều điểm tham quan trong cùng một ngày.\n- Có thể dừng chụp ảnh hoặc nghỉ ngơi theo nhu cầu.\n\n3. Gợi ý\n- Nên trao đổi trước lịch trình và điểm đến để chốt giá rõ ràng.\n- Nếu đi cuối tuần hoặc nhóm đông, nên đặt xe sớm.\n\nGợi ý thông tin xe tại địa phương: liên hệ trực tiếp các đầu mối uy tín ở khu vực Bình Điền.",
+    "moTaDayDu": "Phương tiện di chuyển tại Bình Điền\n\nBình Điền có nhiều điểm tham quan nằm rải rác, vì vậy lựa chọn xe địa phương giúp hành trình linh hoạt và tiết kiệm thời gian.\n\n1. Vì sao nên ưu tiên xe địa phương\n- Tài xế quen tuyến đường đồi dốc và các điểm dừng trong khu vực.\n- Dễ điều chỉnh lịch trình theo nhu cầu nhóm bạn hoặc gia đình.\n- Thuận tiện khi kết hợp nhiều điểm tham quan trong ngày.\n\n2. Gợi ý sử dụng\n- Nên trao đổi lộ trình và chi phí trước khi khởi hành.\n- Cuối tuần hoặc dịp lễ nên đặt xe sớm để giữ lịch.\n\n3. Thông tin liên hệ thuê xe\n- Xe anh Hưng | SĐT: 0386415224\n- Xe anh Tây | SĐT: 0902545952\n- Xe chú Bình | SĐT: 0985866168",
     "anh": [
-      "/assets/services/taxi/img-09.jpg",
       "/assets/services/taxi/img-01.jpg",
       "/assets/services/taxi/img-02.jpg",
       "/assets/services/taxi/img-03.jpg",
@@ -13,7 +12,8 @@
       "/assets/services/taxi/img-05.jpg",
       "/assets/services/taxi/img-06.jpg",
       "/assets/services/taxi/img-07.jpg",
-      "/assets/services/taxi/img-08.jpg"
+      "/assets/services/taxi/img-08.jpg",
+      "/assets/services/taxi/img-09.jpg"
     ],
     "videos": []
   },

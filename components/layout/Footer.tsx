@@ -15,7 +15,7 @@ export default function Footer() {
             <span className="relative h-8 w-8 overflow-hidden rounded-full border border-hueGold/70">
               <Image src="/images/featured/logo-cndl.jpeg" alt="Logo Huế" fill className="object-cover" />
             </span>
-            <span>Trang thông tin Du lịch Huế</span>
+            <span>Trang thông tin Du lịch Bình Điền - Huế</span>
           </h3>
           <p className="mt-3 text-sm leading-7">
             Cổng thông tin tổng hợp danh lam thắng cảnh, ẩm thực, văn hoá và sự kiện của Huế theo cách trực quan,
@@ -44,7 +44,7 @@ export default function Footer() {
       </div>
 
       <div className="section-wrap border-t border-hueGold/20 py-4 text-xs">
-        © 2026 Trang thông tin Du lịch Huế
+        © 2026 Trang thông tin Du lịch Bình Điền - Huế
       </div>
     </footer>
   );

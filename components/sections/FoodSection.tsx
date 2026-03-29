@@ -39,6 +39,14 @@ export default function FoodSection() {
   const activeMapEntries = useMemo(() => {
     if (!active) return [] as { label: string; url: string }[];
 
+    const fromData = (active as any)?.mapEntries;
+    if (Array.isArray(fromData) && fromData.length > 0) {
+      return fromData
+        .filter((e: any) => e && typeof e.label === 'string' && typeof e.url === 'string')
+        .map((e: any) => ({ label: e.label.trim(), url: e.url.trim() }))
+        .filter((e: any) => e.label && e.url);
+    }
+
     const lines = ((active as any)?.moTaDayDu || '')
       .split('\n')
       .map((line: string) => line.trim())
