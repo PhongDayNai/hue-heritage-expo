@@ -51,6 +51,7 @@ export default function SpotlightModal({
   enableContactEnhancements = false
 }: Props) {
   const [mainIndex, setMainIndex] = useState(0);
+  const [bgIndex, setBgIndex] = useState(0);
 
   const galleryImages = useMemo(() => {
     if (images.length > 0) return images;
@@ -64,7 +65,10 @@ export default function SpotlightModal({
   }, [galleryImages, videos]);
 
   const hasMedia = mediaItems.length > 0;
-  const isVideoActive = hasMedia && mediaItems[mainIndex]?.type === 'video';
+  const currentMedia = hasMedia ? mediaItems[Math.min(mainIndex, mediaItems.length - 1)] : null;
+  const isVideoActive = currentMedia?.type === 'video';
+  const safeBgImage = galleryImages[bgIndex] || galleryImages[0] || '';
+
   const normalizedMapEntries = useMemo(() => {
     if (!showMapEntriesList) return [] as MapEntry[];
 
@@ -104,9 +108,44 @@ export default function SpotlightModal({
   useEffect(() => {
     if (open) {
       setMainIndex(0);
+      setBgIndex(0);
     }
   }, [open, title]);
 
+
+  useEffect(() => {
+    if (!open || isVideoActive || galleryImages.length <= 1) return;
+
+    let timer: number | null = null;
+
+    const schedule = () => {
+      const delay = 9000 + Math.floor(Math.random() * 5000); // 9s -> 14s
+      timer = window.setTimeout(() => {
+        setBgIndex((prev) => {
+          if (galleryImages.length <= 1) return 0;
+          let next = prev;
+          while (next === prev) {
+            next = Math.floor(Math.random() * galleryImages.length);
+          }
+          return next;
+        });
+        schedule();
+      }, delay);
+    };
+
+    schedule();
+    return () => {
+      if (timer) window.clearTimeout(timer);
+    };
+  }, [open, isVideoActive, galleryImages.length]);
+
+  useEffect(() => {
+    if (mainIndex >= mediaItems.length) setMainIndex(0);
+  }, [mainIndex, mediaItems.length]);
+
+  useEffect(() => {
+    if (bgIndex >= galleryImages.length) setBgIndex(0);
+  }, [bgIndex, galleryImages.length]);
 
   useEffect(() => {
     if (!open) return;
@@ -123,35 +162,30 @@ export default function SpotlightModal({
     if (!open) return;
 
     const { body, documentElement } = document;
-    const scrollY = window.scrollY;
-
     const prevBodyOverflow = body.style.overflow;
-    const prevBodyPosition = body.style.position;
-    const prevBodyTop = body.style.top;
-    const prevBodyWidth = body.style.width;
     const prevBodyTouchAction = body.style.touchAction;
     const prevHtmlOverflow = documentElement.style.overflow;
 
     body.style.overflow = 'hidden';
-    body.style.position = 'fixed';
-    body.style.top = `-${scrollY}px`;
-    body.style.width = '100%';
     body.style.touchAction = 'none';
     documentElement.style.overflow = 'hidden';
 
     return () => {
       body.style.overflow = prevBodyOverflow;
-      body.style.position = prevBodyPosition;
-      body.style.top = prevBodyTop;
-      body.style.width = prevBodyWidth;
       body.style.touchAction = prevBodyTouchAction;
       documentElement.style.overflow = prevHtmlOverflow;
-      window.scrollTo(0, scrollY);
     };
   }, [open]);
 
-  const nextMain = () => setMainIndex((prev) => (prev + 1) % mediaItems.length);
-  const prevMain = () => setMainIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
+  const nextMain = () => {
+    if (mediaItems.length === 0) return;
+    setMainIndex((prev) => (prev + 1) % mediaItems.length);
+  };
+
+  const prevMain = () => {
+    if (mediaItems.length === 0) return;
+    setMainIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
+  };
 
   return (
     <AnimatePresence>
@@ -163,10 +197,19 @@ export default function SpotlightModal({
           exit={{ opacity: 0 }}
         >
           <div className="pointer-events-none absolute inset-0">
-            {!isVideoActive && galleryImages.length > 0 ? (
-              <div className="absolute inset-0">
-                <Image src={galleryImages[0]} alt={title} fill className="object-cover" priority />
-              </div>
+            {!isVideoActive && safeBgImage ? (
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={safeBgImage}
+                  className="absolute inset-0"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.4, ease: 'easeInOut' }}
+                >
+                  <Image src={safeBgImage} alt={title} fill className="object-cover" priority />
+                </motion.div>
+              </AnimatePresence>
             ) : (
               <div className="h-full w-full bg-neutral-900" />
             )}
@@ -197,20 +240,20 @@ export default function SpotlightModal({
                 <div className="grid min-h-[70vh] lg:grid-cols-[1.05fr_1fr]">
                   <div className="relative min-h-[320px] border-b border-white/15 lg:min-h-full lg:border-b-0 lg:border-r lg:border-white/15">
                     <AnimatePresence mode="wait">
-                      {hasMedia ? (
+                      {currentMedia ? (
                         <motion.div
-                          key={`${mediaItems[mainIndex].type}-${mediaItems[mainIndex].src}`}
+                          key={`${currentMedia.type}-${currentMedia.src}`}
                           className="absolute inset-0 will-change-[opacity]"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.2, ease: 'linear' }}
                         >
-                          {mediaItems[mainIndex].type === 'image' ? (
-                            <Image src={mediaItems[mainIndex].src} alt={title} fill className="object-cover" />
+                          {currentMedia.type === 'image' ? (
+                            <Image src={currentMedia.src} alt={title} fill className="object-cover" />
                           ) : (
                             <video
-                              src={mediaItems[mainIndex].src}
+                              src={currentMedia.src}
                               autoPlay
                               muted
                               loop
@@ -270,7 +313,10 @@ export default function SpotlightModal({
                               <button
                                 key={`${media.type}-${media.src}-${index}`}
                                 type="button"
-                                onClick={() => setMainIndex(index)}
+                                onClick={() => {
+                                  if (mediaItems.length === 0) return;
+                                  setMainIndex(index);
+                                }}
                                 aria-label={`Media ${index + 1}`}
                                 className={`h-2.5 w-2.5 rounded-full border transition ${
                                   active
