@@ -314,7 +314,7 @@ export default function SpotlightModal({
                     </div>
                   </div>
 
-                  <div className="flex flex-col bg-gradient-to-b from-white to-[#f8f4ed]">
+                  <div className="flex flex-col bg-[#f8f9f4]">
                     <div className="border-b border-neutral-200/80 px-5 py-4 sm:px-7">
                       <p className="text-xs font-semibold tracking-[0.12em] text-hueRed/90">THÔNG TIN CHI TIẾT</p>
                     </div>
