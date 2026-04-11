@@ -18,7 +18,7 @@ export default function Footer() {
             <span>Trang thông tin Du lịch Bình Điền - Huế</span>
           </h3>
           <p className="mt-3 text-sm leading-7">
-            Cổng thông tin tổng hợp danh lam thắng cảnh, ẩm thực, văn hoá và sự kiện của Huế theo cách trực quan,
+            Cổng thông tin tổng hợp danh lam thắng cảnh, ẩm thực, văn hoá và sự kiện của Bình Điền, Huế theo cách trực quan,
             dễ tra cứu và phù hợp trình bày học thuật.
           </p>
         </div>
