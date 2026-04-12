@@ -36,28 +36,6 @@
     "videos": []
   },
   {
-    "id": "su-kien-2",
-    "tieuDe": "Tuần lễ Ẩm thực Huế 2026",
-    "thoiGian": "2026-04-05",
-    "diaDiem": "Trung tâm TP Huế",
-    "moTaNgan": "Giới thiệu món Huế tiêu biểu và kết nối chuỗi quán địa phương.",
-    "anh": [
-      "/images/food/food-1.jpg"
-    ],
-    "videos": []
-  },
-  {
-    "id": "su-kien-3",
-    "tieuDe": "Chuyên đề bảo tồn văn hoá học đường tại Huế",
-    "thoiGian": "2026-04-18",
-    "diaDiem": "TP Huế",
-    "moTaNgan": "Tăng cường giáo dục di sản địa phương cho học sinh, sinh viên.",
-    "anh": [
-      "/images/culture/culture-1.jpg"
-    ],
-    "videos": []
-  },
-  {
     "id": "su-kien-4",
     "tieuDe": "Hội thảo phát triển du lịch sinh thái bền vững Bình Điền",
     "thoiGian": "2026-05-02",
