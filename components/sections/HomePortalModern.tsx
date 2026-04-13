@@ -312,6 +312,7 @@ export default function HomePortalModern() {
         image={activeSpot?.anh?.[0]}
         chips={activeSpot?.dichVu || []}
         address={activeSpot?.diaChi}
+        mapUrls={((activeSpot as any)?.mapUrls as string[]) || ((activeSpot as any)?.mapUrl ? [(activeSpot as any).mapUrl] : [])}
       />
     </>
   );

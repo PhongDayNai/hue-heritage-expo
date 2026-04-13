@@ -103,6 +103,8 @@ export default function ServiceSection() {
         fullDesc={active?.moTaDayDu}
         image={active?.anh?.[0]}
         images={active?.anh || []}
+        address={(active as any)?.diaChi}
+        mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
         enableContactEnhancements
       />
     </section>
