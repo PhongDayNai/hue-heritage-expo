@@ -528,13 +528,27 @@ export default function SpotlightModal({
 
                       {(address || normalizedMapEntries.length > 0) && (
                         <div className="mt-5 space-y-2">
-                          {normalizedMapEntries.length === 0 && address && (
-                            <p className="inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
-                              <MapPin size={18} className="mt-0.5 text-hueRed" />
-                              <span>
-                                <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
-                              </span>
-                            </p>
+                          {address && (
+                            normalizedMapEntries[0]?.url ? (
+                              <a
+                                href={normalizedMapEntries[0].url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
+                              >
+                                <MapPin size={18} className="mt-0.5 text-hueRed" />
+                                <span>
+                                  <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
+                                </span>
+                              </a>
+                            ) : (
+                              <p className="inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
+                                <MapPin size={18} className="mt-0.5 text-hueRed" />
+                                <span>
+                                  <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
+                                </span>
+                              </p>
+                            )
                           )}
 
                           {normalizedMapEntries.map((entry, idx) => {
