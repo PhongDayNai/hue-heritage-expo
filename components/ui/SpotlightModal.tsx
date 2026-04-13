@@ -70,6 +70,22 @@ export default function SpotlightModal({
   const isVideoActive = currentMedia?.type === 'video';
   const safeBgImage = galleryImages[bgIndex] || galleryImages[0] || '';
 
+  const primaryMapUrl = useMemo(() => {
+    for (const e of mapEntries) {
+      if (!e || typeof e.url !== 'string') continue;
+      const url = e.url.trim();
+      if (url) return url;
+    }
+
+    for (const u of mapUrls) {
+      if (typeof u !== 'string') continue;
+      const url = u.trim();
+      if (url) return url;
+    }
+
+    return '';
+  }, [mapEntries, mapUrls]);
+
   const normalizedMapEntries = useMemo(() => {
     if (!showMapEntriesList) return [] as MapEntry[];
 
@@ -529,9 +545,9 @@ export default function SpotlightModal({
                       {(address || normalizedMapEntries.length > 0) && (
                         <div className="mt-5 space-y-2">
                           {address && (
-                            normalizedMapEntries[0]?.url ? (
+                            primaryMapUrl ? (
                               <a
-                                href={normalizedMapEntries[0].url}
+                                href={primaryMapUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
