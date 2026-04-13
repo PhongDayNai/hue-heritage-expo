@@ -209,7 +209,9 @@
     "moTaDayDu": "Bánh ép Huế là món ăn vặt phổ biến, dễ ăn và hợp khẩu vị nhiều người.\n1. Thành phần\n- Bột lọc ép với trứng, tôm hoặc thịt trên khuôn nóng.\n2. Hai kiểu thường gặp\n- Bánh ép khô: giòn nhẹ, đậm vị.\n- Bánh ép ướt: mềm dẻo, dễ ăn.\n3. Gợi ý thưởng thức\n- Nên ăn nóng tại chỗ để cảm nhận độ giòn và mùi thơm rõ nhất.\n- Có thể tìm ở khu vực chợ Bình Điền và dọc Quốc lộ\n49. Giá tham khảo: 20.000\n- 30.000 đồng/phần.",
     "mapUrls": [
       "https://maps.app.goo.gl/WfDPHujHUsUZE6197",
-      "https://maps.app.goo.gl/4VkKPzxPxDfuXXg66"
+      "https://maps.app.goo.gl/4VkKPzxPxDfuXXg66",
+      "https://maps.app.goo.gl/qJbAYB6kF6t6amRv9?g_st=ic",
+      "https://maps.app.goo.gl/FVUbLeASSW1qoVSc8?g_st=ic"
     ],
     "mapEntries": [
       {
@@ -219,6 +221,14 @@
       {
         "label": "Quán chị Linh: gần chợ Bình Điền, TX Hương Trà",
         "url": "https://maps.app.goo.gl/4VkKPzxPxDfuXXg66"
+      },
+      {
+        "label": "Bánh ép Linh: khu vực Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/qJbAYB6kF6t6amRv9?g_st=ic"
+      },
+      {
+        "label": "Quán bánh ép mệ Bê: khu vực Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/FVUbLeASSW1qoVSc8?g_st=ic"
       }
     ]
   },
@@ -264,7 +274,9 @@
     "mapUrls": [
       "https://maps.app.goo.gl/2XnQwtcHEjLyLids5",
       "https://maps.app.goo.gl/GyBziF9sxnLRZLvS8",
-      "https://maps.app.goo.gl/AdL4qfjbMDgvjiAs7"
+      "https://maps.app.goo.gl/AdL4qfjbMDgvjiAs7",
+      "https://maps.app.goo.gl/LYSJuaGNq35DfzvbA",
+      "https://maps.app.goo.gl/uw3zj6ag9AygDKreA"
     ],
     "mapEntries": [
       {
@@ -278,6 +290,14 @@
       {
         "label": "Quán phổ biến 3: Quốc lộ 49, xã Bình Điền, TX Hương Trà",
         "url": "https://maps.app.goo.gl/AdL4qfjbMDgvjiAs7"
+      },
+      {
+        "label": "Bún bò Tâm Hoa và bún mắm nêm thịt nướng o Hiền: khu vực Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/LYSJuaGNq35DfzvbA"
+      },
+      {
+        "label": "Bún bò giò chả o Linh: khu vực Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/uw3zj6ag9AygDKreA"
       }
     ]
   },
@@ -298,7 +318,9 @@
     "moTaDayDu": "Cơm hến và bún hến là hai món quen thuộc với hương vị mộc mạc nhưng đậm đà.\n1. Thành phần\n- Hến xào, cơm hoặc bún, rau sống, đậu phộng, mắm ruốc.\n- Có thể dùng kèm nước hến nóng.\n2. Hương vị\n- Vị ngọt tự nhiên của hến, cay nhẹ và thơm đặc trưng.\n- Ăn gọn, phù hợp bữa sáng hoặc bữa nhẹ.\n3. Gợi ý thưởng thức\n- Các quán ăn dọc Quốc lộ 49 khu vực Bình Điền. Giá tham khảo: 15.000\n- 30.000 đồng/phần.",
     "mapUrls": [
       "https://maps.app.goo.gl/EGQVsV4YHc7hcQXQA",
-      "https://maps.app.goo.gl/fcbY4pKjqMVKXBqp6"
+      "https://maps.app.goo.gl/fcbY4pKjqMVKXBqp6",
+      "https://maps.app.goo.gl/jjVtrjbX5X2nqf9EA?g_st=ic",
+      "https://maps.app.goo.gl/JNDSbhniaebWho2B7"
     ],
     "mapEntries": [
       {
@@ -308,6 +330,14 @@
       {
         "label": "Quán Mùi: Quốc lộ 49, xã Bình Điền, TX Hương Trà (SĐT: 0354755459 - 0917207506)",
         "url": "https://maps.app.goo.gl/fcbY4pKjqMVKXBqp6"
+      },
+      {
+        "label": "Quán chè Xương Nhị và quán bún hến o Nhíp: khu vực Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/jjVtrjbX5X2nqf9EA?g_st=ic"
+      },
+      {
+        "label": "Cơm hến, bún hến o Mùi: khu vực Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/JNDSbhniaebWho2B7"
       }
     ]
   },
@@ -327,12 +357,17 @@
     "videos": [],
     "moTaDayDu": "Bún mắm nêm là món dân dã đặc trưng của miền Trung, rất phổ biến ở Huế.\n1. Thành phần\n- Bún tươi, thịt heo, chả/nem (tùy quán), rau sống.\n- Mắm nêm pha là phần quyết định hương vị.\n2. Hương vị\n- Đậm, nồng, dậy mùi đặc trưng của mắm nêm.\n- Kết hợp tốt với rau sống và vị chua cay nhẹ.\n3. Gợi ý thưởng thức\n- Có tại chợ Bình Điền buổi sáng và các quán ven Quốc lộ 49 buổi chiều tối. Giá tham khảo: 15.000\n- 25.000 đồng/phần.",
     "mapUrls": [
-      "https://maps.app.goo.gl/YYnC73MgDRAocNqZ9"
+      "https://maps.app.goo.gl/YYnC73MgDRAocNqZ9",
+      "https://maps.app.goo.gl/LYSJuaGNq35DfzvbA"
     ],
     "mapEntries": [
       {
         "label": "Quán phổ biến: Quốc lộ 49, xã Bình Điền, TX Hương Trà",
         "url": "https://maps.app.goo.gl/YYnC73MgDRAocNqZ9"
+      },
+      {
+        "label": "Bún mắm nêm thịt nướng o Hiền: khu vực Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/LYSJuaGNq35DfzvbA"
       }
     ]
   },
@@ -374,7 +409,9 @@
     "moTaDayDu": "Chè Huế là phần không thể thiếu trong trải nghiệm ẩm thực địa phương.\n1. Đặc trưng\n- Vị ngọt thanh, không gắt.\n- Nhiều loại như chè đậu, chè hạt sen, chè truyền thống theo mùa.\n2. Gợi ý thưởng thức\n- Bán phổ biến ở chợ Bình Điền buổi sáng và các phiên chợ.\n- Có thể tìm thêm tại các quán chè dọc Quốc lộ\n49. Giá tham khảo: 10.000\n- 20.000 đồng/ly.",
     "mapUrls": [
       "https://maps.app.goo.gl/UhGDcKWyGYkw56eK7",
-      "https://maps.app.goo.gl/Z1KrsUQUFh62d64V8"
+      "https://maps.app.goo.gl/Z1KrsUQUFh62d64V8",
+      "https://maps.app.goo.gl/N3iPbgqre65S52PAA",
+      "https://maps.app.goo.gl/jjVtrjbX5X2nqf9EA?g_st=ic"
     ],
     "mapEntries": [
       {
@@ -384,6 +421,14 @@
       {
         "label": "Quán chè Trương Định: Quốc lộ 49, xã Bình Điền, TX Hương Trà (SĐT: 0982002189)",
         "url": "https://maps.app.goo.gl/Z1KrsUQUFh62d64V8"
+      },
+      {
+        "label": "Chè o Hoa: khu vực Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/N3iPbgqre65S52PAA"
+      },
+      {
+        "label": "Quán chè Xương Nhị: khu vực Bình Điền, TX Hương Trà",
+        "url": "https://maps.app.goo.gl/jjVtrjbX5X2nqf9EA?g_st=ic"
       }
     ]
   },
