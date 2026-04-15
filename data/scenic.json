@@ -376,5 +376,68 @@
     "videos": [
       "/assets/scenic/dia-dao-khu-uy-tri-thien/video-01.mp4"
     ]
+  },
+  {
+    "id": "dau-tien",
+    "tenDiaDiem": "Vườn Dâu Tiên",
+    "gioiThieuNgan": "Vườn dâu tiên Bình Điền mang không gian xanh mát, phù hợp trải nghiệm hái quả và thư giãn gần gũi thiên nhiên.",
+    "gioiThieuDayDu": "Vườn Dâu Tiên là điểm trải nghiệm nông nghiệp dân dã tại Bình Điền, phù hợp cho du khách yêu thiên nhiên và muốn tìm cảm giác gần gũi đời sống địa phương.\n1. Điểm nổi bật\n- Những chùm dâu chín đỏ nổi bật giữa không gian vườn xanh mát.\n- Hương vị ngọt thanh xen chút chua nhẹ, đặc trưng của trái cây tại vườn.\n2. Trải nghiệm phù hợp\n- Tham quan vườn, thưởng thức trái cây tươi ngay tại chỗ.\n- Chụp ảnh, thư giãn và tìm hiểu đời sống nông nghiệp địa phương.\n3. Thông tin thêm\n- Phù hợp cho nhóm bạn, gia đình và du khách thích trải nghiệm chân thực.\n- Liên hệ: 0367616050 (Thuyết).",
+    "anh": [
+      "/assets/scenic/dau-tien/img-01.jpg",
+      "/assets/scenic/dau-tien/img-02.jpg",
+      "/assets/scenic/dau-tien/img-03.jpg"
+    ],
+    "dichVu": [
+      "Tham quan vườn",
+      "Trái cây tại chỗ",
+      "Chụp ảnh",
+      "Trải nghiệm nông nghiệp"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà",
+    "videos": []
+  },
+  {
+    "id": "suoi-chang-hom",
+    "tenDiaDiem": "Suối Chàng Hòm",
+    "gioiThieuNgan": "Suối Chàng Hòm là đoạn suối hoang sơ, mát lành ở Bình Điền, thích hợp tắm suối và vui chơi theo nhóm.",
+    "gioiThieuDayDu": "Suối Chàng Hòm tọa lạc tại thôn Hòa Hợp, xã Bình Điền, cách tuyến tỉnh lộ 12D khoảng 500 m và vẫn giữ nguyên vẻ đẹp tự nhiên, yên bình.\n1. Điểm nổi bật\n- Không gian suối rộng, thoáng đãng với bãi tắm tự nhiên và làn nước trong xanh.\n- Các đoạn nước sâu - cạn đan xen, phù hợp cho hoạt động vui chơi và tắm suối.\n2. Trải nghiệm phù hợp\n- Tắm suối, thư giãn giữa thiên nhiên và tổ chức picnic nhẹ.\n- Đi cùng gia đình hoặc nhóm bạn trẻ vào những ngày thời tiết đẹp.\n3. Lưu ý\n- Hiện khu vực chưa có dịch vụ khai thác.\n- Du khách nên chuẩn bị áo phao, đồ ăn, nước uống và chủ động giữ gìn vệ sinh môi trường.",
+    "anh": [
+      "/assets/scenic/suoi-chang-hom/img-01.jpg",
+      "/assets/scenic/suoi-chang-hom/img-02.jpg",
+      "/assets/scenic/suoi-chang-hom/img-03.jpg"
+    ],
+    "dichVu": [
+      "Tắm suối",
+      "Dã ngoại",
+      "Check-in thiên nhiên",
+      "Du lịch nhóm"
+    ],
+    "diaChi": "Thôn Hòa Hợp, xã Bình Điền, TX Hương Trà",
+    "videos": [
+      "/assets/scenic/suoi-chang-hom/video-01.mp4",
+      "/assets/scenic/suoi-chang-hom/video-02.mp4"
+    ],
+    "mapUrl": "https://goo.gl/maps/FGpG1CwHbDvJPfUE8"
+  },
+  {
+    "id": "quyt-thanh-binh",
+    "tenDiaDiem": "Vườn Quýt Thanh Bình",
+    "gioiThieuNgan": "Vườn quýt Thanh Bình là điểm trải nghiệm nông nghiệp sạch với giống quýt ngọt thanh, nhiều nước và không gian xanh mát.",
+    "gioiThieuDayDu": "Vườn Quýt Thanh Bình là mô hình canh tác bền vững tiêu biểu tại Bình Điền, gắn với anh Nguyễn Bá Lộc và giống quýt riêng có chất lượng nổi bật.\n1. Điểm nổi bật\n- Diện tích hơn 2,5 ha đạt chuẩn VietGAP.\n- Quýt có vỏ mỏng, nhiều nước, vị ngọt thanh tự nhiên.\n2. Giá trị trải nghiệm\n- Tìm hiểu mô hình trồng trọt sạch, sử dụng phân hữu cơ.\n- Tham quan vườn cây ăn quả và cảm nhận không gian nông nghiệp địa phương.\n3. Thông tin thêm\n- Sản phẩm đạt chứng nhận OCOP và góp phần nâng cao giá trị nông nghiệp địa phương.\n- Liên hệ: Anh Lộc (0903519622).",
+    "anh": [
+      "/assets/scenic/quyt-thanh-binh/img-01.jpg",
+      "/assets/scenic/quyt-thanh-binh/img-02.jpg",
+      "/assets/scenic/quyt-thanh-binh/img-03.avif"
+    ],
+    "dichVu": [
+      "Tham quan vườn",
+      "Trải nghiệm nông nghiệp sạch",
+      "Check-in",
+      "OCOP địa phương"
+    ],
+    "diaChi": "Xã Bình Điền, TX Hương Trà",
+    "videos": [
+      "/assets/scenic/quyt-thanh-binh/video-01.mp4"
+    ]
   }
 ]
