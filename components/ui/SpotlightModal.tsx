@@ -103,7 +103,7 @@ export default function SpotlightModal({
   }, [mapEntries, showMapEntriesList]);
   const detailLines = useMemo(() => {
     const normalized = (fullDesc || '')
-      .replace(/\s+(?=\d+\.\s+)/g, '\n')
+      .replace(/\s+(?=\d\.\s+)/g, '\n')
       .replace(/\s+(?=[IVXLCDM]{1,6}\.\s+)/gi, '\n');
 
     const lines = normalized.split('\n');
