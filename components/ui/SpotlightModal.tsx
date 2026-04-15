@@ -99,16 +99,8 @@ export default function SpotlightModal({
       if (!out.some((x) => x.url === url)) out.push({ label, url });
     }
 
-    for (const u of mapUrls) {
-      if (typeof u !== 'string' || !u.trim()) continue;
-      const url = u.trim();
-      if (!out.some((x) => x.url === url)) {
-        out.push({ label: `Google Maps ${out.length + 1}`, url });
-      }
-    }
-
     return out;
-  }, [mapEntries, mapUrls, showMapEntriesList]);
+  }, [mapEntries, showMapEntriesList]);
   const detailLines = useMemo(() => {
     const normalized = (fullDesc || '')
       .replace(/\s+(?=\d+\.\s+)/g, '\n')
