@@ -11,6 +11,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import SpotlightModal from '../ui/SpotlightModal';
+import TravelQuizChat from './TravelQuizChat';
 import { useFeatureFlags } from '@/lib/useFeatureFlags';
 
 const infoCards = [
@@ -84,7 +85,6 @@ export default function HomePortalModern() {
 
   return (
     <>
-      
       <div className="border-b border-hueGold/30 bg-white/90">
         <div className="section-wrap py-2 text-xs text-neutral-600">
           <span className="text-hueRed">Vi vu Bình Điền</span>
@@ -135,6 +135,8 @@ export default function HomePortalModern() {
           </aside>
         </div>
       </section>
+
+      <TravelQuizChat />
 
       <section className="section-wrap pt-8 md:pt-10">
         <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_300px]">
