@@ -162,7 +162,7 @@ export default function Topbar() {
           </div>
 
           <div>
-            <p className="font-[var(--font-heading)] text-xl leading-tight text-hueGold md:text-2xl">Vi vu Bình Điền</p>
+            <p className="font-[var(--font-heading)] text-xl leading-tight text-hueGold md:text-2xl">VI VU BÌNH ĐIỀN</p>
             <p className="mt-1 text-[11px] text-[#e8d5a0] md:text-xs">Khám phá danh lam - văn hoá - ẩm thực theo trải nghiệm hiện đại</p>
           </div>
 
