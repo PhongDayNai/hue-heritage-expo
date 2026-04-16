@@ -33,6 +33,12 @@ type MediaItem = {
   src: string;
 };
 
+function extractPhoneNumbers(raw: string) {
+  return (raw.match(/(?:\+?84|0)(?:[\s.-]?\d){8,9}/g) || [])
+    .map((phone) => phone.trim())
+    .filter(Boolean);
+}
+
 export default function SpotlightModal({
   open,
   onClose,
@@ -414,7 +420,7 @@ export default function SpotlightModal({
                                   const pageName = match[1].trim();
                                   const fbUrl = match[2].trim();
                                   const phoneRaw = match[3].trim();
-                                  const phoneHref = phoneRaw.replace(/\s+/g, '');
+                                  const phones = extractPhoneNumbers(phoneRaw);
 
                                   return (
                                     <div
@@ -434,17 +440,20 @@ export default function SpotlightModal({
                                         </span>
                                       </a>
 
-                                      <div className="min-w-0 text-neutral-700">
-                                        <a
-                                          href={`tel:${phoneHref}`}
-                                          className="flex min-w-0 items-start gap-2 rounded-xl border border-hueRed/15 bg-hueRed/[0.05] px-3 py-2 transition hover:bg-hueRed/[0.08]"
-                                        >
-                                          <Phone size={15} className="mt-0.5 shrink-0 text-hueRed" />
-                                          <span className="min-w-0">
-                                            <span className="block text-[11px] font-semibold uppercase tracking-[0.12em] text-hueRed">Liên hệ</span>
-                                            <span className="block truncate font-medium text-neutral-900">{phoneRaw}</span>
-                                          </span>
-                                        </a>
+                                      <div className="min-w-0">
+                                        <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-hueRed">Liên hệ</div>
+                                        <div className="flex flex-wrap gap-2">
+                                          {(phones.length > 0 ? phones : [phoneRaw]).map((phone) => (
+                                            <a
+                                              key={`${idx}-${phone}`}
+                                              href={`tel:${phone.replace(/[^\d+]/g, '')}`}
+                                              className="inline-flex min-w-0 items-center gap-2 rounded-xl border border-hueRed/15 bg-hueRed/[0.05] px-3 py-2 transition hover:bg-hueRed/[0.08]"
+                                            >
+                                              <Phone size={15} className="shrink-0 text-hueRed" />
+                                              <span className="truncate font-medium text-neutral-900">{phone}</span>
+                                            </a>
+                                          ))}
+                                        </div>
                                       </div>
                                     </div>
                                   );
@@ -454,20 +463,25 @@ export default function SpotlightModal({
                                 if (contactOnly) {
                                   const contactName = contactOnly[1].trim();
                                   const phoneRaw = contactOnly[2].trim();
-                                  const phoneHref = phoneRaw.replace(/\s+/g, '');
+                                  const phones = extractPhoneNumbers(phoneRaw);
                                   return (
                                     <div
                                       key={`${idx}-${line.slice(0, 24)}`}
                                       className="flex w-full flex-col gap-2 rounded-2xl border border-[#d9c7a0] bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(249,243,229,0.92))] px-4 py-3 shadow-[0_10px_24px_rgba(67,43,18,0.08)] sm:flex-row sm:items-center sm:justify-between"
                                     >
                                       <span className="font-medium text-neutral-800">{contactName}</span>
-                                      <a
-                                        href={`tel:${phoneHref}`}
-                                        className="inline-flex items-center gap-1.5 rounded-full bg-hueRed/[0.08] px-3 py-1.5 font-medium text-hueRed transition hover:bg-hueRed/[0.12]"
-                                      >
-                                        <Phone size={14} />
-                                        {phoneRaw}
-                                      </a>
+                                      <div className="flex flex-wrap gap-2">
+                                        {(phones.length > 0 ? phones : [phoneRaw]).map((phone) => (
+                                          <a
+                                            key={`${idx}-${phone}`}
+                                            href={`tel:${phone.replace(/[^\d+]/g, '')}`}
+                                            className="inline-flex items-center gap-1.5 rounded-full bg-hueRed/[0.08] px-3 py-1.5 font-medium text-hueRed transition hover:bg-hueRed/[0.12]"
+                                          >
+                                            <Phone size={14} />
+                                            {phone}
+                                          </a>
+                                        ))}
+                                      </div>
                                     </div>
                                   );
                                 }
