@@ -68,7 +68,9 @@
     "mucGia": "Theo món",
     "moTaNgan": "Quán nhậu địa phương tại An Vinh, thực đơn đa dạng với dê hấp, hải sản và các món lẩu.",
     "anh": [
-      "/assets/food/quan-ht/img-01.jpg"
+      "/assets/food/quan-ht/img-01.jpg",
+      "/assets/food/quan-ht/menu-01.jpg",
+      "/assets/food/quan-ht/menu-02.jpg"
     ],
     "diaChi": "Thôn An Vinh, xã Bình Điền, TX Hương Trà",
     "videos": [],
@@ -114,7 +116,9 @@
     "mucGia": "Theo món",
     "moTaNgan": "Quán ốc bình dân tại An Vinh, nổi bật với bạch tuộc hấp, hàu nướng và các món hải sản sốt me.",
     "anh": [
-      "/assets/food/quan-oc-xinh/img-01.jpg"
+      "/assets/food/quan-oc-xinh/img-01.jpg",
+      "/assets/food/quan-oc-xinh/menu-01.jpg",
+      "/assets/food/quan-oc-xinh/menu-02.jpg"
     ],
     "diaChi": "Thôn An Vinh, xã Bình Điền, TX Hương Trà",
     "videos": [],
