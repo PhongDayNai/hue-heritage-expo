@@ -25,6 +25,21 @@ type ItineraryCard = {
   timeline: ItineraryStep[];
 };
 
+type SpotlightTarget = {
+  openId: string;
+  aliases: string[];
+};
+
+type TravelQuizChatProps = {
+  onOpenTarget?: (openId: string) => void;
+};
+
+type TravelQuizState = {
+  answers: OptionKey[];
+  started: boolean;
+  isOpen: boolean;
+};
+
 const quizQuestions: QuizQuestion[] = [
   {
     id: 1,
@@ -154,6 +169,45 @@ const introMessages = [
   'Mình sẽ hỏi nhanh 5 câu. Bạn chỉ cần chạm vào đáp án phù hợp nhất để nhận gợi ý chuyến đi.'
 ];
 
+const QUIZ_STATE_KEY = 'travel-quiz-chat-state';
+const defaultQuizState: TravelQuizState = {
+  answers: [],
+  started: false,
+  isOpen: false
+};
+let cachedQuizState: TravelQuizState = defaultQuizState;
+
+const spotlightTargets: SpotlightTarget[] = [
+  {
+    openId: 'quan-be-den',
+    aliases: ['Quán Bé Đen']
+  },
+  {
+    openId: 'gee-garden',
+    aliases: ['Gee Garden', 'Gee Garden Homestay']
+  },
+  {
+    openId: 'binh-dien-retreat',
+    aliases: ['Bình Điền Retreat']
+  },
+  {
+    openId: 'ami-binh-dien',
+    aliases: ['Ami Retreat', 'AMI Bình Điền', 'Ami Bình Điền']
+  },
+  {
+    openId: 'khe-day',
+    aliases: ['Khe Đầy']
+  },
+  {
+    openId: 'doi-chuong-gio',
+    aliases: ['Đồi Chuông Gió']
+  }
+];
+
+const aliasTargets = spotlightTargets.flatMap((target) =>
+  target.aliases.map((alias) => ({ alias, target }))
+);
+
 function renderResponseText(template: string, label: string) {
   const normalizedLabel = label.charAt(0).toLowerCase() + label.slice(1);
   const parts = template.split(normalizedLabel);
@@ -209,27 +263,126 @@ function resolveTravelStyle(answers: OptionKey[]): TravelStyle {
   return 'chill';
 }
 
-export default function TravelQuizChat() {
-  const [answers, setAnswers] = useState<OptionKey[]>([]);
-  const [started, setStarted] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function findTargetsInText(text: string) {
+  return aliasTargets.reduce<Array<{ alias: string; target: SpotlightTarget }>>((matches, item) => {
+    if (!text.includes(item.alias)) {
+      return matches;
+    }
+
+    if (matches.some((match) => match.target.openId === item.target.openId)) {
+      return matches;
+    }
+
+    matches.push(item);
+    return matches;
+  }, []);
+}
+
+function readStoredQuizState(): TravelQuizState {
+  if (typeof window === 'undefined') {
+    return cachedQuizState;
+  }
+
+  try {
+    const raw = window.sessionStorage.getItem(QUIZ_STATE_KEY);
+    if (!raw) return cachedQuizState;
+
+    const parsed = JSON.parse(raw) as Partial<TravelQuizState>;
+    const answers = Array.isArray(parsed.answers)
+      ? parsed.answers.filter((answer): answer is OptionKey => answer === 'A' || answer === 'B' || answer === 'C')
+      : [];
+
+    return {
+      answers,
+      started: Boolean(parsed.started),
+      isOpen: Boolean(parsed.isOpen)
+    };
+  } catch {
+    return cachedQuizState;
+  }
+}
+
+function persistQuizState(state: TravelQuizState) {
+  cachedQuizState = state;
+
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    window.sessionStorage.setItem(QUIZ_STATE_KEY, JSON.stringify(state));
+  } catch {
+    // Ignore storage errors; in-memory cache still preserves state during client navigation.
+  }
+}
+
+export default function TravelQuizChat({ onOpenTarget }: TravelQuizChatProps) {
+  const [quizState, setQuizState] = useState<TravelQuizState>(() => readStoredQuizState());
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const endRef = useRef<HTMLDivElement | null>(null);
+
+  const { answers, started, isOpen } = quizState;
 
   const currentQuestion = quizQuestions[answers.length] || null;
   const isComplete = answers.length === quizQuestions.length;
   const travelStyle = isComplete ? resolveTravelStyle(answers) : null;
   const result = travelStyle ? styleContent[travelStyle] : null;
 
+  const openTarget = (target: SpotlightTarget) => {
+    if (!onOpenTarget) return;
+    onOpenTarget(target.openId);
+    setQuizState((prev) => ({ ...prev, isOpen: false }));
+  };
+
+  const renderLinkedText = (text: string) => {
+    const matches = findTargetsInText(text);
+
+    if (matches.length === 0) {
+      return text;
+    }
+
+    const pattern = new RegExp(`(${matches.map((item) => escapeRegExp(item.alias)).join('|')})`, 'g');
+    const parts = text.split(pattern);
+
+    return parts.map((part, index) => {
+      const matched = matches.find((item) => item.alias === part);
+
+      if (!matched) {
+        return <span key={`${part}-${index}`}>{part}</span>;
+      }
+
+      return (
+        <button
+          key={`${matched.target.openId}-${index}`}
+          type="button"
+          onClick={() => openTarget(matched.target)}
+          className="font-semibold text-[#9a6412] underline decoration-[#f0bf63] underline-offset-4 transition hover:text-[#c07812]"
+        >
+          {part}
+        </button>
+      );
+    });
+  };
+
   const handleAnswer = (answer: OptionKey) => {
-    setStarted(true);
-    setAnswers((prev) => [...prev, answer]);
+    setQuizState((prev) => ({
+      ...prev,
+      started: true,
+      answers: [...prev.answers, answer]
+    }));
   };
 
   const resetQuiz = () => {
-    setStarted(false);
-    setAnswers([]);
+    setQuizState(defaultQuizState);
   };
+
+  useEffect(() => {
+    persistQuizState(quizState);
+  }, [quizState]);
 
   useEffect(() => {
     if (!isOpen || !scrollRef.current || !endRef.current) {
@@ -264,7 +417,7 @@ export default function TravelQuizChat() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setQuizState((prev) => ({ ...prev, isOpen: false }))}
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-[#cad9e7] bg-white text-lg text-[#35516e] transition hover:bg-[#f7fbff]"
                   aria-label="Đóng quiz"
                 >
@@ -391,9 +544,28 @@ export default function TravelQuizChat() {
 
                       <div className="mt-4 flex flex-wrap gap-2">
                         {result.highlights.map((item) => (
-                          <span key={item} className="rounded-full border border-[#d7e6f3] bg-white px-3 py-1.5 text-xs font-medium text-[#35516e]">
-                            {item}
-                          </span>
+                          (() => {
+                            const match = aliasTargets.find((entry) => entry.alias === item);
+
+                            if (!match) {
+                              return (
+                                <span key={item} className="rounded-full border border-[#d7e6f3] bg-white px-3 py-1.5 text-xs font-medium text-[#35516e]">
+                                  {item}
+                                </span>
+                              );
+                            }
+
+                            return (
+                              <button
+                                key={item}
+                                type="button"
+                                onClick={() => openTarget(match.target)}
+                                className="rounded-full border border-[#d7e6f3] bg-white px-3 py-1.5 text-xs font-medium text-[#35516e] transition hover:border-[#d88d1d] hover:bg-[#fff8ea] hover:text-[#9a6412]"
+                              >
+                                {item}
+                              </button>
+                            );
+                          })()
                         ))}
                       </div>
 
@@ -422,7 +594,7 @@ export default function TravelQuizChat() {
                                           {item.time || ' '}
                                         </div>
                                         <div className="flex-1 rounded-xl bg-[#f7fbff] px-3 py-2.5 leading-6">
-                                          {item.text}
+                                          {renderLinkedText(item.text)}
                                         </div>
                                       </div>
                                     ))}
@@ -444,7 +616,7 @@ export default function TravelQuizChat() {
 
         <button
           type="button"
-          onClick={() => setIsOpen(true)}
+          onClick={() => setQuizState((prev) => ({ ...prev, isOpen: true }))}
           className="group flex h-[70px] items-center gap-3 rounded-full border border-[#d99f43] bg-[linear-gradient(135deg,#d78e22,#efb14f)] px-5 text-left text-white shadow-[0_16px_36px_rgba(145,91,18,0.32)] transition hover:-translate-y-0.5 hover:brightness-105"
           aria-label="Mở quiz gợi ý lịch trình"
         >

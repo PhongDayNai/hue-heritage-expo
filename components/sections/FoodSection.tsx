@@ -293,6 +293,7 @@ export default function FoodSection() {
         address={active?.diaChi}
         mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
         mapEntries={activeMapEntries}
+        enableContactEnhancements
       />
     </section>
   );
