@@ -419,28 +419,31 @@ export default function SpotlightModal({
                                   return (
                                     <div
                                       key={`${idx}-${line.slice(0, 24)}`}
-                                      className="grid w-full grid-cols-[1fr_auto_1fr] items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2"
+                                      className="grid w-full gap-3 rounded-2xl border border-[#d9c7a0] bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(249,243,229,0.92))] px-4 py-3 shadow-[0_10px_24px_rgba(67,43,18,0.08)] sm:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]"
                                     >
                                       <a
                                         href={fbUrl}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex min-w-0 items-center gap-1.5 font-medium text-[#1877F2] hover:underline"
+                                        className="flex min-w-0 items-start gap-2 rounded-xl border border-[#1877F2]/15 bg-[#1877F2]/[0.06] px-3 py-2 transition hover:bg-[#1877F2]/10"
                                       >
-                                        <Facebook size={14} />
-                                        <span className="truncate">{pageName}</span>
+                                        <Facebook size={15} className="mt-0.5 shrink-0 text-[#1877F2]" />
+                                        <span className="min-w-0">
+                                          <span className="block text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1877F2]">Facebook</span>
+                                          <span className="block truncate font-medium text-neutral-900">{pageName}</span>
+                                        </span>
                                       </a>
 
-                                      <span className="text-neutral-400">|</span>
-
-                                      <div className="inline-flex min-w-0 items-center justify-start gap-1.5 text-neutral-700">
-                                        <Phone size={14} />
-                                        <span>SĐT:</span>
+                                      <div className="min-w-0 text-neutral-700">
                                         <a
                                           href={`tel:${phoneHref}`}
-                                          className="min-w-0 truncate font-medium text-hueRed hover:underline"
+                                          className="flex min-w-0 items-start gap-2 rounded-xl border border-hueRed/15 bg-hueRed/[0.05] px-3 py-2 transition hover:bg-hueRed/[0.08]"
                                         >
-                                          {phoneRaw}
+                                          <Phone size={15} className="mt-0.5 shrink-0 text-hueRed" />
+                                          <span className="min-w-0">
+                                            <span className="block text-[11px] font-semibold uppercase tracking-[0.12em] text-hueRed">Liên hệ</span>
+                                            <span className="block truncate font-medium text-neutral-900">{phoneRaw}</span>
+                                          </span>
                                         </a>
                                       </div>
                                     </div>
@@ -455,12 +458,12 @@ export default function SpotlightModal({
                                   return (
                                     <div
                                       key={`${idx}-${line.slice(0, 24)}`}
-                                      className="flex w-full items-center justify-between gap-3 rounded-lg border border-neutral-200 bg-white px-3 py-2"
+                                      className="flex w-full flex-col gap-2 rounded-2xl border border-[#d9c7a0] bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(249,243,229,0.92))] px-4 py-3 shadow-[0_10px_24px_rgba(67,43,18,0.08)] sm:flex-row sm:items-center sm:justify-between"
                                     >
                                       <span className="font-medium text-neutral-800">{contactName}</span>
                                       <a
                                         href={`tel:${phoneHref}`}
-                                        className="inline-flex items-center gap-1.5 font-medium text-hueRed hover:underline"
+                                        className="inline-flex items-center gap-1.5 rounded-full bg-hueRed/[0.08] px-3 py-1.5 font-medium text-hueRed transition hover:bg-hueRed/[0.12]"
                                       >
                                         <Phone size={14} />
                                         {phoneRaw}
@@ -469,23 +472,6 @@ export default function SpotlightModal({
                                   );
                                 }
 
-                                const mapMatch = line.match(/^-\s*(.+?):\s*(https?:\/\/\S+)$/i);
-                                if (mapMatch && /maps\.app\.goo\.gl/i.test(mapMatch[2])) {
-                                  const placeName = mapMatch[1].trim();
-                                  const mapUrl = mapMatch[2].trim();
-                                  return (
-                                    <a
-                                      key={`${idx}-${line.slice(0, 24)}`}
-                                      href={mapUrl}
-                                      target="_blank"
-                                      rel="noreferrer"
-                                      className="inline-flex w-full items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2 font-medium text-[#0f766e] hover:underline"
-                                    >
-                                      <MapPin size={14} />
-                                      {placeName}
-                                    </a>
-                                  );
-                                }
                               }
 
                               const shouldBoldIntro =
