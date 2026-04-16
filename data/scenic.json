@@ -421,6 +421,52 @@
     "mapUrl": "https://goo.gl/maps/FGpG1CwHbDvJPfUE8"
   },
   {
+    "id": "vinh-tron",
+    "tenDiaDiem": "Vịnh Tròn",
+    "gioiThieuNgan": "Vịnh Tròn là điểm tắm suối, cắm trại và dã ngoại hoang sơ ở Bình Điền với hồ nước tự nhiên hình tròn đặc trưng.",
+    "gioiThieuDayDu": "Vịnh Tròn nằm tại thôn Hòa Hợp, xã Bình Điền, cách trung tâm thành phố Huế khoảng 20 km và được nhiều người biết đến bởi hồ nước tự nhiên có hình tròn độc đáo giữa không gian rừng suối.\n1. Điểm nổi bật\n- Suối trong, hồ nước tự nhiên rộng và cảnh quan còn giữ nét nguyên sơ.\n- Không gian yên tĩnh, phù hợp nghỉ ngơi, chụp ảnh và thư giãn giữa thiên nhiên.\n2. Trải nghiệm phù hợp\n- Tắm suối, cắm trại qua đêm, picnic và tổ chức BBQ theo nhóm.\n- Có thể kết hợp tham quan thêm khu vực suối Khe Đầy trong cùng hành trình.\n3. Lưu ý\n- Khu vực còn hoang sơ, dịch vụ du lịch chưa phát triển nhiều.\n- Nên chuẩn bị sẵn đồ ăn, nước uống, dụng cụ cắm trại và chú ý an toàn vào mùa mưa.",
+    "anh": [
+      "/assets/scenic/vinh-tron/img-01.jpg",
+      "/assets/scenic/vinh-tron/img-02.jpg",
+      "/assets/scenic/vinh-tron/img-03.jpg",
+      "/assets/scenic/vinh-tron/img-04.jpg",
+      "/assets/scenic/vinh-tron/img-05.jpg",
+      "/assets/scenic/vinh-tron/img-06.png",
+      "/assets/scenic/vinh-tron/img-07.png"
+    ],
+    "dichVu": [
+      "Tắm suối",
+      "Cắm trại",
+      "Picnic",
+      "Check-in thiên nhiên"
+    ],
+    "diaChi": "Thôn Hòa Hợp, xã Bình Điền, TX Hương Trà, TP Huế",
+    "videos": []
+  },
+  {
+    "id": "thac-chin-chang",
+    "tenDiaDiem": "Thác Chín Chàng",
+    "gioiThieuNgan": "Thác Chín Chàng là điểm thác tầng hoang sơ với không gian mát lành, phù hợp khám phá thiên nhiên và dã ngoại tại khu vực Bình Điền.",
+    "gioiThieuDayDu": "Thác Chín Chàng là điểm đến thiên nhiên hoang sơ, nổi bật với dòng thác nhiều tầng và không gian núi rừng yên tĩnh, phù hợp cho hành trình tham quan sinh thái gần Bình Điền.\n1. Điểm nổi bật\n- Thác cao khoảng 30 m với 9 tầng nước xếp chồng, tạo cảnh quan hùng vĩ và thơ mộng.\n- Không khí trong lành, nhiều góc nhìn đẹp để ngắm cảnh và chụp ảnh.\n2. Trải nghiệm phù hợp\n- Tắm suối, đi dọc dòng nước, check-in và tổ chức picnic cùng bạn bè hoặc gia đình.\n- Phù hợp tham quan vào mùa khô, đặc biệt từ tháng 4 đến tháng 10.\n3. Lưu ý\n- Mùa mưa đường đi có thể trơn trượt, nước dâng cao và chảy xiết.\n- Nên chuẩn bị đồ ăn, nước uống và ưu tiên an toàn khi vui chơi gần thác.",
+    "anh": [
+      "/assets/scenic/thac-chin-chang/img-01.jpg",
+      "/assets/scenic/thac-chin-chang/img-02.jpg",
+      "/assets/scenic/thac-chin-chang/img-03.jpg",
+      "/assets/scenic/thac-chin-chang/img-04.jpg",
+      "/assets/scenic/thac-chin-chang/img-05.jpg"
+    ],
+    "dichVu": [
+      "Tắm suối",
+      "Check-in",
+      "Dã ngoại",
+      "Khám phá thiên nhiên"
+    ],
+    "diaChi": "Khu vực Bình Điền, TX Hương Trà, TP Huế",
+    "videos": [
+      "/assets/scenic/thac-chin-chang/video-01.mp4"
+    ]
+  },
+  {
     "id": "quyt-thanh-binh",
     "tenDiaDiem": "Vườn Quýt Thanh Bình",
     "gioiThieuNgan": "Vườn quýt Thanh Bình là điểm trải nghiệm nông nghiệp sạch với giống quýt ngọt thanh, nhiều nước và không gian xanh mát.",
