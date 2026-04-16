@@ -21,7 +21,7 @@ export default function Topbar() {
   const items = useMemo(
     () => [
       { label: 'TRANG CHỦ', href: '/' },
-      { label: 'DANH LAM THẮNG CẢNH', href: '/danh-lam' },
+      { label: 'DANH LAM - THẮNG CẢNH', href: '/danh-lam' },
       { label: 'ẨM THỰC', href: '/am-thuc' },
       ...(flags.showServices ? [{ label: 'DỊCH VỤ', href: '/dich-vu' }] : []),
       { label: 'VĂN HOÁ', href: '/van-hoa' },

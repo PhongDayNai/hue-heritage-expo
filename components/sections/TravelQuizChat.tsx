@@ -29,37 +29,27 @@ const quizQuestions: QuizQuestion[] = [
   {
     id: 1,
     text: 'Bạn muốn chuyến đi như thế nào?',
-    responseTemplate: (label) => `Tôi muốn một chuyến đi ${label.toLowerCase()}.`,
+    responseTemplate: (label) => `Tôi muốn chuyến đi ${label.toLowerCase()}.`,
     options: [
-      { key: 'A', label: 'Thư giãn' },
-      { key: 'B', label: 'Khám phá' },
-      { key: 'C', label: 'Chụp ảnh' }
+      { key: 'A', label: 'Thư giãn, nhẹ nhàng' },
+      { key: 'B', label: 'Trải nghiệm, khám phá' },
+      { key: 'C', label: 'Chụp ảnh đẹp' }
     ]
   },
   {
     id: 2,
-    text: 'Hoạt động yêu thích?',
+    text: 'Bạn thích hoạt động nào nhất?',
     responseTemplate: (label) => `Tôi thích ${label.toLowerCase()}.`,
     options: [
-      { key: 'A', label: 'Nghỉ ngơi' },
-      { key: 'B', label: 'Khám phá' },
-      { key: 'C', label: 'Check-in' }
+      { key: 'A', label: 'Nghỉ ngơi, ngắm cảnh' },
+      { key: 'B', label: 'Đi nhiều nơi, khám phá' },
+      { key: 'C', label: 'Check-in, chụp ảnh' }
     ]
   },
   {
     id: 3,
-    text: 'Mục đích du lịch?',
-    responseTemplate: (label) => `Mục đích chuyến đi của tôi là ${label.toLowerCase()}.`,
-    options: [
-      { key: 'A', label: 'Nghỉ ngơi' },
-      { key: 'B', label: 'Trải nghiệm' },
-      { key: 'C', label: 'Kỷ niệm' }
-    ]
-  },
-  {
-    id: 4,
-    text: 'Thời điểm bạn thích nhất?',
-    responseTemplate: (label) => `Tôi thích đi vào lúc ${label.toLowerCase()}.`,
+    text: 'Bạn thích thời điểm nào trong ngày?',
+    responseTemplate: (label) => `Tôi thích thời điểm ${label.toLowerCase()}.`,
     options: [
       { key: 'A', label: 'Sáng sớm' },
       { key: 'B', label: 'Ban ngày' },
@@ -67,63 +57,23 @@ const quizQuestions: QuizQuestion[] = [
     ]
   },
   {
-    id: 5,
-    text: 'Không gian bạn muốn tìm?',
-    responseTemplate: (label) => `Tôi muốn một không gian ${label.toLowerCase()}.`,
-    options: [
-      { key: 'A', label: 'Yên tĩnh' },
-      { key: 'B', label: 'Hoang sơ' },
-      { key: 'C', label: 'View đẹp' }
-    ]
-  },
-  {
-    id: 6,
-    text: 'Bạn đi cùng ai?',
+    id: 4,
+    text: 'Bạn đi du lịch cùng ai?',
     responseTemplate: (label) => `Tôi đi cùng ${label.toLowerCase()}.`,
     options: [
       { key: 'A', label: 'Gia đình' },
       { key: 'B', label: 'Bạn bè' },
-      { key: 'C', label: 'Người yêu' }
+      { key: 'C', label: 'Người yêu / nhóm chụp ảnh' }
     ]
   },
   {
-    id: 7,
-    text: 'Bạn thích hoạt động ngoài trời ở mức nào?',
-    responseTemplate: (label) => `Mức độ hoạt động ngoài trời tôi chọn là ${label.toLowerCase()}.`,
-    options: [
-      { key: 'A', label: 'Ít thôi' },
-      { key: 'B', label: 'Rất thích' },
-      { key: 'C', label: 'Nếu chỗ đẹp' }
-    ]
-  },
-  {
-    id: 8,
-    text: 'Điều quan trọng nhất với chuyến đi này là gì?',
+    id: 5,
+    text: 'Điều quan trọng nhất với bạn là gì?',
     responseTemplate: (label) => `Điều tôi ưu tiên nhất là ${label.toLowerCase()}.`,
     options: [
       { key: 'A', label: 'Thư giãn' },
       { key: 'B', label: 'Trải nghiệm' },
       { key: 'C', label: 'Ảnh đẹp' }
-    ]
-  },
-  {
-    id: 9,
-    text: 'Đến nơi, việc đầu tiên bạn muốn làm là?',
-    responseTemplate: (label) => `Đến nơi tôi muốn ${label.charAt(0).toLowerCase() + label.slice(1)}.`,
-    options: [
-      { key: 'A', label: 'Nghỉ ngơi' },
-      { key: 'B', label: 'Khám phá ngay' },
-      { key: 'C', label: 'Chụp ảnh' }
-    ]
-  },
-  {
-    id: 10,
-    text: 'Bạn muốn lịch trình có nhịp độ ra sao?',
-    responseTemplate: (label) => `Tôi muốn lịch trình ${label.toLowerCase()}.`,
-    options: [
-      { key: 'A', label: 'Nhẹ nhàng' },
-      { key: 'B', label: 'Nhiều hoạt động' },
-      { key: 'C', label: 'Linh hoạt' }
     ]
   }
 ];
@@ -142,28 +92,28 @@ const styleContent: Record<
   chill: {
     badge: 'A nhiều nhất',
     title: 'Chill - nghỉ dưỡng',
-    subtitle: 'Đi nhẹ, nghỉ sâu, ưu tiên cảm giác thư thái.',
+    subtitle: 'Ưu tiên thư giãn, nhịp đi chậm và không gian dễ nghỉ ngơi.',
     summary:
-      'Gợi ý phù hợp nhất là lịch trình 1 ngày để ăn uống địa phương, tham quan nhẹ nhàng và dành thời gian nghỉ ở homestay. Nếu bạn muốn nghỉ sâu hơn, có thể nâng lên 2 ngày 1 đêm.',
-    optionRecommendation: 'Ưu tiên Option 2 (1 ngày), có thể nâng lên Option 1 nếu muốn nghỉ lâu hơn.',
+      'Bạn hợp nhất với lịch trình 1 ngày để ăn sáng, tham quan nhẹ, nghỉ tại Gee Garden rồi đi các điểm chiều tối. Nếu muốn thư giãn lâu hơn, có thể chọn bản 2 ngày 1 đêm.',
+    optionRecommendation: 'Ưu tiên Option 2 (1 ngày), hoặc Option 1 nếu muốn thư giãn lâu hơn.',
     highlights: ['Chợ địa phương', 'Điện Cha - Điện Mẹ', 'Gee Garden', 'Bình Điền Retreat', 'Đồi Chuông Gió']
   },
   explore: {
     badge: 'B nhiều nhất',
     title: 'Khám phá - trải nghiệm',
-    subtitle: 'Lịch trình dày hơn, nhiều điểm đến và thiên nhiên hơn.',
+    subtitle: 'Phù hợp với hành trình nhiều điểm đến, thiên về đi và khám phá.',
     summary:
-      'Phù hợp nhất là lịch trình 2 ngày 1 đêm để có đủ thời gian check-in nhiều điểm, khám phá lòng hồ, suối, rừng và trải nghiệm văn hóa địa phương.',
+      'Bạn hợp nhất với lịch trình 2 ngày 1 đêm để có đủ thời gian di chuyển, khám phá lòng hồ, suối và trải nghiệm thêm các điểm lưu trú, văn hóa địa phương.',
     optionRecommendation: 'Ưu tiên Option 1 (2 ngày 1 đêm).',
     highlights: ['Quán Bé Đen', 'Gee Garden Homestay', 'Bình Điền Retreat', 'Ami Retreat', 'Lòng hồ', 'Suối']
   },
   checkin: {
     badge: 'C nhiều nhất',
     title: 'Sống ảo - check-in',
-    subtitle: 'Tập trung view đẹp, ánh sáng đẹp và điểm dừng có ảnh tốt.',
+    subtitle: 'Ưu tiên ảnh đẹp, ánh sáng tốt và các điểm dừng có view nổi bật.',
     summary:
-      'Bạn hợp với lịch trình linh hoạt quanh các điểm check-in, đặc biệt là khung giờ hoàng hôn và bình minh. Đi nhanh có thể chọn 1 ngày, còn muốn gom nhiều ảnh đẹp hơn thì nên ở lại 2 ngày 1 đêm.',
-    optionRecommendation: 'Option 2 nếu đi nhanh, Option 1 nếu muốn chụp được nhiều khung cảnh hơn.',
+      'Bạn hợp với lịch trình có nhiều điểm check-in, nhất là các khung sáng sớm và hoàng hôn. Có thể đi nhanh trong 1 ngày hoặc ở lại 2 ngày 1 đêm để gom nhiều góc ảnh đẹp hơn.',
+    optionRecommendation: 'Option 2 (1 ngày) hoặc Option 1 (2 ngày 1 đêm).',
     highlights: ['Gee Garden', 'Bình Điền Retreat', 'Ami Retreat', 'Đồi Chuông Gió', 'Hoàng hôn', 'Bình minh']
   }
 };
@@ -174,13 +124,13 @@ const itineraryCards: ItineraryCard[] = [
     title: 'Option 1 · 2 ngày 1 đêm',
     cost: '1.600.000đ/người',
     timeline: [
-      { label: 'Ngày 1', time: '10:30', text: 'Di chuyển và ăn trưa tại quán Bé Đen.' },
+      { label: 'Ngày 1', time: '10:30', text: 'Xuất phát, ăn trưa tại quán Bé Đen.' },
       { label: 'Ngày 1', time: '12:30', text: 'Nhận phòng Gee Garden Homestay.' },
-      { label: 'Ngày 1', time: '15:00', text: 'Check-in Bình Điền Retreat và Ami Retreat.' },
-      { label: 'Ngày 1', text: 'Buổi tối ăn đặc sản Pa Hy.' },
+      { label: 'Ngày 1', time: '15:00', text: 'Check-in Bình Điền Retreat, Ami Retreat.' },
+      { label: 'Ngày 1', time: '18:00', text: 'Thưởng thức ẩm thực Pa Hy.' },
       { label: 'Ngày 2', time: '06:30', text: 'Ăn sáng.' },
-      { label: 'Ngày 2', time: '07:00', text: 'Khám phá lòng hồ và suối.' },
-      { label: 'Ngày 2', time: '14:00', text: 'Ăn chiều và kết thúc hành trình.' }
+      { label: 'Ngày 2', time: '07:00', text: 'Khám phá lòng hồ, suối.' },
+      { label: 'Ngày 2', time: '14:00', text: 'Ăn chiều, kết thúc.' }
     ]
   },
   {
@@ -188,19 +138,20 @@ const itineraryCards: ItineraryCard[] = [
     title: 'Option 2 · 1 ngày',
     cost: '200.000 - 300.000đ/người',
     timeline: [
-      { label: 'Sáng', text: 'Ăn sáng và tham quan chợ.' },
-      { label: 'Sáng', text: 'Ghé Điện Cha - Điện Mẹ.' },
-      { label: 'Trưa', text: 'Ăn trưa và nghỉ tại Gee Garden.' },
-      { label: 'Chiều tối', text: 'Khám phá Khe Đầy và Bình Điền Retreat.' },
-      { label: 'Chiều tối', text: 'Check-in Đồi Chuông Gió.' },
-      { label: 'Chiều tối', text: 'Ăn tối rồi kết thúc hành trình.' }
+      { label: 'Sáng', text: 'Ăn sáng, tham quan chợ Bình Điền.' },
+      { label: 'Sáng', text: 'Tham quan Điện Cha - Điện Mẹ.' },
+      { label: 'Trưa', text: 'Ăn trưa, nghỉ tại Gee Garden.' },
+      { label: 'Chiều', text: 'Tham quan Khe Đầy, Bình Điền Retreat.' },
+      { label: 'Chiều', text: 'Nghỉ ngơi.' },
+      { label: 'Tối', text: 'Check-in Đồi Chuông Gió.' },
+      { label: 'Tối', text: 'Ăn tối, kết thúc.' }
     ]
   }
 ];
 
 const introMessages = [
   'Chào bạn, mình là trợ lý chọn lịch trình Bình Điền.',
-  'Mình sẽ hỏi nhanh 10 câu. Bạn chỉ cần chạm vào đáp án phù hợp nhất để nhận gợi ý chuyến đi.'
+  'Mình sẽ hỏi nhanh 5 câu. Bạn chỉ cần chạm vào đáp án phù hợp nhất để nhận gợi ý chuyến đi.'
 ];
 
 function renderResponseText(template: string, label: string) {
@@ -426,7 +377,7 @@ export default function TravelQuizChat() {
                           {result.badge}
                         </span>
                         <span className="rounded-full bg-[#fff0cf] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9a6412]">
-                          {answers.length}/10 câu
+                          {answers.length}/{quizQuestions.length} câu
                         </span>
                       </div>
 
@@ -500,7 +451,7 @@ export default function TravelQuizChat() {
           <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/18 text-xl backdrop-blur">🧭</span>
           <span className="hidden pr-1 sm:block">
             <span className="block text-sm font-semibold">Gợi ý lịch trình</span>
-            <span className="block text-xs text-white/85">Mở quiz 10 câu</span>
+            <span className="block text-xs text-white/85">Mở quiz 5 câu</span>
           </span>
         </button>
       </div>
