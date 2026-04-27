@@ -100,7 +100,7 @@ docker compose up -d --build
 Mặc định compose map cổng:
 
 ```text
-http://localhost:6060 -> container:3000
+http://localhost:47080 -> container:3000
 ```
 
 Tắt container:
