@@ -33,6 +33,12 @@ type MediaItem = {
   src: string;
 };
 
+function extractPhoneNumbers(raw: string) {
+  return (raw.match(/(?:\+?84|0)(?:[\s.-]?\d){8,9}/g) || [])
+    .map((phone) => phone.trim())
+    .filter(Boolean);
+}
+
 export default function SpotlightModal({
   open,
   onClose,
@@ -70,6 +76,22 @@ export default function SpotlightModal({
   const isVideoActive = currentMedia?.type === 'video';
   const safeBgImage = galleryImages[bgIndex] || galleryImages[0] || '';
 
+  const primaryMapUrl = useMemo(() => {
+    for (const e of mapEntries) {
+      if (!e || typeof e.url !== 'string') continue;
+      const url = e.url.trim();
+      if (url) return url;
+    }
+
+    for (const u of mapUrls) {
+      if (typeof u !== 'string') continue;
+      const url = u.trim();
+      if (url) return url;
+    }
+
+    return '';
+  }, [mapEntries, mapUrls]);
+
   const normalizedMapEntries = useMemo(() => {
     if (!showMapEntriesList) return [] as MapEntry[];
 
@@ -83,19 +105,11 @@ export default function SpotlightModal({
       if (!out.some((x) => x.url === url)) out.push({ label, url });
     }
 
-    for (const u of mapUrls) {
-      if (typeof u !== 'string' || !u.trim()) continue;
-      const url = u.trim();
-      if (!out.some((x) => x.url === url)) {
-        out.push({ label: `Google Maps ${out.length + 1}`, url });
-      }
-    }
-
     return out;
-  }, [mapEntries, mapUrls, showMapEntriesList]);
+  }, [mapEntries, showMapEntriesList]);
   const detailLines = useMemo(() => {
     const normalized = (fullDesc || '')
-      .replace(/\s+(?=\d+\.\s+)/g, '\n')
+      .replace(/\s+(?=\d\.\s+)/g, '\n')
       .replace(/\s+(?=[IVXLCDM]{1,6}\.\s+)/gi, '\n');
 
     const lines = normalized.split('\n');
@@ -406,34 +420,40 @@ export default function SpotlightModal({
                                   const pageName = match[1].trim();
                                   const fbUrl = match[2].trim();
                                   const phoneRaw = match[3].trim();
-                                  const phoneHref = phoneRaw.replace(/\s+/g, '');
+                                  const phones = extractPhoneNumbers(phoneRaw);
 
                                   return (
                                     <div
                                       key={`${idx}-${line.slice(0, 24)}`}
-                                      className="grid w-full grid-cols-[1fr_auto_1fr] items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2"
+                                      className="grid w-full gap-3 rounded-2xl border border-[#d9c7a0] bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(249,243,229,0.92))] px-4 py-3 shadow-[0_10px_24px_rgba(67,43,18,0.08)] sm:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]"
                                     >
                                       <a
                                         href={fbUrl}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex min-w-0 items-center gap-1.5 font-medium text-[#1877F2] hover:underline"
+                                        className="flex min-w-0 items-start gap-2 rounded-xl border border-[#1877F2]/15 bg-[#1877F2]/[0.06] px-3 py-2 transition hover:bg-[#1877F2]/10"
                                       >
-                                        <Facebook size={14} />
-                                        <span className="truncate">{pageName}</span>
+                                        <Facebook size={15} className="mt-0.5 shrink-0 text-[#1877F2]" />
+                                        <span className="min-w-0">
+                                          <span className="block text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1877F2]">Facebook</span>
+                                          <span className="block truncate font-medium text-neutral-900">{pageName}</span>
+                                        </span>
                                       </a>
 
-                                      <span className="text-neutral-400">|</span>
-
-                                      <div className="inline-flex min-w-0 items-center justify-start gap-1.5 text-neutral-700">
-                                        <Phone size={14} />
-                                        <span>SĐT:</span>
-                                        <a
-                                          href={`tel:${phoneHref}`}
-                                          className="min-w-0 truncate font-medium text-hueRed hover:underline"
-                                        >
-                                          {phoneRaw}
-                                        </a>
+                                      <div className="min-w-0">
+                                        <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-hueRed">Liên hệ</div>
+                                        <div className="flex flex-wrap gap-2">
+                                          {(phones.length > 0 ? phones : [phoneRaw]).map((phone) => (
+                                            <a
+                                              key={`${idx}-${phone}`}
+                                              href={`tel:${phone.replace(/[^\d+]/g, '')}`}
+                                              className="inline-flex min-w-0 items-center gap-2 rounded-xl border border-hueRed/15 bg-hueRed/[0.05] px-3 py-2 transition hover:bg-hueRed/[0.08]"
+                                            >
+                                              <Phone size={15} className="shrink-0 text-hueRed" />
+                                              <span className="truncate font-medium text-neutral-900">{phone}</span>
+                                            </a>
+                                          ))}
+                                        </div>
                                       </div>
                                     </div>
                                   );
@@ -443,41 +463,29 @@ export default function SpotlightModal({
                                 if (contactOnly) {
                                   const contactName = contactOnly[1].trim();
                                   const phoneRaw = contactOnly[2].trim();
-                                  const phoneHref = phoneRaw.replace(/\s+/g, '');
+                                  const phones = extractPhoneNumbers(phoneRaw);
                                   return (
                                     <div
                                       key={`${idx}-${line.slice(0, 24)}`}
-                                      className="flex w-full items-center justify-between gap-3 rounded-lg border border-neutral-200 bg-white px-3 py-2"
+                                      className="flex w-full flex-col gap-2 rounded-2xl border border-[#d9c7a0] bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(249,243,229,0.92))] px-4 py-3 shadow-[0_10px_24px_rgba(67,43,18,0.08)] sm:flex-row sm:items-center sm:justify-between"
                                     >
                                       <span className="font-medium text-neutral-800">{contactName}</span>
-                                      <a
-                                        href={`tel:${phoneHref}`}
-                                        className="inline-flex items-center gap-1.5 font-medium text-hueRed hover:underline"
-                                      >
-                                        <Phone size={14} />
-                                        {phoneRaw}
-                                      </a>
+                                      <div className="flex flex-wrap gap-2">
+                                        {(phones.length > 0 ? phones : [phoneRaw]).map((phone) => (
+                                          <a
+                                            key={`${idx}-${phone}`}
+                                            href={`tel:${phone.replace(/[^\d+]/g, '')}`}
+                                            className="inline-flex items-center gap-1.5 rounded-full bg-hueRed/[0.08] px-3 py-1.5 font-medium text-hueRed transition hover:bg-hueRed/[0.12]"
+                                          >
+                                            <Phone size={14} />
+                                            {phone}
+                                          </a>
+                                        ))}
+                                      </div>
                                     </div>
                                   );
                                 }
 
-                                const mapMatch = line.match(/^-\s*(.+?):\s*(https?:\/\/\S+)$/i);
-                                if (mapMatch && /maps\.app\.goo\.gl/i.test(mapMatch[2])) {
-                                  const placeName = mapMatch[1].trim();
-                                  const mapUrl = mapMatch[2].trim();
-                                  return (
-                                    <a
-                                      key={`${idx}-${line.slice(0, 24)}`}
-                                      href={mapUrl}
-                                      target="_blank"
-                                      rel="noreferrer"
-                                      className="inline-flex w-full items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2 font-medium text-[#0f766e] hover:underline"
-                                    >
-                                      <MapPin size={14} />
-                                      {placeName}
-                                    </a>
-                                  );
-                                }
                               }
 
                               const shouldBoldIntro =
@@ -528,13 +536,27 @@ export default function SpotlightModal({
 
                       {(address || normalizedMapEntries.length > 0) && (
                         <div className="mt-5 space-y-2">
-                          {normalizedMapEntries.length === 0 && address && (
-                            <p className="inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
-                              <MapPin size={18} className="mt-0.5 text-hueRed" />
-                              <span>
-                                <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
-                              </span>
-                            </p>
+                          {address && (
+                            primaryMapUrl ? (
+                              <a
+                                href={primaryMapUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm transition hover:bg-hueGold/10"
+                              >
+                                <MapPin size={18} className="mt-0.5 text-hueRed" />
+                                <span>
+                                  <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
+                                </span>
+                              </a>
+                            ) : (
+                              <p className="inline-flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 shadow-sm">
+                                <MapPin size={18} className="mt-0.5 text-hueRed" />
+                                <span>
+                                  <span className="font-semibold text-neutral-900">Địa chỉ:</span> {address}
+                                </span>
+                              </p>
+                            )
                           )}
 
                           {normalizedMapEntries.map((entry, idx) => {

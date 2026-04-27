@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -34,7 +35,15 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
         />
       </head>
-      <body className="font-[var(--font-body)] antialiased">{children}</body>
+      <body className="font-[var(--font-body)] antialiased">
+        {children}
+        <Script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token":"fb706cf853d34eda8866a31c5d22c8e1"}'
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }

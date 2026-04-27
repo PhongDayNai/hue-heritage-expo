@@ -9,8 +9,9 @@ import library from '@/data/library.json';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import SpotlightModal from '../ui/SpotlightModal';
+import TravelQuizChat from './TravelQuizChat';
 import { useFeatureFlags } from '@/lib/useFeatureFlags';
 
 const infoCards = [
@@ -21,11 +22,17 @@ const infoCards = [
 ];
 
 type Scenic = (typeof scenic)[number];
+type Food = (typeof food)[number] & {
+  moTaDayDu?: string;
+};
+type HomeSpotlight =
+  | { kind: 'scenic'; item: Scenic }
+  | { kind: 'food'; item: Food };
 
 const ALBUM_BATCH = 9; // ~3 hàng ở layout 3 cột
 
 export default function HomePortalModern() {
-  const [activeSpot, setActiveSpot] = useState<Scenic | null>(null);
+  const [activeSpotlight, setActiveSpotlight] = useState<HomeSpotlight | null>(null);
   const [albumVisibleCount, setAlbumVisibleCount] = useState(ALBUM_BATCH);
   const [expandedAlbums, setExpandedAlbums] = useState<Record<string, boolean>>({});
   const { flags } = useFeatureFlags();
@@ -50,8 +57,64 @@ export default function HomePortalModern() {
   const visibleAlbums = albums.slice(0, albumVisibleCount);
   const hasMoreAlbums = albumVisibleCount < albums.length;
 
+  const activeFoodMapEntries = useMemo(() => {
+    if (activeSpotlight?.kind !== 'food') return [] as { label: string; url: string }[];
+
+    const activeFood = activeSpotlight.item;
+    const fromData = (activeFood as any)?.mapEntries;
+    if (Array.isArray(fromData) && fromData.length > 0) {
+      return fromData
+        .filter((entry: any) => entry && typeof entry.label === 'string' && typeof entry.url === 'string')
+        .map((entry: any) => ({ label: entry.label.trim(), url: entry.url.trim() }))
+        .filter((entry: any) => entry.label && entry.url);
+    }
+
+    const lines = ((activeFood as any)?.moTaDayDu || '')
+      .split('\n')
+      .map((line: string) => line.trim())
+      .filter(Boolean);
+
+    const entries: { label: string; url: string }[] = [];
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      if (!/^https?:\/\//i.test(line)) continue;
+
+      const url = line;
+      let label = lines[i - 1] || '';
+      label = label.replace(/^[-+•]\s*/, '').replace(/^Gợi ý:\s*/i, '').trim();
+
+      if (!label) continue;
+
+      if (/gần chợ Bình Điền$/i.test(label) && !/TX\s*Hương\s*Trà/i.test(label)) {
+        label = `${label}, TX Hương Trà`;
+      }
+
+      label = label.replace(/Tp\.Huế/gi, 'TP. Huế').replace(/TP\.Huế/g, 'TP. Huế');
+
+      if (!entries.some((entry) => entry.url === url)) {
+        entries.push({ label, url });
+      }
+    }
+
+    return entries;
+  }, [activeSpotlight]);
+
   const toggleAlbum = (id: string) => {
     setExpandedAlbums((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  const openSpotlightById = (openId: string) => {
+    const scenicItem = scenic.find((item) => item.id === openId);
+    if (scenicItem) {
+      setActiveSpotlight({ kind: 'scenic', item: scenicItem });
+      return;
+    }
+
+    const foodItem = food.find((item) => item.id === openId) as Food | undefined;
+    if (foodItem) {
+      setActiveSpotlight({ kind: 'food', item: foodItem });
+    }
   };
 
   const galleryTiles = visibleAlbums.flatMap((album) => {
@@ -84,10 +147,9 @@ export default function HomePortalModern() {
 
   return (
     <>
-      
       <div className="border-b border-hueGold/30 bg-white/90">
         <div className="section-wrap py-2 text-xs text-neutral-600">
-          <span className="text-hueRed">Cổng thông tin Du lịch Bình Điền - Huế</span>
+          <span className="text-hueRed">Vi vu Bình Điền</span>
           <span className="mx-2 text-hueGold">›</span>
           <span>Hành trình khám phá</span>
         </div>
@@ -102,7 +164,7 @@ export default function HomePortalModern() {
         <div className="section-wrap relative z-10 grid gap-6 py-14 lg:grid-cols-[1fr_320px] lg:items-center">
           <div>
             <span className="inline-flex rounded bg-hueGold px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-hueInk">
-              Di sản văn hoá thế giới
+              Cẩm nang du lịch
             </span>
             <h1 className="mt-4 font-[var(--font-heading)] text-5xl leading-tight text-[#f8eecf] md:text-6xl">
               Khám phá Bình Điền
@@ -135,6 +197,8 @@ export default function HomePortalModern() {
           </aside>
         </div>
       </section>
+
+      <TravelQuizChat onOpenTarget={openSpotlightById} />
 
       <section className="section-wrap pt-8 md:pt-10">
         <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_300px]">
@@ -251,7 +315,7 @@ export default function HomePortalModern() {
                   <button
                     type="button"
                     key={item.id}
-                    onClick={() => setActiveSpot(item)}
+                    onClick={() => setActiveSpotlight({ kind: 'scenic', item })}
                     className="flex w-full gap-3 border-b border-dashed border-[#dcc09a] py-2.5 text-left transition hover:bg-[#fbf6ea] last:border-b-0"
                   >
                     <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md">
@@ -304,14 +368,48 @@ export default function HomePortalModern() {
       </section>
 
       <SpotlightModal
-        open={!!activeSpot}
-        onClose={() => setActiveSpot(null)}
-        title={activeSpot?.tenDiaDiem || ''}
-        shortDesc={activeSpot?.gioiThieuNgan}
-        fullDesc={activeSpot?.gioiThieuDayDu}
-        image={activeSpot?.anh?.[0]}
-        chips={activeSpot?.dichVu || []}
-        address={activeSpot?.diaChi}
+        open={!!activeSpotlight}
+        onClose={() => setActiveSpotlight(null)}
+        title={
+          activeSpotlight?.kind === 'scenic'
+            ? activeSpotlight.item.tenDiaDiem
+            : activeSpotlight?.kind === 'food'
+            ? activeSpotlight.item.tenMon
+            : ''
+        }
+        shortDesc={
+          activeSpotlight?.kind === 'scenic'
+            ? activeSpotlight.item.gioiThieuNgan
+            : activeSpotlight?.kind === 'food'
+            ? `${activeSpotlight.item.tenQuan} · ${activeSpotlight.item.mucGia}`
+            : undefined
+        }
+        fullDesc={
+          activeSpotlight?.kind === 'scenic'
+            ? activeSpotlight.item.gioiThieuDayDu
+            : activeSpotlight?.kind === 'food'
+            ? ((activeSpotlight.item as any)?.moTaDayDu || activeSpotlight.item.moTaNgan)
+            : undefined
+        }
+        fullDescTitle={
+          activeSpotlight?.kind === 'food' && (activeSpotlight.item as any)?.id === 'anh-huong-den-am-thuc-binh-dien'
+            ? 'Giới thiệu ẩm thực Bình Điền'
+            : undefined
+        }
+        image={activeSpotlight?.item?.anh?.[0]}
+        images={activeSpotlight?.item?.anh || []}
+        videos={activeSpotlight?.item?.videos || []}
+        chips={
+          activeSpotlight?.kind === 'scenic'
+            ? activeSpotlight.item.dichVu || []
+            : activeSpotlight?.kind === 'food'
+            ? [activeSpotlight.item.tenQuan, activeSpotlight.item.mucGia]
+            : []
+        }
+        address={activeSpotlight?.item?.diaChi}
+        mapUrls={((activeSpotlight?.item as any)?.mapUrls as string[]) || (((activeSpotlight?.item as any)?.mapUrl) ? [(activeSpotlight?.item as any).mapUrl] : [])}
+        mapEntries={activeSpotlight?.kind === 'food' ? activeFoodMapEntries : []}
+        enableContactEnhancements
       />
     </>
   );

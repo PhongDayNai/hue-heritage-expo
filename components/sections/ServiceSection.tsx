@@ -61,7 +61,7 @@ export default function ServiceSection() {
                 <div className="bg-gradient-to-r from-hueRed to-[#b7401f] px-6 py-5 text-white">
                   <p className="text-xs font-semibold tracking-[0.12em] text-white/85">GỢI Ý RIÊNG CHO CHUYẾN ĐI</p>
                   <h3 className="mt-2 text-2xl font-semibold">{itinerary.tenDichVu}</h3>
-                  <p className="mt-2 text-sm leading-6 text-white/90">Lộ trình tham khảo 1 ngày tại Bình Điền (tách riêng khỏi nhóm dịch vụ).</p>
+                  <p className="mt-2 text-sm leading-6 text-white/90">Gồm lịch trình 1 ngày và 2 ngày 1 đêm để chọn theo nhịp chuyến đi của bạn.</p>
                 </div>
 
                 <div className="grid gap-6 px-6 py-6 lg:grid-cols-[1.25fr_1fr]">
@@ -71,9 +71,20 @@ export default function ServiceSection() {
                       .map((line) => line.trim())
                       .filter(Boolean)
                       .map((line, idx) => {
-                        const isSection = /^(\d+\.|Buổi\s+sáng|Buổi\s+trưa|Buổi\s+chiều|Buổi\s+tối)/i.test(line);
+                        const isMainSection = /^\d+\.\s+/i.test(line);
+                        const isTimeBlock = /^(Buổi\s+sáng|Buổi\s+trưa|Buổi\s+chiều|Buổi\s+tối)/i.test(line);
+                        const isSubTitle = /^(Ngày thứ nhất|Ngày thứ hai|Chi phí và liên hệ|Chi phí tham khảo|Lưu ý)$/i.test(line);
+
+                        const className = isMainSection
+                          ? 'mt-4 text-base font-bold text-hueRed first:mt-0'
+                          : isSubTitle
+                          ? 'pt-2 font-bold text-hueInk'
+                          : isTimeBlock
+                          ? 'font-semibold text-hueRed'
+                          : '';
+
                         return (
-                          <p key={`${idx}-${line.slice(0, 16)}`} className={isSection ? 'font-semibold text-hueRed' : ''}>
+                          <p key={`${idx}-${line.slice(0, 16)}`} className={className}>
                             {line}
                           </p>
                         );
@@ -103,6 +114,8 @@ export default function ServiceSection() {
         fullDesc={active?.moTaDayDu}
         image={active?.anh?.[0]}
         images={active?.anh || []}
+        address={(active as any)?.diaChi}
+        mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
         enableContactEnhancements
       />
     </section>

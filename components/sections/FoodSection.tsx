@@ -153,12 +153,35 @@ export default function FoodSection() {
                           className="overflow-hidden rounded-xl border border-hueGold/45 bg-hueGold/10 p-5 text-sm"
                         >
                           <div className="grid gap-4 md:grid-cols-[300px_1fr]">
-                            <div className="relative h-60 overflow-hidden rounded-xl border border-hueGold/20 bg-neutral-100">
-                              {selected.anh?.[0] ? (
-                                <Image src={selected.anh[0]} alt={selected.tenMon} fill className="object-cover" />
-                              ) : (
-                                <div className="flex h-full items-center justify-center px-3 text-center text-xs font-medium text-neutral-500">
-                                  Chưa có ảnh từ thư mục nguồn
+                            <div className="space-y-3">
+                              <div className="relative h-60 overflow-hidden rounded-xl border border-hueGold/20 bg-neutral-100">
+                                {selected.anh?.[0] ? (
+                                  <Image src={selected.anh[0]} alt={selected.tenMon} fill className="object-cover" />
+                                ) : (
+                                  <div className="flex h-full items-center justify-center px-3 text-center text-xs font-medium text-neutral-500">
+                                    Chưa có ảnh từ thư mục nguồn
+                                  </div>
+                                )}
+                              </div>
+
+                              {selected.anh && selected.anh.length > 1 && (
+                                <div className="grid grid-cols-2 gap-3">
+                                  {selected.anh.slice(1).map((src, imageIdx) => (
+                                    <a
+                                      key={`${selected.id}-gallery-${imageIdx}`}
+                                      href={src}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="group relative h-40 overflow-hidden rounded-xl border border-hueGold/25 bg-neutral-50"
+                                    >
+                                      <Image
+                                        src={src}
+                                        alt={`${selected.tenMon} - menu ${imageIdx + 1}`}
+                                        fill
+                                        className="object-contain transition duration-300 group-hover:scale-[1.02]"
+                                      />
+                                    </a>
+                                  ))}
                                 </div>
                               )}
                             </div>
@@ -239,7 +262,7 @@ export default function FoodSection() {
                             <span className="font-semibold text-hueRed">Tên món:</span> {item.tenMon}
                           </p>
                           <p>
-                            <span className="font-semibold text-hueRed">Tên quán:</span> {item.tenQuan}
+                            <span className="font-semibold text-hueRed">Thể loại món:</span> {item.tenQuan}
                           </p>
                           <p>
                             <span className="font-semibold text-hueRed">Mức giá:</span> {item.mucGia}
@@ -270,6 +293,7 @@ export default function FoodSection() {
         address={active?.diaChi}
         mapUrls={((active as any)?.mapUrls as string[]) || ((active as any)?.mapUrl ? [(active as any).mapUrl] : [])}
         mapEntries={activeMapEntries}
+        enableContactEnhancements
       />
     </section>
   );
